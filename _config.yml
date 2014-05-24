@@ -1,15 +1,52 @@
-name: "hikari"
-description: "Fluid, responsive blog theme for Jekyll"
+# Dependencies
+markdown:	redcarpet
+pygments:	true
 
-author: "John Doge"
+# Permalinks
+permalink:	/blog/:title
 
-url: "http://m3xm.github.io"
-baseurl: ""
+# Setup
+title:		Thinny
+tagline:	'blog'
+description:	'My personal blog.'
+url:		http://camporez.com
 
-markdown: rdiscount
-permalink: :year/:month/:title.html
-pygments: false
+author:
+  name:		'Ian Camporez Brunelli'
+  url:		https://google.com/+IanCamporezBrunelli
 
-# Google Analytics
-# ga_domain: m3xm.github.io
-# ga_tracking_id: UA-47727049-1
+paginate:	5
+
+# Custom vars
+icon:		/assets/images/icon.png
+cover:		/assets/images/cover.jpg
+
+social:
+  - icon:	twitter
+    url:	https://twitter.com/iancamporez
+    desc:	Follow me on twitter
+
+  - icon:	github
+    url:	https://github.com/camporez
+    desc:	Fork me on github
+
+  - icon:	googleplus-alt
+    url:	https://google.com/+IanCamporezBrunelli
+    desc:	Add me on google+
+
+  - icon:	feed
+    url:	http://camporez.com/atom.xml
+    desc:	Subscribe to my feed
+    
+menu:
+  - title:	Home
+    url:	/
+    
+  - title:	About
+    url:	/about
+    
+copyright:
+  author:	Camporez
+  url:		http://camporez.com
+  type_title:	Some rights reserved
+  type_url:	http://creativecommons.org/licenses/by-nc/2.5
