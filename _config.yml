@@ -1,24 +1,15 @@
-# Dependencies
-markdown:         redcarpet
-pygments:         true
+name: "hikari"
+description: "Fluid, responsive blog theme for Jekyll"
 
-# Permalinks
-permalink:        pretty
+author: "John Doge"
 
-# Setup
-title:            Lanyon
-tagline:          'A Jekyll theme'
-description:      'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://lanyon.getpoole.com
+url: "http://m3xm.github.io"
+baseurl: ""
 
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+markdown: rdiscount
+permalink: :year/:month/:title.html
+pygments: true
 
-paginate:         5
-
-# Custom vars
-version:          2.0.0
-
-github:
-  repo:           https://github.com/poole/lanyon
+# Google Analytics
+ga_domain: m3xm.github.io
+ga_tracking_id: UA-47727049-1
