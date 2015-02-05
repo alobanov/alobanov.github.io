@@ -1,7 +1,8 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);*/
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic);
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "PT Serif", sans-serif;
   background-color: #fff;
   font-weight: 400;
   line-height: 1.65em;
