@@ -1,9 +1,9 @@
-title:            "@malobanov"
+title:            "alobanov"
 url:              http://lobanov-aw.com
 permalink:        pretty
 highlighter:      pygments
 markdown:         kramdown
-google_analytics: UA-21332781-7
+google_analytics: UsA-21332781-7
 timezone:         Europe/Ekaterinburg
 gems:
   - jemoji
