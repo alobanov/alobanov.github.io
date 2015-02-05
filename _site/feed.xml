@@ -1,460 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>@muanchiou</title>
+    <title>@malobanov</title>
     <description></description>
-    <link>http://muan.co</link>
-    <atom:link href="http://muan.co/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://lobanov-aw.com</link>
+    <atom:link href="http://lobanov-aw.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>2014 in Contributions</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/images/2014-in-contributions.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;For some reasons I did not code at all in the 4 days I spent in Seoul.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 14 Jan 2015 00:00:00 +0000</pubDate>
-        <link>http://muan.co/2015/01/14/2014-in-contributions/</link>
-        <guid isPermaLink="true">http://muan.co/2015/01/14/2014-in-contributions/</guid>
-      </item>
-    
-      <item>
-        <title>Happy Hubberversary</title>
-        <description>&lt;p&gt;Today marks my one year being a GitHubber. Phew, what a crazy year.&lt;/p&gt;
-
-&lt;p&gt;A lot happened in this past year, both inside and outside of GitHub. The following paragraph from &lt;a href=&quot;/2013/07/24/github-hiring-story/&quot;&gt;my interview post last year&lt;/a&gt; had been tested again, and again, and it remains to be so true.&lt;/p&gt;
+        <title>Классический MVC</title>
+        <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна &lt;em&gt;MVC&lt;/em&gt; на Smalltalk-80. &lt;/h1&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;GitHub is the people, and obviously people make mistakes, no one is ever perfect, and they are not afraid to show it. They recognise their weaknesses and try to better everything all the time.&lt;/p&gt;
+  &lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;em&gt;MVC&lt;/em&gt; на Smalltalk-80. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (и каюсь, перевёл не всё).&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;In the last year, I shipped the &lt;a href=&quot;https://github.com/blog/1775-github-goes-to-school&quot;&gt;GitHub Education&lt;/a&gt; site with @johndbritton and @afeld, made many changes to our payment/coupon system with @kasima and @southgate, added &lt;a href=&quot;https://github.com/blog/1861-pay-for-github-with-paypal&quot;&gt;PayPal support&lt;/a&gt; with the amazing [redacted] team, and fixed god knows how many bugs on github.com – &lt;img class=&quot;emoji&quot; title=&quot;:laughing:&quot; alt=&quot;:laughing:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f606.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; I was surprised by how many there were to begin with.&lt;/p&gt;
-
-&lt;p&gt;I also travelled to 12 different countries, met many GitHubbers in their natural habitats, realized that some people are actually much more lovely in person, and made friends with amazing people all over the world.&lt;/p&gt;
-
-&lt;p&gt;However, this journey, which seems nice and easy on the outside, is actually filled with insecurity and struggles for me.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;My first few months at GitHub weren’t smooth. It took me months to finally feel like I know how things should be done, what is appreciated, and who to ask for help on all different sorts of things. Although apparently, I hid it pretty well.&lt;/p&gt;
-
-&lt;p&gt;The Education site took way longer than I had expected, because of which I was frustrated with myself and was scared to do more. Getting into github.com’s code base was such a challenge that I doubted if I ever really know anything about Rails. And, working with amazing designers/developers means I’d constantly feel like I can’t ever do either well enough.&lt;/p&gt;
-
-&lt;p&gt;The thought of &lt;em&gt;“Ugh, [_____] must think I am an idiot. Gonna hide in a hole and never come out.”&lt;/em&gt; pops into my head constantly.&lt;/p&gt;
-
-&lt;p&gt;In the process, there were times when I feel so overwhelmed and frustrated that I thought I should stop pretending I am good enough to be here, all this faking just wasn’t going to cut it. Sounds familiar? the ever so annoying Impostor Syndrome.&lt;/p&gt;
-
-&lt;p&gt;But, I am all good now.&lt;/p&gt;
-
-&lt;p&gt;In this past year I have also heard so many praises and kind words from coworkers who I didn’t even know or may have never worked with. They made me realise that I can really contribute, and the work I do is appreciated. So much so that they may &lt;em&gt;hear&lt;/em&gt; about my work without having seeing it themselves.&lt;/p&gt;
-
-&lt;p&gt;And the people I work closely with, they make me feel fortunate each day, for that I get to work with and learn from them, these genuinely nice and super talented individuals, who blow my mind all the time.&lt;/p&gt;
-
-&lt;p&gt;And finally the people, who care hard, who speak up without a hint of doubt when they see something wrong, whom I can comfortably reach out to any time, they are the best, and they made a world of difference to me.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;GitHub, as advertised, let us have tons of freedom, and that freedom comes with a price. Things are loose, unclear, up in the air from time to time, and it sucked to feel unsure about things constantly. Saying that “you get to work on what you want to”, means that you will have to figure that out yourself.&lt;/p&gt;
-
-&lt;p&gt;It’s a lot like leaving home – the right to be independent comes with a ton of responsibilities.&lt;/p&gt;
-
-&lt;p&gt;I was &lt;em&gt;so lucky&lt;/em&gt; to have met the people who helped me through the bumps in the road, I was &lt;em&gt;so lucky&lt;/em&gt; to have found a spot where I fit in, and I was &lt;em&gt;so lucky&lt;/em&gt; to have got on this journey. The journey that I wouldn’t trade for the world.&lt;/p&gt;
-
-&lt;p&gt;Twelve months passed by, GitHub still does not have everything figured out, but I already knew that’d be the case. GitHub is growing, and things are changing, it’s going to be a while til dust settles.&lt;/p&gt;
-
-&lt;p&gt;People here are trying tirelessly to make a big difference, and there are indeed many things broken, but we are fixing them. This ride to the moon is going to be bumpy along the way, but we will get there.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;To all of my lovely fellow hubbernauts who make me feel welcomed, appreciated, and respected on a daily basis, it has been a blessing to work with you all, and here’s to another crazy year. &lt;img class=&quot;emoji&quot; title=&quot;:tada:&quot; alt=&quot;:tada:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f389.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;3,&lt;br /&gt;
-Mu-An&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/photobooth.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;small&gt;&lt;i&gt;Many of the said lovely people are not in these photos.&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 22 Jul 2014 18:44:00 +0100</pubDate>
-        <link>http://muan.co/2014/07/22/hubberversary/</link>
-        <guid isPermaLink="true">http://muan.co/2014/07/22/hubberversary/</guid>
-      </item>
-    
-      <item>
-        <title>It Was Not You</title>
-        <description>&lt;p&gt;At 19, I moved to the UK to study. I scored 108 out of 120 in TOEFL before applying for schools, FYI that was high, especially so for a high schooler, but it meant nothing after I landed in this strong-accent-English-speaking foreign island. I was in Birmingham.&lt;/p&gt;
-
-&lt;p&gt;I struggled to understand the words coming out of my classmates’ mouths, struggled to keep up, and struggled to form any responses. Even when I barely understood and replied, they seldom got what I was saying. &lt;/p&gt;
-
-&lt;p&gt;It was very frustrating. It got more so when I started double, triple check the words I was using, and the grammar of every single sentence, to no avail. Even when I thought I said everything right, they still did not understand me. &lt;/p&gt;
-
-&lt;p&gt;Was it my non-british accent? Or was it that the English ability I was proud of was actually completely imaginary and false?&lt;/p&gt;
-
-&lt;p&gt;Then, I met people who understood me. People who helped explaining what I said to the people who didn’t understand me. They told me, actually, there was nothing wrong with my English, they weren’t exceptionally good at guessing broken English. Those people who said that they didn’t understand me, had it in their mind that, my English will not make sense, so it didn’t.&lt;/p&gt;
-
-&lt;p&gt;It was at that point, I started to see, it was probably not my fault most of the time.&lt;/p&gt;
-
-&lt;p&gt;There are people who are convinced you can’t do certain things because of the way you are. So even when you did it, they still find a way in their mind to reject the facts.&lt;/p&gt;
-
-&lt;p&gt;They are not bad people, it is just the way things are for them. Until you can prove it again, again, and again, til they notice, or until there are people around who help convincing these people, they will keep on rejecting you.&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;No, it was not you.&lt;/strong&gt;&lt;br /&gt;
-What a nice thing to know.&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;At times it becomes obvious that these people are not even trying to perceive the fact that, against all their beliefs, we might actually be very good at this certain thing that we do.&lt;/p&gt;
-
-&lt;p&gt;However, it is equally easy make the same mistake these people make. Let’s at least try to do better, OK?&lt;/p&gt;
-</description>
-        <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
-        <link>http://muan.co/2014/02/19/it-was-not-you/</link>
-        <guid isPermaLink="true">http://muan.co/2014/02/19/it-was-not-you/</guid>
-      </item>
-    
-      <item>
-        <title>2013 in Contributions</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/images/2013-in-contributions.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
-        <link>http://muan.co/2014/01/02/2013-in-contributions/</link>
-        <guid isPermaLink="true">http://muan.co/2014/01/02/2013-in-contributions/</guid>
-      </item>
-    
-      <item>
-        <title>GitHub Hiring Story</title>
-        <description>&lt;p&gt;Most of us have heard how incredibly relaxed GitHub’s culture is, but not many people have actually experienced it first hand to be able to confirm it. After going through GitHub’s hiring process, I have to say it was honestly the best experience I have ever had.&lt;/p&gt;
-
-&lt;p&gt;Reading &lt;a href=&quot;https://github.com/blog/1269-the-github-hiring-experience&quot;&gt;The GitHub hiring experience&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/cobyism&quot;&gt;Coby&lt;/a&gt; certainly helped me a lot in understanding GitHub’s process while I was in it. GitHub is so out of the ordinary that you do need to study up in order to get a grasp on where you are at. And here’s my take on everything. :)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;first-contact&quot;&gt;First Contact&lt;/h3&gt;
-
-&lt;p&gt;3 months ago, I was taking my time in finding something new, while finishing off lots of personal projects. I talked to a bunch of companies during the time; it took some people a long time to say no, and for some it cost me a long time to find out it wasn’t a good fit.&lt;/p&gt;
-
-&lt;p&gt;Lots of people talk about how interview should be a two-way process, but there is a problem: most interviews are not set up to be a two-way process. It wouldn’t be about people meeting people, but purely about the company screening you.&lt;/p&gt;
-
-&lt;p&gt;I initially got in contact at &lt;img class=&quot;emoji&quot; title=&quot;:uk:&quot; alt=&quot;:uk:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f1ec-1f1e7.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; &lt;a href=&quot;https://github.com/blog/1471-london-drinkup&quot;&gt;GitHub London drinkup&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:uk:&quot; alt=&quot;:uk:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f1ec-1f1e7.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; after &lt;a href=&quot;http://devslovebacon.com/&quot;&gt;BACON&lt;/a&gt;. I have almost never been to these kind of social events, because I am genuinely afraid of &lt;strong&gt;strangers in bulk&lt;/strong&gt;. I somehow got the courage that day, most likely because it was my birthday, and I went alone!!! I met Julie (@nrrrdcore) and Zach (@holman). &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We talked about various things for a good chunk of time. Having saw both of their talks before, and being a female designer/developer like Julie, there were lots of questions I wanted to ask, things about how designer should code, how all web designers code in GitHub, what are passion projects like, what the bigger vision is and so on, I even told them that drinkups frighten me. It was a really nice, casual chat, they were both super friendly and easy to talk to, &lt;strong&gt;and I really can’t stress this enough.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;At the end of the night, I mentioned my interest in GitHub to Julie, she asked me to drop her an email so we can talk more. I really didn’t want to be abrupt, but I thought it was appropriate at the time; she reminded me to send that email again right before I took off. &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; How nice!&lt;/p&gt;
-
-&lt;p&gt;Soon after, we started emailing back and forth.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;interviewing&quot;&gt;Interviewing&lt;/h3&gt;
-
-&lt;p&gt;Hiring takes time, and it’s time from both ends. In the first one and a half month I had some emails/Skype/FaceTime calls with a bunch of GitHubbers.&lt;/p&gt;
-
-&lt;p&gt;It wasn’t moving fast, from time to time I waited for more than a week to get a response or to schedule a call time. I’ll be lying if I say I wasn’t bothered by that, but it was really pleasant nonetheless, here’s why: when people replied me late, they told me they were going to be late, and why they were. They make the effort to drop me a short email only to make sure I know what is going on. (Thank you especially @tclem &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;)&lt;/p&gt;
-
-&lt;p&gt;Different from the usual interview setup, people I talked to made the purpose of the calls very clear to me.&lt;/p&gt;
+&lt;p&gt;Это не введение в модель &lt;em&gt;MVC&lt;/em&gt;, а обзор его осуществления на &lt;a href=&quot;https://ru.wikipedia.org/wiki/Smalltalk&quot;&gt;Smalltalk-80&lt;/a&gt; для понимания первоначальных намерений и функций триады. Классическая &lt;em&gt;MVC&lt;/em&gt; поможет лучше понять последующее развитие паттернов, которые появились позже. Посмотрим, как простое &lt;em&gt;MVC&lt;/em&gt; приложение работает в Smalltalk-80 и изучим как оно может быть реализовано на языке &lt;strong&gt;ActionScript&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;We want to get to know you, and we want you to know us, so you can be sure you would like to work with us personally.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Model-view-controller&lt;/strong&gt; (&lt;em&gt;MVC&lt;/em&gt;, «Модель-представление-поведение», «Модель-представление-контроллер») — архитектура программного обеспечения, в которой &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&quot;&gt;модель данных&lt;/a&gt; приложения, &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательский интерфейс&lt;/a&gt; и управляющая логика разделены на три отдельных компонента, так, что модификация одного из компонентов оказывает минимальное воздействие на другие компоненты.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Most of my developer friends love GitHub, and almost everyone would like to work in GitHub simply because &lt;strong&gt;it is GitHub&lt;/strong&gt;. But through talking to real people working in GitHub, there comes a point when I felt &lt;strong&gt;I really want to work with these people!&lt;/strong&gt; It was perfectly possible that during the process I might realise that they are pricks and stop being interested in them, but it was the complete opposite.&lt;/p&gt;
+&lt;h1 id=&quot;model-view-controller--smalltalk-80&quot;&gt;Реализация Model-View-Controller в Smalltalk-80.&lt;/h1&gt;
+&lt;p&gt;Модель &lt;em&gt;MVC&lt;/em&gt; облегчает разделение ответственности при разработке интерактивных графических приложений. Логика и состояние приложения, как пользователи взаимодействуют с приложением, и как состояние приложения представляется пользователю по средствам отдельных элементов триады &lt;em&gt;MVC&lt;/em&gt;. Smalltalk-80 использует метафору &lt;em&gt;MVC&lt;/em&gt;, что обеспечивает встроенную поддержку для интерактивной разработки приложений. Идея заключалась в том, чтобы обеспечить набор встроенных компонентов &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательского интерфейса&lt;/a&gt;, таких как кнопки, меню и списки, которые могут быть подключены к GUI приложения. Для эффективного использования этих встроенных элементов интерфейса, реализация должна была быть построена в соответствии с &lt;strong&gt;MVC&lt;/strong&gt;. Давайте посмотрим на концептуальную диаграмму приложения &lt;strong&gt;Smalltalk-80&lt;/strong&gt;.
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;All of the calls were super casual, we talk about personal experiences, my usual design process, preprocessors I love and hate, joked about how me loving HAML (just for not having to close tags) is plain lazy. :P I was super nervous, but it was great fun at the same time.&lt;/p&gt;
-
-&lt;p&gt;Lots of companies talk to you about what frameworks you use/they use, what would you choose out of Backbone, Angular and Ember, what is the most difficult technical puzzle you’ve solved recently and even ask you where would you want to be in 5 years, or who do you follow on Twitter. (Yes, I have been asked.)&lt;/p&gt;
-
-&lt;p&gt;Not GitHub.&lt;/p&gt;
-
-&lt;p&gt;GitHubbers talked with me like real people, like friends. They asked “human” and sensible questions that you might ask a new friend during a coffee or a pint. They were so friendly that you would think it is silly to feel any pressure, although like me, you might still do.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/schemamvc.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;onsite-interview&quot;&gt;Onsite Interview&lt;/h3&gt;
-
-&lt;p&gt;After a bunch of skype/FaceTime calls, they invited me to fly over from London to San Francisco for an onsite interview.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;By the time we’re flying someone out, we mean business.&lt;br /&gt; &lt;small&gt;The GitHub Hiring Experience - Coby&lt;/small&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;They offered to fly me in for extra days prior/following just to relax and adjust to jet lag before the interview, which was super nice. They booked me airport pickup services with a limo. I am not some hotshot like many of you, it was the first time I have people holding my name sign at the gate. After I checked in at the hotel, they got in touch to see if I am doing OK and if I need anything. (&lt;a href=&quot;http://twitter.com/WassupBryant&quot;&gt;Emma&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;)&lt;/p&gt;
-
-&lt;p&gt;After a few days of relaxing and meeting friends, here comes the first part of the onsite interview: @nrrrdcore, @jakeboxer and @mdo took me out for dinner. It was just a casual welcome dinner, and by casual, I mean CASUAL casual, as in they were talking about love for Chicken Nuggets, and how tiny humans make their apartment seem big. :) I was nervous and shy so didn’t talk much, but they were so funny and you can see that they get along really well.&lt;/p&gt;
-
-&lt;p&gt;Next up was the interview day, I had breakfast with @tclem, whom I have already talked to online so I wasn’t too nervous, and the &lt;a href=&quot;https://github.com/blog/1519-jesse-toth-is-a-githubber&quot;&gt;badass&lt;/a&gt; @jesseplusplus. They walked me to the office afterwards.&lt;/p&gt;
-
-&lt;p&gt;Over the course of the day, I talked to about some 10 people, 2 at a time. It was super laid-back, just chatting. There was one thing surprised me the most – everyone already knows a lot about me. They know about my recent projects, things I have built and shipped(not just the ones on my resume), they know how I got in touch, they know I am from Taiwan but I live in London and so on. It is surprising how rare this is the case, and this tells me that they took the time to get to know me, not just by looking at my resume, but actually took the time to read through stuff I have done.&lt;/p&gt;
-
-&lt;p&gt;I talked to developers, designers and also to my surprise – the finance team! Normally when interviewing at a company, I will expect seeing developers, project managers or so, not people from a whole different department, but this was brilliant! People were not hard-divided into certain groups simply because they were non-techs working in a tech company or something. I enjoyed very much talking to @hotbootymasala, who used to live in London like me, and @alysonla, who codes quite a lot now!&lt;/p&gt;
-
-&lt;p&gt;The day finished at 3pm, which was rather early. At the end of it, I had a design session with @nrrrdcore and @mdo, it was unexpectedly not as intimidating as I imagined. @nrrrdcore &lt;a href=&quot;https://instagram.com/p/ag-UenJanP/&quot;&gt;drew a clippy&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;That was the first and the only ‘technical’ interview I had with GitHub, so I asked: “How are you guys sure about my coding ability?” and well, they told me that obviously they have read through my GitHub profile, and they meant it. Just on top of his head, @mdo listed almost all of my project repositories and told me how each one showed them what I can do. Wow.&lt;/p&gt;
-
-&lt;p&gt;Lucky for me, in the evening one of the &lt;a href=&quot;http://passion-projects.github.com/&quot;&gt;passion projects&lt;/a&gt; was being held, so I hang out more that night to check it out, chatted with some more people, met @bleikamp. And that was the end of the onsite interview.., almost!&lt;/p&gt;
+&lt;p&gt;Диаграмма &lt;strong&gt;MVC&lt;/strong&gt; в Smalltalk-80 (Krasner &amp;amp; Pope)Все объекты в Smalltalk общаться друг с другом при помощи сообщений, которые является способом вызова методов объекта. На первый взгляд, диаграмма &lt;strong&gt;MVC&lt;/strong&gt; кажется немного странной. Model-View и Controller-Model имеют зависимости направленные в обе стороны. Вторым интересным аспектом было то, что пользовательский ввод идет непосредственно через контроллер. Это является существенным изменением, как правило мы ожидаем от пользователя взаимодействия с элементами интерфейса в представлении (View), а не в корнтроллере. В Smalltalk-80, все данные с устройства ввода подаются непосредственно в контроллер. Давайте кратко рассмотрим, как &lt;strong&gt;MVC&lt;/strong&gt; поддерживается в Smalltalk-80.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;a-little-incident&quot;&gt;A little incident&lt;/h3&gt;
+&lt;h1 id=&quot;mvc---smalltalk-80&quot;&gt;&lt;strong&gt;MVC&lt;/strong&gt; классы в Smalltalk-80.&lt;/h1&gt;
 
-&lt;p&gt;The day after, I received an email from someone I met briefly but didn’t get a chance to talk to on the interview day. He introduced himself and said if I have got any more questions about GitHub he’ll be happy to answer.&lt;/p&gt;
+&lt;p&gt;Есть три абстрактных класса называемые Модель, Вид и Контроллер. Все конкретные реализации модели, вида и контроллера должны иметь подклассы этих абстрактных суперклассов. Давайте взглянем на классы (это сокращенное описание — см. &lt;a href=&quot;http://www.math.rsu.ru/smalltalk/gui/&quot;&gt;Krasner &amp;amp; Pope&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;It could be because the interview was over, I had the illusion that I can now begin to ask a bunch of silly questions and not get judged by, so I replied asking if he’ll be able to meet and have a chat, and he said yes right away.&lt;/p&gt;
-
-&lt;p&gt;@mtodd ended up spending a whole Saturday afternoon with me in the GitHub office, just answering my endless questions about GitHub and chatting with me about basically everything.&lt;/p&gt;
-
-&lt;p&gt;I was really glad to have the chance spending time with him that afternoon, I got to know so much more about GitHub. I had a peek of the weekend office, sat in an egg chair hugging an octocat pillow, and hung out in the guitar room. Without the pressure of it being an interview (although it definitely still counted), I was a whole lot more relaxed!&lt;/p&gt;
-
-&lt;p&gt;Then I flew back to London a day later.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;at-the-end-of-everything&quot;&gt;At the end of everything&lt;/h3&gt;
-
-&lt;p&gt;During the whole process, I did not talk to any “HR people.” I met and talked to people who actually work in GitHub doing the same thing as what I will be doing, and people who will be working with me if I got hired. There was really an impressive amount of engineering time set aside purely for hiring.&lt;/p&gt;
-
-&lt;p&gt;Watching from the outside, I saw GitHub being this great company that builds a much loved product, and I thought they must have everything all figured out; but I came to realise, &lt;strong&gt;they do not have everything figured out&lt;/strong&gt;, and it is so awesome. &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub is the people, and obviously people make mistakes, no one is ever perfect, and they are not afraid to show it. They recognise their weaknesses and try to better everything all the time.&lt;/p&gt;
-
-&lt;p&gt;Before the interview I couldn’t help but feeling out of place, simply because GitHub is GitHub; but after the whole interview process, GitHub is no longer the entity I used to think it was. GitHub is that group of people I met with; they are approachable, friendly, and no different to you and I.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Модель&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Model&lt;/strong&gt; реализует общую модель поведения. Он реализует механизм зависимости обслуживания. Вид может зарегистрироваться на конкретную модель чтобы стать подписчиком и получать оповещения об изменениях. Если конкретная модель рассылает свои сообщения, то они будут автоматически отправлены всем своим подписанным представлениям. Это реализация &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C_%28%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%29&quot;&gt;паттерна Наблюдатель&lt;/a&gt; (паттерн поведения объектов). Конкретная модель напрямую не знает о зависимых от него представлениях.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Представление&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;View&lt;/strong&gt; реализует общие поведения представления. Встроенный набор компонентов подкласса представления (например, StandardSystemView — стандартное окно и TextEditorView — текстовый редактор). Представления могут быть вложенными для разработки сложного пользовательского интерфейса. Например, StandardSystemView (т.е. окна) содержит компонент представления, называемые TextEditorView.
+Каждое представление может иметь одну модель и один контроллер. Встроенный компоненты по умолчанию имеют заранее определенный класс контроллера для реализации своего стандартного поведения. Чтобы создать экземпляр компонента, вам нужно настроить свою модель и отобразить компонент. Компонент затем будет инициализировать по умолчанию контроллер со своим экземпляром модели и регистрироваться в ней для получения сообщений. При закрытии компонента, освобождаются все вложенные компоненты. Когда представление освободилось, оно удаляет свои подписки на сообщения из модели. Если вы хотите чтобы компоненты имели своё уникальное поведения, вы можете создать свой контроллер для него.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Контроллер&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Controller&lt;/strong&gt; реализующий общие поведения. Каждый контроллер имеет ссылку на одну модель, один контроллер, и глобальную переменную называемую сенсор, который предоставляет интерфейс взаимодействия для устройств ввода (мышь, клавиатура). Абстрактный класс контроллера реализующий его общие поведения для определения уже конкретного контроллера и соответствующего ему представления. Если конкретное представление является активным (которое в данный момент использует пользователь), то егоконтроллер осуществляет управление всего пользовательского ввода.
+Контроллер должен иметь прямую ссылку на представление, например для того чтобы знать расположен ли сейчас курсора мыши над конкретным представлением. Важно отметить, что только контроллеры, а не представление, получает информацию о вводе данных (с клавиатуры или мышки).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;My concern as a candidate was to make sure I will love my job, I will get excited at what I’ll be doing, I will like the company and most importantly, enjoy working with the people. And from what I have learned from the process, the people and the culture, I find everything at GitHub extremely appealing to me.&lt;/p&gt;
+&lt;h1 id=&quot;mvc--smalltalk-80-1&quot;&gt;Ключевые особенности реализации &lt;strong&gt;MVC&lt;/strong&gt; на Smalltalk-80:&lt;/h1&gt;
 
-&lt;p&gt;I started writing this blog post before they flew me to San Francisco, and I finished the post on the plane back to London. I didn’t know if I was going to get an offer while writing this initially, it almost felt like a stupid teenage crush; fortunately for me, turns out in the end our love was mutual &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;, I got an offer a couple days after I got back to London.&lt;/p&gt;
-
-&lt;p&gt;Obviously not having actually worked in GitHub yet, there could be a possibility that everyone is secretly annoying, @mtodd lied about how Tom really is, and I just couldn’t see all these things from the outside. Although I highly doubt these, I do only speak for what I’ve already known. :)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/muan-fast.gif&quot; alt=&quot;Spinning, I am spinning!&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;This week is my first week at GitHub, good luck to me. &lt;br /&gt;
-&lt;a href=&quot;http://octodex.github.com/&quot;&gt;May the octocats be with you&lt;/a&gt;. &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;p.s. Thank you @nrrrdcore for everything. You are so awesome. &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;представления могут быть вложенными;&lt;/li&gt;
+  &lt;li&gt;каждый встроенный компонент (например ListBox) это представление;&lt;/li&gt;
+  &lt;li&gt;каждый вид имеет соответствующий контроллер;&lt;/li&gt;
+  &lt;li&gt;контроллер осведомляет своё представление, если оно активно;&lt;/li&gt;
+  &lt;li&gt;активные контроллер (чье представление в данный момент активно) получает данные которые изменил пользователь при помощи устройств ввода;&lt;/li&gt;
+  &lt;li&gt;контроллер может обновить представление (компонент) на основе действий пользователя;&lt;/li&gt;
+  &lt;li&gt;контроллер изменяет модель на действий пользователя;&lt;/li&gt;
+  &lt;li&gt;представление обновляет себя пир помощи наблюдателя, синхронизированного с моделью.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Wed, 24 Jul 2013 23:34:00 +0100</pubDate>
-        <link>http://muan.co/2013/07/24/github-hiring-story/</link>
-        <guid isPermaLink="true">http://muan.co/2013/07/24/github-hiring-story/</guid>
-      </item>
-    
-      <item>
-        <title>Git wedding-speech</title>
-        <description>&lt;p&gt;Lots of my friends just got married/got engaged recently. People plan their weddings in all different ways. I suddenly wondered if any couple has ever planned a wedding in a GitHub repository, so I typed “wedding” into &lt;a href=&quot;https://github.com/blog/1381-a-whole-new-code-search&quot;&gt;GitHub search box&lt;/a&gt;. And found this.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;お互いの人生という repository に、それぞれの人生の branch が、ここにmergeされました。&lt;/p&gt;
-
-  &lt;p&gt;ときにはconflictが発生することもあるでしょう。そんなときは慌てずきちんとソースを読んでconflictを解消することが重要です。&lt;/p&gt;
-
-  &lt;p&gt;夫はgit blameしてはいけません。&lt;/p&gt;
-
-  &lt;p&gt;妻からpull requestがあったら、すみやかにmergeしてください。&lt;/p&gt;
-
-  &lt;p&gt;何か困ったことや問題が発生したらうやむやにせずIssueを登録して、きちんと対応していきましょう。長い人生を一緒に歩んでいくうえで大切なことです。&lt;/p&gt;
-
-  &lt;p&gt;人生設計として milestone を意識するのも良いと思います。いつまでにこうしよう、何歳になったらこうなっているといいね、という意識を共有することで人生がより豊かになります。&lt;/p&gt;
-
-  &lt;p&gt;周りの夫婦を見て、これはいいなと思うところは、積極的にcherry-pickしていきましょう。&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://github.com/chris4403/wedding-party-speech&quot;&gt;https://github.com/chris4403/wedding-party-speech&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I don’t know Japanese, but I know the fragmented Kanji(漢字), and it looks so sweet with all the Git/GitHub terms, so I asked my Japanese-fluent sister to translate it. It turned out to be so extremely sweet, especially for a female geek like me, I can only wish I was there to see the bride’s reaction.&lt;/p&gt;
-
-&lt;p&gt;Here’s my sister’s &lt;a href=&quot;https://github.com/muan/wedding-party-speech/blob/master/speech-zh-tw.md&quot;&gt;Traditional Chinese translation&lt;/a&gt;, and an &lt;a href=&quot;https://github.com/muan/wedding-party-speech/blob/master/speech-en.md&quot;&gt;English translation&lt;/a&gt; by myself. The English translation I feel lack of the original cuteness and the jokingly-warning impressions, which was a shame; so, pull requests please. :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;:heart:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/2764.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jul 2013 05:43:00 +0100</pubDate>
-        <link>http://muan.co/2013/07/21/git-weddnig-speech/</link>
-        <guid isPermaLink="true">http://muan.co/2013/07/21/git-weddnig-speech/</guid>
-      </item>
-    
-      <item>
-        <title>Noise</title>
-        <description>&lt;p&gt;I live next to a huge mall in London. Last night as I was walking through the mall to the grocery store on the other side, I couldn’t help but noticed the terrible music that was blasting through the speakers and into my ears.&lt;/p&gt;
-
-&lt;p&gt;Naturally I put on my headphones to stop what was happening, but seconds later, I realised it was not just the music. There were millions of other things being shoved into my eyes – the display windows, the colourful stands, the flashing digital signages, the wallpapers, they are all trying to talk to me, all trying to sell me something. I lowered my head only to find there were advertising stickers on the floor.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Last year I went back to Taiwan for a couple of weeks. While I was there I kept feeling there were this constant noise that I cannot get rid of. I cannot have one single quiet moment and it annoyed me so much.&lt;/p&gt;
-
-&lt;p&gt;You see, I am from Taipei, and this is just an ordinary street:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/13052101.jpg&quot; alt=&quot;Taipei&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;**It is mad. **&lt;/p&gt;
-
-&lt;p&gt;Interestingly though, I have never noticed it while I was living there, it was only after 5 years living in the UK that I realised there is this massive difference. London is in comparison a lot quieter.&lt;/p&gt;
-
-&lt;p&gt;Imagine every signage has a voice, and as soon as you lay eyes on it, it starts talking: “Hey are you hungry? We serve a mean pork belly bun!”, “Do you need a haircut? We are offering student discount! Not that you look like a student.”, “We sell rice burger and we are from Japan! Why not come in?”, “Wanna buy a lottery? Chance to win 5 million!”&lt;/p&gt;
-
-&lt;p&gt;I missed London a lot while I was there, I missed the quietness; regardless growing up in the city, I have never “liked” quietness  particularly.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;So being in the mall reminded me, the other day when I was at the gym, there was something similar. The TVs, all 8 of them, right in front of the treadmills. Are you kidding me?&lt;/p&gt;
-
-&lt;p&gt;Everything in this mad world now requires us to make a deliberate effort to shut things off, otherwise they will sneak through every possible crack to get into your head.&lt;/p&gt;
-
-&lt;p&gt;To block the noise, it might be as easy as putting on your headphones, but it might not be.&lt;/p&gt;
-
-&lt;p&gt;Taiwanese are particularly good at, I mean, addicted to, shoving things into your face. Take Yahoo! Taiwan for example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/13052102.png&quot; alt=&quot;Yahoo Taiwan&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;And the second largest web portal in Taiwan:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/13052104.png&quot; alt=&quot;PCHome&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;It is as if leaving white space is a deadly sin.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I am not showing them so I can bash Taiwanese websites, I am showing them as examples of the extreme cases, and it is bad, so we need to move towards the opposite direction.&lt;/p&gt;
-
-&lt;p&gt;Sure, we often see nice, clean, well-spaced websites when we work in tech, but &lt;strong&gt;this is not about the design&lt;/strong&gt;, this is about the amount of information you present. We all know how scrolling works, but is it necessary to give people 20000 pixels to scroll?&lt;/p&gt;
-
-&lt;p&gt;I am not good at selling at all, so I am not talking about what will work for a business. I am talking about NOT shoving things to people’s faces when they don’t need the information. Why? Because there needs to be a noise control and I want my quietness, so should you.&lt;/p&gt;
-
-&lt;p&gt;If people click through to an article they do not need to know who you are, where you’re from and who do you work for before they read the article, and obviously they would not want to subscribe to your blog out of nowhere. Sure, less clicks means higher conversion rate, but it comes with a price.&lt;/p&gt;
-
-&lt;p&gt;Simplicity is not hard, you just have to leave certain unimportant things out. Just be aware of the Signal v.s. Noise ratio. Things that are not the signal, are noise. You might as well have the most bullet-proof rationale as to why everything just NEEDS to be shown and above the fold, but just listen to your page. How many of the things are shouting? How come you are not deaf yet?&lt;/p&gt;
-
-&lt;p&gt;Our environment is gradually upping the volume for what seems to be a perfectly legitimate reason – sales. And we are getting used to it.&lt;/p&gt;
-
-&lt;p&gt;There will be a day, when we realised that the background noise is dominating our world, and it is going to be too late, as we can no longer hear the signal from all the noise.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;A somewhat relevant video:&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/N5WurXNec7E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;on&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 21 May 2013 04:02:39 +0100</pubDate>
-        <link>http://muan.co/2013/05/21/noise/</link>
-        <guid isPermaLink="true">http://muan.co/2013/05/21/noise/</guid>
-      </item>
-    
-      <item>
-        <title>Scribble, a Jekyll Theme</title>
-        <description>&lt;p&gt;&lt;strong&gt;Update: 25 Sep 2012&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I decided it was too much work to add a new theme, and rather not destroy the joy of redesigning blogs by constraining myself with frameworks, so.. from now on the themes will be in &lt;a href=&quot;https://github.com/muan/muan.github.com&quot;&gt;the repository of this blog&lt;/a&gt;, meaning if you do want to use it, it’s going to take you some setup time, migrating posts or however you do it. &lt;/p&gt;
-
-&lt;p&gt;One thing remains to be true: you’re all welcome to use the themes I made, edit it however you like, only that I will not be doing support. &lt;/p&gt;
-
-&lt;p&gt;Browse the design changes using this neat &lt;a href=&quot;https://github.com/muan/muan.github.com/releases&quot;&gt;release view&lt;/a&gt; of the repository. ♥&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Update: 20 May 2013&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I am now working on &lt;strong&gt;Wardrobe&lt;/strong&gt;, which would be a jekyll setup with 3-5 themes to start with, it is currently work in progress but you can have &lt;a href=&quot;http://themes.muan.co/&quot;&gt;a sneak preview here&lt;/a&gt; (one of the themes.)&lt;/p&gt;
-
-&lt;p&gt;Follow me on &lt;a href=&quot;https://twitter.com/muanchiou&quot;&gt;Twitter&lt;/a&gt; or &lt;a href=&quot;https://github.com/muan/jekyll-wardrobe&quot;&gt;GitHub&lt;/a&gt; to keep yourself in the loop. ♥&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Remember &lt;a href=&quot;/2013/04/08/jekyll-themes/&quot;&gt;this post&lt;/a&gt;? Yap, I have been busy, but it is no excuse. There is only one reason for why I didn’t start the project – It is too big to start. I failed to find a way in. &lt;/p&gt;
-
-&lt;p&gt;How exactly do you make it easy for people to switch themes without turning this project into some huge monster? I don’t know, and couldn’t find the time to think about it thoroughly.&lt;/p&gt;
-
-&lt;p&gt;I thought about building the themes on top of &lt;a href=&quot;http://jekyllbootstrap.com&quot;&gt;jekyll bootstrap&lt;/a&gt;. Well, it would be sensible, but no, not at this point at least. It would be a huge barrier for me in terms of kicking start this project, because then I’d need to understand how things are structured in jekyll bootstrap…&lt;/p&gt;
-
-&lt;p&gt;Therefore, I decided to keep it as simple as possible, just do basically what &lt;a href=&quot;https://github.com/holman/left&quot;&gt;Left&lt;/a&gt; (by &lt;a href=&quot;http://zachholman.com/posts/left/&quot;&gt;Zach Holman&lt;/a&gt;) does, and it, is, done.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;scribble&quot;&gt;Scribble.&lt;/h2&gt;
-
-&lt;p&gt;So, Scribble is the first theme, read more about it on &lt;a href=&quot;http://scribble.muan.co/2013/05/06/scribble-the-jekyll-theme/&quot;&gt;the demo site&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;That’ll be all. :)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 05 May 2013 21:38:50 +0100</pubDate>
-        <link>http://muan.co/2013/05/05/scribble-the-jekyll-theme/</link>
-        <guid isPermaLink="true">http://muan.co/2013/05/05/scribble-the-jekyll-theme/</guid>
-      </item>
-    
-      <item>
-        <title>Scribble</title>
-        <description>&lt;p&gt;I have been busy building &lt;a href=&quot;http://www.zeczec.com&quot;&gt;zeczec&lt;/a&gt;. This version was shipped 2 weeks ago, and I guess I’d never really be happy with it.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Well, so evidently upon shipping zeczec, I stopped writing blogs and stopped redesigning my blog(!), which is bad, but I just could not spare the time, too many bugs and too many improvements to make. :S&lt;/p&gt;
-
-&lt;p&gt;I have been thinking about finishing the &lt;a href=&quot;/2013/04/14/A-Story-1/&quot;&gt;last post&lt;/a&gt; for a long time, but having left it for too long, I cannot really find a place to start… &lt;/p&gt;
-
-&lt;p&gt;Therefore, instead of keeping finding out where and how to start, I thought I try to get back on track by redesigning my blog! :) And as expected, as soon as I open Sublime(not really, Sublime was never closed), the new design was born within 2 hours. So here it is, now the next thing would be to start writing again. Hope that would happen soon.&lt;/p&gt;
-
-&lt;p&gt;In the mean time,… I’m craving some dumplings.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 05 May 2013 21:38:50 +0100</pubDate>
-        <link>http://muan.co/2013/05/05/scribble/</link>
-        <guid isPermaLink="true">http://muan.co/2013/05/05/scribble/</guid>
-      </item>
-    
-      <item>
-        <title>A Story 1/2</title>
-        <description>&lt;p&gt;&lt;span class=&quot;muted&quot;&gt;# This post is not yet finished.&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;About a year ago, a bunch of friends and I launched &lt;a href=&quot;http://zeczec.com&quot;&gt;zeczec.com&lt;/a&gt;, a crowdfunding website. We are Kickstarter for Taiwan.&lt;/p&gt;
-
-&lt;p&gt;It was pretty simple, Kickstarter does not exist in Taiwan, but we want a crowdfunding site. What do we do? We build it.&lt;/p&gt;
-
-&lt;p&gt;We are a group of designers plus a fresh entrepreneur. I am a web designer with a product design degree. My co-founders are an architect, a fashion blogger/book author, and a graphic designer. We all have numerous designer friends working in various professions, we all know talents that we believe should not be left unknown. There was simply no reason for us not to do this.&lt;/p&gt;
-
-&lt;p&gt;It was 6 months before we launched the website when we first got together for our collective debut startup experience. It was just ridiculous how much time we spent on coming up with a name, doing case studies on crowdfunding in other countries, and wireframing without actually building anything. I had to become so discouraged by the endless meetings to a certain point when I finally decided to build a prototype.&lt;/p&gt;
-
-&lt;p&gt;A prototype? not really. It was static HTML. I was a web designer and a front-end girl, I had too little back end knowledge. Sure I could build something easily on WordPress, but there are hoops I couldn’t imagine jumping through without external help, paypal pre-approval for one. Wait, what? I didn’t even know what an API was.&lt;/p&gt;
-
-&lt;p&gt;So it was only sensible that we find a back end developer. We were looking for Drupal or Rails dev specifically; Drupal because there were lots of Drupal devs allegedly, and Rails because it’s hot, that simple. However, in the end we found a Django dev.&lt;/p&gt;
-
-&lt;p&gt;We were all working at after work hours and on weekends. I would be busy designing and doing front end of the site, others trying to set up an actual company and doing countless paperwork. There were too much to do and too little time to do them, so we decided to ship out a MVP and try to be “lean.” We didn’t even really know how M a MVP should be, but our Python dev had a startup background so he stopped us from wanting too much by simply not building them, which was great.&lt;/p&gt;
-
-&lt;p&gt;We launched the MVP, and it was really well-received. Zeczec was the first creative crowdfunding site in Taiwan, it was an entirely new idea to put in people’s heads. But much to our surprise, the first project reached its goal on the 3rd day, and the following projects all reached their goals within the first few days. On top of that, the media jumped at us. We told ourselves, this was awesome, now that the idea had been proven to work in Taiwan, let’s build a full product in a few months.&lt;/p&gt;
-
-&lt;p&gt;That proper version of the site never happened for the next 12 months.&lt;/p&gt;
-
-&lt;p&gt;I was going through lots of changes at the time. I got a job in a London based startup when I didn’t really know what a startup was, and soon after we launched zeczec, my company decided to move us to the US for 500 Startups. Just like that, we moved from London to Mountain View, nothing was for certain. 48 hours after we were sure it was a go, we were already on a plane, then 3 months in 500 Startups flew past in a blink. I learned a bajillion things.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;A Bajillion&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Apart from all the startup related things (there were tons), I also learned Rails.&lt;/p&gt;
-
-&lt;p&gt;In 500, my company was working on a re-build, we switched from Drupal to Rails, and it was quite crucial for me to know how the front end works in Rails. Why does this view need to be called new.erb, why is there an underscore prepending the file name, and where do those instance variables(if only I knew that’s their name) come from?&lt;/p&gt;
-
-&lt;p&gt;I couldn’t really do anything on zeczec. Our founding team were split across the globe literally, there is +0800 in Taiwan, +0000 in London and -0800 in Mountain View. Not only was it impossible to set up a proper meeting, I was just too busy and overwhelmed with all the stuff happening in the accelerator.&lt;/p&gt;
-
-&lt;p&gt;However as I was absorbing all the knowledge and funsies around me, I realised I was suddenly so much closer to building a website completely solo. @robert, my colleague at the time and our Rails dev, suggested that we exchange front/back end knowledge, that was perfect! It didn’t take long before I realised: Oh wow, Rails is so easy to learn!&lt;/p&gt;
-
-&lt;p&gt;I needed something to practice on, so I decided I was going to build my first app as a crowdfunding site. I was nuts. It was a so unimaginably huge project, but I really didn’t know, I really didn’t notice. In the process my company also started using Backbone.js, so I thought why not practice it even more? I built a real-time messaging system in my crowdfunding rails app, before I even began to sort out any of the payment practicalities…&lt;/p&gt;
-
-&lt;p&gt;To be continue.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 14 Apr 2013 01:50:07 +0100</pubDate>
-        <link>http://muan.co/2013/04/14/A-Story-1/</link>
-        <guid isPermaLink="true">http://muan.co/2013/04/14/A-Story-1/</guid>
+        <pubDate>Sat, 04 Jan 2014 00:00:00 +0000</pubDate>
+        <link>http://lobanov-aw.com/2014/01/04/2014-MVC/</link>
+        <guid isPermaLink="true">http://lobanov-aw.com/2014/01/04/2014-MVC/</guid>
       </item>
     
   </channel>
