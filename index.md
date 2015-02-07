@@ -3,7 +3,7 @@ layout: about
 ---
 
 **Лобанов Алексей**<br />
-iOS Разработчик в [NET Elements](http://www.netelement.com/)
+iOS Разработчик в [Net Elements](http://www.netelement.com/)
 
 <p class="justified">Разработчик приложений под iOS c 2011 года. Живу и работаю в Екатеринбурге. Увлекаюсь web-дизайном и проектированием интерфейсов для мобильных устройств.</p>
 

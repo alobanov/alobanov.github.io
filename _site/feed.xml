@@ -7,6 +7,107 @@
     <atom:link href="http://lobanov-aw.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Мультиязычность в iOS</title>
+        <description>&lt;p&gt;Стандартные гайды iOS предлагают нам отталкиваться от выбранного языка на нашем устройстве. То есть чтобы поменять язык в нашем приложении нам необходимо полность поменять язык системы. Что делать если хочется изменить язык не выходя из приложения и тем более не меняя настройки языка устройства?&lt;/p&gt;
+
+&lt;p&gt;Один из вариантов брать необходимый нам файл переводов и локализовать приложение на основе выставления своих настроек языка сохраняя их например в &lt;code&gt;UserDefaults&lt;/code&gt;. Все необходимые методы для реализации этого решения имеются.&lt;/p&gt;
+
+&lt;p&gt;Менеджер можно скачать тут &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
+
+&lt;p&gt;Чтобы начать использовать &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; необходимо его проинициализировать вызвав метод &lt;code&gt;ALLocalizedInit;&lt;/code&gt; (&lt;em&gt;все методы менеджера сделаны макросами, для удобства&lt;/em&gt;) желательно поместить вызов в &lt;code&gt;didFinishLaunchingWithOptions&lt;/code&gt; класса &lt;code&gt;AppDelegate&lt;/code&gt;. В момент инициализации проверяем в &lt;code&gt;UserDefaults&lt;/code&gt; наши настройки языка, если их нет то берем язык системы и записываем в &lt;code&gt;UserDefaults&lt;/code&gt;, в дальнейшем будем работать только с этими настройками.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;использование&lt;/h3&gt;
+
+&lt;p&gt;Для измения языка приложения выставляем нужный нам и рассылаем сообщение об этом изменении:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать в какой момент мы его изменили, для этого нужно подписаться на оповещения события &lt;code&gt;ALLocalizedManagerChangeLangNotification&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;
+           &lt;span class=&quot;nl&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;changeAppLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:)&lt;/span&gt;
+               &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedManagerChangeLangNotification&lt;/span&gt;
+             &lt;span class=&quot;nl&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateTitles:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;notify&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Change_language&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Изменить язык&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+                    &lt;span class=&quot;nl&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Привет мир&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Current_lang&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;examplePlist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;После этого в методе обновления нужно заново локализовать все текты.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;настройка языков&lt;/h3&gt;
+
+&lt;p&gt;Логика выбора первого языка: сначало берем язык системы и проверяем есть ли он в нашем списке определенных нами языковых словарей. Если системный язык отсутствует в словаре берем из списка тот который отмечен ключом &lt;code&gt;isDefault&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Пример словаря языков который необходимо настроить в зависимости от вашего проекта:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;languageList&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;l&quot;&gt;@[@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;ru&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;isDefault&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;YES&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;English&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;es&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Spanish&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Если есть предложения по улучшению пишите.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;методы&lt;/h3&gt;
+
+&lt;p&gt;Все макросы для работы с менеджером:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// init localized manager&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizedInit&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Update current index by index &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguageByIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// set language (example &amp;quot;ru&amp;quot;,&amp;quot;en&amp;quot;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// return &amp;quot;ru&amp;quot;,&amp;quot;en&amp;quot; and etc.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationGetLanguage&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Full name of lang&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationGetNameLanguage&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// take current index selected language&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationGetLanguageIndex&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// reset all by default&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationReset&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// after selecting language you can throw notice&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// localized images&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizationImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+&lt;span class=&quot;c1&quot;&gt;// localized string&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;Используйте этот клас на свой страх и риск&lt;/h4&gt;
+</description>
+        <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
+        <link>http://lobanov-aw.com/libs/2014/01/07/2014-ALLocalizedManager/</link>
+        <guid isPermaLink="true">http://lobanov-aw.com/libs/2014/01/07/2014-ALLocalizedManager/</guid>
+      </item>
+    
+      <item>
         <title>Классический MVC</title>
         <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
 
