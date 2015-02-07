@@ -2,10 +2,10 @@
 layout: about
 ---
 
-**Lobanov Aleksey**<br />
-iOS Developer at [NET Elements](http://www.netelement.com/)
+**Лобанов Алексей**<br />
+iOS Разработчик в [NET Elements](http://www.netelement.com/)
 
-Currently watch TV.
+<p class="justified">Разработчик приложений под iOS c 2011 года. Живу и работаю в Екатеринбурге. Увлекаюсь web-дизайном и проектированием интерфейсов для мобильных устройств.</p>
 
 ---
 

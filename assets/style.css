@@ -1,14 +1,39 @@
 @charset "UTF-8";
+
+/*indax page some style*/
+
+.metawork {
+font-style: italic;
+font-weight: normal;
+color: #b2b2b2;
+}
+
+.justified {
+text-align: justify;
+text-align-last: justify;
+display: inline-block;
+width: 68%;
+}
+
 body {
   line-height: 1.65em;
-  font-family: 'PT Serif', serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #fff; }
 
 a {
   color: #8f65ca;
   text-decoration: none; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #aeab86;
+    margin-top: 2em;
+    font-size: 1.1rem;
+  }
 
 .site-header {
   text-align: center;
@@ -48,7 +73,7 @@ a {
     height: 140px; }
 
 .wrapper {
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
   margin: auto; }
 
@@ -62,15 +87,20 @@ a {
     margin-bottom: 30px; }
 
 .content {
-  padding: 35px; }
+  padding: 10px; }
 
 .meta {
-  font-size: 9px; }
+  font-size: 9px; 
+  line-height: 7em;
+  text-decoration: none;
+  text-align: center;
+}
   .meta, .meta * {
     color: #a0a0a0; }
 
 .post-title {
-  font-size: 20px; }
+  color: #000;
+  font-size: 40px; }
 
 .post-header {
   text-align: center;
@@ -89,15 +119,33 @@ a {
     left: 50%;
     border-radius: 15px;
     margin-left: -9px;
-    bottom: -9px; }
+    bottom: -9px; 
+  }
+    .post-subheader {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 1em;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 15px;
+    }
 
 article img {
-  max-width: 100%; }
+  max-width: 150%; }
 article h3 {
-  border-bottom: 1px solid #777;
   line-height: 0.9em;
-  display: inline-block;
-  text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff,0 0 1px #fff,0 0 1px #fff,0 0 1px #fff,0 0 1px #fff; }
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-decoration: none;}
+article h4 {
+  line-height: 0.9em;
+  font-size: .65rem;
+  text-decoration: none;
+  text-align: center;
+  color: #ccc;
+  }
 
 .a-cat, .a-house, .a-person, .a-page {
   display: inline-block;
