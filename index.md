@@ -11,7 +11,5 @@ iOS Разработчик в [Net Elements](http://www.netelement.com/)
 
 <div class="links">
 <a href="https://github.com/alobanov" target="_blank">GitHub</a>
-<a href="https://twitter.com/muanchiou" target="_blank">Twitter</a>
-<a href="https://vk.com/lobanov_av" target="_blank">VK</a>
-<a href="/feed.xml" target="_blank">Blog feed</a>
+<a href="https://twitter.com/alobanov" target="_blank">Twitter</a>
 </div>
