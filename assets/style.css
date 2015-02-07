@@ -18,13 +18,14 @@ body {
 
 a {
   color: #8f65ca;
-  text-decoration: none; }
+  text-decoration: none;
+  }
 
   h1, h2, h3, h4 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: #aeab86;
+    color: #869aae;
     margin-top: 2em;
     font-size: 1.1rem;
   }
@@ -374,7 +375,7 @@ hr {
     text-align: center;
     padding: 3px 0;
     display: inline-block;
-    color: #333;
+    color: #ccc;
     width: 20%;
     position: relative; }
     .links a:before {
@@ -399,7 +400,7 @@ hr {
   .links a {
     width: auto;
     height: 50px;
-    margin-right: 70%; }
+    margin-right: 10%; }
     .links a:before {
       -webkit-transform: rotate(-135deg) skew(-10deg, -10deg);
       -moz-transform: rotate(-135deg) skew(-10deg, -10deg);
