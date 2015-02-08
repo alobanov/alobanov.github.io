@@ -12,17 +12,17 @@
     &lt;img src=&quot;/images/github.svg&quot; alt=&quot;GitHub&quot; size=&quot;100&quot;&gt;
  &lt;/div&gt;--&gt;
 
-&lt;p&gt;Стандартное решение от Apple, предлагает нам отталкиваться от выбранного языка на нашем устройстве. То есть чтобы поменять язык в нашем приложении нам необходимо полность поменять язык системы. Что делать если хочется изменить язык на лету не выходя из приложения и тем более не меняя полностью локаль на устройстве?&lt;/p&gt;
+&lt;p&gt;Стандартное решение от Apple предлагает отталкиваться от выбранного языка на нашем устройстве. То есть, чтобы поменять язык в приложении, необходимо полностью поменять язык системы. Что делать, если хочется изменить язык на лету, не выходя из приложения и, тем более, не меняя полностью локаль на устройстве?&lt;/p&gt;
 
-&lt;p&gt;Один из вариантов: брать необходимый нам файл переводов и локализовать приложение на основе выставления своих настроек языка, сохраняя их например в &lt;code&gt;UserDefaults&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Один из вариантов - брать необходимый файл переводов и локализовать приложение на основе выставления своих настроек языка, сохраняя их например в &lt;code&gt;UserDefaults&lt;/code&gt;. &lt;/p&gt;
 
-&lt;p&gt;Я подготовил менеджер который позволит нам без труда реализовать быстрое переключение языка в приложении. Проект можно скачать тут &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Я подготовил менеджер который позволит без труда реализовать быстрое переключение языка в приложении. Проект можно скачать тут &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
 
-&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать   &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; вызвав метод &lt;code&gt;ALLocalizedInit;&lt;/code&gt; (&lt;em&gt;все методы менеджера сделаны макросами, для удобства&lt;/em&gt;) желательно поместить вызов в &lt;code&gt;didFinishLaunchingWithOptions&lt;/code&gt; класса &lt;code&gt;AppDelegate&lt;/code&gt;. В момент инициализации проверяется установленый язык из &lt;code&gt;UserDefaults&lt;/code&gt;, если настроек еще нет (например при первом запуске приложения), то берем язык системы и записываем в &lt;code&gt;UserDefaults&lt;/code&gt;, после этого даже если вы поменяете язык системы в приложении сохранится тот язык который был проинициалищирован при первом запуске приложения.&lt;/p&gt;
+&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать   &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; вызвав метод &lt;code&gt;ALLocalizedInit;&lt;/code&gt; (&lt;em&gt;все методы менеджера сделаны макросами, для удобства&lt;/em&gt;) желательно поместить вызов в &lt;code&gt;didFinishLaunchingWithOptions&lt;/code&gt; класса &lt;code&gt;AppDelegate&lt;/code&gt;. В момент инициализации проверяется установленый язык из &lt;code&gt;UserDefaults&lt;/code&gt;, если настроек еще нет (например, при первом запуске приложения), то берем язык системы и записываем в &lt;code&gt;UserDefaults&lt;/code&gt;. После этого, даже если поменять язык системы, в приложении сохранится тот язык, который был проинициалищирован при первом запуске приложения.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -33,7 +33,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать события измененя , поэтому подписываемся на событие &lt;code&gt;ALLocalizedManagerChangeLangNotification&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать события измененя, поэтому подписываемся на событие &lt;code&gt;ALLocalizedManagerChangeLangNotification&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;
@@ -48,15 +48,15 @@
     &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Current_lang&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;examplePlist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;После этого в методе обновления нужно обновить ваши текстовки/картинки/ресурсы. &lt;/p&gt;
+&lt;p&gt;После этого в методе обновления нужно обновить текстовки/картинки/ресурсы. &lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;настройка языков&lt;/h3&gt;
 
-&lt;p&gt;Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре берем тот который отмечен ключом &lt;code&gt;isDefault&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется, есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре, берем тот, который отмечен ключом &lt;code&gt;isDefault&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Пример словаря языков который необходимо настроить в зависимости от вашего проекта:&lt;/p&gt;
+&lt;p&gt;Пример словаря языков, который необходимо настроить в зависимости от вашего проекта:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;languageList&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;l&quot;&gt;@[@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;ru&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;isDefault&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;YES&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
