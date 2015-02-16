@@ -26,12 +26,15 @@ body {
   line-height: 1.65em;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   background-color: #fff; }
 
 a {
-  color: #8f65ca;
+  color: #6c9ee5;
   text-decoration: none;
+  }
+  .a:hover, .document a:hover {
+    border-bottom: 1px solid #333;
   }
 
   h1, h2, h3, h4 {
@@ -55,7 +58,7 @@ a {
     font-family: 'Ubuntu', sans-serif; }
     .site-header a.active {
       opacity: .2;
-      border-bottom: 1px solid #333; }
+      border-bottom: 1px solid #333;}
     .site-header a:last-child {
       margin-right: 0; }
 
@@ -97,7 +100,7 @@ a {
   padding: 10px; }
 
 .meta {
-  font-size: 9px; 
+  font-size: 9px;
   line-height: 7em;
   text-decoration: none;
   text-align: center;
@@ -107,7 +110,7 @@ a {
 
 .post-title {
   color: #000;
-  font-size: 36px; }
+  font-size: 29px; }
 
 .post-headerarchive {
   text-align: center;
@@ -132,7 +135,7 @@ a {
     left: 50%;
     border-radius: 15px;
     margin-left: -9px;
-    bottom: -9px; 
+    bottom: -9px;
   }
     .post-subheader {
       text-align: center;
@@ -387,7 +390,7 @@ hr {
     text-align: center;
     padding: 3px 0;
     display: inline-block;
-    color: #ccc;
+    color: #6c9ee5;
     width: 20%;
     position: relative; }
     .links a:before {
@@ -406,7 +409,7 @@ hr {
     .links a:hover:before {
       margin-top: -15px;
       border-bottom-color: #d8badc;
-      border-left-color: #d8badc; }
+      border-left-color: #d8badc;}
 
 @media (max-width: 480px) {
   .links a {
@@ -580,4 +583,3 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0; }
-
