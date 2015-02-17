@@ -12,9 +12,9 @@
     &lt;img src=&quot;/images/github.svg&quot; alt=&quot;GitHub&quot; size=&quot;100&quot;&gt;
  &lt;/div&gt;--&gt;
 
-&lt;p&gt;Стандартное решение от Apple предлагает отталкиваться от выбранного языка на нашем устройстве. То есть, чтобы поменять язык в приложении, необходимо полностью поменять язык системы. Что делать, если хочется изменить язык на лету, не выходя из приложения и, тем более, не меняя полностью локаль на устройстве?&lt;/p&gt;
+&lt;p&gt;Стандартное решение от &lt;strong&gt;Apple&lt;/strong&gt; предлагает отталкиваться от выбранного языка на нашем устройстве. То есть, чтобы поменять язык в приложении, необходимо полностью поменять язык системы. Что делать, если хочется изменить язык на лету, не выходя из приложения и, тем более, не меняя полностью локаль на устройстве?&lt;/p&gt;
 
-&lt;p&gt;Один из вариантов - брать необходимый файл переводов и локализовать приложение на основе выставления своих настроек языка, сохраняя их например в &lt;code&gt;UserDefaults&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Один из вариантов – брать необходимый файл переводов и локализовать приложение на основе выставления своих настроек языка, сохраняя их например в &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;.&lt;/p&gt;
 
 &lt;p&gt;Я подготовил менеджер который позволит без труда реализовать быстрое переключение языка в приложении. Проект можно скачать тут &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;.&lt;/p&gt;
 
@@ -22,7 +22,9 @@
 
 &lt;h1 id=&quot;section&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
 
-&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать   &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; вызвав метод &lt;code&gt;ALLocalizedInit;&lt;/code&gt; (&lt;em&gt;все методы менеджера сделаны макросами, для удобства&lt;/em&gt;) желательно поместить вызов в &lt;code&gt;didFinishLaunchingWithOptions&lt;/code&gt; класса &lt;code&gt;AppDelegate&lt;/code&gt;. В момент инициализации проверяется установленый язык из &lt;code&gt;UserDefaults&lt;/code&gt;, если настроек еще нет (например, при первом запуске приложения), то берем язык системы и записываем в &lt;code&gt;UserDefaults&lt;/code&gt;. После этого, даже если поменять язык системы, в приложении сохранится тот язык, который был проинициалищирован при первом запуске приложения.&lt;/p&gt;
+&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать   &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; вызвав метод &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedInit&lt;/span&gt; (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в &lt;span class=&quot;wordcode&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; класса &lt;span class=&quot;wordcode&quot;&gt;AppDelegate&lt;/span&gt;.&lt;/p&gt;
+
+&lt;p&gt;В момент инициализации проверяется установленый язык из &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;, если настроек еще нет (например, при первом запуске приложения), то берем язык системы и записываем в &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;. После этого, даже если поменять язык системы, в приложении сохранится тот язык, который был проинициалищирован при первом запуске приложения.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -33,7 +35,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать события измененя, поэтому подписываемся на событие &lt;code&gt;ALLocalizedManagerChangeLangNotification&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать события измененя, поэтому подписываемся на событие &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedManagerChangeLangNotification&lt;/span&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;
@@ -48,13 +50,13 @@
     &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Current_lang&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;examplePlist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;После этого в методе обновления нужно обновить текстовки/картинки/ресурсы. &lt;/p&gt;
+&lt;p&gt;После этого в методе обновления нужно обновить текстовки/картинки/ресурсы.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;настройка языков&lt;/h3&gt;
 
-&lt;p&gt;Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется, есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре, берем тот, который отмечен ключом &lt;code&gt;isDefault&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется, есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре, берем тот, который отмечен ключом &lt;span class=&quot;wordcode&quot;&gt;isDefault&lt;/span&gt;.&lt;/p&gt;
 
 &lt;p&gt;Пример словаря языков, который необходимо настроить в зависимости от вашего проекта:&lt;/p&gt;
 
@@ -75,7 +77,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// init localized manager&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizedInit&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Update current index by index &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Update current index by index&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguageByIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// set language (example &amp;quot;ru&amp;quot;,&amp;quot;en&amp;quot;)&lt;/span&gt;
@@ -98,12 +100,13 @@
 
 &lt;span class=&quot;c1&quot;&gt;// localized images&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizationResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;ALLocalizationImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// localized string&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 </description>
         <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
         <link>http://lobanov-aw.com/libs/2014/01/07/2014-ALLocalizedManager/</link>
@@ -114,11 +117,11 @@
         <title>Классический MVC</title>
         <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
 
-&lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (и каюсь, перевёл не всё).&lt;/p&gt;
+&lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;strong&gt;MVC&lt;/strong&gt; на Smalltalk-80. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (и каюсь, перевёл не всё).&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;предисловие&lt;/h3&gt;
+&lt;h1 id=&quot;section&quot;&gt;Предисловие&lt;/h1&gt;
 
 &lt;p&gt;Это не введение в модель MVC, а обзор его осуществления на &lt;a href=&quot;https://ru.wikipedia.org/wiki/Smalltalk&quot;&gt;Smalltalk-80&lt;/a&gt; для понимания первоначальных намерений и функций триады. Классическая MVC поможет лучше понять последующее развитие паттернов, которые появились позже. Посмотрим, как простое MVC приложение работает в Smalltalk-80 и изучим как оно может быть реализовано на языке &lt;strong&gt;ActionScript&lt;/strong&gt;.&lt;/p&gt;
 
@@ -140,24 +143,24 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;Диаграмма &lt;em&gt;MVC&lt;/em&gt; в Smalltalk-80 (Krasner &amp;amp; Pope) Все объекты в Smalltalk общаться друг с другом при помощи сообщений, которые является способом вызова методов объекта. На первый взгляд, диаграмма &lt;em&gt;MVC&lt;/em&gt; кажется немного странной. Model-View и Controller-Model имеют зависимости направленные в обе стороны. Вторым интересным аспектом было то, что пользовательский ввод идет непосредственно через контроллер. Это является существенным изменением, как правило мы ожидаем от пользователя взаимодействия с элементами интерфейса в представлении (View), а не в корнтроллере. &lt;/p&gt;
+&lt;p&gt;Диаграмма &lt;em&gt;MVC&lt;/em&gt; в Smalltalk-80 (Krasner &amp;amp; Pope) Все объекты в Smalltalk общаться друг с другом при помощи сообщений, которые является способом вызова методов объекта. На первый взгляд, диаграмма &lt;em&gt;MVC&lt;/em&gt; кажется немного странной. Model-View и Controller-Model имеют зависимости направленные в обе стороны. Вторым интересным аспектом было то, что пользовательский ввод идет непосредственно через контроллер. Это является существенным изменением, как правило мы ожидаем от пользователя взаимодействия с элементами интерфейса в представлении (View), а не в корнтроллере.&lt;/p&gt;
 
 &lt;p&gt;В Smalltalk-80, все данные с устройства ввода подаются непосредственно в контроллер. Давайте кратко рассмотрим, как &lt;em&gt;MVC&lt;/em&gt; поддерживается в Smalltalk-80.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;mvc---smalltalk-80&quot;&gt;&lt;em&gt;MVC&lt;/em&gt; классы в Smalltalk-80.&lt;/h1&gt;
+&lt;h1 id=&quot;mvc---smalltalk-80&quot;&gt;MVC классы в Smalltalk-80.&lt;/h1&gt;
 
 &lt;p&gt;Есть три абстрактных класса называемые Модель, Вид и Контроллер. Все конкретные реализации модели, вида и контроллера должны иметь подклассы этих абстрактных суперклассов. Давайте взглянем на классы (это сокращенное описание — см. &lt;a href=&quot;http://www.math.rsu.ru/smalltalk/gui/&quot;&gt;Krasner &amp;amp; Pope&lt;/a&gt;).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Модель&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Model&lt;/strong&gt; реализует общую модель поведения. Он реализует механизм зависимости обслуживания. &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Модель&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Model&lt;/strong&gt; реализует общую модель поведения. Он реализует механизм зависимости обслуживания.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Вид может зарегистрироваться на конкретную модель чтобы стать подписчиком и получать оповещения об изменениях. Если конкретная модель рассылает свои сообщения, то они будут автоматически отправлены всем своим подписанным представлениям. Это реализация &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C_%28%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%29&quot;&gt;паттерна Наблюдатель&lt;/a&gt; (паттерн поведения объектов). Конкретная модель напрямую не знает о зависимых от него представлениях.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Представление&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;View&lt;/strong&gt; реализует общие поведения представления. Встроенный набор компонентов подкласса представления (например, StandardSystemView — стандартное окно и TextEditorView — текстовый редактор). &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Представление&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;View&lt;/strong&gt; реализует общие поведения представления. Встроенный набор компонентов подкласса представления (например, StandardSystemView — стандартное окно и TextEditorView — текстовый редактор).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Представления могут быть вложенными для разработки сложного пользовательского интерфейса. Например, StandardSystemView (т.е. окна) содержит компонент представления, называемые TextEditorView.

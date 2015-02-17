@@ -1,5 +1,39 @@
 @charset "UTF-8";
 
+
+.wordcode {
+display: inline-block;
+padding: 0 .333em;
+margin-right: .1em;
+font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
+font-size: 12.6px;
+line-height: 1.333;
+font-style: normal;
+font-weight: normal;
+color: #4f5e6d;
+background: #f6f7f9;
+border: 1px solid #bbc4ce;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-o-border-radius: 3px;
+-ms-border-radius: 3px;
+border-radius: 3px;
+}
+
+.notice {
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  padding: 12.5px 1em 15.5px 1em;
+  color: #2c2b21;
+  border: 1px solid #f7ec6e;
+  background: #fcf9cf;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+
 /*banner*/
 
 .banner-red {
@@ -26,15 +60,14 @@ body {
   line-height: 1.65em;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
-  font-size: 15px;
-  background-color: #fff; }
+  font-size: 16px;
+  background-color: #fff;
+  color: #292929;
+  }
 
 a {
   color: #6c9ee5;
   text-decoration: none;
-  }
-  .a:hover, .document a:hover {
-    border-bottom: 1px solid #333;
   }
 
   h1, h2, h3, h4 {
@@ -150,17 +183,21 @@ a {
 article img {
   max-width: 100%; }
 article h3 {
-  line-height: 0.9em;
+  line-height: 1.2em;
   text-transform: uppercase;
   font-size: .75rem;
   letter-spacing: .08em;
   text-decoration: none;}
 article h4 {
-  line-height: 0.9em;
+  line-height: 1.4em;
   font-size: .65rem;
   text-decoration: none;
   text-align: center;
-  color: #ccc;
+  color: #666;
+  }
+
+  article a:hover, .document a:hover {
+    text-decoration: underline;
   }
 
 .a-cat, .a-house, .a-person, .a-page {
@@ -568,6 +605,7 @@ hr {
  */
 pre,
 code {
+  font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
   font-size: 12px;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
