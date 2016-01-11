@@ -1,9 +1,24 @@
-title:            "alobanov"
-url:              http://lobanov-aw.com
-permalink:        pretty
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: alobanov
+email: alesha.lobanov@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Разработчик приложений под iOS c 2011 года. Живу и работаю в Екатеринбурге. Увлекаюсь web-дизайном и проектированием интерфейсов для мобильных устройств.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: alobanov
+github_username:  alobanov
 highlighter:      pygments
-markdown:         kramdown
-google_analytics: UsA-21332781-7
 timezone:         Europe/Ekaterinburg
+
+# Build settings
+markdown: kramdown
 gems:
   - jemoji
+  - jekyll-mentions
