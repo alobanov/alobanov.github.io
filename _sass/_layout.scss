@@ -11,7 +11,8 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 22px;
+    font-weight: 300;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
@@ -35,16 +36,16 @@
         color: $text-color;
         line-height: $base-line-height;
 
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 20px;
         }
     }
 
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
-        right: 30px;
+        right: $spacing-unit / 2;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
@@ -82,11 +83,14 @@
         .page-link {
             display: block;
             padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
         }
     }
 }
-
-
 
 /**
  * Site footer
@@ -156,8 +160,6 @@
     }
 }
 
-
-
 /**
  * Page content
  */
@@ -178,6 +180,11 @@
     }
 }
 
+.post-headerarchive {
+  text-align: center;
+  line-height: 2.5em;
+  position: relative; }
+
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
@@ -188,8 +195,6 @@
     font-size: 24px;
 }
 
-
-
 /**
  * Posts
  */
@@ -198,9 +203,12 @@
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 32px;
+    font-family: $base-font-body;
     letter-spacing: -1px;
     line-height: 1;
+    font-weight: normal;
+    color: #000;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -209,28 +217,118 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #869aae;
+  font-size: 1.1rem;
+}
+
+article img {
+  max-width: 100%; }
+article h3 {
+  line-height: 1.2em;
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-decoration: none;}
+article h4 {
+  line-height: 1.4em;
+  font-size: .65rem;
+  text-decoration: none;
+  text-align: center;
+  color: #666;
+  }
+
+  article a:hover, .document a:hover {
+    text-decoration: underline;
+  }
+
+.post-header {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+  line-height: 2.5em;
+  position: relative;
+}
+.post-header:after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #eee;
+  position: absolute;
+  border: 6px solid #fff;
+  left: 50%;
+  border-radius: 15px;
+  margin-left: -9px;
+  bottom: -9px;
+}
+.post-subheader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 1em;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/**
+* Beauty work code
+*/
+.wordcode {
+display: inline-block;
+padding: 0 .333em;
+margin-right: .1em;
+font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
+font-size: 12.6px;
+line-height: 1.333;
+font-style: normal;
+font-weight: normal;
+color: #4f5e6d;
+background: #f6f7f9;
+border: 1px solid #bbc4ce;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-o-border-radius: 3px;
+-ms-border-radius: 3px;
+border-radius: 3px;
+}
+
+/**
+* Code formatting
+*/
+pre,
+code {
+font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
+font-size: 12px;
+border: 1px solid #e8e8e8;
+border-radius: 5px;
+background-color: #faf9f4; }
+
+code {
+padding: 1px 5px; }
+
+pre {
+padding: 8px 12px;
+overflow-x: scroll; }
+pre > code {
+border: 0;
+padding-right: 0;
+padding-left: 0; }
+
+/**
+* meta
+*/
+.meta {
+  font-size: 9px;
+  line-height: 7em;
+  text-decoration: none;
+  text-align: center;
+}
+  .meta, .meta * {
+    color: #a0a0a0; }

@@ -1,43 +1,21 @@
-<html>
-  <head>
-    {% include head.html %}
-  </head>
-  <body>
-    <div class="wrapper">
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-      {% include header.html %}
+  <header class="post-header">
+    <h1 class="post-subheader">{{ page.description }}</h1>
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">{{ page.author }}</span>
+      </span>{% endif %}-
+    by <a href="https://twitter.com/alobanov" target="_blank">@alobanov</a></p>
+  </header>
 
-      <section class="content">
-        <div class="container">        
-          <article>
-            <h1 class="post-subheader">{{ page.description }}</h1>
-            <header class="post-header">
-              <div class="post-title">{{ page.title }}</div>
-              {% if page.date %}
-                <small class="meta">
-                  {{ page.date | date_to_string }} -
-                  by <a href="https://twitter.com/alobanov" target="_blank">@alobanov</a>
-                </small>
-                <div class="pagination">
-                  {% if page.previous %}
-                    <a class="page-nav previous" {% if page.previous %}href="{{ page.previous.url }}" id="js-previous-post"{% endif %}>
-                      &lt;
-                    </a>
-                  {% endif %}
-                  {% if page.next %}
-                    <a class="page-nav next" {% if page.next %}href="{{ page.next.url }}" id="js-next-post"{% endif %}>
-                      &gt;
-                    </a>
-                  {% endif %}
-                </div>
-              {% endif %}
-            </header>
-            {{ content }}
-          </article>
-        </div>
-      </section>
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
 
-      {% include footer.html %}
-    </div>
-  </body>
-</html>
+</article>
