@@ -1,2 +1,1 @@
-# alobanov.github.io
-lobanovaw site
+http://lobanov-av.ru
