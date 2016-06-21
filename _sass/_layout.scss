@@ -2,11 +2,7 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
+    margin-bottom: 100px;
     position: relative;
 }
 
@@ -19,6 +15,9 @@
     float: left;
 
     &,
+    &:hover {
+      text-decoration: none;
+    }
     &:visited {
         color: $grey-color-dark;
     }
@@ -96,6 +95,7 @@
  * Site footer
  */
 .site-footer {
+  margin-top: 60px;
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }
@@ -122,22 +122,23 @@
     float: left;
     margin-bottom: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
+// .footer-col-1 {
+//     width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+//     width:         calc(35% - (#{$spacing-unit} / 2));
+// }
+//
+// .footer-col-2 {
+//     width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+//     width:         calc(20% - (#{$spacing-unit} / 2));
+// }
+//
+// .footer-col-3 {
+//     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+//     width:         calc(45% - (#{$spacing-unit} / 2));
+// }
 
 @include media-query($on-laptop) {
     .footer-col-1,
@@ -203,7 +204,7 @@
 }
 
 .post-title {
-    font-size: 32px;
+    font-size: 28px;
     font-family: $base-font-body;
     letter-spacing: -1px;
     line-height: 1;
@@ -211,7 +212,7 @@
     color: #000;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        font-size: 23px;
     }
 }
 
@@ -304,8 +305,8 @@ border-radius: 3px;
 */
 pre,
 code {
-font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
-font-size: 12px;
+font-family: 'Menlo', 'Monaco', Courier;;
+font-size: 11px;
 border: 1px solid #e8e8e8;
 border-radius: 5px;
 background-color: #faf9f4; }
@@ -325,8 +326,8 @@ padding-left: 0; }
 * meta
 */
 .meta {
-  font-size: 9px;
-  line-height: 7em;
+  font-size: 11px;
+  line-height: 4em;
   text-decoration: none;
   text-align: center;
 }
