@@ -17,7 +17,7 @@ categories: libs
 
 ---
 
-#Менеджер мультиязычноти
+# Менеджер мультиязычноти
 
 Чтобы все это дело заработало необходимо проинициализировать [ALLocalizedManager](https://github.com/alobanov/ALLocalizedManager):octocat: вызвав метод <span class="wordcode">ALLocalizedInit</span> (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в <span class="wordcode">didFinishLaunchingWithOptions</span> класса <span class="wordcode">AppDelegate</span>.
 
@@ -25,7 +25,7 @@ categories: libs
 
 ---
 
-###использование
+### использование
 
 В момент установки новой локали необходимо разослать сообщение об этом изменении:
 
@@ -55,7 +55,7 @@ NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
 ---
 
-###настройка языков
+### настройка языков
 
 Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется, есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре, берем тот, который отмечен ключом <span class="wordcode">isDefault</span>.
 
@@ -73,7 +73,7 @@ NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
 ---
 
-###методы
+### методы
 
 Все макросы для работы с менеджером:metal::
 
