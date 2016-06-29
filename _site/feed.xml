@@ -6,88 +6,71 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jun 2016 20:10:00 +0000</pubDate>
-    <lastBuildDate>Wed, 29 Jun 2016 20:10:00 +0000</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Wed, 29 Jun 2016 20:53:47 +0000</pubDate>
+    <lastBuildDate>Wed, 29 Jun 2016 20:53:47 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Реактивная пагинация</title>
-        <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
+        <title>ALHudManager</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;Зачем? &lt;/h1&gt;
 
-&lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;strong&gt;MVC&lt;/strong&gt; на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (&lt;img class=&quot;emoji&quot; title=&quot;:grin:&quot; alt=&quot;:grin:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f601.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; и каюсь, перевёл не всё).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;Предисловие&lt;/h1&gt;
-
-&lt;p&gt;Это не введение в модель MVC, а обзор его осуществления на &lt;a href=&quot;https://ru.wikipedia.org/wiki/Smalltalk&quot;&gt;Smalltalk-80&lt;/a&gt; для понимания первоначальных намерений и функций триады. Классическая MVC поможет лучше понять последующее развитие паттернов, которые появились позже. Посмотрим, как простое MVC приложение работает в &lt;strong&gt;Smalltalk-80&lt;/strong&gt; и изучим как оно может быть реализовано на языке &lt;strong&gt;ActionScript&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Model-view-controller&lt;/strong&gt; (MVC, «Модель-представление-поведение», «Модель-представление-контроллер») — архитектура программного обеспечения, в которой &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&quot;&gt;модель данных&lt;/a&gt; приложения, &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательский интерфейс&lt;/a&gt; и управляющая логика разделены на три отдельных компонента, так, что модификация одного из компонентов оказывает минимальное воздействие на другие компоненты.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;model-view-controller--smalltalk-80&quot;&gt;Реализация Model-View-Controller в Smalltalk-80.&lt;/h3&gt;
-&lt;p&gt;Модель MVC облегчает разделение ответственности при разработке интерактивных графических приложений. Логика и состояние приложения, как пользователи взаимодействуют с приложением, и как состояние приложения представляется пользователю по средствам отдельных элементов триады MVC. &lt;strong&gt;Smalltalk-80&lt;/strong&gt; использует метафору MVC, что обеспечивает встроенную поддержку для интерактивной разработки приложений.&lt;/p&gt;
-
-&lt;p&gt;Идея заключалась в том, чтобы обеспечить набор встроенных компонентов &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательского интерфейса&lt;/a&gt;, таких как кнопки, меню и списки, которые могут быть подключены к GUI приложения. Для эффективного использования этих встроенных элементов интерфейса, реализация должна была быть построена в соответствии с &lt;em&gt;MVC&lt;/em&gt;. Давайте посмотрим на концептуальную диаграмму приложения &lt;strong&gt;Smalltalk-80&lt;/strong&gt;.
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alobanov/ALHUDManager&quot;&gt;ALHUDManager&lt;/a&gt; — это удобная обвёртка для быстрого использования &lt;a href=&quot;https://github.com/jdg/MBProgressHUD&quot;&gt;MBProgressHUD&lt;/a&gt;. Основная функция которого избавить вас от надобности создавать экземпляр класса и указывать view для отображения HUD. (Возможность задать view вручную тоже есть).&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/schemamvc.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;Как использовать&lt;/h3&gt;
 
-&lt;h4 id=&quot;pointup-mvc--smalltalk-80-krasner--pope&quot;&gt;:point_up:Диаграмма MVC в Smalltalk-80 (Krasner &amp;amp; Pope)&lt;/h4&gt;
+&lt;p&gt;Можно полностью не настраивать &lt;span class=&quot;wordcode&quot;&gt;HUDItem&lt;/span&gt;, указав ему &lt;span class=&quot;wordcode&quot;&gt;title&lt;/span&gt; и &lt;span class=&quot;wordcode&quot;&gt;detail&lt;/span&gt; - вы просто покажете сообщение с заголовком и подзаголовком на 2 секуды.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;// создаём элемент худа
+HUDItem *item = [HUDItem itemWithTitle:@”Title” andDetail:@”Test”];
 
-&lt;p&gt;Диаграмма MVC в &lt;strong&gt;Smalltalk-80&lt;/strong&gt; (&lt;a href=&quot;http://www.math.rsu.ru/smalltalk/gui/&quot;&gt;Krasner &amp;amp; Pope&lt;/a&gt;) Все объекты в Smalltalk общаться друг с другом при помощи сообщений, которые является способом вызова методов объекта. На первый взгляд, диаграмма MVC кажется немного странной. Model-View и Controller-Model имеют зависимости направленные в обе стороны. Вторым интересным аспектом было то, что пользовательский ввод идет непосредственно через контроллер. Это является существенным изменением, как правило мы ожидаем от пользователя взаимодействия с элементами интерфейса в представлении (View), а не в корнтроллере.&lt;/p&gt;
+// Возможные настройки
+item.hideDelay = 2.0; // время показа
+item.imageType = HUDImage_SadFace; // картинка
+item.dimBackground = YES; // затемнять фон
+item.mode = ProgressHUDModeText; // тип hud’a
 
-&lt;p&gt;В &lt;strong&gt;Smalltalk-80&lt;/strong&gt;, все данные с устройства ввода подаются непосредственно в контроллер. Давайте кратко рассмотрим, как MVC поддерживается в &lt;strong&gt;Smalltalk-80&lt;/strong&gt;.&lt;/p&gt;
+// Показать созданый item
+[ALHUDManager showHUD:item];
 
-&lt;hr /&gt;
+// для ручного уничтожения
+[ALHUDManager hideHud];&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h1 id=&quot;mvc---smalltalk-80&quot;&gt;MVC классы в Smalltalk-80.&lt;/h1&gt;
-
-&lt;p&gt;Есть три абстрактных класса называемые Модель, Вид и Контроллер. Все конкретные реализации модели, вида и контроллера должны иметь подклассы этих абстрактных суперклассов. Давайте взглянем на классы (это сокращенное описание — см. &lt;a href=&quot;http://www.math.rsu.ru/smalltalk/gui/&quot;&gt;Krasner &amp;amp; Pope&lt;/a&gt;).&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Модель&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Model&lt;/strong&gt; реализует общую модель поведения. Он реализует механизм зависимости обслуживания.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Вид может зарегистрироваться на конкретную модель чтобы стать подписчиком и получать оповещения об изменениях. Если конкретная модель рассылает свои сообщения, то они будут автоматически отправлены всем своим подписанным представлениям. Это реализация &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C_%28%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%29&quot;&gt;паттерна Наблюдатель&lt;/a&gt; (паттерн поведения объектов). Конкретная модель напрямую не знает о зависимых от него представлениях.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Представление&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;View&lt;/strong&gt; реализует общие поведения представления. Встроенный набор компонентов подкласса представления (например, StandardSystemView — стандартное окно и TextEditorView — текстовый редактор).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Представления могут быть вложенными для разработки сложного пользовательского интерфейса. Например, StandardSystemView (т.е. окна) содержит компонент представления, называемые TextEditorView.
-Каждое представление может иметь одну модель и один контроллер. Встроенный компоненты по умолчанию имеют заранее определенный класс контроллера для реализации своего стандартного поведения. Чтобы создать экземпляр компонента, вам нужно настроить свою модель и отобразить компонент. Компонент затем будет инициализировать по умолчанию контроллер со своим экземпляром модели и регистрироваться в ней для получения сообщений. При закрытии компонента, освобождаются все вложенные компоненты. Когда представление освободилось, оно удаляет свои подписки на сообщения из модели. Если вы хотите чтобы компоненты имели своё уникальное поведения, вы можете создать свой контроллер для него.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Контроллер&lt;/strong&gt;: абстрактный суперкласс &lt;strong&gt;Controller&lt;/strong&gt; реализующий общие поведения. Каждый контроллер имеет ссылку на одну модель, один контроллер, и глобальную переменную называемую сенсор, который предоставляет интерфейс взаимодействия для устройств ввода (мышь, клавиатура). Абстрактный класс контроллера реализующий его общие поведения для определения уже конкретного контроллера и соответствующего ему представления. Если конкретное представление является активным (которое в данный момент использует пользователь), то егоконтроллер осуществляет управление всего пользовательского ввода.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Контроллер должен иметь прямую ссылку на представление, например для того чтобы знать расположен ли сейчас курсора мыши над конкретным представлением. Важно отметить, что только контроллеры, а не представление, получает информацию о вводе данных (с клавиатуры или мышки).&lt;/p&gt;
+&lt;p&gt;Принудительно скрыть HUD, например если вы используете стиль: &lt;span class=&quot;wordcode&quot;&gt;ProgressHUDModeIndeterminate&lt;/span&gt;, &lt;span class=&quot;wordcode&quot;&gt;ProgressHUDModeDeterminate&lt;/span&gt; или &lt;span class=&quot;wordcode&quot;&gt;ProgressHUDModeDeterminateHorizontalBar&lt;/span&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;mvc--smalltalk-80-1&quot;&gt;Ключевые особенности реализации MVC на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;:&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;Установить свое изображение&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;представления могут быть вложенными;&lt;/li&gt;
-  &lt;li&gt;каждый встроенный компонент (например &lt;strong&gt;ListBox&lt;/strong&gt;) это представление;&lt;/li&gt;
-  &lt;li&gt;каждый вид имеет соответствующий контроллер;&lt;/li&gt;
-  &lt;li&gt;контроллер осведомляет своё представление, если оно активно;&lt;/li&gt;
-  &lt;li&gt;активные контроллер (чье представление в данный момент активно) получает данные которые изменил пользователь при помощи устройств ввода;&lt;/li&gt;
-  &lt;li&gt;контроллер может обновить представление (компонент) на основе действий пользователя;&lt;/li&gt;
-  &lt;li&gt;контроллер изменяет модель на действий пользователя;&lt;/li&gt;
-  &lt;li&gt;представление обновляет себя пир помощи наблюдателя, синхронизированного с моделью.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;В проекте так же имеется базовый набор картинок которыми вы можете пользоваться:
+&lt;span class=&quot;wordcode&quot;&gt;HUDImage_Success&lt;/span&gt;✅,
+&lt;span class=&quot;wordcode&quot;&gt;HUDImage_SadFace&lt;/span&gt;☹,
+&lt;span class=&quot;wordcode&quot;&gt;HUDImage_Star&lt;/span&gt;⭐,
+&lt;span class=&quot;wordcode&quot;&gt;HUDImage_Heart&lt;/span&gt;❤️&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;HUDItem *item = [HUDItem itemWithTitle:@”Nice heart” andDetail:@”Smile bitch!”];
+item.hudCustomImagePath = @”hudTest.png”;
+item.hideDelay = 7.0;
+[ALHUDManager showHUD:item];&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;Или можете установить свое изображение.&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;Методы класса:&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;- (void) setProgress:(float) value;
+- (void) setDetailText:(NSString *) text;
+- (void) updateHudView:(UIView *) hudView;
+- (void) showAlwaysOnTop;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 
 </description>
         <pubDate>Sun, 22 Jun 2014 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/article/2014/06/22/2014-RxPagination.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/article/2014/06/22/2014-RxPagination.html</guid>
+        <link>http://yourdomain.com/article/2014/06/22/2014-ALHUDManager.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/article/2014/06/22/2014-ALHUDManager.html</guid>
         
         
         <category>article</category>
@@ -100,7 +83,7 @@
     &lt;img src=&quot;/images/github.svg&quot; alt=&quot;GitHub&quot; size=&quot;100&quot;&gt;
  &lt;/div&gt;--&gt;
 
-&lt;p&gt;Стандартное решение от &lt;img class=&quot;emoji&quot; title=&quot;:apple:&quot; alt=&quot;:apple:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f34e.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;strong&gt;Apple&lt;/strong&gt; предлагает отталкиваться от выбранного языка на нашем устройстве. То есть, чтобы поменять язык в приложении, необходимо полностью поменять язык системы. Что делать, если хочется изменить язык на лету, не выходя из приложения и, тем более, не меняя полностью локаль на устройстве?&lt;/p&gt;
+&lt;p&gt;Стандартное решение от :apple:&lt;strong&gt;Apple&lt;/strong&gt; предлагает отталкиваться от выбранного языка на нашем устройстве. То есть, чтобы поменять язык в приложении, необходимо полностью поменять язык системы. Что делать, если хочется изменить язык на лету, не выходя из приложения и, тем более, не меняя полностью локаль на устройстве?&lt;/p&gt;
 
 &lt;p&gt;Один из вариантов – брать необходимый файл переводов и локализовать приложение на основе выставления своих настроек языка, сохраняя их например в &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;.&lt;/p&gt;
 
@@ -110,7 +93,7 @@
 
 &lt;h1 id=&quot;section&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
 
-&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;&lt;img class=&quot;emoji&quot; title=&quot;:octocat:&quot; alt=&quot;:octocat:&quot; src=&quot;https://assets.github.com/images/icons/emoji/octocat.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; вызвав метод &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedInit&lt;/span&gt; (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в &lt;span class=&quot;wordcode&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; класса &lt;span class=&quot;wordcode&quot;&gt;AppDelegate&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt;:octocat: вызвав метод &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedInit&lt;/span&gt; (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в &lt;span class=&quot;wordcode&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; класса &lt;span class=&quot;wordcode&quot;&gt;AppDelegate&lt;/span&gt;.&lt;/p&gt;
 
 &lt;p&gt;В момент инициализации проверяется установленый язык из &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;, если настроек еще нет (например, при первом запуске приложения), то берем язык системы и записываем в &lt;span class=&quot;wordcode&quot;&gt;UserDefaults&lt;/span&gt;. После этого, даже если поменять язык системы, в приложении сохранится тот язык, который был проинициалищирован при первом запуске приложения.&lt;/p&gt;
 
@@ -120,23 +103,23 @@
 
 &lt;p&gt;В момент установки новой локали необходимо разослать сообщение об этом изменении:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;ALLocalizationSetLanguage(@&quot;en&quot;);
+ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Так как необходимо переключать язык на лету надо отслеживать события измененя, поэтому подписываемся на событие &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedManagerChangeLangNotification&lt;/span&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nc&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;
-           &lt;span class=&quot;nl&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//github.com/selector&amp;#39; class=&amp;#39;user-mention&amp;#39;&amp;gt;@selector&amp;lt;/a&amp;gt;(changeAppLanguage:)&lt;/span&gt;
-               &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedManagerChangeLangNotification&lt;/span&gt;
-             &lt;span class=&quot;nl&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(changeAppLanguage:)
+               name:ALLocalizedManagerChangeLangNotification
+             object:nil];
 
-&lt;span class=&quot;p&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateTitles:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;notify&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Change_language&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Изменить язык&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-                    &lt;span class=&quot;nl&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Привет мир&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Current_lang&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;examplePlist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+-(void) updateTitles:(NSNotification*) notify {
+    NSLog(ALLocalizedString(@&quot;Change_language&quot;, @&quot;Изменить язык&quot;));
+                    forState:UIControlStateNormal ];
+    NSLog(ALLocalizedString(@&quot;Hello&quot;, @&quot;Привет мир&quot;));
+    NSLog(ALLocalizedStringFromTable(@&quot;Current_lang&quot;, @&quot;Русский&quot;, @&quot;examplePlist&quot;));
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;После этого в методе обновления нужно обновить текстовки &lt;strong&gt;/&lt;/strong&gt; картинки &lt;strong&gt;/&lt;/strong&gt; ресурсы.&lt;/p&gt;
 
@@ -148,11 +131,11 @@
 
 &lt;p&gt;Пример словаря языков, который необходимо настроить в зависимости от вашего проекта:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;languageList&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;l&quot;&gt;@[@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;ru&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Русский&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;isDefault&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;YES&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-             &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;English&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-             &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;es&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;Spanish&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;- (NSArray *) languageList {
+    return @[@{@&quot;ru&quot;: @&quot;Русский&quot;, @&quot;isDefault&quot;:@&quot;YES&quot;},
+             @{@&quot;en&quot;: @&quot;English&quot;},
+             @{@&quot;es&quot;: @&quot;Spanish&quot;}];
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;allocalizationresource-allocalizationimage&quot;&gt;Также можно локализовать ресурсы и картинки (ALLocalizationResource, ALLocalizationImage)&lt;/h4&gt;
 
@@ -160,41 +143,41 @@
 
 &lt;h3 id=&quot;section-3&quot;&gt;методы&lt;/h3&gt;
 
-&lt;p&gt;Все макросы для работы с менеджером&lt;img class=&quot;emoji&quot; title=&quot;:metal:&quot; alt=&quot;:metal:&quot; src=&quot;https://assets.github.com/images/icons/emoji/metal.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;:&lt;/p&gt;
+&lt;p&gt;Все макросы для работы с менеджером:metal::&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// init localized manager&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizedInit&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;// init localized manager
+ALLocalizedInit
 
-&lt;span class=&quot;c1&quot;&gt;// Update current index by index&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguageByIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+// Update current index by index
+ALLocalizationSetLanguageByIndex(language)
 
-&lt;span class=&quot;c1&quot;&gt;// set language (example &amp;quot;ru&amp;quot;,&amp;quot;en&amp;quot;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationSetLanguage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+// set language (example &quot;ru&quot;,&quot;en&quot;)
+ALLocalizationSetLanguage(language)
 
-&lt;span class=&quot;c1&quot;&gt;// return &amp;quot;ru&amp;quot;,&amp;quot;en&amp;quot; and etc.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationGetLanguage&lt;/span&gt;
+// return &quot;ru&quot;,&quot;en&quot; and etc.
+ALLocalizationGetLanguage
 
-&lt;span class=&quot;c1&quot;&gt;// Full name of lang&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationGetNameLanguage&lt;/span&gt;
+// Full name of lang
+ALLocalizationGetNameLanguage
 
-&lt;span class=&quot;c1&quot;&gt;// take current index selected language&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationGetLanguageIndex&lt;/span&gt;
+// take current index selected language
+ALLocalizationGetLanguageIndex
 
-&lt;span class=&quot;c1&quot;&gt;// reset all by default&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationReset&lt;/span&gt;
+// reset all by default
+ALLocalizationReset
 
-&lt;span class=&quot;c1&quot;&gt;// after selecting language you can throw notice&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationThrowNotification&lt;/span&gt;
+// after selecting language you can throw notice
+ALLocalizationThrowNotification
 
-&lt;span class=&quot;c1&quot;&gt;// localized images&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizationImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+// localized images
+ALLocalizationResource(resource, type)
+ALLocalizationImage(resource, type)
 
-&lt;span class=&quot;c1&quot;&gt;// localized string&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ALLocalizedStringFromTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+// localized string
+ALLocalizedString(key, comment)
+ALLocalizedStringFromTable(key, comment, tableName)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;a-hrefhttpsgithubcomalobanov-classuser-mentionalobanovahttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;&lt;a href=&quot;https://github.com/alobanov&quot; class=&quot;user-mention&quot;&gt;@alobanov&lt;/a&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 </description>
         <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
         <link>http://yourdomain.com/libs/2014/01/07/2014-ALLocalizedManager.html</link>
@@ -209,7 +192,7 @@
         <title>Классический MVC</title>
         <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
 
-&lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;strong&gt;MVC&lt;/strong&gt; на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (&lt;img class=&quot;emoji&quot; title=&quot;:grin:&quot; alt=&quot;:grin:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f601.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; и каюсь, перевёл не всё).&lt;/p&gt;
+&lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;strong&gt;MVC&lt;/strong&gt; на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (:grin: и каюсь, перевёл не всё).&lt;/p&gt;
 
 &lt;hr /&gt;
 
