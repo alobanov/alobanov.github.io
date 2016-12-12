@@ -205,8 +205,8 @@
 }
 
 .post-title {
-    font-size: 28px;
-    font-family: $base-font-body;
+    font-size: 38px;
+    font-family: $base-font-title;
     letter-spacing: -1px;
     line-height: 1;
     font-weight: normal;
@@ -313,7 +313,7 @@ border-radius: 3px;
 */
 pre,
 code {
-font-family: 'Menlo', 'Monaco', Courier;;
+font-family: 'Lucida Sans', Courier;
 font-size: 11px;
 border: 1px solid #e8e8e8;
 border-radius: 5px;
