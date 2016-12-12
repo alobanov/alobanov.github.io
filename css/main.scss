@@ -6,25 +6,26 @@
 
 
 // Our variables
-$base-font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
-$base-font-body:   'Roboto Slab', serif;
-$base-font-size:   14px;
+$base-font-family: 'Lucida Grande', 'Open Sans', 'Yeseva One', 'Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
+$base-font-body:   'Merriweather', serif;
+$base-font-title:  'Yeseva One', cursive;
+$base-font-size:   15px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.65em;
+$base-line-height: 1.80em;
 
 $spacing-unit:     30px;
 
 $text-color:       #555;
 $background-color: #fff;
-$brand-color:      #6c9ee5;
+$brand-color:      #64AAD0;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    640px;
+$content-width:    740px;
 $on-palm:          300px;
 $on-laptop:        640px;
 
