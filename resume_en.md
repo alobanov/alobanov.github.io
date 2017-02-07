@@ -25,9 +25,11 @@ Dates: April 2006 - May 2010
 
 **Hobby:** playing on piano, computer game, traveling, basketball and football
 
-#### Skills and Competences
+## Skills and Competences
 **Language spoken:** Russian, English
+
 **Computer skills and competences:** iOS Developer
+
 **Programming languages:** Objective-C (finished  more than 9 projects), Swift (1 Real project)
 
 ## iOS Development (Skills and technologies)
@@ -55,7 +57,7 @@ Working on several closed company projects.
 2. Implement the mobile application for [UBRA Boats](http://www.unitedboatridersassociation.com/), it is analogue of UBER application for water transport.
 
 ### **[East Media LTD](http://www.east-media.ru/)** (3 years 5 months - iOS Developer)
-Development iOS applications:
+
 1. Development universal mobile application for [PinMe](http://pinme.ru/) social network (iPhone and iPad), analogue of Pinerest social network. Was obtained experience with: networking, work with threads, optimisation of UI elements, camera and animations.
 
 2. [Live poetry](#) — it is interactive book with rich scope of multimedia elements: video, animations and audio. Application have not native iOS interface and looks really like a book.
