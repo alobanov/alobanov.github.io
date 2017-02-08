@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Feb 2017 20:08:15 +0000</pubDate>
-    <lastBuildDate>Tue, 07 Feb 2017 20:08:15 +0000</lastBuildDate>
+    <pubDate>Wed, 08 Feb 2017 06:45:10 +0000</pubDate>
+    <lastBuildDate>Wed, 08 Feb 2017 06:45:10 +0000</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -126,37 +126,27 @@ ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Все макросы для работы с менеджером:metal::&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;// init localized manager
-ALLocalizedInit
+&lt;script src=&quot;https://gist.github.com/alobanov/f07585a35c96de9345514acff490b062.js&quot;&gt;&lt;/script&gt;
 
-// Update current index by index
-ALLocalizationSetLanguageByIndex(language)
+&lt;hr /&gt;
 
-// set language (example &quot;ru&quot;,&quot;en&quot;)
-ALLocalizationSetLanguage(language)
+&lt;h3 id=&quot;pluralization--&quot;&gt;Pluralization (Числительные формы)&lt;/h3&gt;
 
-// return &quot;ru&quot;,&quot;en&quot; and etc.
-ALLocalizationGetLanguage
+&lt;p&gt;Для того чтобы добавить в проект числительные формы необходимо сделать слудующее:&lt;/p&gt;
 
-// Full name of lang
-ALLocalizationGetNameLanguage
+&lt;ol&gt;
+  &lt;li&gt;Добавить &lt;span class=&quot;wordcode&quot;&gt;.strings&lt;/span&gt; файл &lt;span class=&quot;wordcode&quot;&gt;LocalizablePlural&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;Допишите в него числовых формы, например:&lt;/li&gt;
+&lt;/ol&gt;
 
-// take current index selected language
-ALLocalizationGetLanguageIndex
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;/* LocalizablePlural */
+&quot;%d Murloc (plural rule: one)&quot; = &quot;%d мурлок&quot;;
+&quot;%d Murloc (plural rule: few)&quot; = &quot;%d мурлока&quot;;
+&quot;%d Murloc (plural rule: many)&quot; = &quot;%d мурлоков&quot;;
+&quot;%d Murloc (plural rule: other)&quot; = &quot;%d мурлока&quot;;
 
-// reset all by default
-ALLocalizationReset
-
-// after selecting language you can throw notice
-ALLocalizationThrowNotification
-
-// localized images
-ALLocalizationResource(resource, type)
-ALLocalizationImage(resource, type)
-
-// localized string
-ALLocalizedString(key, comment)
-ALLocalizedStringFromTable(key, comment, tableName)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+// Использование в проекте
+NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 </description>

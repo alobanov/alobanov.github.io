@@ -77,38 +77,26 @@ NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
 Все макросы для работы с менеджером:metal::
 
+<script src="https://gist.github.com/alobanov/f07585a35c96de9345514acff490b062.js"></script>
+
+---
+
+### Pluralization (Числительные формы)
+
+Для того чтобы добавить в проект числительные формы необходимо сделать слудующее:
+
+1. Добавить <span class="wordcode">.strings</span> файл <span class="wordcode">LocalizablePlural</span>
+2. Допишите в него числовых формы, например:
+
 {% highlight objective-c %}
-// init localized manager
-ALLocalizedInit
+/* LocalizablePlural */
+"%d Murloc (plural rule: one)" = "%d мурлок";
+"%d Murloc (plural rule: few)" = "%d мурлока";
+"%d Murloc (plural rule: many)" = "%d мурлоков";
+"%d Murloc (plural rule: other)" = "%d мурлока";
 
-// Update current index by index
-ALLocalizationSetLanguageByIndex(language)
-
-// set language (example "ru","en")
-ALLocalizationSetLanguage(language)
-
-// return "ru","en" and etc.
-ALLocalizationGetLanguage
-
-// Full name of lang
-ALLocalizationGetNameLanguage
-
-// take current index selected language
-ALLocalizationGetLanguageIndex
-
-// reset all by default
-ALLocalizationReset
-
-// after selecting language you can throw notice
-ALLocalizationThrowNotification
-
-// localized images
-ALLocalizationResource(resource, type)
-ALLocalizationImage(resource, type)
-
-// localized string
-ALLocalizedString(key, comment)
-ALLocalizedStringFromTable(key, comment, tableName)
+// Использование в проекте
+NSString *pluralString = ALLocalizedPluralString(@"Murloc", 4, nil);
 {% endhighlight %}
 
 #### Есть вопросы? Пишите сюда – [@alobanov](https://twitter.com/alobanov)

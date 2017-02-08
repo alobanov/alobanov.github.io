@@ -5,17 +5,17 @@ permalink: /about_en/
 ---
 ## Lobanov Aleksey :coffee:
 
-#### Summary 
-I am an iOS developer based in Ekaterinburg, Russia and my real passion is creating iOS applications and to confirm that interfaces should be easy to use. 
+#### Summary
+I am an iOS developer based in Ekaterinburg, Russia and my real passion is creating iOS applications and to confirm that interfaces should be easy to use.
 I have a full understanding the process of software engineering, development life cycle. I’m always ready to give an advices for Designers and Managers, that help to understand how app should work and look better.
 I have a lot of experience with agile environments. It helps react on deadline in a short time and find a better solutions for a project.
-I am also good as a team-player and in working individually. 
+I am also good as a team-player and in working individually.
 
 **Date of birthday:** 06.05.1987 (29 age)<br/>
 **Gender:** male<br/>
-**Desired position :** iOS Developer, UX Designer - Consultant 
+**Desired position :** iOS Developer, UX Designer - Consultant
 
-<br/>
+---
 
 # Education and Training:
 **Graduated:** Ural Federal University
@@ -47,7 +47,7 @@ Dates: April 2006 - May 2010<br/>
 
 <br/>
 
-## **East Media Lab** 
+## **East Media Lab**
 
 #### Currently work - iOS Developer, Team-lead
 
@@ -55,7 +55,7 @@ Working on several closed company projects.
 
 <br/>
 
-## **[NET Element](https://www.netelement.com/en)** 
+## **[NET Element](https://www.netelement.com/en)**
 
 #### 1 year 6 months - iOS Developer
 
