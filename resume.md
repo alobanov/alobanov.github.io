@@ -34,11 +34,12 @@ permalink: /about/
 
 2. Приложения для холдинга **«Уральский рабочий»**. За время создания получил опыт со всеми типами платежей:
 - **iГазета** - ежедневная газета :iphone:[Уральский Рабочий](http://ipad.uralsky-rabochi.ru) ([Описание работы](http://www.east-media.ru/portfolio/12/))
-- Создание iPad версии **PDF**-магазина [iАрхив](http://iarchive.info) для двух изданий [Вечерний-Екатеринбург](https://itunes.apple.com/ru/app/iarhiv-ve/id880) и [Уральский Рабочий](https://itunes.apple.com/ru/app/iarhiv-ur/id688).
+- Приложение для iPhone [Вечерний-Екатеринбург](https://itunes.apple.com/ru/app/ivecerka-setevoe-izdanie-vecernij/id477025674)
+- Создание iPad версии **PDF**-магазина [iАрхив](http://iarchive.info) для двух изданий [Вечерний-Екатеринбург](https://itunes.apple.com/ru/app/iarhiv-ve/id880577339) и [Уральский Рабочий](https://itunes.apple.com/ru/app/iarhiv-ur/id688696313).
 
-3. Создание [iPhone-версии](https://itunes.apple.com/ru/app/id861246494) для издательской платформы East-Media. Один из журналов изданный на данной платформе - [Майорка](http://www.east-media.ru/portfolio/25/)
+3. Создание iPhone-версии для издательской платформы East-Media. Один из журналов изданный на данной платформе - [Майорка](http://www.east-media.ru/portfolio/25/)
 
-4. Приложение :book: [Живая поэзия](https://itunes.apple.com/us/app/antologia-russk) — интерактивная книга с богатым набором мультимедийных вставок: мультфильмы, анимация, видео и аудио.
+4. Приложение :book: [Живая поэзия](http://antologia.xxc.ru/ios) — интерактивная книга с богатым набором мультимедийных вставок: мультфильмы, анимация, видео и аудио.
 
 <br/>
 
@@ -58,7 +59,6 @@ permalink: /about/
 
 - Создание [сайта](http://www.makfa.ru) для компании Макфа. В рамках этой работы также была создана flash-игра для детского раздела сайта про [поваренка](http://povar.makfa.ru).
 - Разработка [интерактивной карты](http://www.targotrans.ru/directions/) грузоперевозок для компании Targo
-- Создание интерактивных элементов для [сайта Кириешки](http://kirieshki.ru)
 
 ---
 
