@@ -67,7 +67,7 @@ Worked on several closed company projects
 
 1. Implementation the universal mobile application for [PinMe](http://pinme.ru/) social network, which is an analogue of Pinerest social network. Had experience with networking, work with threads, optimisation of UI elements, camera and animations.
 
-2. [Live poetry](#) — is an interactive book with rich scope of multimedia elements: video, animations and audio. An application does not have native iOS interface and looks like a real book.
+2. [Live poetry](http://antologia.xxc.ru/ios) — is an interactive book with rich scope of multimedia elements: video, animations and audio. An application does not have native iOS interface and looks like a real book.
 
 3. iPhone-version of publishing platform East-Media development. One of magazines released on the platform is  [Majorca](http://www.east-media.ru/portfolio/25/).
 
