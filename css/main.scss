@@ -11,13 +11,13 @@ $base-font-body:   'Merriweather', serif;
 $base-font-title:  'Yeseva One', cursive;
 $base-font-size:   15px;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
+$small-font-size:  $base-font-size * 0.175;
 $base-line-height: 1.80em;
 
 $spacing-unit:     30px;
 
 $text-color:       #555;
-$background-color: #fff;
+$background-color: #ffffff;
 $brand-color:      #64AAD0;
 
 $grey-color:       #828282;
@@ -25,7 +25,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    740px;
+$content-width:    700px;
 $on-palm:          300px;
 $on-laptop:        640px;
 
@@ -34,8 +34,8 @@ $on-laptop:        640px;
 // Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
+//         padding-right: $spacing-unit / 1;
+//         padding-left: $spacing-unit / 1;
 //     }
 // }
 @mixin media-query($device) {

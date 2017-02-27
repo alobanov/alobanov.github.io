@@ -51,7 +51,7 @@ Worked on several closed company projects
 
 <br/>
 
-## **[NET Element](https://www.netelement.com/en)**
+## **[NET Element](https://netelement.com/en)**
 
 #### 1 year 6 months - iOS Developer
 
@@ -61,7 +61,7 @@ Worked on several closed company projects
 
 <br/>
 
-## **[East Media LTD](http://www.east-media.ru/)**
+## **[East Media LTD](http://east-media.ru/)**
 
 #### 3 years 5 months - iOS Developer
 
