@@ -43,7 +43,7 @@ Dates: April 2006 - May 2010<br/>
 
 <br/>
 
-## **East Media Lab**
+## **[Soft Media Lab](http://softmedialab.com/)**
 
 #### Currently work - iOS Developer, Team-lead
 
