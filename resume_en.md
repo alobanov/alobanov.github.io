@@ -3,9 +3,9 @@ layout: page
 title: Resume
 permalink: /about_en/
 ---
-## Lobanov Aleksey :coffee:
+## Lobanov Aleksey
 
-#### Summary
+#### Let me introduce myself :coffee:
 I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.
 
 **Date of birthday:** 06.05.1987 (30 age)<br/>
@@ -13,7 +13,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 ---
 
-## Work experience:
+## Work experience
 
 <br/>
 
@@ -87,7 +87,7 @@ Implementation of platform for distributing of social games.
 
 ---
 
-# Education and Training:
+## Education and Training
 **Graduated:** Ural Federal University Training Software computer technology and automated systems. Dates: April 2006 - May 2010<br/>
 **Additional:** information about university from [Anabin](http://anabin.kmk.org/): [University information](../files/urfu_common.pdf), [Faculty information](../files/urfu_faculty.pdf)
 <br/>
@@ -95,14 +95,14 @@ Implementation of platform for distributing of social games.
 
 <br/>
 
-# Skills and Competences:
+## Skills and Competences
 **Language spoken:** Russian, English<br/>
 **Computer skills and competences:** iOS Developer<br/>
 **Programming languages:** Objective-C (more than 9 projects done), Swift (1 Real project done)
 
 <br/>
 
-# iOS Development (Skills and technologies):
+## iOS Development (Skills and technologies)
 **Development skills:** OOP (Object-Oriented Programming), POP (Protocol-Oriented Programming), TDD (Test-Driven Development).<br/>
 **Data base:** CoreData, Realm<br/>
 **Frameworks:** SDK Development, Reactive Programming (RxSwift, Reactive Cocoa)<br/>
@@ -116,3 +116,5 @@ Implementation of platform for distributing of social games.
 #### :smiley_cat: [Git-Hub](https://github.com/alobanov)
 
 #### :camera: [Instagram](https://www.instagram.com/alobanov/)
+
+#### Thanks for waching
