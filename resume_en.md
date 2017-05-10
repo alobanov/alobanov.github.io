@@ -119,4 +119,4 @@ Implementation of platform for distributing of social games.
 
 #### [PDF version of resume](../files/alobanov_resume.pdf)
 
-#### Thanks for waching
+#### Thanks for watching
