@@ -8,7 +8,7 @@ permalink: /about_en/
 #### Let me introduce myself :coffee:
 I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.
 
-**Date of birthday:** 06.05.1987 (30 age)<br/>
+**Date of birthday:** 06.05.1987 (30 y.o.)<br/>
 **Desired position :** iOS Developer, UX Designer - Consultant
 
 ---
