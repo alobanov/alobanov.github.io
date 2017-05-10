@@ -23,9 +23,9 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 #### Working since april 2016
 
-1. [Avatar](http://abatap.com/) — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 activities in.
+1. [Avatar](http://abatap.com/) — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
     - Users can search conversation partners who are near to her/him to chat with
-    - Using RESTful API backend and Realm instead of SQLite
+    - Using RESTful API backend and Realm instead of Coredata
     - Push notifications and In APP purchases 
     - Business logic includes: geographic search, messaging, send files etc
 <br/><br/>
@@ -57,7 +57,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 ## **[East Media LTD](http://east-media.ru/)**
 
-#### Software Engineer / Midle - iOS Developer 
+#### Software Engineer / Middle - iOS Developer 
 
 #### 3 years 5 months (Oct. 2011 - Feb. 2016)
 
@@ -116,5 +116,7 @@ Implementation of platform for distributing of social games.
 #### :smiley_cat: [Git-Hub](https://github.com/alobanov)
 
 #### :camera: [Instagram](https://www.instagram.com/alobanov/)
+
+#### [PDF version of resume](../files/alobanov_resume.pdf)
 
 #### Thanks for waching
