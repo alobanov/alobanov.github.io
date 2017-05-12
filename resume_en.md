@@ -31,7 +31,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 <br/><br/>
 2. [Creditclub](https://creditclub.ge/) (work in progress...) - a credit system which works only in Georgia
     - project based on swift language
-    - Technologis which I use: Realm for database, RxSwift + MVVM architecture, Moya framework for network layer
+    - Technologies which I use: Realm for database, RxSwift + MVVM architecture, Moya framework for network layer
 
 <br/>
 
