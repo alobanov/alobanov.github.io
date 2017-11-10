@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     position: relative;
 }
 
@@ -188,6 +188,7 @@
   position: relative; }
 
 .post-meta {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 0.9em;
     color: $grey-color;
 }
@@ -209,7 +210,7 @@
     font-family: $base-font-title;
     letter-spacing: -1px;
     line-height: 1;
-    font-weight: normal;
+    font-weight: bold;
     color: #000;
 
     @include media-query($on-laptop) {
@@ -334,10 +335,13 @@ padding-left: 0; }
 * meta
 */
 .meta {
+  font-family: 'Ubuntu', sans-serif;
   font-size: 11px;
-  line-height: 4em;
+  margin-bottom: -31px;
+  font-weight: normal;
   text-decoration: none;
   text-align: center;
 }
-  .meta, .meta * {
-    color: #a0a0a0; }
+.meta, .meta * {
+  color: #a0a0a0;
+}
