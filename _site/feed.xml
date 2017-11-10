@@ -6,65 +6,67 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Nov 2017 15:05:37 +0000</pubDate>
-    <lastBuildDate>Fri, 03 Nov 2017 15:05:37 +0000</lastBuildDate>
+    <pubDate>Fri, 10 Nov 2017 16:21:12 +0000</pubDate>
+    <lastBuildDate>Fri, 10 Nov 2017 16:21:12 +0000</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Компоновщик</title>
         <description>&lt;h1 id=&quot;section&quot;&gt;Суть проблемы&lt;/h1&gt;
 
-&lt;p&gt;Часто в приложениях встречаются табличные представления &lt;span class=&quot;wordcode&quot;&gt;UITableView&lt;/span&gt;, &lt;span class=&quot;wordcode&quot;&gt;UICollectionView&lt;/span&gt;. Раньше в зависимости от задачи я использовал в качестве структуры данных массив либо словарь. Это решение несло ряд ограничений и не было гибким. Для меня более удобным стало использование &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D1%89%D0%B8%D0%BA&quot;&gt;&lt;strong&gt;компоновщика&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Часто в приложениях встречаются табличные представления &lt;span class=&quot;wordcode&quot;&gt;UITableView&lt;/span&gt;, &lt;span class=&quot;wordcode&quot;&gt;UICollectionView&lt;/span&gt;. В зависимости от задачи я использовал в качестве структуры данных массив либо словарь. Это решение несло ряд ограничений и не было гибким. Для меня более удобным стало использование &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D1%89%D0%B8%D0%BA&quot;&gt;&lt;strong&gt;компоновщика&lt;/strong&gt;&lt;/a&gt;. Проект с &lt;a href=&quot;https://github.com/alobanov/ExampleArticleComposite&quot;&gt;примером&lt;/a&gt; на Git-Hub :octocat:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Компоновщик&lt;/strong&gt; — структурный паттерн проектирования. Он позволяет сгруппировать объекты в древовидную структуру, а затем работать с ними как с единым объектом.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Проект с &lt;a href=&quot;https://github.com/alobanov/ExampleArticleComposite&quot;&gt;примером&lt;/a&gt; на Git-Hub :octocat:&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;Теория&lt;/h1&gt;
+
+&lt;p&gt;Как будет выглядеть наше дерево? Табличное представление состоит из списка &lt;span class=&quot;wordcode&quot;&gt;секций&lt;/span&gt;. В свою очередь, секции содержат модели &lt;span class=&quot;wordcode&quot;&gt;ячеек&lt;/span&gt; (тоже самое для коллекций). Таким образом нам нужны элементы двух типов которые могут содержать дочерние элементы и конечные элементы (листья) в которые нельзя добавлять детей.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Контейнер&lt;/strong&gt; (Композит) — составной элемент дерева. Содержит дочерние элементы — Листья или другие Контейнеры — но не знает, какие именно, так как работает с ними только через общий интерфейс Компонента (&lt;span class=&quot;wordcode&quot;&gt;CompoundItemProtocol&lt;/span&gt;). Методы этого класса переадресуют основную работу своим дочерним компонентам, хотя и могут добавлять что-то своё к результату. Таким образом, паттерн Компоновщик позволяет нам работать с деревьями объектов любой сложности, не обращая внимание на конкретные модели, формирующие дерево.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;Теория&lt;/h3&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;Реализация&lt;/h1&gt;
 
-&lt;p&gt;Как будет выглядеть наше дерево? Табличное представление состоит из списка &lt;span class=&quot;wordcode&quot;&gt;секций&lt;/span&gt;. В свою очередь, секции содержат модели &lt;span class=&quot;wordcode&quot;&gt;ячеек&lt;/span&gt; (тоже самое для коллекций).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Контейнер&lt;/strong&gt; (или Композит) — составной элемент дерева. Содержит дочерние элементы — Листья или другие Контейнеры — но не знает, какие именно, так как работает с ними только через общий интерфейс Компонента (&lt;span class=&quot;wordcode&quot;&gt;CompoundItemProtocol&lt;/span&gt;).&lt;/p&gt;
-
-&lt;p&gt;Методы этого класса переадресуют основную работу своим дочерним компонентам, хотя и могут добавлять что-то своё к результату.&lt;/p&gt;
-
-&lt;p&gt;Таким образом, паттерн Компоновщик позволяет нам работать с деревьями объектов любой сложности, не обращая внимание на конкретные модели, формирующие дерево.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;Реализация&lt;/h2&gt;
-
-&lt;p&gt;Напишем общий интерфейс для элементов дерева:&lt;/p&gt;
+&lt;p&gt;Напишем общий интерфейс для элементов дерева &lt;span class=&quot;wordcode&quot;&gt;CompoundItemProtocol&lt;/span&gt;, все элементы нашей структуры должны релиазовывать этот протокол. Также созданим перечисление с возможными уровнями вложенности &lt;span class=&quot;wordcode&quot;&gt;CompoundItemLevel&lt;/span&gt;.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/67bb633143ab5340328be8e9814c27e0.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;Базовый протокол для всех моделей дерева и перечисление его уровней&lt;/h4&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;Компонент определяет общий интерфейс для простых и составных компонентов дерева.&lt;/h4&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Базовый класс, реализующий общий протокол для всех элементов дерева:&lt;/p&gt;
+&lt;p&gt;Так как все модели должны его реализовывать - напишем базовый каласс &lt;span class=&quot;wordcode&quot;&gt;BaseCompoundItem&lt;/span&gt; на базе которого будем добавлять необходимые модели нашего дерева:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/6858458b24cadc7f7dce6ea6106e2222.js&quot;&gt;&lt;/script&gt;
 
-&lt;hr /&gt;
+&lt;h4 id=&quot;section-4&quot;&gt;Контейнер (или Композит) — это составной элемент дерева.&lt;/h4&gt;
 
-&lt;p&gt;Базовая реализация готова. К ней можно добавить конкретные модели: &lt;span class=&quot;wordcode&quot;&gt;секций&lt;/span&gt; и &lt;span class=&quot;wordcode&quot;&gt;ячеек&lt;/span&gt;. Для создания модели элементов дерева будем использовать паттерн &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)&quot;&gt;&lt;strong&gt;декоратор&lt;/strong&gt;&lt;/a&gt;, чтобы расширить нашу базовую реализацию &lt;span class=&quot;wordcode&quot;&gt;BaseCompoundItem&lt;/span&gt;. Этот структурный паттерн позволит динамически добавить объектам новую функциональность, используя так называемые обвертки.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Базовая реализация готова. К ней можно добавить конкретные модели: &lt;span class=&quot;wordcode&quot;&gt;секций&lt;/span&gt; и &lt;span class=&quot;wordcode&quot;&gt;ячееки&lt;/span&gt;. Для создания модели элементов дерева будем использовать паттерн &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)&quot;&gt;&lt;strong&gt;декоратор&lt;/strong&gt;&lt;/a&gt;, чтобы расширить нашу базовую реализацию &lt;span class=&quot;wordcode&quot;&gt;BaseCompoundItem&lt;/span&gt;. Этот структурный паттерн позволит динамически добавить объектам новую функциональность, используя так называемые обвертки.&lt;/p&gt;
 
 &lt;p&gt;Напишем модель для &lt;span class=&quot;wordcode&quot;&gt;секции&lt;/span&gt;:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/90c513a5c906937f5959084f1c02e6f7.js&quot;&gt;&lt;/script&gt;
 
+&lt;h4 id=&quot;section-5&quot;&gt;Модель секции тоже является контейнером так как может содержать дочернии элементы.&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;p&gt;И модель для &lt;span class=&quot;wordcode&quot;&gt;ячейки&lt;/span&gt;:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/11e1e95eba62aa4e70857fcebe0d96ca.js&quot;&gt;&lt;/script&gt;
 
+&lt;h4 id=&quot;section-6&quot;&gt;Модель ячейки является листом – это простой элемент дерева, не имеющий ответвлений.&lt;/h4&gt;
+
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;Использование&lt;/h2&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;Использование&lt;/h2&gt;
 
 &lt;p&gt;Код написан, можно опробовать нашу новую структуру данных:&lt;/p&gt;
 
@@ -74,7 +76,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;В заключении&lt;/h2&gt;
+&lt;h2 id=&quot;section-8&quot;&gt;В заключении&lt;/h2&gt;
 
 &lt;p&gt;Что полезного можно добавить:&lt;/p&gt;
 
