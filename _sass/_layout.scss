@@ -294,7 +294,7 @@ article h4 {
 display: inline-block;
 padding: 0 .333em;
 margin-right: .1em;
-font-family: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
+font-family: "Lucida Console", Monaco, monospace; //'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;
 font-size: 12.6px;
 line-height: 1.333;
 font-style: normal;
@@ -314,8 +314,8 @@ border-radius: 3px;
 */
 pre,
 code {
-// font-family: 'Lucida Sans Unicode', Courie;
-font-size: 13px;
+font-family: "Lucida Console", Monaco, monospace;
+font-size: 12px;
 border: 1px solid #e8e8e8;
 border-radius: 5px;
 background-color: #faf9f4; }
