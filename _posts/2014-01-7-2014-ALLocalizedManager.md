@@ -19,7 +19,7 @@ categories: libs
 
 # Менеджер мультиязычноти
 
-Чтобы все это дело заработало необходимо проинициализировать [ALLocalizedManager](https://github.com/alobanov/ALLocalizedManager):octocat: вызвав метод <span class="wordcode">ALLocalizedInit</span> (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в <span class="wordcode">didFinishLaunchingWithOptions</span> класса <span class="wordcode">AppDelegate</span>.
+Чтобы все это дело заработало необходимо проинициализировать [ALLocalizedManager](https://github.com/alobanov/ALLocalizedManager) :octocat: вызвав метод <span class="wordcode">ALLocalizedInit</span> (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в <span class="wordcode">didFinishLaunchingWithOptions</span> класса <span class="wordcode">AppDelegate</span>.
 
 В момент инициализации проверяется установленый язык из <span class="wordcode">UserDefaults</span>, если настроек еще нет (например, при первом запуске приложения), то берем язык системы и записываем в <span class="wordcode">UserDefaults</span>. После этого, даже если поменять язык системы, в приложении сохранится тот язык, который был проинициалищирован при первом запуске приложения.
 

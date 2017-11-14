@@ -13,12 +13,12 @@ layout: title_index
         </h2>
       </li> -->
       <li class="post post-headerarchive">
+        <small class="meta">
+          <time>{{ post.date | date_to_string }}</time>
+        </small>
         <h3 class="post-subheader">{{ post.description }}</h3>
         <a href="{{ post.url }}" class="post-link post-title">
           {{ post.title }}<br />
-          <small class="meta">
-            <time>{{ post.date | date_to_string }}</time>
-          </small>
         </a>
       </li>
     {% endfor %}
