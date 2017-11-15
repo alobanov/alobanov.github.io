@@ -6,15 +6,17 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Nov 2017 18:19:32 +0000</pubDate>
-    <lastBuildDate>Tue, 14 Nov 2017 18:19:32 +0000</lastBuildDate>
+    <pubDate>Wed, 15 Nov 2017 07:40:40 +0000</pubDate>
+    <lastBuildDate>Wed, 15 Nov 2017 07:40:40 +0000</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Валидируем</title>
         <description>&lt;h1 id=&quot;section&quot;&gt;Мотивы&lt;/h1&gt;
 
-&lt;p&gt;Необходимо последовательно провести ряд проверок над данными, а затем применить для них ряд изменений. Причем порядок проверок и изменений хотелось бы применять в разном порядке для разных случаев. Например нам надо проверить строку с телефонным номером:&lt;/p&gt;
+&lt;p&gt;Необходимо последовательно выполнить провероку над данными, а затем для них применить изменения. Причем порядок проверок и изменений хочется применять как угодно, в зависимости от ситуации. В этом нам на помощь приходит поведенческий паттерн &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BF%D0%BE%D1%87%D0%BA%D0%B0_%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9&quot;&gt;&lt;strong&gt;«Цепочка обязанностей»&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Например нам надо проверить строку с телефонным номером и отформатировать ее. Опишем по порядку какие действия мы хотим выполнить:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Строка не должна быть пустой и не &lt;span class=&quot;wordcode&quot;&gt;nil&lt;/span&gt;&lt;/li&gt;
@@ -26,31 +28,31 @@
   &lt;p&gt;&lt;strong&gt;Цепочка обязанностей&lt;/strong&gt; — это поведенческий паттерн проектирования, который позволяет передавать запросы последовательно по цепочке обработчиков. Каждый последующий обработчик решает, может ли он обработать запрос сам и стоит ли передавать запрос дальше по цепи.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Проект с &lt;a href=&quot;https://gist.github.com/alobanov/30dec2f118532b4cc32d82bc321ac1bd&quot;&gt;примером&lt;/a&gt; на Git-Hub :octocat:&lt;/p&gt;
+&lt;p&gt;Playground с &lt;a href=&quot;https://gist.github.com/alobanov/30dec2f118532b4cc32d82bc321ac1bd&quot;&gt;примером&lt;/a&gt; на Git-Hub :octocat:&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;Реализация&lt;/h1&gt;
 
-&lt;p&gt;Напишем общий интерфейс для всех обработчиков &lt;span class=&quot;wordcode&quot;&gt;MiddlewareProtocol&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Общий интерфейс для всех обработчиков &lt;span class=&quot;wordcode&quot;&gt;MiddlewareProtocol&lt;/span&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Связываем текущий и следующий экземпляр проверки&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Связываем текущий и следующий экземпляр обработчика&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;@discardableResult&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Этот метод необходимо перегрузить и реализовать свой вариант проверки&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Этот метод необходимо перегрузить, в нем описывается вся логика&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// Вспомогательный метод для упрощения вызова следующей проверки в цепочке&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Также создадим перечисление &lt;span class=&quot;wordcode&quot;&gt;MiddlewareItem&lt;/span&gt; – этот тип данных содержит само значение &lt;span class=&quot;wordcode&quot;&gt;.value&lt;/span&gt; и ошибку &lt;span class=&quot;wordcode&quot;&gt;.error&lt;/span&gt; если мы не прошли валидацию:&lt;/p&gt;
+&lt;p&gt;Добавим перечисление &lt;span class=&quot;wordcode&quot;&gt;MiddlewareItem&lt;/span&gt; – этот тип данных содержит само значение &lt;span class=&quot;wordcode&quot;&gt;.value&lt;/span&gt; и ошибку &lt;span class=&quot;wordcode&quot;&gt;.error&lt;/span&gt; если мы не прошли валидацию:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Напишем базовую реализацию обработчика &lt;span class=&quot;wordcode&quot;&gt;MiddlewareProtocol&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Базовая реализация обработчика &lt;span class=&quot;wordcode&quot;&gt;MiddlewareProtocol&lt;/span&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
@@ -70,9 +72,9 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;middleware&quot;&gt;Все обработчики проверок и модификации необходимо наследовать от Middleware&lt;/h4&gt;
+&lt;h4 id=&quot;middleware&quot;&gt;Все обработчики необходимо наследовать от Middleware&lt;/h4&gt;
 
-&lt;p&gt;Теперь можно написать дополнительные обработчики для валидации и изменений:&lt;/p&gt;
+&lt;p&gt;Теперь напишем конкретные обработчики для валидации и изменения данных, в нашем случае это строка:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Обработчик проверки на &lt;span class=&quot;wordcode&quot;&gt;nil&lt;/span&gt; и пустую строку: &lt;span class=&quot;wordcode&quot;&gt;CheckNilMiddleware&lt;/span&gt;&lt;/li&gt;
@@ -80,18 +82,22 @@
   &lt;li&gt;Обработчик который форматирует строку с учетом указанного формата: &lt;span class=&quot;wordcode&quot;&gt;PhoneFormatterMiddleware&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Реализация всех трех классов описаных выше, жмите на &lt;a href=&quot;https://github.com/alobanov/ExampleArticleComposite/tree/master/chainOfResponsibilityValidation/chainOfResponsibilityValidation.playground&quot;&gt;ссылуку&lt;/a&gt; :octocat:.&lt;/p&gt;
+&lt;p&gt;Реализация &lt;a href=&quot;https://github.com/alobanov/ExampleArticleComposite/tree/master/chainOfResponsibilityValidation/chainOfResponsibilityValidation.playground&quot;&gt;всех трех классов описаных выше&lt;/a&gt; :octocat:.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;section-2&quot;&gt;Разберем подробнее&lt;/h1&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Каждый обработчик должен наследоваться от &lt;span class=&quot;wordcode&quot;&gt;Middleware&lt;/span&gt;, далее перегружем метод &lt;span class=&quot;wordcode&quot;&gt;override func check(value: MiddlewareItem) -&amp;gt; MiddlewareItem&lt;/span&gt;.&lt;/li&gt;
-  &lt;li&gt;В нем реализуем проверку или форматируем данные &lt;span class=&quot;wordcode&quot;&gt;.value(let val)&lt;/span&gt;.&lt;/li&gt;
-  &lt;li&gt;Если все успешно вызываем следующую проверку в нашем списке цепочек &lt;span class=&quot;wordcode&quot;&gt;return checkNext(value: value)&lt;/span&gt;. Иначе сразу возвращаем ошибку &lt;span class=&quot;wordcode&quot;&gt;return .error(“Example error text”)&lt;/span&gt;.&lt;/li&gt;
-  &lt;li&gt;если хотим подменить данные то передаем новое значение &lt;span class=&quot;wordcode&quot;&gt;return checkNext(value: .value(“New value”))&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Обработчик должен наследоваться от &lt;span class=&quot;wordcode&quot;&gt;Middleware&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;Перегружем метод &lt;span class=&quot;wordcode&quot;&gt;check(value: MiddlewareItem) -&amp;gt; MiddlewareItem&lt;/span&gt; и описываем логику проверок, изменений над данными &lt;span class=&quot;wordcode&quot;&gt;.value(let val)&lt;/span&gt;.&lt;/li&gt;
+  &lt;li&gt;Если все успешно вызываем следующую проверку в нашем списке цепочек &lt;span class=&quot;wordcode&quot;&gt;return checkNext(value: value)&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Если хотим прервать выполнение то сразу возвращаем ошибку &lt;span class=&quot;wordcode&quot;&gt;return .error(“Example error text”)&lt;/span&gt;.&lt;/li&gt;
+      &lt;li&gt;Если хотим подменить данные то передаем новое значение &lt;span class=&quot;wordcode&quot;&gt;return checkNext(value: .value(“New value”))&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -108,13 +114,13 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;Читай комментарии к коду&lt;/h4&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;Смотри комментарии к коду&lt;/h4&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;Использование&lt;/h2&gt;
 
-&lt;p&gt;Попробуем проверить и отформатировать телефонный номер с помощью нашей реализации:&lt;/p&gt;
+&lt;p&gt;Проверяем и отформатируем телефонный номер с помощью нашей реализации:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
@@ -129,18 +135,30 @@
 &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;??&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Вывод в консоль: &lt;span class=&quot;wordcode&quot;&gt;+7 (963) 448 02-09&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Можно добавить немного синтаксического сахара, перегрузив оператор &lt;span class=&quot;wordcode&quot;&gt;«&lt;/span&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MiddlewareProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lhs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// после можно использовать такое написание&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CheckNilMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CheckCountMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PhoneFormatterMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;+X (XXX) XXX XX-XX&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Результатом выполнения будет вывод в консоль: &lt;span class=&quot;wordcode&quot;&gt;+7 (963) 448 02-09&lt;/span&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;В заключении&lt;/h2&gt;
 
+&lt;p&gt;Таким образом мы можем добавлять сколько угодно не зависящих друг от друга обработчиков и использовать их в зависимости от ситуации.&lt;/p&gt;
+
 &lt;p&gt;Где еще можно использовать:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;добавить обработчики которые будут выполнять манипуляции над изображением, таким образом получим удобный способ применять фильтры для изображения (как пример можно &lt;a href=&quot;https://github.com/onevcat/Kingfisher/blob/master/Sources/ImageProcessor.swift&quot;&gt;посмотреть реализацию&lt;/a&gt; в фреймворке Kingfisher)&lt;/li&gt;
-  &lt;li&gt;валидация при авторизации или регистрации пользователя&lt;/li&gt;
-  &lt;li&gt;когда необходимо чтобы обработчики выполнялись один за другим&lt;/li&gt;
+  &lt;li&gt;Редактор изображений. Добавить обработчики которые будут выполнять манипуляции над изображением, таким образом получим удобный способ применять фильтры (как пример можно &lt;a href=&quot;https://github.com/onevcat/Kingfisher/blob/master/Sources/ImageProcessor.swift&quot;&gt;посмотреть реализацию&lt;/a&gt; в фреймворке &lt;a href=&quot;https://github.com/onevcat/Kingfisher&quot;&gt;Kingfisher&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Валидация при авторизации или регистрации пользователя&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
