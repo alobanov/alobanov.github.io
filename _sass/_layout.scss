@@ -315,10 +315,11 @@ border-radius: 3px;
 pre,
 code {
 font-family: "Lucida Console", Monaco, monospace;
-font-size: 12px;
-border: 1px solid #e8e8e8;
-border-radius: 5px;
-background-color: #faf9f4; }
+font-size: 11px;
+// border: 1px solid #e8e8e8;
+line-height: 1.9em;
+border-radius: 10px;
+background-color: #f7f8f9; }
 
 code {
 padding: 1px 5px; }
