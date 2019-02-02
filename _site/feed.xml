@@ -4,15 +4,15 @@
     <title>Lobanov</title>
     <description>Разработчик приложений под iOS c 2011 года. Живу и работаю в Екатеринбурге. Увлекаюсь web-дизайном и проектированием интерфейсов для мобильных устройств.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Feb 2019 11:10:06 +0000</pubDate>
-    <lastBuildDate>Sat, 02 Feb 2019 11:10:06 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 02 Feb 2019 11:26:09 +0000</pubDate>
+    <lastBuildDate>Sat, 02 Feb 2019 11:26:09 +0000</lastBuildDate>
+    <generator>Jekyll v3.7.4</generator>
     
       <item>
         <title>Валидируем</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;Мотивы&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;Мотивы&quot;&gt;Мотивы&lt;/h1&gt;
 
 &lt;p&gt;Необходимо последовательно выполнить провероку над данными, а затем для них применить изменения. Причем порядок проверок и изменений хочется применять как угодно, в зависимости от ситуации. В этом нам на помощь приходит поведенческий паттерн &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BF%D0%BE%D1%87%D0%BA%D0%B0_%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9&quot;&gt;&lt;strong&gt;«Цепочка обязанностей»&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section-1&quot;&gt;Реализация&lt;/h1&gt;
+&lt;h1 id=&quot;Реализация&quot;&gt;Реализация&lt;/h1&gt;
 
 &lt;p&gt;Общий интерфейс для всех обработчиков &lt;span class=&quot;wordcode&quot;&gt;MiddlewareProtocol&lt;/span&gt;:&lt;/p&gt;
 
@@ -72,7 +72,7 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;middleware&quot;&gt;Все обработчики необходимо наследовать от Middleware&lt;/h4&gt;
+&lt;h4 id=&quot;Все-обработчики-необходимо-наследовать-от-middleware&quot;&gt;Все обработчики необходимо наследовать от Middleware&lt;/h4&gt;
 
 &lt;p&gt;Теперь напишем конкретные обработчики для валидации и изменения данных, в нашем случае это строка:&lt;/p&gt;
 
@@ -86,7 +86,7 @@
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section-2&quot;&gt;Разберем подробнее&lt;/h1&gt;
+&lt;h1 id=&quot;Разберем-подробнее&quot;&gt;Разберем подробнее&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Обработчик должен наследоваться от &lt;span class=&quot;wordcode&quot;&gt;Middleware&lt;/span&gt;&lt;/li&gt;
@@ -114,11 +114,11 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;Смотри комментарии к коду&lt;/h4&gt;
+&lt;h4 id=&quot;Смотри-комментарии-к-коду&quot;&gt;Смотри комментарии к коду&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;Использование&lt;/h2&gt;
+&lt;h2 id=&quot;Использование&quot;&gt;Использование&lt;/h2&gt;
 
 &lt;p&gt;Проверяем и отформатируем телефонный номер с помощью нашей реализации:&lt;/p&gt;
 
@@ -137,8 +137,8 @@
 
 &lt;p&gt;Можно добавить немного функциональной магии, добавим оператор &lt;span class=&quot;wordcode&quot;&gt;|&amp;gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;n&quot;&gt;precedencegroup&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ForwardOperator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sociativity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;precedencegroup&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ForwardOperator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;associativity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;infix&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ForwardOperator&lt;/span&gt;
@@ -163,7 +163,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;В заключении&lt;/h2&gt;
+&lt;h2 id=&quot;В-заключении&quot;&gt;В заключении&lt;/h2&gt;
 
 &lt;p&gt;Таким образом мы можем добавлять сколько угодно не зависящих друг от друга обработчиков и использовать их в зависимости от ситуации.&lt;/p&gt;
 
@@ -174,12 +174,12 @@
   &lt;li&gt;Валидация при авторизации или регистрации пользователя&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;Есть-вопросы-Пишите-сюда--alobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 
 </description>
         <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/article/2017/11/14/2017-Chain.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/article/2017/11/14/2017-Chain.html</guid>
+        <link>http://localhost:4000/article/2017/11/14/2017-Chain.html</link>
+        <guid isPermaLink="true">http://localhost:4000/article/2017/11/14/2017-Chain.html</guid>
         
         <category>composite</category>
         
@@ -194,7 +194,7 @@
     
       <item>
         <title>Компоновщик</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;Мотивы&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;Мотивы&quot;&gt;Мотивы&lt;/h1&gt;
 
 &lt;p&gt;Часто в приложениях встречаются табличные представления &lt;span class=&quot;wordcode&quot;&gt;UITableView&lt;/span&gt;, &lt;span class=&quot;wordcode&quot;&gt;UICollectionView&lt;/span&gt;. В зависимости от задачи я использовал в качестве структуры данных массив либо словарь. Это решение несло ряд ограничений и не было гибким. Для меня более удобным стало использование &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%BE%D0%B2%D1%89%D0%B8%D0%BA&quot;&gt;&lt;strong&gt;компоновщика&lt;/strong&gt;&lt;/a&gt;. Проект с &lt;a href=&quot;https://github.com/alobanov/ExampleArticleComposite/tree/master/compositeTable&quot;&gt;примером&lt;/a&gt; на Git-Hub :octocat:&lt;/p&gt;
 
@@ -204,7 +204,7 @@
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section-1&quot;&gt;Теория&lt;/h1&gt;
+&lt;h1 id=&quot;Теория&quot;&gt;Теория&lt;/h1&gt;
 
 &lt;p&gt;Как будет выглядеть наше дерево? Табличное представление состоит из списка &lt;span class=&quot;wordcode&quot;&gt;секций&lt;/span&gt;. В свою очередь, секции содержат модели &lt;span class=&quot;wordcode&quot;&gt;ячеек&lt;/span&gt; (тоже самое для коллекций). Таким образом нам нужны элементы двух типов которые могут содержать дочерние элементы (&lt;strong&gt;контейнеры&lt;/strong&gt;) и конечные элементы (&lt;strong&gt;листья&lt;/strong&gt;) в которые нельзя добавлять детей.&lt;/p&gt;
 
@@ -212,13 +212,13 @@
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section-2&quot;&gt;Реализация&lt;/h1&gt;
+&lt;h1 id=&quot;Реализация&quot;&gt;Реализация&lt;/h1&gt;
 
 &lt;p&gt;Напишем общий интерфейс для элементов дерева &lt;span class=&quot;wordcode&quot;&gt;CompoundItemProtocol&lt;/span&gt;, все элементы нашей структуры должны релиазовать этот протокол. Так же создадим перечисление с доступными уровнями вложенности &lt;span class=&quot;wordcode&quot;&gt;CompoundItemLevel&lt;/span&gt;.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/67bb633143ab5340328be8e9814c27e0.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;Компонент определяет общий интерфейс для простых и составных компонентов дерева.&lt;/h4&gt;
+&lt;h4 id=&quot;Компонент-определяет-общий-интерфейс-для-простых-и-составных-компонентов-дерева&quot;&gt;Компонент определяет общий интерфейс для простых и составных компонентов дерева.&lt;/h4&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -226,7 +226,7 @@
 
 &lt;script src=&quot;https://gist.github.com/alobanov/6858458b24cadc7f7dce6ea6106e2222.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-4&quot;&gt;Контейнер (или Композит) — это составной элемент дерева.&lt;/h4&gt;
+&lt;h4 id=&quot;Контейнер-или-Композит--это-составной-элемент-дерева&quot;&gt;Контейнер (или Композит) — это составной элемент дерева.&lt;/h4&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -236,7 +236,7 @@
 
 &lt;script src=&quot;https://gist.github.com/alobanov/90c513a5c906937f5959084f1c02e6f7.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-5&quot;&gt;Модель секции тоже является контейнером так как может содержать дочернии элементы.&lt;/h4&gt;
+&lt;h4 id=&quot;Модель-секции-тоже-является-контейнером-так-как-может-содержать-дочернии-элементы&quot;&gt;Модель секции тоже является контейнером так как может содержать дочернии элементы.&lt;/h4&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -244,11 +244,11 @@
 
 &lt;script src=&quot;https://gist.github.com/alobanov/11e1e95eba62aa4e70857fcebe0d96ca.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-6&quot;&gt;Модель ячейки является листом – это простой элемент дерева, не имеющий ответвлений.&lt;/h4&gt;
+&lt;h4 id=&quot;Модель-ячейки-является-листом--это-простой-элемент-дерева-не-имеющий-ответвлений&quot;&gt;Модель ячейки является листом – это простой элемент дерева, не имеющий ответвлений.&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-7&quot;&gt;Использование&lt;/h2&gt;
+&lt;h2 id=&quot;Использование&quot;&gt;Использование&lt;/h2&gt;
 
 &lt;p&gt;Код написан, можно опробовать нашу новую структуру данных:&lt;/p&gt;
 
@@ -258,7 +258,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;В заключении&lt;/h2&gt;
+&lt;h2 id=&quot;В-заключении&quot;&gt;В заключении&lt;/h2&gt;
 
 &lt;p&gt;Что полезного можно добавить:&lt;/p&gt;
 
@@ -277,12 +277,12 @@
   &lt;li&gt;Проверка изменений данных таблицы при создании сложных форм ввода данных (создается по аналогии с п. 2).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;Есть-вопросы-Пишите-сюда--alobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 
 </description>
         <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/article/2017/11/03/2017-Composite.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/article/2017/11/03/2017-Composite.html</guid>
+        <link>http://localhost:4000/article/2017/11/03/2017-Composite.html</link>
+        <guid isPermaLink="true">http://localhost:4000/article/2017/11/03/2017-Composite.html</guid>
         
         <category>composite</category>
         
@@ -297,13 +297,13 @@
     
       <item>
         <title>ALHudManager</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;Зачем? &lt;/h1&gt;
+        <description>&lt;h1 id=&quot;Зачем&quot;&gt;Зачем? &lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/alobanov/ALHUDManager&quot;&gt;ALHUDManager&lt;/a&gt; — это удобная обвёртка для быстрого использования &lt;a href=&quot;https://github.com/jdg/MBProgressHUD&quot;&gt;MBProgressHUD&lt;/a&gt;. Основная функция которого избавить вас от надобности создавать экземпляр класса и указывать view для отображения HUD. (Возможность задать view вручную тоже есть).&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;Как использовать&lt;/h3&gt;
+&lt;h3 id=&quot;Как-использовать&quot;&gt;Как использовать&lt;/h3&gt;
 
 &lt;p&gt;Можно полностью не настраивать &lt;span class=&quot;wordcode&quot;&gt;HUDItem&lt;/span&gt;, указав ему &lt;span class=&quot;wordcode&quot;&gt;title&lt;/span&gt; и &lt;span class=&quot;wordcode&quot;&gt;detail&lt;/span&gt; - вы просто покажете сообщение с заголовком и подзаголовком на 2 секуды.&lt;/p&gt;
 
@@ -313,7 +313,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;Установить свое изображение&lt;/h3&gt;
+&lt;h3 id=&quot;Установить-свое-изображение&quot;&gt;Установить свое изображение&lt;/h3&gt;
 
 &lt;p&gt;В проекте так же имеется базовый набор картинок которыми вы можете пользоваться:
 &lt;span class=&quot;wordcode&quot;&gt;HUDImage_Success&lt;/span&gt;✅,
@@ -323,20 +323,20 @@
 
 &lt;script src=&quot;https://gist.github.com/alobanov/d5b8f79aded0fc642a5f378819663643.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;Или можете установить свое изображение.&lt;/h4&gt;
+&lt;h4 id=&quot;Или-можете-установить-свое-изображение&quot;&gt;Или можете установить свое изображение.&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;Методы класса:&lt;/h3&gt;
+&lt;h3 id=&quot;Методы-класса&quot;&gt;Методы класса:&lt;/h3&gt;
 
 &lt;script src=&quot;https://gist.github.com/alobanov/07d07dd0cef25a49c4832df39b6377ec.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;Есть-вопросы-Пишите-сюда--alobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 
 </description>
         <pubDate>Sun, 22 Jun 2014 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/article/2014/06/22/2014-ALHUDManager.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/article/2014/06/22/2014-ALHUDManager.html</guid>
+        <link>http://localhost:4000/article/2014/06/22/2014-ALHUDManager.html</link>
+        <guid isPermaLink="true">http://localhost:4000/article/2014/06/22/2014-ALHUDManager.html</guid>
         
         
         <category>article</category>
@@ -357,7 +357,7 @@
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
+&lt;h1 id=&quot;Менеджер-мультиязычноти&quot;&gt;Менеджер мультиязычноти&lt;/h1&gt;
 
 &lt;p&gt;Чтобы все это дело заработало необходимо проинициализировать &lt;a href=&quot;https://github.com/alobanov/ALLocalizedManager&quot;&gt;ALLocalizedManager&lt;/a&gt; :octocat: вызвав метод &lt;span class=&quot;wordcode&quot;&gt;ALLocalizedInit&lt;/span&gt; (все методы менеджера сделаны макросами, для удобства) желательно поместить вызов в &lt;span class=&quot;wordcode&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; класса &lt;span class=&quot;wordcode&quot;&gt;AppDelegate&lt;/span&gt;.&lt;/p&gt;
 
@@ -365,7 +365,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;использование&lt;/h3&gt;
+&lt;h3 id=&quot;использование&quot;&gt;использование&lt;/h3&gt;
 
 &lt;p&gt;В момент установки новой локали необходимо разослать сообщение об этом изменении:&lt;/p&gt;
 
@@ -391,7 +391,7 @@ ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;настройка языков&lt;/h3&gt;
+&lt;h3 id=&quot;настройка-языков&quot;&gt;настройка языков&lt;/h3&gt;
 
 &lt;p&gt;Логика выбора языка во время первого запуска приложения: берется язык системы и проверяется, есть ли он в определенном нами списке  языков. Если системный язык отсутствует в словаре, берем тот, который отмечен ключом &lt;span class=&quot;wordcode&quot;&gt;isDefault&lt;/span&gt;.&lt;/p&gt;
 
@@ -403,11 +403,11 @@ ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
              @{@&quot;es&quot;: @&quot;Spanish&quot;}];
 }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;allocalizationresource-allocalizationimage&quot;&gt;Также можно локализовать ресурсы и картинки (ALLocalizationResource, ALLocalizationImage)&lt;/h4&gt;
+&lt;h4 id=&quot;Также-можно-локализовать-ресурсы-и-картинки-allocalizationresource-allocalizationimage&quot;&gt;Также можно локализовать ресурсы и картинки (ALLocalizationResource, ALLocalizationImage)&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;методы&lt;/h3&gt;
+&lt;h3 id=&quot;методы&quot;&gt;методы&lt;/h3&gt;
 
 &lt;p&gt;Все макросы для работы с менеджером:metal::&lt;/p&gt;
 
@@ -415,7 +415,7 @@ ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;pluralization--&quot;&gt;Pluralization (Числительные формы)&lt;/h3&gt;
+&lt;h3 id=&quot;pluralization-Числительные-формы&quot;&gt;Pluralization (Числительные формы)&lt;/h3&gt;
 
 &lt;p&gt;Для того чтобы добавить в проект числительные формы необходимо сделать слудующее:&lt;/p&gt;
 
@@ -433,11 +433,11 @@ ALLocalizationThrowNotification;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 // Использование в проекте
 NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;alobanovhttpstwittercomalobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;Есть-вопросы-Пишите-сюда--alobanov&quot;&gt;Есть вопросы? Пишите сюда – &lt;a href=&quot;https://twitter.com/alobanov&quot;&gt;@alobanov&lt;/a&gt;&lt;/h4&gt;
 </description>
         <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/libs/2014/01/07/2014-ALLocalizedManager.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/libs/2014/01/07/2014-ALLocalizedManager.html</guid>
+        <link>http://localhost:4000/libs/2014/01/07/2014-ALLocalizedManager.html</link>
+        <guid isPermaLink="true">http://localhost:4000/libs/2014/01/07/2014-ALLocalizedManager.html</guid>
         
         
         <category>libs</category>
@@ -446,13 +446,13 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
     
       <item>
         <title>Классический MVC</title>
-        <description>&lt;h1 id=&quot;mvc--smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
+        <description>&lt;h1 id=&quot;Перевод-статьи-Била-Сандерса-о-реализации-классического-мета-паттерна-mvc-на-smalltalk-80&quot;&gt;Перевод статьи Била Сандерса о реализации классического мета паттерна MVC на Smalltalk-80. &lt;/h1&gt;
 
 &lt;p&gt;Это мой вольный перевод статьи Била Сандерса о реализации классического мета паттерна &lt;strong&gt;MVC&lt;/strong&gt; на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;. Так как это мой первый опыт, строго не судите и в комментариях желательно оставлять какие либо замечания по тексту. Переводил не дословно, немного из русскоязычных источников накопал (:grin: и каюсь, перевёл не всё).&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;Предисловие&lt;/h1&gt;
+&lt;h1 id=&quot;Предисловие&quot;&gt;Предисловие&lt;/h1&gt;
 
 &lt;p&gt;Это не введение в модель MVC, а обзор его осуществления на &lt;a href=&quot;https://ru.wikipedia.org/wiki/Smalltalk&quot;&gt;Smalltalk-80&lt;/a&gt; для понимания первоначальных намерений и функций триады. Классическая MVC поможет лучше понять последующее развитие паттернов, которые появились позже. Посмотрим, как простое MVC приложение работает в &lt;strong&gt;Smalltalk-80&lt;/strong&gt; и изучим как оно может быть реализовано на языке &lt;strong&gt;ActionScript&lt;/strong&gt;.&lt;/p&gt;
 
@@ -460,7 +460,7 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
   &lt;p&gt;&lt;strong&gt;Model-view-controller&lt;/strong&gt; (MVC, «Модель-представление-поведение», «Модель-представление-контроллер») — архитектура программного обеспечения, в которой &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&quot;&gt;модель данных&lt;/a&gt; приложения, &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательский интерфейс&lt;/a&gt; и управляющая логика разделены на три отдельных компонента, так, что модификация одного из компонентов оказывает минимальное воздействие на другие компоненты.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;model-view-controller--smalltalk-80&quot;&gt;Реализация Model-View-Controller в Smalltalk-80.&lt;/h3&gt;
+&lt;h3 id=&quot;Реализация-model-view-controller-в-smalltalk-80&quot;&gt;Реализация Model-View-Controller в Smalltalk-80.&lt;/h3&gt;
 &lt;p&gt;Модель MVC облегчает разделение ответственности при разработке интерактивных графических приложений. Логика и состояние приложения, как пользователи взаимодействуют с приложением, и как состояние приложения представляется пользователю по средствам отдельных элементов триады MVC. &lt;strong&gt;Smalltalk-80&lt;/strong&gt; использует метафору MVC, что обеспечивает встроенную поддержку для интерактивной разработки приложений.&lt;/p&gt;
 
 &lt;p&gt;Идея заключалась в том, чтобы обеспечить набор встроенных компонентов &lt;a href=&quot;https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F&quot;&gt;пользовательского интерфейса&lt;/a&gt;, таких как кнопки, меню и списки, которые могут быть подключены к GUI приложения. Для эффективного использования этих встроенных элементов интерфейса, реализация должна была быть построена в соответствии с &lt;em&gt;MVC&lt;/em&gt;. Давайте посмотрим на концептуальную диаграмму приложения &lt;strong&gt;Smalltalk-80&lt;/strong&gt;.
@@ -470,7 +470,7 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
 
 &lt;p&gt;&lt;img src=&quot;/images/schemamvc.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;pointup-mvc--smalltalk-80-krasner--pope&quot;&gt;:point_up:Диаграмма MVC в Smalltalk-80 (Krasner &amp;amp; Pope)&lt;/h4&gt;
+&lt;h4 id=&quot;point_upДиаграмма-mvc-в-smalltalk-80-krasner--pope&quot;&gt;:point_up:Диаграмма MVC в Smalltalk-80 (Krasner &amp;amp; Pope)&lt;/h4&gt;
 
 &lt;hr /&gt;
 
@@ -480,7 +480,7 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;mvc---smalltalk-80&quot;&gt;MVC классы в Smalltalk-80.&lt;/h1&gt;
+&lt;h1 id=&quot;mvc-классы-в-smalltalk-80&quot;&gt;MVC классы в Smalltalk-80.&lt;/h1&gt;
 
 &lt;p&gt;Есть три абстрактных класса называемые Модель, Вид и Контроллер. Все конкретные реализации модели, вида и контроллера должны иметь подклассы этих абстрактных суперклассов. Давайте взглянем на классы (это сокращенное описание — см. &lt;a href=&quot;http://www.math.rsu.ru/smalltalk/gui/&quot;&gt;Krasner &amp;amp; Pope&lt;/a&gt;).&lt;/p&gt;
 
@@ -505,7 +505,7 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;mvc--smalltalk-80-1&quot;&gt;Ключевые особенности реализации MVC на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;:&lt;/h3&gt;
+&lt;h3 id=&quot;Ключевые-особенности-реализации-mvc-на-smalltalk-80&quot;&gt;Ключевые особенности реализации MVC на &lt;strong&gt;Smalltalk-80&lt;/strong&gt;:&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;представления могут быть вложенными;&lt;/li&gt;
@@ -520,8 +520,8 @@ NSString *pluralString = ALLocalizedPluralString(@&quot;Murloc&quot;, 4, nil);&l
 
 </description>
         <pubDate>Sat, 04 Jan 2014 00:00:00 +0000</pubDate>
-        <link>http://yourdomain.com/article/2014/01/04/2014-MVC.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/article/2014/01/04/2014-MVC.html</guid>
+        <link>http://localhost:4000/article/2014/01/04/2014-MVC.html</link>
+        <guid isPermaLink="true">http://localhost:4000/article/2014/01/04/2014-MVC.html</guid>
         
         
         <category>article</category>
