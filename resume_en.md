@@ -20,7 +20,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 <br/>
 
-## iOS Development (Skills and technologies)
+## Development (Skills and technologies)
 **Development skills:** OOP (Object-Oriented Programming), POP (Protocol-Oriented Programming), TDD (Test-Driven Development).<br/>
 **Data base:** Hive, CoreData, Realm<br/>
 **Frameworks:** SDK Development, Reactive Programming (RxSwift, Reactive Cocoa, RxDart)<br/>
@@ -33,13 +33,21 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 ## Work experience
 
+<br />
+
+## **Fintech startup**
+
+#### Software Engineer / iOS Developer / Flutter (Dart), Team-lead
+
+#### Working since april 2018 ...
+
 <br/>
 
 ## **[Soft Media Lab](http://softmedialab.com/)**
 
 #### Software Engineer / Senior - iOS Developer, Team-lead
 
-#### Working since april 2016
+#### Working since april 2016 - 2028
 
 1. [Avatar](http://abatap.com/) — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
     - Users can search conversation partners who are near to her/him to chat with
