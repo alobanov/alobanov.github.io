@@ -8,8 +8,8 @@ permalink: /about_en/
 #### Let me introduce myself :coffee:
 I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.
 
-**Date of birthday:** 06.05.1987 (30 y.o.)<br/>
-**Desired position :** iOS Developer, UX Designer - Consultant
+**Date of birthday:** 06.05.1987<br/>
+**Desired position :** Mobile Developer (iOS, Android)
 
 <br/>
 
@@ -41,13 +41,21 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 
 #### Working since april 2018 ...
 
+
+1. **Client for the Banking app**
+    - Universal app for toh platform iOS and Android, using `Flutter` framework
+    - Using GraphQL API backend and Hive as Database
+
+<br/><br/>
+2. **Client for the exchange platform** - Now project is freezen
+
 <br/>
 
 ## **[Soft Media Lab](http://softmedialab.com/)**
 
 #### Software Engineer / Senior - iOS Developer, Team-lead
 
-#### Working since april 2016 - 2028
+#### Working since april 2016 - 2018
 
 1. [Avatar](http://abatap.com/) — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
     - Users can search conversation partners who are near to her/him to chat with
