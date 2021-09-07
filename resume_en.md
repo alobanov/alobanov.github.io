@@ -16,7 +16,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 ## Skills and Competences
 **Language spoken:** Russian, English<br/>
 **Computer skills and competences:** Flutter and iOS Developer (previusly native developer on iOS)<br/>
-**Programming languages:** Dart (Flutter framework), Swift, Objective-C (more than 9 projects done), Python (for home project for fun)
+**Programming languages:** Dart (Flutter framework), Swift (more than 12 projects done), Python (for home project for fun)
 
 <br/>
 
