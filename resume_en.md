@@ -11,6 +11,24 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 **Date of birthday:** 06.05.1987 (30 y.o.)<br/>
 **Desired position :** iOS Developer, UX Designer - Consultant
 
+<br/>
+
+## Skills and Competences
+**Language spoken:** Russian, English<br/>
+**Computer skills and competences:** Flutter and iOS Developer (previusly native developer on iOS)<br/>
+**Programming languages:** Dart (Flutter framework), Swift, Objective-C (more than 9 projects done), Python (for home project for fun)
+
+<br/>
+
+## iOS Development (Skills and technologies)
+**Development skills:** OOP (Object-Oriented Programming), POP (Protocol-Oriented Programming), TDD (Test-Driven Development).<br/>
+**Data base:** Hive, CoreData, Realm<br/>
+**Frameworks:** SDK Development, Reactive Programming (RxSwift, Reactive Cocoa, RxDart)<br/>
+**Package managers, tools and apps:** CocoaPods, Carthage, Fastlane, Emacs<br/>
+**Development tools and approaches:** Git-flow, JIRA, Jodiz<br/>
+**Application architectures:** Swift I use MVVM + Rx, MVCm. Dart I use BloC<br/>
+**Additional knowledge:** Work experience with iTunes Connect, iOS Provisioning Portal, Google Play.
+
 ---
 
 ## Work experience
@@ -92,24 +110,6 @@ Implementation of platform for distributing of social games.
 **Additional:** information about university from [Anabin](http://anabin.kmk.org/): [University information](../files/urfu_common.pdf), [Faculty information](../files/urfu_faculty.pdf)
 <br/>
 **Hobby:** playing piano, computer games, travelling, basketball and football
-
-<br/>
-
-## Skills and Competences
-**Language spoken:** Russian, English<br/>
-**Computer skills and competences:** iOS Developer<br/>
-**Programming languages:** Objective-C (more than 9 projects done), Swift (1 Real project done)
-
-<br/>
-
-## iOS Development (Skills and technologies)
-**Development skills:** OOP (Object-Oriented Programming), POP (Protocol-Oriented Programming), TDD (Test-Driven Development).<br/>
-**Data base:** CoreData, Realm<br/>
-**Frameworks:** SDK Development, Reactive Programming (RxSwift, Reactive Cocoa)<br/>
-**Package managers:** CocoaPods, Carthage<br/>
-**Development tools and approaches:** Git-flow, JIRA, Jodiz<br/>
-**Application architectures:** on Objective-C I prefer VIPER, for projects on Swift I use MVVM + Rx, MVC<br/>
-**Additional knowledge:** Work experience with iTunes Connect, iOS Provisioning Portal.
 
 <br/>
 
