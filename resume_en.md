@@ -42,7 +42,7 @@ I am an iOS developer based in Ekaterinburg, Russia. My real passion is creating
 #### Working since april 2018 ...
 
 1. **Client for the Banking app**
-    - Universal app for toh platform iOS and Android, using `Flutter` framework
+    - Universal app for toh platform iOS and Android, using Flutter framework
     - Using GraphQL API backend and Hive as Database
 <br/><br/>
 2. **Client for the exchange platform** - Now project is freezen
