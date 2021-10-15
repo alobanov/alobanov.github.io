@@ -55,13 +55,13 @@ I am an mobile developer based in Ekaterinburg, Russia. My real passion is creat
 
 #### Working since april 2016 - 2018
 
-1. [Avatar](http://abatap.com/) — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
+1. Avatar — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
     - Users can search conversation partners who are near to her/him to chat with
     - Using RESTful API backend and Realm instead of Coredata
     - Push notifications and In APP purchases 
     - Business logic includes: geographic search, messaging, send files etc
 <br/><br/>
-2. [Creditclub](https://creditclub.ge/) (work in progress...) - a credit system which works only in Georgia
+2. Creditclub - a credit system which works only in Georgia
     - project based on swift language
     - Technologies which I use: Realm for database, RxSwift + MVVM architecture, Moya framework for network layer
 
@@ -126,6 +126,8 @@ Implementation of platform for distributing of social games.
 **Hobby:** playing piano, computer games, travelling, basketball and football
 
 <br/>
+
+#### 📫 lobanov.aw(DOG)gmail.com
 
 #### :smiley_cat: [Git-Hub](https://github.com/alobanov)
 
