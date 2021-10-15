@@ -133,6 +133,4 @@ Implementation of platform for distributing of social games.
 
 #### :camera: [Instagram](https://www.instagram.com/alobanov/)
 
-#### [PDF version of resume](../files/alobanov_resume.pdf)
-
 #### Thanks for watching
