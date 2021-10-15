@@ -6,7 +6,7 @@ permalink: /about_en/
 ## Lobanov Aleksey
 
 #### Let me introduce myself :coffee:
-I am an mobile developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.mobile
+I am an mobile developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.
 
 **Date of birthday:** 06.05.1987<br/>
 **Desired position :** Mobile Developer (iOS, Android)
@@ -78,7 +78,7 @@ I am an mobile developer based in Ekaterinburg, Russia. My real passion is creat
     - had work with printers and barcode scanners SDK, implemented convenient wrappers for development with it
     - language Objective-C
 <br/><br/>
-2. Implementation the mobile application for [UBRA Boats](http://www.unitedboatridersassociation.com/), which are an analogue of UBER application for water transport.
+2. Implementation the mobile application for UBRA Boats, which are an analogue of UBER application for water transport.
     - had implemented two apps for riders and shkipers
     - business logic includes: geolocation search places, clasterization of items on map, location tracking by trips, messaging
     - push notifications
