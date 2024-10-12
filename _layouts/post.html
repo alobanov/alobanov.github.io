@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="bubble">
-  <span class="article-title"><a href="{{ page.url }}"># </a>{{ page.title }}</span>
+  <span class="article-title">{{ page.title }}</span>
   <br />
   <small>Published: <b>{{ page.date | date: "%-d %B %Y" }}</b><br />Tagged:</small>
   {% if page.tags %}

@@ -1,6 +1,6 @@
 ---
 layout: log
-title: _LOG
+title: LOG
 permalink: /logs/
 ---
 
