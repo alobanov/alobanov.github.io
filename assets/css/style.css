@@ -3,7 +3,7 @@
 
 /* Общие стили */
 body {
-    font-size: clamp(12px, 2vw, 15px);
+    font-size: clamp(13px, 1.5vw, 15px);
     font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #54433a;
     background-color: #fff;
@@ -119,6 +119,7 @@ footer {
     width: 270px;
     float: left;
     -webkit-font-smoothing: subpixel-antialiased;
+    margin-bottom: 20px;
 }
 
 section {
@@ -261,7 +262,7 @@ screen and (max-width: 540px) {
     text-decoration: none;
     color: #333;
     font-family: 'Rubik', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     padding: 8px;
     border-radius: 20px;
     transition: background-color 0.3s ease, color 0.3s ease;

@@ -4,10 +4,9 @@ layout: page
 
 <div class="bubble">
 {% capture markdown_content %}
-Hi! I'm Aleksei, a developer and gamer.
-Say hello, or keep reading.
+Hi! I'm Aleksei, a developer and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com), or keep reading.
 
-<br />
+<div class="spacer"></div>
 
 ---
 
@@ -31,8 +30,6 @@ Say hello, or keep reading.
     <br/>
 {% endfor %}
 </body>
-
----
 
 {% endcapture %}
 {{ markdown_content | markdownify }}
