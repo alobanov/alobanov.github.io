@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Music"
+permalink: /logs/music/
+---
+
+<h1>{{ page.title }}</h1>
+
+{% include log_category_list.html %}
+
+{% assign items = site.logs | where: "category", "music" | sort: 'date' | reverse %}
+{% for item in items %}
+<div class="bubble">
+    {{ item.content | markdownify }}
+    <small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+</div>
+{% endfor %}

@@ -1,21 +1,17 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-subheader">{{ page.description }}</h1>
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-      {{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} •
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">{{ page.author }}</span>
-      </span>{% endif %}-
-    by <a href="https://twitter.com/alobanov" target="_blank">@alobanov</a></p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-</article>
+<div class="bubble">
+  <span class="article-title"><a href="{{ page.url }}"># </a>{{ page.title }}</span>
+  <br />
+  <small>Published: <b>{{ page.date | date: "%-d %B %Y" }}</b><br />Tagged:</small>
+  {% if page.tags %}
+  {% for tag in page.tags %}
+  <span class="tag small">{{ tag }}</span>
+  {% endfor %}
+  {% endif %}
+  <br />
+  <br />
+  {{ content }}
+</div>

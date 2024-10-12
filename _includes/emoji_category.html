@@ -1,0 +1,14 @@
+{% capture emoji %}
+{% case category %}
+{% when "game" %}
+👾
+{% when "movie" %}
+🎞️
+{% when "location" %}
+📍
+{% when "music" %}
+💽
+{% else %}
+✈️
+{% endcase %}
+{% endcapture %}
