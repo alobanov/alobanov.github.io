@@ -1,11 +1,7 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-group :jekyll_plugins do
-  gem "jekyll", ">= 4"
-  # gem 'github-pages'
-  gem 'jemoji'
-  gem 'jekyll-mentions'
-  gem "nokogiri"
-  gem "ffi"
-  
- end
+source "https://rubygems.org"
+
+gemspec
+
+gem 'jemoji'

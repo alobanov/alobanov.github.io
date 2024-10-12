@@ -1,0 +1,135 @@
+:root {
+    --color-hr: #ccc;
+    --melange_b_yellow: #a06d00;
+    --melange_b_magenta: #914180;
+    --melange_b_red: #362424;
+}
+
+.events {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin-block: 0.5em;
+    font-family: "Rubik", sans-serif;
+}
+
+/* Центральная линия */
+.events::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 1px;
+    background: var(--color-hr);
+}
+
+.event {
+    display: flex;
+    align-items: baseline;
+}
+
+.event .marker {
+    position: relative;
+    left: -6px;
+}
+
+.event.life .marker {
+    fill: var(--melange_b_yellow);
+}
+
+.event.programming .marker {
+    fill: var(--melange_b_magenta);
+}
+
+.event.family .marker {
+    fill: var(--melange_b_red);
+}
+
+.content time {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+}
+
+/* Стили для экранов шириной менее 700px */
+@media (max-width: 699px) {
+
+    /* Линия слева */
+    .events::before {
+        left: 5px;
+        transform: none;
+    }
+
+    /* Маркер на линии слева */
+    .event .marker {
+        left: 0;
+        order: 0;
+        /* Маркер перед контентом */
+    }
+
+    /* Контент занимает всю ширину, отступая от линии */
+    .event .content {
+        width: calc(100% - 1em);
+        /* 1em отступ от линии */
+        padding-left: 1em;
+        padding-right: 0;
+        text-align: left;
+        order: 1;
+        /* Контент после маркера */
+    }
+
+    /* Выравниваем элементы слева направо */
+    .event {
+        flex-direction: row;
+    }
+
+    /* Убираем инверсию для событий, которые были справа */
+    .event:is(.programming, .work, .projects) {
+        flex-direction: row;
+    }
+
+    .event:is(.programming, .work, .projects) .marker {
+        left: 0;
+    }
+
+    .event:is(.programming, .work, .projects) .content {
+        padding-left: 1em;
+        padding-right: 0;
+        text-align: left;
+    }
+}
+
+/* Стили для экранов шириной более 700px */
+@media (min-width: 700px) {
+
+    /* Сохраняем текущие стили для больших экранов */
+    .events::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .event .marker {
+        order: 1;
+    }
+
+    .event .content {
+        width: calc(50% - 2em);
+        padding-inline: 1em;
+        text-align: right;
+    }
+
+    .event:is(.programming, .work, .projects) {
+        flex-direction: row-reverse;
+    }
+
+    .event:is(.programming, .work, .projects) .content {
+        text-align: left;
+        padding-inline: 1em;
+    }
+
+    .event:is(.programming, .work, .projects) .marker {
+        left: 6px;
+    }
+}

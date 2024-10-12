@@ -1,0 +1,9 @@
+<p>
+    <span class="tag"><a href="{{ site.baseurl }}/logs/">🤙 All</a></span>
+    {% assign categories = site.logs | map: "category" | uniq %}
+    {% for category in categories %}
+    {% include emoji_category.html %}
+    <span class="tag"><a href="{{ site.baseurl }}/logs/{{ category }}">{{ emoji }} {{ category | capitalize
+            }}</a></span>
+    {% endfor %}
+</p>

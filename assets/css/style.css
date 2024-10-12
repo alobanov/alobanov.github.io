@@ -1,0 +1,391 @@
+@import "codeblock.css";
+@import "timeline.css";
+
+/* Общие стили */
+body {
+    font-size: clamp(12px, 2vw, 15px);
+    font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #54433a;
+    background-color: #fff;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Rubik", serif;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: #54433a;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: #494949;
+}
+
+/* Параграфы и списки */
+p {
+    margin: 0;
+}
+
+ol,
+ul {
+    margin: 0 0 20px;
+    padding-left: 25px;
+}
+
+/* Таблицы и блоки кода */
+table,
+pre,
+dl {
+    margin: 0 0 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+code,
+pre {
+    font-family: Victor Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+    font-size: 12px;
+    color: #333;
+}
+
+pre {
+    margin: 10px 0;
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+}
+
+/* Ссылки */
+a {
+    color: #267CB9;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #069;
+}
+
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.3em;
+    display: block;
+}
+
+a:hover small {
+    color: #777;
+}
+
+/* Структура страницы */
+.wrapper {
+    width: 540px;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    font-family: "Rubik", serif;
+    width: 270px;
+    float: left;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+section {
+    width: 540px;
+    float: right;
+    padding-bottom: 50px;
+}
+
+/* Дополнительные элементы */
+blockquote {
+    border-left: 3px solid #a48346;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+dt,
+th {
+    color: #444;
+}
+
+img {
+    max-width: 100%;
+}
+
+kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
+strong {
+    color: #222;
+    font-weight: 700;
+}
+
+small {
+    font-size: 11px;
+}
+
+small.superscript {
+    vertical-align: super;
+}
+
+hr {
+    border: 0;
+    background: #e5e5e5;
+    height: 1px;
+    margin: 0 0 20px;
+}
+
+/* Медиа-запросы */
+@media print,
+screen and (max-width: 540px) {
+
+    .wrapper,
+    header,
+    section,
+    footer {
+        width: auto;
+        float: none;
+        position: static;
+    }
+
+    header {
+        padding-right: 20px;
+    }
+
+    section {
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
+        padding: 20px 0;
+        margin: 0 0 20px;
+    }
+
+    header a small {
+        display: inline;
+    }
+
+    header ul {
+        position: absolute;
+        top: 52px;
+    }
+
+    body {
+        word-wrap: break-word;
+    }
+
+    pre,
+    code {
+        word-wrap: normal;
+    }
+}
+
+@media print {
+    body {
+        font-size: 12pt;
+        color: #444;
+    }
+}
+
+/* Меню */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    max-width: 540px;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.menu-icon {
+    width: 34px;
+    height: 34px;
+    background-image: url('/assets/img/ava.jpeg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.menu-nav a {
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.menu-nav a:hover {
+    background-color: #e0e0e0;
+    color: #54433a;
+}
+
+/* Пузырь */
+.bubble {
+    position: relative;
+    background-color: #f1f1f1;
+    color: #54433a;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.5;
+    margin: 16px 0;
+}
+
+.bubble h1,
+.bubble h2,
+.bubble h3,
+.bubble h4,
+.bubble h5,
+.bubble h6 {
+    color: inherit;
+    margin: 0 0 10px;
+}
+
+.badge {
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+    padding: 4px 7px;
+    border-radius: 12px;
+    /* border: 1px solid #e5e5e5; */
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* Статья */
+article {
+    margin: 90px 10px 0;
+}
+
+.article-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+/* Теги */
+.tag {
+    display: inline-block;
+    background-color: #eae1db;
+    color: #1a1a1a;
+    font-family: 'Victor Mono', sans-serif;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin: 4px 10px 0 0;
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.tag:last-child {
+    margin-right: 0;
+}
+
+.tag.small {
+    font-size: 10px;
+    padding: 2px 6px;
+    margin-right: 3px;
+}
+
+.tag:hover {
+    background-color: #dcd0c6;
+}
+
+/* Пользовательский счетчик */
+ol.custom-counter {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+ol.custom-counter>li {
+    counter-increment: item;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+ol.custom-counter>li::before {
+    content: counter(item);
+    font-size: 20px;
+    font-weight: bold;
+    color: #996767;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Стиль для кода в тексте */
+.wordcode {
+    background-color: #f2e9e1;
+    color: #5a4635;
+    padding: 1px 4px;
+    border-radius: 4px;
+    border: 1px solid #e0d3c9;
+    font-family: 'Victor Mono', 'Courier', monospace;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.spacer {
+    height: 10px;
+}

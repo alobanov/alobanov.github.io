@@ -1,136 +1,173 @@
 ---
 layout: page
-title: Resume
+title: CV / Aleksei Lobanov
 permalink: /about_en/
 ---
-## Lobanov Aleksey
 
-#### Let me introduce myself :coffee:
-I am an mobile developer based in Ekaterinburg, Russia. My real passion is creating of ios applications with an interface that should be easy to use. I have a full understanding the process of software engineering, development life cycle. I am always ready to give designers and managers an advice, that helps to understand how an app should work and how to make it look better. I have a lot of experience in agile environment. It helps to meet the deadline and find better solutions for a project. I am also good as a team-player and in working individually.
-
-**Date of birthday:** 06.05.1987<br/>
-**Desired position :** Mobile Developer (iOS, Android)
-
+<div class="bubble">
+{% capture markdown_content %}
+Detail-oriented **Mobile Engineer** dedicated to building high-quality products.
 <br/>
+<span class='tag'>📍 [Novi Sad, Serbia](https://maps.app.goo.gl/GbfAnyofmzMD2ZqT6)</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
-## Skills and Competences
-**Language spoken:** Russian, English<br/>
-**Computer skills and competences:** Flutter and iOS Developer (previusly native developer on iOS)<br/>
-**Programming languages:** Dart (Flutter framework), Swift (more than 12 projects done), Python (for home project for fun)
+<div class="bubble">
+{% capture markdown_content %}
+### # Let me introduce myself
+I am a mobile developer based in Novi Sad, Serbia. My true passion is creating mobile applications with intuitive and user-friendly interfaces. I have a comprehensive understanding of the software engineering process and the development life cycle. I am always ready to offer designers and managers advice to help them understand how an app should work and how to make it look better. With extensive experience in an agile environment, I am adept at meeting deadlines and finding optimal solutions for projects. I excel both as a team player and when working independently.
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
-<br/>
+<div class="bubble">
+{% capture markdown_content %}
+### # Skills and Competences
+**Computer skills and competences:** Flutter and iOS Developer (previusly native developer on iOS)  
+**Programming languages:** Dart (Flutter), Swift (more than 12 projects done), Python (I write scripts to simplify the workflow)
 
-## Development (Skills and technologies)
-**Development skills:** OOP (Object-Oriented Programming), POP (Protocol-Oriented Programming), TDD (Test-Driven Development).<br/>
-**Data base:** Hive, CoreData, Realm<br/>
-**Frameworks:** SDK Development, Reactive Programming (RxSwift, Reactive Cocoa, RxDart)<br/>
-**Package managers, tools and apps:** CocoaPods, Carthage, Fastlane, Emacs<br/>
-**Development tools and approaches:** Git-flow, JIRA, Jodiz<br/>
-**Application architectures:** Swift I use MVVM + Rx, MVCm. Dart I use BloC<br/>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
+### # Development (Skills and technologies)
+**Development skills:** OOP, POP, TDD  
+**Data base:** Hive, Realm, SQLite  
+**Frameworks:** SDK Development, Reactive Programming  
+**Pm, tools and apps:** CocoaPods, Fastlane, Mason  
+**Development tools and approaches:** Git, JIRA, YouTrack  
+**Application architectures:** BloC one love ❤️  
 **Additional knowledge:** Work experience with iTunes Connect, iOS Provisioning Portal, Google Play.
-
----
-
-## Work experience
-
-<br />
-
-## **Fintech startup**
-
-#### Software Engineer / iOS Developer / Flutter (Dart), Team-lead
-
-#### Working since april 2018 ...
-
-1. **Client for the Banking app**
-    - Universal app for toh platform iOS and Android, using Flutter framework
-    - Using GraphQL API backend and Hive as Database
-<br/><br/>
-2. **Client for the exchange platform** - Now project is freezen
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
 <br/>
 
-## **[Soft Media Lab](http://softmedialab.com/)**
+<h1>Work experience</h1>
 
-#### Software Engineer / Senior - iOS Developer, Team-lead
+<div class="bubble">
+{% capture markdown_content %}
+## # Gameram
+> **Software Engineer** / Flutter (Dart)  
+> (Sep 2023 — work in progress...)  
+> <span class='tag'>Remote</span>
 
-#### Working since april 2016 - 2018
-
-1. Avatar — a location-based private messaging  app, for strangers. I had created a native iOS application from a scratch with about 20 controllers in.
-    - Users can search conversation partners who are near to her/him to chat with
-    - Using RESTful API backend and Realm instead of Coredata
-    - Push notifications and In APP purchases 
-    - Business logic includes: geographic search, messaging, send files etc
-<br/><br/>
-2. Creditclub - a credit system which works only in Georgia
-    - project based on swift language
-    - Technologies which I use: Realm for database, RxSwift + MVVM architecture, Moya framework for network layer
+<br/>
+[Gameram](https://www.gameram.com/) is a social network for gamers who want to share their gaming experiences with friends and find teammates to play online games with. Download application for [iOS](https://apps.apple.com/us/app/gameram-network-for-gamers/id1526052976) and [Android](https://play.google.com/store/apps/details?id=com.gameram.gameram&hl=en&gl=US)
 
 <br/>
 
-## **[NET Element](https://netelement.com/en)**
+<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Architecture</span>
 
-#### Software Engineer / Senior - iOS Developer 
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
-#### 1 year 6 months (Feb. 2015 - Apr. 2016)
+<div class="bubble">
+{% capture markdown_content %}
+## # Finblox
+> **Software Engineer** / Flutter (Dart)  
+> 1 year 9 months (Nov. 2021 — Aug. 2023)  
+> <span class='tag'>Remote</span>
 
-1. POS system [Aptito](https://aptito.com/) — is an all-in-one restaurant POS solution that offers the most complete package of features. My responsibilities included supporting current functionality and implementation of new features.
+<br/>
+Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https://play.google.com/store/apps/details?id=com.finbloxapp.finblox&pli=1) and [iOS](https://apps.apple.com/us/app/id1579461536). We also released app for flutter web [mobile.finblox.com](mobile.finblox.com)
+
+<br/>
+
+<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Third Party Services</span><span class='tag small'>Architecture</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
+## # CoinsBank
+> **Software Engineer** / Team lead / Flutter / iOS Developer  
+> 1 year 9 months (Nov. 2021 — Aug. 2023)  
+> <span class='tag'>Remote</span>
+
+<br/>
+- [CoinsBank Mobile Wallet](https://coinsbank.com/) — Build from scratch iOS mobile application. CoinsBank is your «all-in-one» gateway to blockchain services.
+- [CoinsBank Blockchain Cruise 2019](https://coinsbank.cruises/) — Also build application for CoinsBank Blockchain Cruise
+- [Neocard - Mobile banking](https://www.neocard.com/) — Created from scratch universal application for iOS and Android, based on Flutter framework. Neocard provides secure, fully compliant financial services with a personal touch. We’re always here and ready to help.
+
+<span class='tag small'>Objective-C</span><span class='tag small'>Swift</span><span class='tag small'>GraphQL</span><span class='tag small'>SQLite</span><span class='tag small'>Flutter</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
+## # [Soft Media Lab](http://softmedialab.com/)
+> **Software Engineer** / Senior - iOS Developer / Team-lead
+> Working since April 2016 - February 2017  
+> <span class='tag'>📍 Ekaterinbug</span>
+
+<br/>
+1. **Avatar**: A location-based private messaging app connecting strangers nearby. Developed a native iOS app with features like geographic user search, a RESTful API backend, Realm database integration, push notifications, in-app purchases, and seamless messaging and file sharing functionality. 
+2. **Creditclub**: A credit system app for Georgia (unreleased). Built using Swift with Realm for data management, RxSwift and MVVM architecture for streamlined UI updates, and Moya for efficient networking.
+
+<span class='tag small'>Swift</span><span class='tag small'>Realm</span><span class='tag small'>REST</span><span class='tag small'>In-app Purchase</span><span class='tag small'>RxSwift</span><span class='tag small'>☠️ Dead project</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
+## # [NET Element](https://netelement.com/en)
+> **Software Engineer** / iOS Engineer  
+> 1 year 6 months (Feb. 2015 - Apr. 2016)  
+> <span class='tag'>📍 Ekaterinbug</span>
+
+<br/>
+1. **POS system** [Aptito](https://aptito.com/) — is an all-in-one restaurant POS solution that offers the most complete package of features. My responsibilities included supporting current functionality and implementation of new features.
     - had work with refactoring and improvements current code database because app has alot of legacy code, elimination of memory leaks
     - had work with printers and barcode scanners SDK, implemented convenient wrappers for development with it
     - language Objective-C
-<br/><br/>
-2. Implementation the mobile application for UBRA Boats, which are an analogue of UBER application for water transport.
+2. Implementation the mobile application for **UBRA Boats**, which are an analogue of UBER application for water transport.
     - had implemented two apps for riders and shkipers
     - business logic includes: geolocation search places, clasterization of items on map, location tracking by trips, messaging
     - push notifications
     - app has been implemented on VIPER architecture
     - language Objective-C
+  
+<span class='tag small'>Objective-C</span><span class='tag small'>Hardware</span><span class='tag small'>Bluetooth</span><span class='tag small'>REST</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
+## # [East Media LTD](http://east-media.ru/)  
+> **Software Engineer** / Middle - iOS Developer  
+> 3 years 5 months (Oct. 2011 - Feb. 2016)  
+> <span class='tag'>📍 Ekaterinbug</span>
+
+<br/>
+Developed mobile applications in **Objective-C**, including “PinMe” (an analogue of Pinterest), “Live Poetry” (an interactive multimedia book), and publications for “Uralskiy Rabochiy”, gaining experience in network programming, multithreading, UI optimization, animations using Facebook’s POP framework, and photo editing.
 
 <br/>
 
-## **[East Media LTD](http://east-media.ru/)**
+<span class='tag small'>Objective-C</span><span class='tag small'>CoreData</span><span class='tag small'>REST</span>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
-#### Software Engineer / Middle - iOS Developer 
-
-#### 3 years 5 months (Oct. 2011 - Feb. 2016)
-
-1. Implementation the universal [mobile application](https://itunes.apple.com/ru/app/id561684663) for [PinMe](http://pinme.ru/) social network, which is an analogue of Pinerest social network. 
-    - had experience with networking, work with threads, optimisation of UI elements, camera
-    - use POP Facebook framework for implemented unusual animations
-    - had implemented photo editor with photo-filters
-    - created own network layer framework based on Bolts Facebook framework
-    - language Objective-C
-<br/><br/>
-2. [Live poetry](http://antologia.xxc.ru/ios) — is an interactive book with rich scope of multimedia elements: video, animations and audio. An application does not have native iOS interface and looks like a real book.
-
-3. iPhone-version of publishing platform East-Media development. One of magazines released on the platform is [Majorca](http://www.east-media.ru/portfolio/25/).
-
-4. Applications development  for «Uralskiy rabochiy»:
-	- [iGazeta](http://ipad.uralsky-rabochi.ru/) - weekly magazine Uralskiy rabochiy ([summary](http://www.east-media.ru/portfolio/12/))
-	- Dayly magazine [Night-Yekaterinburg](https://itunes.apple.com/ru/app/ivecerka-setevoe-izdanie-vecernij/id477025674)
-	- iPad version of PDF-shop called [iАрхив](http://iarchive.info/) ([Night-Yekaterinburg](https://itunes.apple.com/ru/app/iarhiv-ve/id880577339) and [Ural worker](https://itunes.apple.com/ru/app/iarhiv-ur/id688696313))
-
-<br/>
-
-## **I-Jet Media**
-
-#### 1 year 1 month - ActionScript Developer (Oct. 2010 - Sep. 2010)
-
-Implementation of platform for distributing of social games.
-
----
-
-## Education and Training
+<div class="bubble">
+{% capture markdown_content %}
+### # Education and Training
 **Graduated:** Ural Federal University Training Software computer technology and automated systems. Dates: April 2006 - May 2010<br/>
 **Additional:** information about university from [Anabin](http://anabin.kmk.org/): [University information](../files/urfu_common.pdf), [Faculty information](../files/urfu_faculty.pdf)
+  
 <br/>
-**Hobby:** playing piano, computer games, travelling, basketball and football
-
-<br/>
-
-#### 📫 lobanov.aw(DOG)gmail.com
-
-#### :smiley_cat: [Git-Hub](https://github.com/alobanov)
-
-#### :camera: [Instagram](https://www.instagram.com/alobanov/)
-
-#### Thanks for watching
+### # Links:
+**[Git-Hub](https://github.com/alobanov)** :smiley_cat:  
+**[Instagram](https://www.instagram.com/alobanov/)** :camera:
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
