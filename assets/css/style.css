@@ -18,7 +18,7 @@ h5,
 h6 {
     font-family: "Rubik", serif;
     font-weight: 700;
-    margin: 0 0 20px;
+    margin: 0 0 5px;
     color: #54433a;
 }
 
@@ -283,7 +283,28 @@ screen and (max-width: 540px) {
     border-radius: 15px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.5;
-    margin: 16px 0;
+    margin: 20px 0;
+}
+
+
+.bookmarks-container {
+    column-count: 2;
+    column-gap: 10px;
+}
+
+.bookmarks-bubble {
+    background-color: #f1f1f1;
+    color: #54433a;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .bubble h1,
