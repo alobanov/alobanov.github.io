@@ -9,7 +9,7 @@ kramdown:
   input: GFM
 
 collections:
-  thoughts:
+  bookmarks:
     output: true
   logs:
     output: true

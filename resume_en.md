@@ -54,7 +54,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 ## # Gameram
 > **Software Engineer** / Flutter (Dart)  
 > (Sep 2023 — work in progress...)  
-> <span class='tag'>Remote</span>
+> <span class='tag'>Remote</span><span class='tag'>📍 Cyprus</span>
 
 <br/>
 [Gameram](https://www.gameram.com/) is a social network for gamers who want to share their gaming experiences with friends and find teammates to play online games with. Download application for [iOS](https://apps.apple.com/us/app/gameram-network-for-gamers/id1526052976) and [Android](https://play.google.com/store/apps/details?id=com.gameram.gameram&hl=en&gl=US)
@@ -72,7 +72,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 ## # Finblox
 > **Software Engineer** / Flutter (Dart)  
 > 1 year 9 months (Nov. 2021 — Aug. 2023)  
-> <span class='tag'>Remote</span>
+> <span class='tag'>Remote</span><span class='tag'>📍 Singapore</span>
 
 <br/>
 Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https://play.google.com/store/apps/details?id=com.finbloxapp.finblox&pli=1) and [iOS](https://apps.apple.com/us/app/id1579461536). We also released app for flutter web [mobile.finblox.com](mobile.finblox.com)
@@ -88,8 +88,8 @@ Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https:/
 {% capture markdown_content %}
 ## # CoinsBank
 > **Software Engineer** / Team lead / Flutter / iOS Developer  
-> 1 year 9 months (Nov. 2021 — Aug. 2023)  
-> <span class='tag'>Remote</span>
+> 4 years (Dec. 2017 -  Nov. 2021)  
+> <span class='tag'>Remote</span><span class='tag'>📍 Spain</span>
 
 <br/>
 - [CoinsBank Mobile Wallet](https://coinsbank.com/) — Build from scratch iOS mobile application. CoinsBank is your «all-in-one» gateway to blockchain services.

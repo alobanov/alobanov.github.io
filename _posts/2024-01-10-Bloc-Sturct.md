@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BLoC and File structure
+title: BLoC file structure (Part 1)
 categories: article
 tags:
   - BLoC
@@ -153,6 +153,8 @@ Pабота с сервисами, подготовка данных и форм
 - **feature_loading.dart** - добавляем шиммер для экрана
 - **feature_loaded.dart** - основное <span class='wordcode'>view</span> на котором отрисовываем <span class='wordcode'>UI</span> с данными
 - **feature_empty.dart**/**feature_error.dart** - ошибка и пустое состояние соответственно
+
+---
 
 ### Очень важно
 
