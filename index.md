@@ -4,7 +4,7 @@ layout: page
 
 <div class="bubble">
 {% capture markdown_content %}
-Hi! I'm Aleksei, a developer and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com), or keep reading.
+Hi! I'm Aleksei, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com), or keep reading.
 
 <div class="spacer"></div>
 
