@@ -4,9 +4,7 @@ title: Bookmarks
 permalink: /bookmarks/
 ---
 
-<div class="spacer"></div>
-
-<div class="bookmarks-bubble">
+<div class="bubble">
 {% capture markdown_content %}
 💁 Here I collect links to various utilities, applications and sites that are useful to me.
 {% endcapture %}
