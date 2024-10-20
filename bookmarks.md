@@ -4,7 +4,15 @@ title: Bookmarks
 permalink: /bookmarks/
 ---
 
-<br/>
+<div class="spacer"></div>
+
+<div class="bookmarks-bubble">
+{% capture markdown_content %}
+💁 Here I collect links to various utilities, applications and sites that are useful to me.
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
 <div class="bookmarks-container">
 {% for bookmark in site.bookmarks %}
 <div class="bookmarks-bubble">

@@ -71,7 +71,15 @@ td {
 
 code,
 pre {
-    font-family: Victor Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+    font-family:
+        Victor Mono,
+        Lucida Console,
+        Terminal,
+        Consolas,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Courier New,
+        monospace;
     font-size: 12px;
     color: #333;
 }
@@ -87,7 +95,7 @@ pre {
 
 /* Ссылки */
 a {
-    color: #267CB9;
+    color: #267cb9;
     text-decoration: none;
 }
 
@@ -247,7 +255,7 @@ screen and (max-width: 540px) {
 .menu-icon {
     width: 34px;
     height: 34px;
-    background-image: url('/assets/img/ava.jpeg');
+    background-image: url("/assets/img/ava.jpeg");
     background-size: cover;
     border-radius: 50%;
 }
@@ -261,11 +269,13 @@ screen and (max-width: 540px) {
     text-align: center;
     text-decoration: none;
     color: #333;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     padding: 8px;
     border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
     font-weight: bold;
 }
 
@@ -281,11 +291,10 @@ screen and (max-width: 540px) {
     color: #54433a;
     padding: 15px 20px;
     border-radius: 15px;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
     line-height: 1.5;
     margin: 20px 0;
 }
-
 
 .bookmarks-container {
     column-count: 2;
@@ -297,8 +306,8 @@ screen and (max-width: 540px) {
     color: #54433a;
     padding: 15px 20px;
     border-radius: 15px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 12px;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
     line-height: 1.5;
     margin: 0;
     margin-bottom: 10px;
@@ -348,7 +357,7 @@ article {
     display: inline-block;
     background-color: #eae1db;
     color: #1a1a1a;
-    font-family: 'Victor Mono', sans-serif;
+    font-family: "Victor Mono", sans-serif;
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 6px;
@@ -403,7 +412,7 @@ ol.custom-counter>li::before {
     padding: 1px 4px;
     border-radius: 4px;
     border: 1px solid #e0d3c9;
-    font-family: 'Victor Mono', 'Courier', monospace;
+    font-family: "Victor Mono", "Courier", monospace;
     font-size: 12px;
     display: inline-block;
 }
