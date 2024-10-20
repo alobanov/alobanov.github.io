@@ -5,11 +5,12 @@ layout: page
 <div class="bubble">
 {% capture markdown_content %}
 Hi! I'm Aleksei, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com), or keep reading.
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
 
-<div class="spacer"></div>
-
----
-
+<div class="bubble">
+{% capture markdown_content %}
 > # Posts
 
 <div class="spacer"></div>
