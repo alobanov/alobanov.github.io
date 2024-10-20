@@ -78,6 +78,10 @@ tags:
 
 <div class="spacer"></div> 
 
+---
+
+#### Stacked branshes
+
 Но самое удобное если вы используете <span class="wordcode">stacked branch</span>. Чтобы добавить новую фичу от текущей надо вызвать команду <span class="wordcode">append</span>, а иерархию можно посомтреть командой <span class="wordcode">branch</span>
 
 {% highlight bash %}
@@ -88,4 +92,4 @@ tags:
      mob-2-add-more-ui
 {% endhighlight %}
 
-Далее переключаемся на нашу последнюю ветку в стэке, и выполняем <span class="wordcode">git town sync</span>, после поочередно будет выполнена синхронизация от основной до текущей ветке.
+Затем переходим к последней ветке в нашем стеке и запускаем команду <span class="wordcode">git town sync</span>. Это действие инициирует процесс синхронизации, который будет последовательно проходить от основной ветки к текущей.
