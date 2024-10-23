@@ -333,11 +333,17 @@ screen and (max-width: 540px) {
     background-color: #f1f1f1;
     color: #333;
     font-size: 14px;
-    padding: 4px 7px;
+    padding: 4px 8px;
     border-radius: 12px;
-    /* border: 1px solid #e5e5e5; */
     font-weight: normal;
     white-space: nowrap;
+}
+
+.badge img,
+.badge span {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
 }
 
 /* Статья */
@@ -354,7 +360,9 @@ article {
 
 /* Теги */
 .tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #eae1db;
     color: #1a1a1a;
     font-family: "Victor Mono", sans-serif;
@@ -362,9 +370,15 @@ article {
     padding: 3px 8px;
     border-radius: 6px;
     margin: 4px 10px 0 0;
-    text-align: center;
     font-size: 12px;
     white-space: nowrap;
+}
+
+.tag img,
+.tag span {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
 }
 
 .tag:last-child {

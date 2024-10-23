@@ -1,8 +1,9 @@
 ---
 layout: bookmark
 title: Starship
+date: 2024-10-22
 tags: 
- - Termainl
+ - Terminal
 ---
 
 ### [Starship](https://github.com/starship/starship) <small class="superscript">Configure you terminal</small>

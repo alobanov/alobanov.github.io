@@ -1,8 +1,10 @@
 ---
 layout: bookmark
 title: Yazi
+date: 2024-10-21
 tags: 
- - Termainl
+ - Terminal
+ - Utils
 ---
 
 ### [Yazi](https://github.com/sxyazi/yazi) <small class="superscript">Terminal file manager</small>

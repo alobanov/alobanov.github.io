@@ -12,9 +12,16 @@ permalink: /bookmarks/
 </div>
 
 <div class="bookmarks-container">
-{% for bookmark in site.bookmarks %}
+{% assign sorted_bookmarks = site.bookmarks | sort: 'date' | reverse %}
+{% for bookmark in sorted_bookmarks %}
 <div class="bookmarks-bubble">
   {{ bookmark.content | markdownify }}
+
+<div class="spacer"></div>
+
+  {% for tag in bookmark.tags %}
+    <span class='tag small'>{{ tag }}</span>
+  {% endfor %}
 </div>
 {% endfor %}
 </div>
