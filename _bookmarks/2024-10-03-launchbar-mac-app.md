@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: LaunchBar 6
+date: 2024-10-03
 tags: 
  - App
 ---

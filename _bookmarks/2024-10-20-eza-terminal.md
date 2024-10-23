@@ -1,8 +1,10 @@
 ---
 layout: bookmark
 title: Eza
+date: 2024-10-20
 tags: 
- - Termainl
+ - Terminal
+ - Utils
 ---
 
 ### [Eza](https://github.com/eza-community/eza) <small class="superscript">replace ls</small>

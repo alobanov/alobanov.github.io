@@ -1,8 +1,10 @@
 ---
 layout: bookmark
 title: Atuin
+date: 2024-10-23
 tags: 
- - Termainal
+ - Terminal
+ - Utils
 ---
 
 ### [Atuin](https://github.com/atuinsh/atuin) <small class="superscript">Magical shell history</small>
