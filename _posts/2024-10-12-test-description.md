@@ -19,7 +19,7 @@ tags:
 
 ```
 the sky is blue
-and the sea is green
+and the grass is green
 ```
 <br/> 
 Здесь ясно указано, что тест должен подтвердить, что небо синее, а море зелёное. Ожидаемый результат всегда должен быть конкретным и понятным.
@@ -34,7 +34,7 @@ and the sea is green
 ```
 when season is summer
 and the wind is blowing south
-and Peter decides to buy an ice cream
+and the rain is over
 ```
 
 <br/>  
