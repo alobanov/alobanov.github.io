@@ -8,6 +8,12 @@ permalink: /logs/music/
 
 {% include log_category_list.html %}
 
+<div class="bubble">
+    🎧 Music I’ve created on my gear: <a href="https://elektron.se/explore/digitakt-ii">Digitakt II</a>,
+    <a href="https://elektron.se/explore/syntakt">Syntakt</a> and
+    <a href="https://www.ericasynths.lv/shop/standalone-instruments-1/desktop-bassline-db-01/">BassLineDB-1</a>
+</div>
+
 {% assign items = site.logs | where: "category", "music" | sort: 'date' | reverse %}
 {% for item in items %}
 <div class="bubble">
