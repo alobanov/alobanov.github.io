@@ -8,6 +8,10 @@ permalink: /logs/location/
 
 {% include log_category_list.html %}
 
+<div class="bubble">
+    🌏 Places I’ve visited with a brief note about each
+</div>
+
 {% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
 {% for item in items %}
 <div class="bubble">

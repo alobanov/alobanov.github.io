@@ -18,7 +18,6 @@ permalink: /bookmarks/
   {{ bookmark.content | markdownify }}
 
 <div class="spacer"></div>
-
   {% for tag in bookmark.tags %}
     <span class='tag small'>{{ tag }}</span>
   {% endfor %}
