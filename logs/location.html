@@ -16,6 +16,18 @@ permalink: /logs/location/
 {% for item in items %}
 <div class="bubble">
     {{ item.content | markdownify }}
-    <small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+    <div class="container-two-columns">
+        <div class="content-two-columns">
+            <small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+        </div>
+        {% if item.images %}
+        <div class="image-preview">
+            {% for image in item.images %}
+            <img src="/assets/img/{{ item.category }}/{{ image }}" alt="{{ item.title }} Preview" class="thumbnail"
+                onclick="openModal('/assets/img/{{ item.category }}/{{ image }}')" />
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
 </div>
 {% endfor %}

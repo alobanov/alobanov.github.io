@@ -6,6 +6,11 @@ permalink: /about_en/
 
 <div class="bubble">
 {% capture markdown_content %}
+
+<img src="/assets/img/workplace.jpeg" alt="Description" class="full-width-rounded-image">
+
+<div class="spacer"></div>
+
 Detail-oriented **Mobile Engineer** dedicated to building high-quality products.
 <br/>
 <span class='tag'>📍 [Novi Sad, Serbia](https://maps.app.goo.gl/GbfAnyofmzMD2ZqT6)</span>
@@ -158,9 +163,12 @@ Developed mobile applications in **Objective-C**, including “PinMe” (an anal
 {{ markdown_content | markdownify }}
 </div>
 
+<br />
+
+<h1>Education and Training</h1>
+
 <div class="bubble">
 {% capture markdown_content %}
-### # Education and Training
 **Graduated:** Ural Federal University Training Software computer technology and automated systems. Dates: April 2006 - May 2010<br/>
 **Additional:** information about university from [Anabin](http://anabin.kmk.org/): [University information](../files/urfu_common.pdf), [Faculty information](../files/urfu_faculty.pdf)
   

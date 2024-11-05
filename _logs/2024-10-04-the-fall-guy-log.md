@@ -9,7 +9,6 @@ category: movie
 
 > Is a fun, action-packed movie where a stuntman gets into real trouble. It’s entertaining, but definitely a one-time watch.
 
-<div class="spacer"></div>
 
  
 

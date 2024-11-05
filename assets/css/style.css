@@ -1,5 +1,14 @@
 @import "codeblock.css";
 @import "timeline.css";
+@import "image_pop.css";
+
+
+.full-width-rounded-image {
+    width: 100%;
+    height: auto;
+    border-radius: 13px;
+    object-fit: cover;
+}
 
 /* Общие стили */
 body {
@@ -282,6 +291,19 @@ screen and (max-width: 540px) {
 .menu-nav a:hover {
     background-color: #e0e0e0;
     color: #54433a;
+}
+
+.container-two-columns {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    height: 30px;
+}
+
+/* Колонка для текста */
+.content-two-columns {
+    flex: 1;
+    align-items: end;
 }
 
 /* Пузырь */
