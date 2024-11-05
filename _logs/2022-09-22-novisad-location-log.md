@@ -4,7 +4,6 @@ title: "Novi Sad"
 date: 2022-09-21
 category: location
 images:
-  - novisad1.jpeg
   - novisad2.jpeg
 ---
 
