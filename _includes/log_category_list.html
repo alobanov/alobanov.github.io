@@ -1,3 +1,6 @@
+<!-- script for full-size image -->
+<script src="{{ "/assets/js/image_pop.js" | relative_url }}"></script>
+
 <p>
     <span class="tag"><a href="{{ site.baseurl }}/logs/">:eyes: All</a></span>
     {% assign categories = site.logs | map: "category" | uniq %}
@@ -7,3 +10,9 @@
             }}</a></span>
     {% endfor %}
 </p>
+
+<!-- Modal for full-size image -->
+<div id="image-modal" class="modal" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
