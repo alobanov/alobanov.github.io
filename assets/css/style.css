@@ -306,6 +306,13 @@ screen and (max-width: 540px) {
     align-items: end;
 }
 
+.log-number {
+    font-weight: bold;
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+    color: #5a463c;
+}
+
 /* Пузырь */
 .bubble {
     position: relative;

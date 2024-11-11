@@ -16,9 +16,11 @@ permalink: /logs/movie/
 {% for item in items %}
 <div class="bubble">
     {{ item.content | markdownify }}
+    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
 
     <div class="spacer"></div>
 
-    <small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date:
+            "%-d %B %Y" }}</b></small>
 </div>
 {% endfor %}

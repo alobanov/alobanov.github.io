@@ -1,16 +1,50 @@
 ---
-layout: log
+layout: page
 title: LOGs
 permalink: /logs/
 ---
 
 {% include log_category_list.html %}
 
-<br/>
+{% assign categories = "" %}
+
+{% assign sorted_logs = site.logs | sort: 'date' | reverse %}
+{% for log in sorted_logs %}
+  {% assign categories = categories | append: log.category | append: "," %}
+{% endfor %}
+
+<div class="bubble">
+ 💁‍♂️ On this page, I keep a log of my activities. Here’s the current statistics:
+    {% assign unique_categories = categories | split: "," | uniq %}
+    {% for category in unique_categories %}
+      {% unless category == "" %}
+        {% assign count = 0 %}
+        {% for log in site.logs %}
+          {% if log.category == category %}
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        
+        {% case category %}
+          {% when "movie" %}
+            I watched <strong>{{ count }}</strong> movies,
+          {% when "location" %}
+            and visited <strong>{{ count }}</strong> places
+          {% when "game" %}
+            completed <strong>{{ count }}</strong> games,
+          {% when "music" %}
+            created <strong>{{ count }}</strong> music tracks
+        {% endcase %}
+      {% endunless %}
+    {% endfor %}
+</div>
+<div class="spacer"></div>
 
 {% assign sorted_logs = site.logs | sort: 'date' | reverse %}
 {% for log in sorted_logs %}
 <div class="bubble">
+  {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+  
   {{ log.content | markdownify }}
   {% assign category = log.category %}
   {% include emoji_category.html %}
@@ -20,7 +54,7 @@ permalink: /logs/
   {% if log.images %}
   <div class="container-two-columns">
     <div class="content-two-columns">
-      <small><b>{{ log.date | date: "%-d %B %Y" }}</b></small>
+      <span class="log-number"><a href="{{ log.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ log.date | date: "%-d %B %Y" }}</b></small>
     </div>
     <div class="image-preview">
     {% for image in log.images %}
@@ -31,7 +65,7 @@ permalink: /logs/
   </div>
   {% else %}
     <div class="spacer"></div>
-    <small><b>{{ log.date | date: "%-d %B %Y" }}</b></small>
+    <span class="log-number"><a href="{{ log.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ log.date | date: "%-d %B %Y" }}</b></small>
   {% endif %}
 </div>
 
