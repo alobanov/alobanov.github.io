@@ -16,9 +16,12 @@ permalink: /logs/location/
 {% for item in items %}
 <div class="bubble">
     {{ item.content | markdownify }}
+    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+
     <div class="container-two-columns">
         <div class="content-two-columns">
-            <small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+            <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date |
+                    date: "%-d %B %Y" }}</b></small>
         </div>
         {% if item.images %}
         <div class="image-preview">

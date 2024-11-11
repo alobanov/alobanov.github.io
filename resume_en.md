@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CV / Aleksei Lobanov
+title: Resume / Aleksei Lobanov
 permalink: /about_en/
 ---
 
@@ -9,10 +9,8 @@ permalink: /about_en/
 
 <img src="/assets/img/workplace.jpeg" alt="Description" class="full-width-rounded-image">
 
-<div class="spacer"></div>
-
 Detail-oriented **Mobile Engineer** dedicated to building high-quality products.
-<br/>
+<div class="spacer"></div>
 <span class='tag'>📍 [Novi Sad, Serbia](https://maps.app.goo.gl/GbfAnyofmzMD2ZqT6)</span>
 {% endcapture %}
 {{ markdown_content | markdownify }}

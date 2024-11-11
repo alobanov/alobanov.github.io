@@ -7,4 +7,4 @@ category: movie
 
 ### 🐺 [Wolfs](https://www.imdb.com/title/tt14257582) / It's OK <small class="superscript">3.5/5</small>
 
-> Nothing special—a standard, formulaic movie that feels like a single episode from a series. Despite this, the charisma and chemistry between the characters still shine through, which might appeal to fans of Pitt and Clooney.
+> Nothing special—a simple, predictable movie that feels like just one episode of a TV show. But even so, the charm and connection between the characters still show, which fans of Pitt and Clooney might enjoy.
