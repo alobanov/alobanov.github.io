@@ -12,6 +12,8 @@ tags:
 
 <br/>
 
+---
+
 ## Trunk-Base
 
 Используя **trunk-based development**, который подразумевает регулярное слияние изменений из рабочих веток в основную, поддерживая её актуальной и рабочей. 
@@ -80,7 +82,7 @@ tags:
 
 ---
 
-#### Stacked branshes
+## Stacked branshes
 
 Наиболее удобно использовать команду <span class="wordcode">stacked branch</span>. Чтобы добавить новую функцию на основе текущей ветки, просто выполните команду <span class="wordcode">append</span>. Структуру веток можно просмотреть с помощью команды <span class="wordcode">branch<span>.
 
