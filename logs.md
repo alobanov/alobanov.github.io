@@ -41,10 +41,27 @@ permalink: /logs/
 <div class="spacer"></div>
 
 {% assign sorted_logs = site.logs | sort: 'date' | reverse %}
+{% assign current_month = "" %}
+{% assign current_year = "" %}
+
 {% for log in sorted_logs %}
+  {% assign log_month = log.date | date: "%B" %}
+  {% assign log_year = log.date | date: "%Y" %}
+
+  {% if log_year != current_year %}
+<div class="year-divider">{{ log_year }}</div>
+    {% assign current_year = log_year %}
+    {% assign current_month = "" %}
+  {% endif %}
+
+  {% if log_month != current_month %}
+<div class="month-divider">{{ log_month }}</div>
+    {% assign current_month = log_month %}
+  {% endif %}
+
 <div class="bubble">
   {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-  
+
   {{ log.content | markdownify }}
   {% assign category = log.category %}
   {% include emoji_category.html %}
