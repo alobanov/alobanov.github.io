@@ -51,6 +51,12 @@
 <h1></h1>
 </head>
 
+<script src="/assets/js/bookmark_selector.js"></script>
+
+<body>
+
+<h1>~lobanov-av.ru</h1>
+
 <div class="bubble">
 
 
@@ -58,107 +64,180 @@
 
 </div>
 
+<h1># Posts</h1>
+
 <div class="bubble">
 
 
-<blockquote>
-  <h1 id="posts">Posts</h1>
-</blockquote>
+
+<p>Select a <strong>tag</strong> to highlight related posts:</p>
 
 <div class="spacer"></div>
 
-<body>
 
-    <a href="/article/2024/10/13/git-town-workflow.html" class="article-title">
-      Workflow with GitTown
-    </a>
-    <br />
-    <small>13 October 2024</small>
-    
-      
-          <span class="tag small">Git</span>
-      
-    
-    <br />
-    <br />
+  
 
-    <a href="/article/2024/10/12/test-description.html" class="article-title">
-      Unit test description
-    </a>
-    <br />
-    <small>12 October 2024</small>
+  
+  <b>Tags:</b> 
+  
     
-      
-          <span class="tag small">Unit-Test</span>
-      
+      <span class="tag small" data-tag="git">Git</span>
     
-    <br />
-    <br />
+  
+    
+      <span class="tag small" data-tag="unit test">Unit Test</span>
+    
+  
+    
+      <span class="tag small" data-tag="bloc">BLoC</span>
+    
+  
+    
+      <span class="tag small" data-tag="pattern">Pattern</span>
+    
+  
+    
+      <span class="tag small" data-tag="ios">iOS</span>
+    
+  
+    
+      <span class="tag small" data-tag="swift">Swift</span>
+    
+  
+    
+      <span class="tag small" data-tag="mvc">MVC</span>
+    
+  
 
-    <a href="/article/2024/01/10/Bloc-Sturct.html" class="article-title">
-      BLoC file structure (Part 1)
-    </a>
-    <br />
-    <small>10 January 2024</small>
-    
-      
-          <span class="tag small">BLoC</span>
-      
-    
-    <br />
-    <br />
+<div class="spacer"></div>
 
-    <a href="/article/2017/11/14/2017-Chain.html" class="article-title">
-      Валидируем
-    </a>
-    <br />
-    <small>14 November 2017</small>
-    
-      
-          <span class="tag small">composite</span>
-      
-          <span class="tag small">ios</span>
-      
-          <span class="tag small">swift</span>
-      
-    
-    <br />
-    <br />
+<button id="reset">❌ Reset</button>
+</div>
 
-    <a href="/article/2017/11/03/2017-Composite.html" class="article-title">
-      Компоновщик
-    </a>
-    <br />
-    <small>3 November 2017</small>
-    
-      
-          <span class="tag small">composite</span>
-      
-          <span class="tag small">ios</span>
-      
-          <span class="tag small">swift</span>
-      
-    
-    <br />
-    <br />
+<div class="bookmarks-container">
 
-    <a href="/article/2014/01/04/2014-MVC.html" class="article-title">
-      Классический MVC
-    </a>
-    <br />
-    <small>4 January 2014</small>
-    
-      
-          <span class="tag small">pattern</span>
-      
-    
-    <br />
-    <br />
 
-</body>
+<div class="bookmarks-bubble" data-tags="git">
+
+<h3><a href="/2024/10/13/git-town-workflow.html">GitTown</a> <small class="superscript">Упрощяем работу с Git</small></h3>
+
+<p>Git Town упрощает использование Git, делая его удобнее, чтобы разработчики могли использовать его возможности на полную.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">Git</span>
+
+
+<div class="spacer"></div>
+
+<small><b>13 October 2024</b></small>
+</div>
+
+<div class="bookmarks-bubble" data-tags="unit test">
+
+<h3><a href="/2024/10/12/test-description.html">Unit test</a> <small class="superscript">Описание</small></h3>
+
+<p>Гайд как составлять комментарий к юнит тестам.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">Unit Test</span>
+
+
+<div class="spacer"></div>
+
+<small><b>12 October 2024</b></small>
+</div>
+
+<div class="bookmarks-bubble" data-tags="bloc">
+
+<h3><a href="/2024/01/10/Bloc-Sturct.html">BLoC file structure</a> <small class="superscript">Part 1</small></h3>
+
+<p>Настраиваем стурткру фичи на базе BLoC архитектуры.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">BLoC</span>
+
+
+<div class="spacer"></div>
+
+<small><b>10 January 2024</b></small>
+</div>
+
+<div class="bookmarks-bubble" data-tags="pattern,ios,swift">
+
+<h3><a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small></h3>
+
+<p>Необходимо последовательно выполнить провероку над данными, а затем для них применить изменения.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">Pattern</span>
+
+  <span class="tag small">iOS</span>
+
+  <span class="tag small">Swift</span>
+
+
+<div class="spacer"></div>
+
+<small><b>14 November 2017</b></small>
+</div>
+
+<div class="bookmarks-bubble" data-tags="pattern,ios,swift">
+
+<h3><a href="/2017/11/03/2017-Composite.html">Компоновщик</a> <small class="superscript">Cтруктуры данных</small></h3>
+
+<p>Для табличных компонентов.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">Pattern</span>
+
+  <span class="tag small">iOS</span>
+
+  <span class="tag small">Swift</span>
+
+
+<div class="spacer"></div>
+
+<small><b>3 November 2017</b></small>
+</div>
+
+<div class="bookmarks-bubble" data-tags="pattern,mvc">
+
+<h3><a href="/2014/01/04/2014-MVC.html">Паттенр MVC</a> <small class="superscript">Классический</small></h3>
+
+<p>Модель MVC облегчает разделение ответственности при разработке интерактивных графических приложений.</p>
+
+
+<div class="spacer"></div>
+
+
+  <span class="tag small">Pattern</span>
+
+  <span class="tag small">MVC</span>
+
+
+<div class="spacer"></div>
+
+<small><b>4 January 2014</b></small>
+</div>
 
 
 </div>
+</body>
 
 
       <footer>

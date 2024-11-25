@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Unit test description
-categories: article
+title: Unit test
+superscript: Описание
+description: Гайд как составлять комментарий к юнит тестам.
 tags:
-  - Unit-Test
+  - Unit Test
 ---
 
 ---
