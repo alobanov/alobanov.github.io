@@ -8,7 +8,7 @@ permalink: /bookmarks/
 
 <div class="bubble">
 {% capture markdown_content %}
-💁 Explore a curated collection of utilities, apps, and sites I find useful. Select a **tag** to highlight related bookmarks:
+💁 Explore a curated collection of utilities, apps, and sites I find useful.
 {% endcapture %}
 {{ markdown_content | markdownify }}
 
@@ -22,6 +22,7 @@ permalink: /bookmarks/
   {% endfor %}
 
   {% assign unique_tags = all_tags | split: "," | uniq %}
+  <small><b>Tags:</b></small>
   {% for tag in unique_tags %}
     {% if tag != "" %}
       <span class='tag small' data-tag="{{ tag | downcase }}">{{ tag }}</span>

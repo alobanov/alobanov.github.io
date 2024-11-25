@@ -10,7 +10,7 @@ layout: page
 
 <div class="bubble">
 {% capture markdown_content %}
-Hi! I'm Aleksei, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com), or keep reading.
+Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com) or keep reading to explore more. Here, you’ll find insights into my [logs](logs/), including [movies](logs/movie/) and [games](logs/game), complete with brief reviews and ratings. I also curate a collection of [bookmarks](bookmarks/) featuring tools and resources that I find useful.
 {% endcapture %}
 {{ markdown_content | markdownify }}
 </div>
@@ -18,13 +18,6 @@ Hi! I'm Aleksei, a [developer](about_en/) and electronic music enthusiast who en
 <h1># Posts</h1>
 
 <div class="bubble">
-
-{% capture markdown_content %}
-Select a **tag** to highlight related posts:
-{% endcapture %}
-{{ markdown_content | markdownify }}
-<div class="spacer"></div>
-
 {% assign all_tags = "" %}
   {% for post in site.posts %}
     {% for tag in post.tags %}
@@ -33,7 +26,7 @@ Select a **tag** to highlight related posts:
   {% endfor %}
 
   {% assign unique_tags = all_tags | split: "," | uniq %}
-  <b>Tags:</b> 
+  <small><b>Tags:</b></small>
   {% for tag in unique_tags %}
     {% if tag != "" %}
       <span class='tag small' data-tag="{{ tag | downcase }}">{{ tag }}</span>

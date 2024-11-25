@@ -111,6 +111,7 @@ a {
 a:hover,
 a:focus {
     color: #069;
+    text-decoration: underline;
 }
 
 a small {
@@ -208,10 +209,6 @@ screen and (max-width: 540px) {
         position: static;
     }
 
-    header {
-        padding-right: 20px;
-    }
-
     section {
         border: 1px solid #e5e5e5;
         border-width: 1px 0;
@@ -238,6 +235,13 @@ screen and (max-width: 540px) {
     }
 }
 
+@media (min-width: 541px) {
+    .menu-container {
+        width: 540px;
+        /* Фиксированная ширина на больших экранах */
+    }
+}
+
 @media print {
     body {
         font-size: 12pt;
@@ -249,16 +253,20 @@ screen and (max-width: 540px) {
 .menu-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #f1f1f1;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px 20px;
     position: fixed;
-    top: 20px;
-    width: 90%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 540px;
+    width: calc(100% - 40px);
     z-index: 1000;
     box-sizing: border-box;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .menu-icon {
@@ -277,11 +285,11 @@ screen and (max-width: 540px) {
 .menu-nav a {
     text-align: center;
     text-decoration: none;
-    color: #333;
+    color: #54433a;
     font-family: "Rubik", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     padding: 8px;
-    border-radius: 20px;
+    border-radius: 15px;
     transition:
         background-color 0.3s ease,
         color 0.3s ease;
@@ -323,6 +331,10 @@ screen and (max-width: 540px) {
     font-family: "Rubik", sans-serif;
     line-height: 1.5;
     margin: 20px 0;
+}
+
+.bubble.transparent {
+    background-color: transparent;
 }
 
 .bookmarks-container {
