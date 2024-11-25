@@ -8,7 +8,7 @@ permalink: /bookmarks/
 
 <div class="bubble">
 {% capture markdown_content %}
-💁 Explore a curated collection of utilities, apps, and sites I find useful. Click a **tag** to highlight related items:
+💁 Explore a curated collection of utilities, apps, and sites I find useful. Select a **tag** to highlight related bookmarks:
 {% endcapture %}
 {{ markdown_content | markdownify }}
 
@@ -32,8 +32,6 @@ permalink: /bookmarks/
 
 <button id="reset">❌ Reset</button>
 </div>
-
-<div class="spacer"></div>
 
 <div class="bookmarks-container">
 {% assign sorted_bookmarks = site.bookmarks | sort: 'date' | reverse %}

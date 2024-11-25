@@ -1,7 +1,8 @@
 ---
 layout: post
-title: BLoC file structure (Part 1)
-categories: article
+title: BLoC file structure
+description: Настраиваем стурткру фичи на базе BLoC архитектуры.
+superscript: Part 1
 tags:
   - BLoC
 ---

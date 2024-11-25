@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Workflow with GitTown
-categories: article
+title:  GitTown
+superscript: Упрощяем работу с Git
+description: Git Town упрощает использование Git, делая его удобнее, чтобы разработчики могли использовать его возможности на полную.
 tags:
   - Git
 ---
