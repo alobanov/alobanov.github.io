@@ -343,6 +343,12 @@ screen and (max-width: 540px) {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bookmarks-bubble.dimmed {
+    opacity: 0.3;
+    transform: scale(0.95);
 }
 
 .bubble h1,
@@ -389,6 +395,7 @@ article {
 
 /* Теги */
 .tag {
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -480,4 +487,74 @@ ol.custom-counter>li::before {
     color: #5a463557;
     font-weight: bold;
     text-align: center;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    header {
+        background-color: #1f1f1f;
+        color: #eeeeee;
+    }
+
+    nav {
+        background-color: #2a2a2a;
+    }
+
+    nav a {
+        color: #00aaff;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        background-color: #1c1c1c;
+    }
+
+    footer {
+        background-color: #1f1f1f;
+        color: #aaaaaa;
+    }
+} */
+
+button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eae1db;
+    color: #1a1a1a;
+    font-family: "Victor Mono", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 6px;
+    border: 1px solid #d6cbc3;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 3px 8px;
+    margin: 4px 10px 0 0;
+}
+
+button:hover {
+    background-color: #d6cbc3;
+    /* Меняем цвет фона при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(234, 225, 219, 0.5);
+    /* Добавляем мягкий фокус */
+}
+
+button:disabled {
+    background-color: #f2ece7;
+    color: #b1a8a1;
+    cursor: not-allowed;
+    border-color: #e0d8d2;
 }
