@@ -50,7 +50,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 
 <br/>
 
-<h1>_Work experience</h1>
+<h1>Work experience</h1>
 
 <div class="bubble">
 {% capture markdown_content %}
@@ -163,7 +163,7 @@ Developed mobile applications in **Objective-C**, including “PinMe” (an anal
 
 <br />
 
-<h1>_Education and Training</h1>
+<h1>Education and Training</h1>
 
 <div class="bubble">
 {% capture markdown_content %}
