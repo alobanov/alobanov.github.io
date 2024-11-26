@@ -1,9 +1,9 @@
 ---
 layout: bookmark
-title: 
+title: Learn Git Branching
 date: 2024-10-29
 tags: 
- - Site
+ - Web
  - Git
 ---
 
