@@ -6,7 +6,7 @@ layout: page
 
 <body>
 
-<h1>~lobanov-av.ru</h1>
+<h2>~lobanov-av.ru</h2>
 
 <div class="bubble">
 {% capture markdown_content %}
@@ -15,7 +15,7 @@ Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast 
 {{ markdown_content | markdownify }}
 </div>
 
-<h1># Posts</h1>
+<h1>Posts</h1>
 
 <div class="bubble">
 {% assign all_tags = "" %}
