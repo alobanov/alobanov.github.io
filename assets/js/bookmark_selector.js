@@ -24,3 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Reorder bookmarks into two columns with snake order
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".bookmarks-container");
+    const items = Array.from(container.children);
+    const columnCount = 2; // Количество колонок
+
+    const reordered = [];
+    for (let i = 0; i < columnCount; i++) {
+        for (let j = i; j < items.length; j += columnCount) {
+            reordered.push(items[j]);
+        }
+    }
+
+    // Очищаем контейнер и добавляем элементы в новом порядке
+    container.innerHTML = "";
+    reordered.forEach(item => container.appendChild(item));
+});

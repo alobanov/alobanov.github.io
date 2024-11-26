@@ -340,6 +340,7 @@ screen and (max-width: 540px) {
 .bookmarks-container {
     column-count: 2;
     column-gap: 10px;
+    column-fill: balance;
 }
 
 .bookmarks-bubble {
