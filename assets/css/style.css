@@ -12,7 +12,7 @@
 
 /* Общие стили */
 body {
-    font-size: 15px;
+    font-size: 16px;
     font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #54433a;
     background-color: #fff;
@@ -127,7 +127,7 @@ a:hover small {
 
 /* Структура страницы */
 .wrapper {
-    width: 540px;
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -141,7 +141,7 @@ footer {
 }
 
 section {
-    width: 540px;
+    width: 600px;
     float: right;
     padding-bottom: 50px;
 }
@@ -199,7 +199,7 @@ hr {
 
 /* Медиа-запросы */
 @media print,
-screen and (max-width: 540px) {
+screen and (max-width: 600px) {
 
     .wrapper,
     header,
@@ -236,9 +236,9 @@ screen and (max-width: 540px) {
     }
 }
 
-@media (min-width: 541px) {
+@media (min-width: 601px) {
     .menu-container {
-        width: 540px;
+        width: 600px;
         /* Фиксированная ширина на больших экранах */
     }
 }
@@ -262,7 +262,7 @@ screen and (max-width: 540px) {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 540px;
+    max-width: 600px;
     width: calc(100% - 40px);
     z-index: 1000;
     box-sizing: border-box;
@@ -350,7 +350,7 @@ screen and (max-width: 540px) {
     padding: 15px 20px;
     border-radius: 15px;
     font-family: "Rubik", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0;
     margin-bottom: 10px;
