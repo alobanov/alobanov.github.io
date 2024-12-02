@@ -228,11 +228,16 @@ screen and (max-width: 600px) {
 
     body {
         word-wrap: break-word;
+        font-size: 14px;
     }
 
     pre,
     code {
         word-wrap: normal;
+    }
+
+    .bookmarks-bubble {
+        font-size: 13px;
     }
 }
 
@@ -350,7 +355,6 @@ screen and (max-width: 600px) {
     padding: 15px 20px;
     border-radius: 15px;
     font-family: "Rubik", sans-serif;
-    font-size: 14px;
     line-height: 1.5;
     margin: 0;
     margin-bottom: 10px;
