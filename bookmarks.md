@@ -28,10 +28,8 @@ permalink: /bookmarks/
       <span class='tag small' data-tag="{{ tag | downcase }}">{{ tag }}</span>
     {% endif %}
   {% endfor %}
-
-<div class="spacer"></div>
-
-<button id="reset">❌ Reset</button>
+| <span class='tag small' id="reset">❌ Reset</span>
+<!-- <button id="reset">❌ Reset</button> -->
 </div>
 
 <div class="bookmarks-container">

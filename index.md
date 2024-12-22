@@ -15,9 +15,12 @@ Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast 
 {{ markdown_content | markdownify }}
 </div>
 
-<h1>Posts</h1>
-
 <div class="bubble">
+{% capture markdown_content %}
+Here you will find **posts**, you can filter them by tags. Enjoy your reading!
+{% endcapture %}
+{{ markdown_content | markdownify }}
+
 {% assign all_tags = "" %}
   {% for post in site.posts %}
     {% for tag in post.tags %}
@@ -32,10 +35,8 @@ Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast 
       <span class='tag small' data-tag="{{ tag | downcase }}">{{ tag }}</span>
     {% endif %}
   {% endfor %}
-
-<div class="spacer"></div>
-
-<button id="reset">❌ Reset</button>
+  | <span class='tag small' id="reset">❌ Reset</span>
+ <!-- <button id="reset">❌ Reset</button>  -->
 </div>
 
 <div class="bookmarks-container">
