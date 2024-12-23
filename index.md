@@ -15,7 +15,7 @@ Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast 
 {{ markdown_content | markdownify }}
 </div>
 
-<div class="bubble blue">
+<div class="bubble">
 {% capture markdown_content %}
 Here you will find **posts**, you can filter them by tags. Enjoy your reading!
 {% endcapture %}
