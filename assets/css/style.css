@@ -333,17 +333,42 @@ screen and (max-width: 600px) {
 /* Пузырь */
 .bubble {
     position: relative;
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
     color: #54433a;
     padding: 15px 18px;
     border-radius: 15px;
     font-family: "Rubik", sans-serif;
     line-height: 1.5;
     margin: 20px 0;
+    border: 1px solid #f6f6f6;
 }
 
 .bubble.transparent {
     background-color: transparent;
+}
+
+.bubble.yellow {
+    background-color: rgba(238, 172, 16, 0.05);
+    /* EEAC110D */
+    border: 1px solid rgba(238, 172, 16, 0.08);
+}
+
+.bubble.purple {
+    background-color: rgba(87, 17, 238, 0.05);
+    /* 5711EE0D */
+    border: 1px solid rgba(87, 17, 238, 0.08);
+}
+
+.bubble.blue {
+    background-color: rgba(17, 91, 238, 0.05);
+    /* 115BEE0D */
+    border: 1px solid rgba(17, 91, 238, 0.08);
+}
+
+.bubble.red {
+    background-color: rgba(238, 17, 57, 0.05);
+    /* EE11390D */
+    border: 1px solid rgba(238, 17, 57, 0.08);
 }
 
 .bookmarks-container {
@@ -353,7 +378,7 @@ screen and (max-width: 600px) {
 }
 
 .bookmarks-bubble {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
     color: #54433a;
     padding: 15px 20px;
     border-radius: 15px;
@@ -365,6 +390,7 @@ screen and (max-width: 600px) {
     width: 100%;
     box-sizing: border-box;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid #f6f6f6;
 }
 
 .bookmarks-bubble.dimmed {
@@ -579,3 +605,11 @@ button:disabled {
     cursor: not-allowed;
     border-color: #e0d8d2;
 }
+
+
+/* 
+EEAC110D yellow
+5711EE0D purple
+115BEE0D blue
+EE11390D red
+*/
