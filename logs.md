@@ -13,7 +13,7 @@ permalink: /logs/
   {% assign categories = categories | append: log.category | append: "," %}
 {% endfor %}
 
-<div class="bubble">
+<div class="bubble yellow">
  💁‍♂️ On this page, I keep a log of my activities. Here’s the current statistics:
     {% assign unique_categories = categories | split: "," | uniq %}
     {% for category in unique_categories %}

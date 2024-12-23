@@ -16,7 +16,7 @@ Detail-oriented **Mobile Engineer** dedicated to building high-quality products.
 {{ markdown_content | markdownify }}
 </div>
 
-<div class="bubble">
+<div class="bubble yellow">
 {% capture markdown_content %}
 ### # Let me introduce myself
 I am a mobile developer based in Novi Sad, Serbia. My true passion is creating mobile applications with intuitive and user-friendly interfaces. I have a comprehensive understanding of the software engineering process and the development life cycle. I am always ready to offer designers and managers advice to help them understand how an app should work and how to make it look better. With extensive experience in an agile environment, I am adept at meeting deadlines and finding optimal solutions for projects. I excel both as a team player and when working independently.
@@ -165,7 +165,7 @@ Developed mobile applications in **Objective-C**, including “PinMe” (an anal
 
 <h1>Education and Training</h1>
 
-<div class="bubble">
+<div class="bubble purple">
 {% capture markdown_content %}
 **Graduated:** Ural Federal University Training Software computer technology and automated systems. Dates: April 2006 - May 2010<br/>
 **Additional:** information about university from [Anabin](http://anabin.kmk.org/): [University information](../files/urfu_common.pdf), [Faculty information](../files/urfu_faculty.pdf)

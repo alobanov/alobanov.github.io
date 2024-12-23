@@ -6,7 +6,7 @@ permalink: /bookmarks/
 
 {% include bookmark_import.html %}
 
-<div class="bubble">
+<div class="bubble blue">
 {% capture markdown_content %}
 💁 Explore a curated collection of utilities, apps, and sites I find useful.
 {% endcapture %}
