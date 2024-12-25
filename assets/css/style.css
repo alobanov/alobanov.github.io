@@ -412,7 +412,7 @@ screen and (max-width: 600px) {
     position: absolute;
     top: -16px;
     right: 10px;
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
     color: #333;
     font-size: 14px;
     padding: 4px 8px;
@@ -470,8 +470,8 @@ article {
 
 .tag.small {
     font-size: 11px;
-    padding: 2px 6px;
-    margin-right: 3px;
+    padding: 3px 8px;
+    margin-right: 5px;
 }
 
 .tag:hover {
