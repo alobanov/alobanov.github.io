@@ -8,3 +8,5 @@ images:
 ---
 
 ### 📍 [Catania](https://maps.app.goo.gl/gRZUyxU3bmA6QfdU8) / 🇮🇹 Italy <small class="superscript">Sicily</small>
+
+> We admired the beautiful architecture of Catania and visited the majestic Mount Etna volcano.

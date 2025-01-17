@@ -8,3 +8,5 @@ images:
 ---
 
 ### 📍 [Syracuse](https://maps.app.goo.gl/qZESCqm7T7FjnHTT6) / 🇮🇹 Italy <small class="superscript">Sicily</small>
+
+> We looked at the Fountain of Arethusa, it’s very beautiful.
