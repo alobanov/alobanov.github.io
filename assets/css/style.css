@@ -2,20 +2,39 @@
 @import "timeline.css";
 @import "image_pop.css";
 
+/* Основные переменные */
+:root {
+    /* Цвета */
+    --primary-color: #54433a;
+    --secondary-color: #267cb9;
+    --background-color: #fff;
+    --background-color-light: #f9f9f9;
+    --code-background: #f6f4f2;
+    --border-color: #e5e5e5;
+
+    /* Размеры */
+    --base-font-size: 15px;
+    --border-radius: 13px;
+
+    /* Шрифты */
+    --primary-font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --code-font: "Victor Mono", "Lucida Console", Terminal, Consolas, "Liberation Mono",
+        "DejaVu Sans Mono", "Courier New", monospace;
+}
 
 .full-width-rounded-image {
     width: 100%;
     height: auto;
-    border-radius: 13px;
+    border-radius: var(--border-radius);
     object-fit: cover;
 }
 
 /* Общие стили */
 body {
-    font-size: 15px;
-    font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #54433a;
-    background-color: #fff;
+    font-size: var(--base-font-size);
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    background-color: var(--background-color);
 }
 
 /* Заголовки */
@@ -25,10 +44,10 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Rubik", serif;
-    font-weight: 700;
+    font-family: var(--primary-font);
+    font-weight: 600;
     margin: 0 0 5px;
-    color: #54433a;
+    color: var(--primary-color);
 }
 
 h1,
@@ -80,15 +99,7 @@ td {
 
 code,
 pre {
-    font-family:
-        Victor Mono,
-        Lucida Console,
-        Terminal,
-        Consolas,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Courier New,
-        monospace;
+    font-family: var(--code-font);
     font-size: 12px;
     color: #333;
 }
@@ -96,15 +107,15 @@ pre {
 pre {
     margin: 10px 0;
     padding: 8px 15px;
-    background: #f6f4f2;
+    background: var(--code-background);
     border-radius: 5px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border-color);
     overflow-x: auto;
 }
 
 /* Ссылки */
 a {
-    color: #267cb9;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -133,7 +144,7 @@ a:hover small {
 
 header,
 footer {
-    font-family: "Rubik", serif;
+    font-family: var(--primary-font);
     width: 270px;
     float: left;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -264,8 +275,8 @@ screen and (max-width: 600px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f6f5f4;
-    border-radius: 15px;
+    background-color: var(--code-background);
+    border-radius: var(--border-radius);
     padding: 10px 20px;
     position: fixed;
     top: 10px;
@@ -275,7 +286,7 @@ screen and (max-width: 600px) {
     width: calc(100% - 40px);
     z-index: 1000;
     box-sizing: border-box;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border-color);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -295,8 +306,8 @@ screen and (max-width: 600px) {
 .menu-nav a {
     text-align: center;
     text-decoration: none;
-    color: #54433a;
-    font-family: "Rubik", sans-serif;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
     font-size: 16px;
     padding: 8px;
     border-radius: 15px;
@@ -308,7 +319,7 @@ screen and (max-width: 600px) {
 
 .menu-nav a:hover {
     background-color: #e0e0e0;
-    color: #54433a;
+    color: var(--primary-color);
 }
 
 .container-two-columns {
@@ -335,11 +346,11 @@ screen and (max-width: 600px) {
 .bubble {
     position: relative;
     /* background-color: #f9f9f9; */
-    background-color: #f6f5f4;
-    color: #54433a;
+    background-color: var(--background-color-light);
+    color: var(--primary-color);
     padding: 15px 18px;
     border-radius: 15px;
-    font-family: "Rubik", sans-serif;
+    font-family: var(--primary-font);
     line-height: 1.5;
     margin: 20px 0;
     border: 1px solid #f6f6f6;
@@ -414,8 +425,8 @@ screen and (max-width: 600px) {
     position: absolute;
     top: -16px;
     right: 10px;
-    background-color: #f6f5f4;
-    color: #333;
+    background-color: var(--background-color-light);
+    color: var(--primary-color);
     font-size: 14px;
     padding: 4px 8px;
     border-radius: 12px;
@@ -511,7 +522,7 @@ ol.custom-counter>li::before {
     padding: 1px 4px;
     border-radius: 4px;
     border: 1px solid #e0d3c9;
-    font-family: "Victor Mono", "Courier", monospace;
+    font-family: var(--code-font);
     font-size: 12px;
     display: inline-block;
 }
