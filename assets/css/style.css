@@ -152,6 +152,7 @@ blockquote {
     border-radius: 5px;
     margin: 0;
     padding: 0 0 0 15px;
+    color: #3e3b39;
 }
 
 dt,
@@ -263,7 +264,7 @@ screen and (max-width: 600px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f1f1f1;
+    background-color: #f6f5f4;
     border-radius: 15px;
     padding: 10px 20px;
     position: fixed;
@@ -275,7 +276,7 @@ screen and (max-width: 600px) {
     z-index: 1000;
     box-sizing: border-box;
     border: 1px solid #e5e5e5;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .menu-icon {
@@ -333,7 +334,8 @@ screen and (max-width: 600px) {
 /* Пузырь */
 .bubble {
     position: relative;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background-color: #f6f5f4;
     color: #54433a;
     padding: 15px 18px;
     border-radius: 15px;
@@ -350,7 +352,7 @@ screen and (max-width: 600px) {
 .bubble.yellow {
     background-color: rgba(238, 172, 16, 0.05);
     /* EEAC110D */
-    border: 1px solid rgba(238, 172, 16, 0.08);
+    border: 1px solid #f6f5f4;
 }
 
 .bubble.purple {
@@ -412,7 +414,7 @@ screen and (max-width: 600px) {
     position: absolute;
     top: -16px;
     right: 10px;
-    background-color: #f9f9f9;
+    background-color: #f6f5f4;
     color: #333;
     font-size: 14px;
     padding: 4px 8px;
