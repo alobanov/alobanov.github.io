@@ -105,12 +105,30 @@ pre {
 }
 
 pre {
-    margin: 10px 0;
-    padding: 8px 15px;
+    margin: 10px -18px;
+    padding: 8px 18px;
     background: var(--code-background);
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     overflow-x: auto;
+}
+
+/* Если код-блок первый или последний элемент в bubble */
+.bubble>pre:first-child {
+    margin-top: -15px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-top: none;
+}
+
+.bubble>pre:last-child {
+    margin-bottom: -15px;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom: none;
 }
 
 /* Ссылки */
@@ -160,10 +178,11 @@ section {
 /* Дополнительные элементы */
 blockquote {
     border-left: 5px solid #909cab;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: 0;
-    padding: 0 0 0 15px;
+    padding: 10px 0 10px 15px;
     color: #3e3b39;
+    background-color: var(--code-background);
 }
 
 dt,
