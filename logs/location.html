@@ -9,15 +9,23 @@ permalink: /logs/location/
 {% include log_category_list.html %}
 
 <div class="bubble yellow">
-    🌏 Places I’ve visited with a brief note about each. <br />
+    🌏 Places I've visited with a brief note about each. <br />
     <b>Countries visited:</b> 🇷🇺 Russia, 🇮🇹 Italy, 🇹🇷 Turkey, 🇷🇸 Serbia, 🇪🇸 Spain, 🇸🇦 United Arab Emirates,
-    🇸🇬
-    Singapore, 🇹🇭 Thailand, 🇫🇷 France, 🇱🇻 Latvia, 🇲🇾 Malaysia, 🇩🇪 Germany, 🇲🇨 Monaco, 🇨🇿 Czechia, 🇫🇮
-    Finland, 🇸🇪 Sweden.
+    🇸🇬 Singapore, 🇹🇭 Thailand, 🇫🇷 France, 🇱🇻 Latvia, 🇲🇾 Malaysia, 🇩🇪 Germany, 🇲🇨 Monaco, 🇨🇿 Czechia,
+    🇫🇮 Finland, 🇸🇪 Sweden.
 </div>
+
+{% assign current_month = "" %}
+{% assign current_year = "" %}
 
 {% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
 {% for item in items %}
+{% include date_dividers.html
+date=item.date
+current_year=current_year
+current_month=current_month
+%}
+
 <div class="bubble">
     {{ item.content | markdownify }}
     {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
@@ -37,4 +45,6 @@ permalink: /logs/location/
         {% endif %}
     </div>
 </div>
+
+<div class="spacer"></div>
 {% endfor %}

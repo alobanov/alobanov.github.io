@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<!-- Root element with language setting and JavaScript detection -->
+<html lang="{{ site.lang | default: 'en-US' }}" class="no-js">
 
 <head>
+  <!-- Essential meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="format-detection" content="telephone=no">
 
+  <!-- SEO meta tags -->
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.author }}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Font preloading for performance optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts with performance optimization -->
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
 
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+  <!-- Legacy browser support -->
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+  <![endif]-->
+
+  <!-- Custom head elements from include -->
   {% include head-custom.html %}
+
+  <!-- JavaScript support detection -->
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 </head>
 
 <body>
-  <article>
+  <!-- Main article wrapper -->
+  <article class="page">
+    <!-- Content wrapper for width constraint -->
     <div class="wrapper">
+      <!-- Navigation menu -->
       {% include header_menu.html %}
 
-      {{ content }}
+      <!-- Main content area -->
+      <main class="content">
+        <!-- Page content from Jekyll -->
+        {{ content }}
+      </main>
 
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com/">GitHub Pages</a> &mdash; build with <a
-              href="https://jekyllrb.com/">Jekill</a></small>
+      <!-- Footer section -->
+      <footer class="footer">
+        <!-- Copyright and attribution -->
+        <p><small>Hosted on <a href="https://pages.github.com/" rel="noopener">GitHub Pages</a> &mdash; built with <a
+              href="https://jekyllrb.com/" rel="noopener">Jekyll</a></small>
         </p>
       </footer>
     </div>
   </article>
-  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+  <!-- Deferred JavaScript -->
+  <script defer src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 </body>
 
 </html>

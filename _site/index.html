@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang=" en-US">
+<!-- Root element with language setting and JavaScript detection -->
+<html lang="en-US" class="no-js">
 
 <head>
+  <!-- Essential meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="format-detection" content="telephone=no">
 
+  <!-- SEO meta tags -->
   <title>Aleksei Lobanov</title>
   <meta name="description"
     content="Personal blog of Aleksei Lobanov">
+  <meta name="author" content="Lobanov Aleksei">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Font preloading for performance optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts with performance optimization -->
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
 
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="/assets/css/style.css?v=">
 
+  <!-- Legacy browser support -->
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+  <![endif]-->
+
+  <!-- Custom head elements from include -->
   <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -30,11 +43,17 @@
 <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
 
 <!-- end custom head snippets -->
+
+  <!-- JavaScript support detection -->
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 </head>
 
 <body>
-  <article>
+  <!-- Main article wrapper -->
+  <article class="page">
+    <!-- Content wrapper for width constraint -->
     <div class="wrapper">
+      <!-- Navigation menu -->
       <div class="menu-container">
   <a href="/">
     <div class="menu-icon"></div>
@@ -46,7 +65,10 @@
   </nav>
 </div>
 
-      <head>
+      <!-- Main content area -->
+      <main class="content">
+        <!-- Page content from Jekyll -->
+        <head>
 <h1></h1>
 </head>
 
@@ -232,15 +254,20 @@
 </div>
 </body>
 
+      </main>
 
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com/">GitHub Pages</a> &mdash; build with <a
-              href="https://jekyllrb.com/">Jekill</a></small>
+      <!-- Footer section -->
+      <footer class="footer">
+        <!-- Copyright and attribution -->
+        <p><small>Hosted on <a href="https://pages.github.com/" rel="noopener">GitHub Pages</a> &mdash; built with <a
+              href="https://jekyllrb.com/" rel="noopener">Jekyll</a></small>
         </p>
       </footer>
     </div>
   </article>
-  <script src="/assets/js/scale.fix.js"></script>
+
+  <!-- Deferred JavaScript -->
+  <script defer src="/assets/js/scale.fix.js"></script>
 </body>
 
 </html>

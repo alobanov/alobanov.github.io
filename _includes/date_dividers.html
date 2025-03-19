@@ -1,0 +1,13 @@
+{% assign log_month = include.date | date: "%B" %}
+{% assign log_year = include.date | date: "%Y" %}
+
+{% if log_year != include.current_year %}
+<div class="year-divider">{{ log_year }}</div>
+{% assign current_year = log_year %}
+{% assign current_month = "" %}
+{% endif %}
+
+{% if log_month != include.current_month %}
+<div class="month-divider">{{ log_month }}</div>
+{% assign current_month = log_month %}
+{% endif %}
