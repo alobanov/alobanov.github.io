@@ -521,17 +521,16 @@ ol.custom-counter>li {
     counter-increment: item;
     margin-bottom: 20px;
     position: relative;
-    padding-left: 25px;
 }
 
 ol.custom-counter>li::before {
-    content: counter(item);
-    font-size: 20px;
+    content: counter(item)".";
+    font-size: 26px;
     font-weight: bold;
     color: #996767;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -26px;
+    top: -4px;
 }
 
 /* Стиль для кода в тексте */
