@@ -54,7 +54,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 
 <div class="bubble">
 {% capture markdown_content %}
-## # Gameram
+## Gameram
 > **Software Engineer** / Flutter (Dart)  
 > (Sep 2023 — work in progress...)  
 > <span class='tag'>Remote</span><span class='tag'>📍 Cyprus</span>
@@ -72,7 +72,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 
 <div class="bubble">
 {% capture markdown_content %}
-## # Finblox
+## Finblox <small class="superscript">fbx</small>
 > **Software Engineer** / Flutter (Dart)  
 > 1 year 9 months (Nov. 2021 — Aug. 2023)  
 > <span class='tag'>Remote</span><span class='tag'>📍 Singapore</span>
@@ -89,7 +89,7 @@ Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https:/
 
 <div class="bubble">
 {% capture markdown_content %}
-## # CoinsBank
+## CoinsBank
 > **Software Engineer** / Team lead / Flutter / iOS Developer  
 > 4 years (Dec. 2017 -  Nov. 2021)  
 > <span class='tag'>Remote</span><span class='tag'>📍 Spain</span>
@@ -106,7 +106,7 @@ Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https:/
 
 <div class="bubble">
 {% capture markdown_content %}
-## # [Soft Media Lab](http://softmedialab.com/)
+## [Soft Media Lab](http://softmedialab.com/)
 > **Software Engineer** / Senior - iOS Developer / Team-lead
 > Working since April 2016 - February 2017  
 > <span class='tag'>📍 Ekaterinbug</span>
@@ -122,7 +122,7 @@ Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https:/
 
 <div class="bubble">
 {% capture markdown_content %}
-## # [NET Element](https://netelement.com/en)
+## NET Element
 > **Software Engineer** / iOS Engineer  
 > 1 year 6 months (Feb. 2015 - Apr. 2016)  
 > <span class='tag'>📍 Ekaterinbug</span>
@@ -146,7 +146,7 @@ Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https:/
 
 <div class="bubble">
 {% capture markdown_content %}
-## # [East Media LTD](http://east-media.ru/)  
+## [East Media LTD](http://east-media.ru/)  
 > **Software Engineer** / Middle - iOS Developer  
 > 3 years 5 months (Oct. 2011 - Feb. 2016)  
 > <span class='tag'>📍 Ekaterinbug</span>

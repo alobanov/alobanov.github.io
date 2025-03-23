@@ -552,19 +552,19 @@ ol.custom-counter>li::before {
 
 /* Разделитель года */
 .year-divider {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Rubik", sans-serif;
-    color: #5a463560;
+    color: var(--primary-color);
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* Разделитель месяца */
 .month-divider {
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Rubik", sans-serif;
-    color: #5a463557;
-    font-weight: bold;
+    color: var(--primary-color);
+    font-weight: 600;
     text-align: center;
 }
 
