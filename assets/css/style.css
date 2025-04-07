@@ -27,6 +27,8 @@
     height: auto;
     border-radius: var(--border-radius);
     object-fit: cover;
+    filter: grayscale(90%);
+    position: relative;
 }
 
 /* Общие стили */
