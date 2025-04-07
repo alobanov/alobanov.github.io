@@ -4,6 +4,8 @@ title: CV / Aleksei Lobanov
 permalink: /about_en/
 ---
 
+{% include grain_import.html %}
+
 <div class="bubble">
 {% capture markdown_content %}
 
