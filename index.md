@@ -36,7 +36,6 @@ Here you will find **posts**, you can filter them by tags. Enjoy your reading!
     {% endif %}
   {% endfor %}
   | <span class='tag small' id="reset">❌ Reset</span>
- <!-- <button id="reset">❌ Reset</button>  -->
 </div>
 
 <div class="bookmarks-container">
