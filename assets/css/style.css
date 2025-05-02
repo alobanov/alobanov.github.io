@@ -317,6 +317,11 @@ screen and (max-width: 600px) {
     background-image: url("/assets/img/ava.jpeg");
     background-size: cover;
     border-radius: 50%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu-icon:hover {
+    filter: brightness(1.2);
 }
 
 .menu-nav {

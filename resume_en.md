@@ -80,7 +80,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 > <span class='tag'>Remote</span><span class='tag'>📍 Singapore</span>
 
 <br/>
-Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https://play.google.com/store/apps/details?id=com.finbloxapp.finblox&pli=1) and [iOS](https://apps.apple.com/us/app/id1579461536). We also released app for flutter web [mobile.finblox.com](mobile.finblox.com)
+Create [Finblox](https://mobile.finblox.com) Mobile Wallet for [Android](https://play.google.com/store/apps/details?id=com.finbloxapp.finblox&pli=1) and [iOS](https://apps.apple.com/us/app/id1579461536). We also released app for flutter web [mobile.finblox.com](https://mobile.finblox.com)
 
 <br/>
 
