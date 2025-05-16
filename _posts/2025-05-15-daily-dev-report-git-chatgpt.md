@@ -12,12 +12,12 @@ tags:
 --- 
 
 > As a developer, I often found myself dreading one simple question in daily stand-ups: 
-> **"What did you work on yesterday?"** 
-> I’d mentally rewind the day, try to recall commits, branches, context switches — and inevitably forget something.
+> **"- What did you work on yesterday?"**. 
+> I'd mentally rewind the day, try to recall commits, branches, context switches — and inevitably forget something.
 
 <div class="spacer"></div>
 
-So **I built a simple script** that solved the problem once and for all.
+So **I built a [simple script](https://gist.github.com/alobanov/07adf800c7bf84596bf05665563f236d)** that solved the problem once and for all.
 
 <div class="spacer"></div>
 
@@ -63,13 +63,15 @@ Yesterday:
 • If any MOB- tasks appear in develop, they are considered completed.
 {% endhighlight %}
 
+ChatGPT does the rest. And now, I never draw a blank in a daily sync again. Here is the result:
+
+{% highlight bash %}
+Yesterday:
+- Completed task MOB-762 — finalized implementation of theme switching in app settings with improved logic reuse and persistent behavior across sessions.
+- Completed task MOB-781 — ensured proper cleanup of user session data during logout to improve stability and security.
+{% endhighlight %}
+
 <div class="spacer"></div> 
-
-ChatGPT does the rest. And now, I never draw a blank in a daily sync again.
-
-<div class="spacer"></div> 
-
----
 
 ### 🧠 Why This Works
 
@@ -81,16 +83,22 @@ ChatGPT does the rest. And now, I never draw a blank in a daily sync again.
 
 ### 💡 Bonus Tip
 
-You can easily schedule this script to run every morning with a cron job or a Makefile alias. Want to export it as Markdown for your wiki or send it to Slack? Just wrap the output and you’re good to go.
-
-<div class="spacer"></div> 
+- You can easily schedule this script to run every morning with a cron job or a Makefile alias. Want to export it as Markdown for your wiki or send it to Slack? Just wrap the output and you're good to go.
+- For full automation, you can integrate the ChatGPT API directly into the script
 
 ---
 
 ### 👨‍💻 Final Thoughts
 
-It’s a simple fix, but it’s changed the way I show up to stand-ups.
-If you’re a dev who forgets what you did yesterday — this little combo of **Git + Python + ChatGPT** might save your mornings.
+It's a simple fix, but it's changed the way I show up to stand-ups.
+If you're a dev who forgets what you did yesterday — this little combo of **Git + Python + ChatGPT** might save your mornings.
+
+<div class="spacer"></div> 
+
+---
+
+### 💬 Feedback
+If you have suggestions for improving the script or have found a bug, please create an issue on GitHub.
 
 <div class="spacer"></div> 
 
