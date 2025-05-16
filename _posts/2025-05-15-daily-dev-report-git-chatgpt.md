@@ -35,7 +35,9 @@ Every morning, I run a **[script that](https://gist.github.com/alobanov/07adf800
 
 Here's what the Git output looks like:
 
-{% highlight bash %}
+{% highlight %}
+~❯ python3 git_log.py --date 2025-05-15
+
 📦 Commits by 'Aleksey Lobanov' for 2025-05-15:
 
 🔀 Branch: develop
@@ -50,7 +52,7 @@ Here's what the Git output looks like:
 
 Then I append this prompt below:
 
-{% highlight bash %}
+{% highlight %}
 🔧 Generate a daily summary for the commits above in this format:
 
 Yesterday:
