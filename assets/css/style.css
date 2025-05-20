@@ -686,3 +686,10 @@ EE11390D red
     color: var(--secondary-color);
     margin-left: 0.5em;
 }
+
+/* Allow line wrapping in code and highlight blocks */
+pre, .highlight pre, .highlight {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
