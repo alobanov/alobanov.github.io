@@ -651,3 +651,38 @@ EEAC110D yellow
 115BEE0D blue
 EE11390D red
 */
+
+/* Footnotes */
+.footnotes {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #eaecef;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.footnotes p {
+    margin: 0.5em 0;
+}
+
+.footnotes a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footnotes a:hover {
+    text-decoration: underline;
+}
+
+.footnote-ref {
+    font-size: 0.8em;
+    vertical-align: super;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footnote-backref {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-left: 0.5em;
+}

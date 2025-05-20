@@ -17,16 +17,16 @@ tags:
 
 <div class="spacer"></div>
 
-So **I built a [simple script](https://gist.github.com/alobanov/07adf800c7bf84596bf05665563f236d)** that solved the problem once and for all.
+So **I built a [script](https://github.com/alobanov/daily-report)[^1]** that solved the problem once and for all.
 
 <div class="spacer"></div>
 
 ---
 
 
-### 📋 What It Does?
+## 📋 What It Does?
 
-Every morning, I run a **[script that](https://gist.github.com/alobanov/07adf800c7bf84596bf05665563f236d)**:
+Every morning, I run a script that:
 
 1. Gathers all my **Git** commits from the previous day.
 2. Groups them by branch.
@@ -35,8 +35,8 @@ Every morning, I run a **[script that](https://gist.github.com/alobanov/07adf800
 
 Here's what the Git output looks like:
 
-{% highlight %}
-~❯ python3 git_log.py --date 2025-05-15
+{% highlight bash %}
+❯ python3 git_log.py --date 2025-05-15
 
 📦 Commits by 'Aleksey Lobanov' for 2025-05-15:
 
@@ -52,7 +52,7 @@ Here's what the Git output looks like:
 
 Then I append this prompt below:
 
-{% highlight %}
+{% highlight bash %}
 🔧 Generate a daily summary for the commits above in this format:
 
 Yesterday:
@@ -83,27 +83,56 @@ Yesterday:
 
 ---
 
-### 💡 Bonus Tip
+## 🛠️ Implementation & Usage
 
-- You can easily schedule this script to run every morning with a cron job or a Makefile alias. Want to export it as Markdown for your wiki or send it to Slack? Just wrap the output and you're good to go.
-- For full automation, you can integrate the ChatGPT API directly into the script
+[The script](https://github.com/alobanov/daily-report)[^1] is now available as a standalone tool with additional features:
 
----
+<div class="spacer"></div> 
 
-### 👨‍💻 Final Thoughts
+#### Quick Start
+
+{% highlight bash %}
+# Setup
+❯ python3.12 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+echo "OPENAI_API_KEY=sk-..." > .env
+
+# Run
+❯ python git_daily_report.py --date YYYY-MM-DD
+{% endhighlight %}
+
+#### Key Features
+- Automatic ChatGPT API integration
+- Custom repository and author filtering
+- Flexible output formats
+
+#### Usage Examples
+
+{% highlight bash %}
+# Basic usage
+❯ python git_daily_report.py
+
+# With ChatGPT API
+❯ python git_daily_report.py --use-gpt
+
+# Specific repository
+❯ python git_daily_report.py --repo /path/to/repo
+
+# Custom author
+❯ python git_daily_report.py --email user@example.com
+{% endhighlight %}
 
 It's a simple fix, but it's changed the way I show up to stand-ups.
 If you're a dev who forgets what you did yesterday — this little combo of **Git + Python + ChatGPT** might save your mornings.
 
-<div class="spacer"></div> 
+<div class="spacer"></div>
 
 ---
 
 ### 💬 Feedback
-If you have suggestions for improving the script or have found a bug, please create an issue on GitHub.
+If you have suggestions for improving the script or have found a bug, please create an issue on GitHub[^2] or join our community discussions[^3].
 
-<div class="spacer"></div> 
+[^1]: [GitHub Repository](https://github.com/alobanov/daily-report) - Full source code and documentation
+[^2]: [GitHub Issues](https://github.com/alobanov/daily-report/issues) - Report bugs or suggest improvements
+[^3]: [GitHub Discussions](https://github.com/alobanov/daily-report/discussions) - Join the community discussion
 
---- 
-
-<small> ⚡️ Git + ChatGPT = Magic</small>
