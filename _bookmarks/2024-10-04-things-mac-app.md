@@ -9,6 +9,6 @@ tags:
 
 
 
-### [Things](https://culturedcode.com/things/) <small class="superscript">by Cultured Code</small>
+### [Things](https://culturedcode.com/things/) <small class="superscript">TODO</small>
 
 Is one of the most minimalistic and visually stunning to-do list apps for Mac.

@@ -6,6 +6,6 @@ tags:
  - App
 ---
 
-### [Kap](https://getkap.co/) <small class="superscript">Screen capture</small>
+### [Kap](https://getkap.co/) <small class="superscript">Record</small>
 
 It is easiest way to capture something on your screen.
