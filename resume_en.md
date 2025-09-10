@@ -80,7 +80,7 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 > <span class='tag'>Remote</span><span class='tag'>📍 Singapore</span>
 
 <br/>
-Create Finblox Mobile Wallet for Android and iOS. We also released app for flutter web.
+Create **Finblox Mobile Wallet** for Android and iOS. We also released app for flutter web.
 
 <br/>
 
@@ -97,9 +97,9 @@ Create Finblox Mobile Wallet for Android and iOS. We also released app for flutt
 > <span class='tag'>Remote</span><span class='tag'>📍 Spain</span>
 
 <br/>
-- CoinsBank Mobile Wallet — Build from scratch iOS mobile application. CoinsBank is your «all-in-one» gateway to blockchain services.
-- CoinsBank Blockchain Cruise 2019 — Also build application for CoinsBank Blockchain Cruise
-- Neocard - Mobile banking — Created from scratch universal application for iOS and Android, based on Flutter framework. Neocard provides secure, fully compliant financial services with a personal touch. We’re always here and ready to help.
+- **CoinsBank Mobile Wallet** — Build from scratch iOS mobile application. CoinsBank is your «all-in-one» gateway to blockchain services.
+- CoinsBank **Blockchain Cruise** 2019 — Also build application for CoinsBank Blockchain Cruise
+- **Neocard** - Mobile banking — Created from scratch universal application for iOS and Android, based on Flutter framework. Neocard provides secure, fully compliant financial services with a personal touch. We’re always here and ready to help.
 
 <span class='tag small'>Objective-C</span><span class='tag small'>Swift</span><span class='tag small'>GraphQL</span><span class='tag small'>SQLite</span><span class='tag small'>Flutter</span>
 {% endcapture %}
