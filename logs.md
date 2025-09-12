@@ -27,13 +27,13 @@ permalink: /logs/
         
         {% case category %}
           {% when "movie" %}
-            I watched <strong>{{ count }}</strong> movies,
+            I watched <strong>{{ count }}</strong> movies.
           {% when "location" %}
-            and visited <strong>{{ count }}</strong> places
+            visited <strong>{{ count }}</strong> places,
           {% when "game" %}
             completed <strong>{{ count }}</strong> games,
           {% when "music" %}
-            created <strong>{{ count }}</strong> music tracks
+            created <strong>{{ count }}</strong> music tracks,
         {% endcase %}
       {% endunless %}
     {% endfor %}
