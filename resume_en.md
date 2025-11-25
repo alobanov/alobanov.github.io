@@ -62,10 +62,10 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 > <span class='tag'>Remote</span><span class='tag'>📍 Serbia</span>
 
 <br/>
-Work as a Flutter developer at Ice Open Network, building Online+—a decentralized, privacy-focused super app for social networking, chat, and crypto asset management on the ION blockchain.
+Work as a Flutter developer at [Ice Open Network](https://ice.io/), building [Online+](https://online.io/) — a decentralized, privacy-focused super app for social networking, chat, and crypto asset management on the ION blockchain.
 <br/>
 
-<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Architecture</span>
+<span class='tag small'>Flutter</span><span class='tag small'>DriftDB</span><span class='tag small'>Riverpod</span>
 
 {% endcapture %}
 {{ markdown_content | markdownify }}
@@ -83,7 +83,7 @@ Work as a Flutter developer at Ice Open Network, building Online+—a decentrali
 
 <br/>
 
-<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Architecture</span>
+<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Architecture</span><span class='tag small'>BLoC</span>
 
 {% endcapture %}
 {{ markdown_content | markdownify }}
@@ -101,7 +101,7 @@ Create **Finblox Mobile Wallet** for Android and iOS. We also released app for f
 
 <br/>
 
-<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Third Party Services</span><span class='tag small'>Architecture</span>
+<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Third Party Services</span><span class='tag small'>Architecture</span><span class='tag small'>BLoC</span>
 {% endcapture %}
 {{ markdown_content | markdownify }}
 </div>
