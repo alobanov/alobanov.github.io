@@ -17,6 +17,16 @@ Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast 
 
 <div class="bubble">
 {% capture markdown_content %}
+
+### My Playlist for Work
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3ltOhzEdh8415XM3kxBlJf?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
 Here you will find **posts**, you can filter them by tags. Enjoy your reading!
 {% endcapture %}
 {{ markdown_content | markdownify }}

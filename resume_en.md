@@ -56,9 +56,26 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 
 <div class="bubble">
 {% capture markdown_content %}
+## Ice-Network
+> **Software Engineer** / Flutter (Dart)  
+> (Oct 2025 — work in progress...)  
+> <span class='tag'>Remote</span><span class='tag'>📍 Serbia</span>
+
+<br/>
+Work as a Flutter developer at Ice Open Network, building Online+—a decentralized, privacy-focused super app for social networking, chat, and crypto asset management on the ION blockchain.
+<br/>
+
+<span class='tag small'>Flutter</span><span class='tag small'>REST</span><span class='tag small'>Hive</span><span class='tag small'>Design System</span><span class='tag small'>Architecture</span>
+
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>
+
+<div class="bubble">
+{% capture markdown_content %}
 ## Gameram
 > **Software Engineer** / Flutter (Dart)  
-> (Sep 2023 — work in progress...)  
+> 2 years 2 months (Sep 2023 — Oct 2025)  
 > <span class='tag'>Remote</span><span class='tag'>📍 Cyprus</span>
 
 <br/>
