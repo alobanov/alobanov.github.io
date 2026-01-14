@@ -65,7 +65,9 @@ I am a mobile developer based in Novi Sad, Serbia. My true passion is creating m
 Work as a Flutter developer at [Ice Open Network](https://ice.io/), building [Online+](https://online.io/) — a decentralized, privacy-focused super app for social networking, chat, and crypto asset management on the ION blockchain.
 <br/>
 
-<span class='tag small'>Flutter</span><span class='tag small'>DriftDB</span><span class='tag small'>Riverpod</span>
+<br/>
+
+<span class='tag small'>Flutter</span><span class='tag small'>DriftDB</span><span class='tag small'>Riverpod</span><span class='tag small'>Blockchain</span>
 
 {% endcapture %}
 {{ markdown_content | markdownify }}
