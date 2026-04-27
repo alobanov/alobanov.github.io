@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BLoC file structure
-description: Настраиваем стурткру фичи на базе BLoC архитектуры.
+description: Setting up a feature structure based on BLoC architecture.
 superscript: Part 1
 tags:
   - BLoC
@@ -9,25 +9,25 @@ tags:
 
 ---
 
-> К чему мы стремимся - это создать читаемый (с предположением использования единого архитектурного стиля), тестируемый код, который легко расширяется и поддерживается.
+> What we strive for is readable (assuming a consistent architectural style), testable code that is easy to extend and maintain.
 
 <br/>
 
-В приложениях, использующих архитектуру <span class='wordcode'>BLoC</span> (Business Logic Component), обеспечивается четкое разделение между бизнес-логикой и пользовательским интерфейсом. 
+In applications using the <span class='wordcode'>BLoC</span> (Business Logic Component) architecture, there is a clear separation between business logic and the user interface.
 
 <div class="spacer"></div>
 
-Важно строго разграничивать эти слои: интерфейс должен быть независимым от бизнес-логики и отображать данные на основе состояния, предоставленного ею. 
+It's important to strictly separate these layers: the UI should be independent of business logic and display data based on the state provided by it.
 
 <div class="spacer"></div>
 
-Бизнес-логика формирует упрощенное описание того, как интерфейс должен выглядеть в данный момент. Такое разделение повышает чистоту кода, его тестируемость, читаемость и упрощает сопровождение.
+Business logic forms a simplified description of how the UI should look at any given moment. This separation improves code cleanliness, testability, readability, and ease of maintenance.
 
 <br/>
 
 ---
 
-## Структура 
+## Structure
 
 ```
 feature/
@@ -61,25 +61,25 @@ feature/
 
 ## bloc/
 
-> Этот каталог содержит <span class='wordcode'>BLoC</span> -- компоненты. Основное правило заключается в том, что все манипуляции с данными должны осуществляться на этом уровне
+> This directory contains the <span class='wordcode'>BLoC</span> components. The key rule is that all data manipulation must happen at this level.
 
 <br/>
 
-Pабота с сервисами, подготовка данных и формирование состояний для пользовательского интерфейса. 
-Если вы замечаете, что некоторые части кода начинают выглядеть громоздко, то их следует вынести в отдельные сервисы, хелперы или провайдеры и передать в качестве зависимости в <span class='wordcode'>bloc</span>.
+Working with services, preparing data, and forming states for the user interface.
+If you notice that some parts of the code are getting bulky, extract them into separate services, helpers, or providers and pass them as dependencies to the <span class='wordcode'>bloc</span>.
 
 <br/>
 
 <ol class="custom-counter">
   <li>
 {% capture markdown_content %}
-  **feature_event.dart** для событий мы должны придерживаться следующего правила: если у вас есть атомарное действие, создается соответствующее событие. Следует избегать ситуаций, когда у вас есть два действия, такие как **удалить/добавить**, и вы создаете один **`Event`** с параметром действия. В таком случае более предпочтительным подходом является создание двух отдельных <span class='wordcode'>Event</span> - одного для удаления и другого для создания. Это повышает читаемость и ясность кода, а также обеспечивает атомарность событий.
+  **feature_event.dart** — for events, follow this rule: if you have an atomic action, create a corresponding event. Avoid situations where you have two actions such as **delete/add** and you create a single **`Event`** with an action parameter. It's preferable to create two separate <span class='wordcode'>Event</span> classes — one for deletion and one for creation. This improves readability and clarity, and ensures atomic events.
 {% endcapture %}
 {{ markdown_content | markdownify }}
   </li>
   <li>
 {% capture markdown_content %}
-  **feature_state.dart** - содержит набор состояний. Важно никоим образом не добавлять расширения (<span class='wordcode'>extensions</span>) к этому классу для вычисления дополнительных свойств. Если возникает необходимость в таких вычислениях, лучше добавить новое свойство и произвести вычисления в классе <span class='wordcode'>feature_bloc</span>, а затем поместить полученное значение в <span class='wordcode'>feature_state</span>.
+  **feature_state.dart** — contains a set of states. It's important not to add extensions (<span class='wordcode'>extensions</span>) to this class for computing additional properties. If such computations are needed, add a new property and perform the computation in <span class='wordcode'>feature_bloc</span>, then place the result in <span class='wordcode'>feature_state</span>.
 {% endcapture %}
 {{ markdown_content | markdownify }}
   </li>
@@ -89,7 +89,7 @@ Pабота с сервисами, подготовка данных и форм
 
 ## models/
 
-> В этом каталоге размещаются модели данных, такие как <span class='wordcode'>keys.dart</span>, которая представляет ключи для компонентов пользовательского интерфейса, а также любые модели для отрисовки виджетов, связанных с данным экраном.
+> This directory holds data models such as <span class='wordcode'>keys.dart</span>, which represents keys for UI components, as well as any models for rendering widgets related to this screen.
 
 <br/>
 
@@ -97,7 +97,7 @@ Pабота с сервисами, подготовка данных и форм
 
 ## cubit/
 
-> В этом каталоге находятся все кубиты, которые в большинстве своем отвечают за прямое взаимодействие с <span class='wordcode'>View</span>. Например, <span class='wordcode'>navigation_cubit.dart</span> содержит вызовы, отвечающие за действия открытия экранов. Мы можем вызвать метод <span class='wordcode'>openScreen</span> в <span class='wordcode'>bloc</span> и обработать состояние, связанное с открытием этого экрана во <span class='wordcode'>View</span>. Также желательно создавать отдельные кубиты, если они отличаются по своей функциональности или смыслу.
+> This directory contains all cubits, which are mostly responsible for direct interaction with the <span class='wordcode'>View</span>. For example, <span class='wordcode'>navigation_cubit.dart</span> contains calls responsible for screen-opening actions. We can call an <span class='wordcode'>openScreen</span> method in <span class='wordcode'>bloc</span> and handle the related state in the <span class='wordcode'>View</span>. It's also advisable to create separate cubits if they differ in functionality or purpose.
 
 <br/>
 
@@ -105,30 +105,30 @@ Pабота с сервисами, подготовка данных и форм
 
 ## route/
 
-> Здесь хранятся компоненты отвечающие за навигацию компонента.
+> This directory contains components responsible for the component's navigation.
 
 <br/>
 
 <ol class="custom-counter">
   <li>
 {% capture markdown_content %}
-  **External_router** предоставляет удобный интефейс показа текущего экрана (Не нужен если в качестве компонента используется не экран (<span class='wordcode'>Route</span>), а простой виджет.
+  **External_router** provides a convenient interface for displaying the current screen. (Not needed if the component is not a screen (<span class='wordcode'>Route</span>) but a simple widget.)
 {% endcapture %}
 {{ markdown_content | markdownify }}
   </li>
   <li>
 {% capture markdown_content %}
-  **Internal_router** предоставляет интерфейс открытия других виджетов и экранов.
+  **Internal_router** provides an interface for opening other widgets and screens.
 {% endcapture %}
 {{ markdown_content | markdownify }}
   </li>
    <li>
 {% capture markdown_content %}
-  **feature_route (view_provider)** - В этом месте происходит конфигурация всех зависимостей и инициализация всех компонентов. Здесь регистрируются все зависимости, к которым будет осуществляться доступ на уровне пользовательского интерфейса с использованием фреймворка **Provider**. 
+  **feature_route (view_provider)** — this is where all dependencies are configured and all components are initialized. All dependencies that will be accessed at the UI level using the **Provider** framework are registered here.
   
   <div class="spacer"></div>
 
-  > Для блока следует использовать <span class='wordcode'>BlockProvider</span>, а для всех остальных сервисов - <span class='wordcode'>RepositoryProvider</span>. Важно также создавать класс <span class='wordcode'>feature_arguments</span>, если необходимо передать более одного параметра.
+  > Use <span class='wordcode'>BlockProvider</span> for the bloc, and <span class='wordcode'>RepositoryProvider</span> for all other services. Also create a <span class='wordcode'>feature_arguments</span> class if more than one parameter needs to be passed.
 {% endcapture %}
 {{ markdown_content | markdownify }}
   </li>
@@ -138,7 +138,7 @@ Pабота с сервисами, подготовка данных и форм
 
 ## view/
 
-> Cодержит виджет экрана. В данном случае, <span class='wordcode'>feature_view.dart</span> представляет собой главный экран. Также здесь нужно добавить все необходимые обработчики событий которые относятся к экрану через <span class='wordcode'>BlocListener</span> (например то что касается навигации, обработка состояний <span class='wordcode'>NavigationCubit</span> или <span class='wordcode'>PaginationCubit</span>).
+> Contains the screen widget. In this case, <span class='wordcode'>feature_view.dart</span> represents the main screen. Add all necessary event handlers related to the screen here via <span class='wordcode'>BlocListener</span> (e.g., navigation handling, processing <span class='wordcode'>NavigationCubit</span> or <span class='wordcode'>PaginationCubit</span> states).
 
 <br/>
 
@@ -146,23 +146,23 @@ Pабота с сервисами, подготовка данных и форм
 
 ## widgets/
 
-> В этом каталоге можно хранить многоразовые виджеты, которые используются на экране. Например, <span class='wordcode'>tile_item.dart</span> может быть виджетом для отображения отдельного элемента в списке.
+> This directory holds reusable widgets used on the screen. For example, <span class='wordcode'>tile_item.dart</span> can be a widget for rendering an individual list item.
 
 <br/>
 
-#### Еще примеры:
-- **feature_loading.dart** - добавляем шиммер для экрана
-- **feature_loaded.dart** - основное <span class='wordcode'>view</span> на котором отрисовываем <span class='wordcode'>UI</span> с данными
-- **feature_empty.dart**/**feature_error.dart** - ошибка и пустое состояние соответственно
+#### More examples:
+- **feature_loading.dart** — add a shimmer for the screen
+- **feature_loaded.dart** — main <span class='wordcode'>view</span> where the <span class='wordcode'>UI</span> with data is rendered
+- **feature_empty.dart** / **feature_error.dart** — error and empty state respectively
 
 ---
 
-### Очень важно
+### Very important
 
-> Добавлю, что в <span class='wordcode'>View</span> не должно происходить никаких дополнительных вычислений для отображения данных. Единственное, что разрешается во <span class='wordcode'>View</span>, это простейшие условия, зависящие от логических значений, хранящихся в <span class='wordcode'>state</span>. Это позволяет поддерживать чистоту и читаемость кода в пользовательском интерфейсе и уменьшает сложность визуальных компонентов.
+> Note that no additional computations for displaying data should happen in the <span class='wordcode'>View</span>. The only thing permitted in the <span class='wordcode'>View</span> is simple conditions based on boolean values stored in <span class='wordcode'>state</span>. This keeps the UI code clean and readable, and reduces the complexity of visual components.
 
 <br/>
 
 ---
 
-#### Есть вопросы? Пишите сюда – [@alobanov](https://twitter.com/alobanov)
+#### Questions? Write here – [@alobanov](https://twitter.com/alobanov)

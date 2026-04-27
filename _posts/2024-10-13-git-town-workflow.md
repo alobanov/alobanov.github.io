@@ -1,43 +1,43 @@
 ---
 layout: post
-title:  GitTown
-superscript: Упрощяем работу с Git
-description: Git Town упрощает использование Git, делая его удобнее, чтобы разработчики могли использовать его возможности на полную.
+title: GitTown
+superscript: Simplifying Git workflows
+description: Git Town simplifies Git usage, making it more convenient so developers can use its full potential.
 tags:
   - Git
 ---
 
 --- 
 
-> Знакомая ситуация: кто-то пишет в рабочем чате — *“я внёс изменения, ребейзнитесь, пожалуйста”*. Приходится прерывать работу, выполнять несколько команд для обновления. Это рутина, которая отвлекает. Я решил найти решение и обнаружил, что их много. После изучения нескольких вариантов я выбрал [GitTown](https://www.git-town.com) — инструмент, который ускоряет рутинные задачи при работе с **Git**.
+> A familiar situation: someone writes in the team chat — *"I pushed changes, please rebase"*. You have to stop what you're doing and run several commands to update. It's routine that breaks your focus. I decided to find a solution and discovered there are many options. After researching several, I chose [GitTown](https://www.git-town.com) — a tool that speeds up routine Git tasks.
 
 <br/>
 
 ---
 
-## Trunk-Base
+## Trunk-Based Development
 
-Используя **trunk-based development**, который подразумевает регулярное слияние изменений из рабочих веток в основную, поддерживая её актуальной и рабочей. 
-
-<div class="spacer"></div>
-
-Для каждой новой фичи, исправления или улучшения создается отдельная ветка и сливается в основную, как только работа завершена.
+Using **trunk-based development** means regularly merging changes from feature branches into the main branch, keeping it up to date and working.
 
 <div class="spacer"></div>
 
-Использую ребейз, чтобы сохранять историю чистой, а множество мелких коммитов объединяю в один (**squash-commit**). Это упрощает процесс интеграции и помогает избежать сложностей при слиянии в активно изменяемом репозитории.
+For each new feature, fix, or improvement, a separate branch is created and merged into the main branch as soon as the work is done.
 
 <div class="spacer"></div>
 
-Поэтому cинхронизация с основной веткой происходит довольно часто, а если добавить использование подхода **stacked branch** это может отнимать много времени и превращаться в рутину.
+I use rebase to keep history clean, and squash many small commits into one (**squash commit**). This simplifies the integration process and helps avoid conflicts in an actively changing repository.
+
+<div class="spacer"></div>
+
+That's why syncing with the main branch happens quite often, and if you add a **stacked branch** approach on top of that, it can take a lot of time and become tedious routine.
 
 <br/>
 
 ---
 
-## Новая фича ветка
+## New feature branch
 
-Находясь в рабочей ветке <span class="wordcode">current-feature</span>, я могу выполнить <span class="wordcode">git town hack feat/mob-1-test-fix</span>. Эта команда автоматизирует несколько рутинных операций: сначала синхронизирует основную ветку с удалённой (чтобы избежать конфликтов в будущем), затем создаст новую ветку от обновлённой основной и автоматически переключит меня на неё.
+While in a working branch <span class="wordcode">current-feature</span>, I can run <span class="wordcode">git town hack feat/mob-1-test-fix</span>. This command automates several routine operations: it first syncs the main branch with remote (to avoid future conflicts), then creates a new branch from the updated main and automatically switches to it.
 
 <div class="spacer"></div>
 
@@ -52,15 +52,15 @@ tags:
 ~ on [feat/mob-1-test-fix]
 {% endhighlight %}
 
-<small>Лог команды <span class="wordcode">hack</span></small> 👆
+<small>Log of the <span class="wordcode">hack</span> command</small> 👆
 
 <div class="spacer"></div> 
 
 ---
 
-## Быстрая синхронизация
+## Quick sync
 
-Работая в <span class="wordcode">feature-ветке</span>, нужно обновить основную ветку и выполнить ребейз для интеграции последних изменений. Команда <span class="wordcode">git town sync</span> автоматизирует этот процесс: обновляет основную ветку и выполняет ребейз, упрощая синхронизацию.
+Working in a <span class="wordcode">feature branch</span>, you need to update the main branch and rebase to integrate the latest changes. The <span class="wordcode">git town sync</span> command automates this process: it updates the main branch and performs a rebase, simplifying synchronization.
 
 <div class="spacer"></div>
 
@@ -77,19 +77,19 @@ tags:
 ~ on [MOB-current-feature]
 {% endhighlight %}
 
-<small>Лог команды <span class="wordcode">sync</span></small> 👆
+<small>Log of the <span class="wordcode">sync</span> command</small> 👆
 
 <div class="spacer"></div> 
 
 ---
 
-## Stacked branshes
+## Stacked branches
 
-Наиболее удобно использовать команду <span class="wordcode">stacked branch</span>. Чтобы добавить новую функцию на основе текущей ветки, просто выполните команду <span class="wordcode">append</span>. Структуру веток можно просмотреть с помощью команды <span class="wordcode">branch<span>.
+The most convenient command to use is <span class="wordcode">stacked branch</span>. To add a new feature on top of the current branch, simply run <span class="wordcode">append</span>. The branch structure can be viewed with the <span class="wordcode">branch</span> command.
 
 <div class="spacer"></div>
 
-Далее, перейдите на последнюю ветку в стеке и запустите <span class="wordcode">git town sync</span>. Эта команда синхронизирует все ветки последовательно — начиная с основной и заканчивая текущей.
+Then, switch to the last branch in the stack and run <span class="wordcode">git town sync</span>. This command syncs all branches sequentially — starting from the main branch and ending with the current one.
 
 <div class="spacer"></div>
 
@@ -101,6 +101,6 @@ tags:
 *    mob-2-add-more-ui
 
 {% endhighlight %}
-<small>Лог команды <span class="wordcode">branch</span></small> 👆
+<small>Log of the <span class="wordcode">branch</span> command</small> 👆
 
-<div class="spacer"></div> 
+<div class="spacer"></div>
