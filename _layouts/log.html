@@ -18,8 +18,9 @@ permalink: /logs/
         </div>
         <div class="image-preview">
             {% for image in page.images %}
-            <img src="/assets/img/{{ page.category }}/{{ image }}" alt="{{ page.title }} Preview" class="thumbnail"
-                onclick="openModal('/assets/img/{{ page.category }}/{{ image }}')" />
+            <img src="/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
+                alt="{{ page.title | escape }} Preview" class="thumbnail"
+                data-modal-src="/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
             {% endfor %}
         </div>
     </div>

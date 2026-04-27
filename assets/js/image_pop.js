@@ -11,3 +11,11 @@ function closeModal(event) {
         modal.classList.remove("show");
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img[data-modal-src]").forEach(function (img) {
+        img.addEventListener("click", function () {
+            openModal(img.dataset.modalSrc);
+        });
+    });
+});
