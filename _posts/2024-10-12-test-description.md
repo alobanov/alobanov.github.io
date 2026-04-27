@@ -1,20 +1,20 @@
 ---
 layout: post
 title: Unit test
-superscript: Описание
-description: Гайд как составлять комментарий к юнит тестам.
+superscript: Description
+description: A guide on how to write comments for unit tests.
 tags:
   - Unit Test
 ---
 
 ---
 
-> Описание к тестам должно быть ясным и структурированным, чтобы можно было легко понять, что тест проверяет и при каких условиях. Хорошая практика — разделять описание на две части:
+> Test descriptions should be clear and structured so that anyone can easily understand what the test checks and under what conditions. A good practice is to split the description into two parts:
 
 <br/> 
 
-### Что ожидается (Expected Outcome):
-Начинайте с того, что именно вы ожидаете от теста. Описание должно отвечать на вопрос "Какое поведение или результат мы хотим видеть?". Это помогает понять цель теста и его конечный результат.
+### What is expected (Expected Outcome):
+Start with what you expect from the test. The description should answer the question "What behavior or result do we want to see?". This helps communicate the purpose of the test and its end result.
 
 <br/>  
 
@@ -23,12 +23,12 @@ the sky is blue
 and the grass is green
 ```
 <br/> 
-Здесь ясно указано, что тест должен подтвердить, что небо синее, а море зелёное. Ожидаемый результат всегда должен быть конкретным и понятным.
+This clearly states that the test should confirm that the sky is blue and the grass is green. The expected result must always be specific and unambiguous.
 
 <br/> 
 
-### Условия/Действия (Conditions/Actions):
-Затем следует описать условия, при которых выполняется тест, и какие действия происходят. Эта часть описывает контекст или триггеры для выполнения теста и какие шаги ведут к ожидаемому результату.
+### Conditions / Actions:
+Then describe the conditions under which the test runs and what actions take place. This part describes the context or triggers for test execution and the steps that lead to the expected result.
 
 <br/>     
 
@@ -40,14 +40,14 @@ and the rain is over
 
 <br/>  
 
-Этот блок объясняет, что должно произойти в ходе теста, чтобы проверить ожидаемый результат. Действия должны быть логичными и последовательными.
+This block explains what must happen during the test in order to verify the expected result. Actions should be logical and sequential.
 
 <br/>     
 
-### Общие принципы:
+### General principles:
 
-- **Конкретность**: Ожидаемый результат и условия должны быть чёткими и недвусмысленными.
-- **Понятность**: Формулировка должна быть простой, чтобы любой разработчик мог понять суть теста, даже если он не работал над функционалом.
-- **Полнота**: Все условия, которые могут повлиять на результат, должны быть указаны в описании.
+- **Specificity**: The expected result and conditions must be clear and unambiguous.
+- **Readability**: The wording should be simple enough that any developer can understand the test's purpose, even without prior knowledge of the feature.
+- **Completeness**: All conditions that might affect the result should be stated in the description.
 
-Такое разделение помогает тестам быть более структурированными и лёгкими для понимания и поддержки.
+This separation helps tests be more structured and easier to understand and maintain.

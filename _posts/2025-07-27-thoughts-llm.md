@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Работать с LLM 
-description: '**Большие языковые модели (LLM)** — это как упрямый **осёл**: всегда спешит помочь, но никогда не признает, что чего-то не знает. Или как **джинн**: исполняет ваши желания буквально, но результат может удивить. А иногда это просто **игровой автомат** — крутанул, и никогда не знаешь, выпадет ли джекпот или пустышка. Так что **не ждите чудес**: с LLM надо уметь обращаться, иначе можно остаться и без желания, и без выигрыша!'
+title: Working with LLMs
+description: Large language models are like a stubborn donkey — always eager to help but never admitting they don't know something. Or like a genie — granting your wishes literally, with surprising results. Sometimes they're just a slot machine — spin it and you never know if you'll hit the jackpot or nothing at all. So don't expect miracles — you need to know how to work with LLMs, or you'll end up with neither your wish nor your winnings.
 tags:
   - Thoughts
 ---
 
-**Большие языковые модели (LLM)** — это как упрямый **осёл**: всегда спешит помочь, но никогда не признает, что чего-то не знает. Или как **джинн**: исполняет ваши желания буквально, но результат может удивить. А иногда это просто **игровой автомат** — крутанул, и никогда не знаешь, выпадет ли джекпот или пустышка. Так что **не ждите чудес**: с LLM надо уметь обращаться, иначе можно остаться и без желания, и без выигрыша!
+**Large language models (LLMs)** are like a stubborn **donkey**: always eager to help, but never admitting they don't know something. Or like a **genie**: granting your wishes literally, with results that might surprise you. And sometimes they're just a **slot machine** — spin it, and you never know if you'll hit the jackpot or get nothing. So **don't expect miracles**: you need to know how to work with LLMs, otherwise you might end up with neither your wish nor your winnings!
