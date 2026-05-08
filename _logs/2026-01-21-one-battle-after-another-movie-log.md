@@ -3,6 +3,7 @@ layout: log
 title: "One Battle After Another"
 date: 2026-01-21
 category: movie
+rating: "5/5"
 ---
 
 ### 🎬 [One Battle After Another](https://www.imdb.com/title/tt30144839) / PTA at his best <small class="superscript">5/5</small>

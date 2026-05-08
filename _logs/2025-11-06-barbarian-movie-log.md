@@ -3,6 +3,7 @@ layout: log
 title: "Barbarian"
 date: 2025-11-06
 category: movie
+rating: "4/5"
 ---
 
 ### 🏚️ [Barbarian](https://www.imdb.com/title/tt15791034) / Must Watch <small class="superscript">4/5</small>

@@ -3,6 +3,7 @@ layout: log
 title: "Frankenstein"
 date: 2026-02-01
 category: movie
+rating: "4/5"
 ---
 
 ### ⚡ [Frankenstein](https://www.imdb.com/title/tt1312221) / Visually breathtaking <small class="superscript">4/5</small>

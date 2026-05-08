@@ -3,6 +3,7 @@ layout: log
 title: "Klaus"
 date: 2025-01-01
 category: movie
+rating: "5/5"
 ---
 
 ### 🔥 [Klaus](https://www.imdb.com/title/tt4729430/) / Perfect for the Christmas Season <small class="superscript">5/5</small>

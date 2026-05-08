@@ -3,6 +3,7 @@ layout: log
 title: "Leave the World Behind"
 date: 2024-12-23
 category: movie
+rating: "3/5"
 ---
 
 ### 🦌 [Leave the World Behind](https://www.imdb.com/title/tt12747748) / Good <small class="superscript">3/5</small>
