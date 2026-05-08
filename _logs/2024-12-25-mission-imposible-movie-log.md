@@ -1,6 +1,6 @@
 ---
 layout: log
-title: "Klaus"
+title: "M:I - Dead Reckoning"
 date: 2024-12-25
 category: movie
 rating: "3"
