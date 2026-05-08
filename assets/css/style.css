@@ -18,8 +18,7 @@
 
     /* Шрифты */
     --primary-font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --code-font: "Victor Mono", "Lucida Console", Terminal, Consolas, "Liberation Mono",
-        "DejaVu Sans Mono", "Courier New", monospace;
+    --code-font: "JetBrains Mono", "Lucida Console", Consolas, monospace;
 }
 
 .full-width-rounded-image {
@@ -488,7 +487,7 @@ article {
     justify-content: center;
     background-color: #eae1db;
     color: #1a1a1a;
-    font-family: "Victor Mono", sans-serif;
+    font-family: "JetBrains Mono", monospace;
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 6px;
@@ -615,7 +614,7 @@ button {
     justify-content: center;
     background-color: #eae1db;
     color: #1a1a1a;
-    font-family: "Victor Mono", sans-serif;
+    font-family: "JetBrains Mono", monospace;
     font-weight: 600;
     font-size: 10px;
     white-space: nowrap;
