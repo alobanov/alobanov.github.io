@@ -3,6 +3,7 @@ layout: log
 title: "The Phoenician Scheme"
 date: 2025-11-07
 category: movie
+rating: "🔥"
 ---
 
 ### [The Phoenician Scheme](https://www.imdb.com/title/tt30840798) / Masterpice <small class="superscript">🔥</small>

@@ -693,3 +693,94 @@ pre, .highlight pre, .highlight {
     word-break: break-word;
     overflow-wrap: anywhere;
 }
+
+/* View toggle (Cards / List) */
+.view-toggle {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+.view-btn {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color-light);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin: 0;
+}
+
+.view-btn:hover {
+    background-color: #eae1db;
+}
+
+.view-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Minimalist movie list */
+.movie-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.movie-list-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.movie-list-table tr:last-child {
+    border-bottom: none;
+}
+
+.movie-list-table td {
+    padding: 8px 6px;
+    vertical-align: middle;
+}
+
+.ml-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: #b0a09a;
+    white-space: nowrap;
+    width: 36px;
+}
+
+.ml-title {
+    width: 100%;
+}
+
+.ml-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.ml-title a:hover {
+    text-decoration: underline;
+}
+
+.ml-rating {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--secondary-color);
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.ml-date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: #b0a09a;
+    white-space: nowrap;
+    text-align: right;
+}

@@ -3,6 +3,7 @@ layout: log
 title: "Mickey 17"
 date: 2025-10-23
 category: movie
+rating: "4/5"
 ---
 
 ### [Mickey 17](https://www.imdb.com/title/tt12299608) / Very Good <small class="superscript">4/5</small>

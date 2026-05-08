@@ -3,6 +3,7 @@ layout: log
 title: "Severance"
 date: 2025-02-01
 category: movie
+rating: "🧠"
 ---
 
 ### 🔥 [Severance](https://www.imdb.com/title/tt11280740/) / Masterpice <small class="superscript">A Mind-Bending Thriller 🧠</small>

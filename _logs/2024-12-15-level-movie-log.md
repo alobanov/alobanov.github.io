@@ -3,6 +3,7 @@ layout: log
 title: "Secret Level"
 date: 2024-12-15
 category: movie
+rating: "🎮"
 ---
 
 ### 🔥 [Secret Level](https://www.imdb.com/title/tt33204697) <small class="superscript">Series</small> / For Gamers <small class="superscript">🎮</small>
