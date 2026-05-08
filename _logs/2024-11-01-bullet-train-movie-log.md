@@ -3,7 +3,7 @@ layout: log
 title: "Bullet train"
 date: 2024-11-01
 category: movie
-rating: "3/5"
+rating: "3"
 ---
 
 ### [Bullet train](https://www.imdb.com/title/tt12593682/) / Good <small class="superscript">3/5</small>

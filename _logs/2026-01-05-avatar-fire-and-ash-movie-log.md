@@ -3,7 +3,7 @@ layout: log
 title: "Avatar: Fire and Ash"
 date: 2026-01-05
 category: movie
-rating: "4/5"
+rating: "4"
 ---
 
 ### 🔥 [Avatar: Fire and Ash](https://www.imdb.com/title/tt1757678) / Spectacular <small class="superscript">4/5</small>

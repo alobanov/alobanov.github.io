@@ -31,6 +31,14 @@ permalink: /logs/movie/
 
 <div id="view-list">
   <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Title</th>
+        <th class="ml-rating">Rating</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
     <tbody>
       {% for item in items %}
       {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}

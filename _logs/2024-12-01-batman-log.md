@@ -3,6 +3,7 @@ layout: log
 title: "Batman"
 date: 2024-12-01
 category: movie
+rating: "4"
 ---
 
 ### 🦇 [Batman](https://www.imdb.com/title/tt1877830/) / Grate <small class="superscript">4/5</small>

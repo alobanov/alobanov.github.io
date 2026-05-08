@@ -3,6 +3,7 @@ layout: log
 title: "God of War Ragnarök"
 date: 2023-06-23
 category: game
+rating: "5"
 ---
 
 ### 🔥 [God of War Ragnarök](https://opencritic.com/game/12919/god-of-war-ragnar-k) / Masterpiece <small class="superscript">5/5</small>

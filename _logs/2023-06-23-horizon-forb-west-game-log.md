@@ -3,6 +3,7 @@ layout: log
 title: "Horizon Forbidden West"
 date: 2023-02-11
 category: game
+rating: "4"
 ---
 
 ### [Horizon Forbidden West](https://opencritic.com/game/12361/horizon-forbidden-west) / Great <small class="superscript">4/5</small>

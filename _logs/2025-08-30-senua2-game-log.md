@@ -3,6 +3,7 @@ layout: log
 title: "Senua's Saga: Hellblade II"
 date: 2025-08-19
 category: game
+rating: "3"
 ---
 
 ### [Senua's Saga: Hellblade II](https://opencritic.com/game/16475/senuas-saga-hellblade-ii) / Great <small class="superscript">Photorealistic</small>

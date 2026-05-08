@@ -3,7 +3,7 @@ layout: log
 title: "Heretic"
 date: 2025-01-10
 category: movie
-rating: "4/5"
+rating: "4"
 ---
 
 ### ✝️ [Heretic](https://www.imdb.com/title/tt28015403/) / Sooo good <small class="superscript">4/5</small>

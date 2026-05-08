@@ -3,7 +3,7 @@ layout: log
 title: "Alien: Romulus"
 date: 2024-10-17
 category: movie
-rating: "5/5"
+rating: "5"
 ---
 
 ### 🔥 [Alien: Romulus](https://www.imdb.com/title/tt18412256/) / Masterpice <small class="superscript">5/5</small>

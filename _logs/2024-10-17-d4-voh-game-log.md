@@ -3,6 +3,7 @@ layout: log
 title: "Diablo IV: Vessel of Hatred"
 date: 2024-10-17
 category: game
+rating: "4"
 ---
 
 ### [Diablo IV: Vessel of Hatred](https://opencritic.com/game/17122/diablo-iv-vessel-of-hatred) / Grate <small class="superscript">4/5</small>

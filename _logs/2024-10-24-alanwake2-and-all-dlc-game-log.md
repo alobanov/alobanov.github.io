@@ -3,6 +3,7 @@ layout: log
 title: "Alan Wake 2 with DLC"
 date: 2024-10-24
 category: game
+rating: "3"
 ---
 
 ### [Alan Wake II](https://opencritic.com/game/15022/alan-wake-2) / Nice <small class="superscript">3/5</small>
