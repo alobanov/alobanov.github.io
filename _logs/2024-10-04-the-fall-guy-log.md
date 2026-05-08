@@ -3,6 +3,7 @@ layout: log
 title: "The Fall Guy"
 date: 2024-10-04
 category: movie
+rating: 3
 ---
 
 ### [The Fall Guy](https://www.imdb.com/title/tt1684562/) / Nice <small class="superscript">3/5</small>
