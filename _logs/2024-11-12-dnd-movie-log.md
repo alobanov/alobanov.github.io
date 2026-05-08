@@ -3,7 +3,7 @@ layout: log
 title: "Dungeons & Dragons: Honour Among Thieves"
 date: 2024-11-12
 category: movie
-rating: "5/5"
+rating: "5"
 ---
 
 ### 🔥 [D&D: Honour Among Thieves](https://www.imdb.com/title/tt2906216/) / Masterpice <small class="superscript">5/5</small>

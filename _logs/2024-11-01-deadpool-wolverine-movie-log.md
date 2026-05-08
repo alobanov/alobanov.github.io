@@ -3,7 +3,7 @@ layout: log
 title: "Deadpool & Wolverine"
 date: 2024-11-01
 category: movie
-rating: "4/5"
+rating: "4"
 ---
 
 ### [Deadpool & Wolverine](https://www.imdb.com/title/tt6263850/) / Grate <small class="superscript">4/5</small>

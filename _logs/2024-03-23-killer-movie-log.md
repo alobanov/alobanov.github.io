@@ -3,7 +3,7 @@ layout: log
 title: "The Killer"
 date: 2024-03-23
 category: movie
-rating: "4/5"
+rating: "4"
 ---
 
 ### 🔫 [The Killer](https://www.imdb.com/title/tt1136617/) / Greate <small class="superscript">4/5</small>

@@ -3,7 +3,7 @@ layout: log
 title: "Wolfs"
 date: 2024-11-07
 category: movie
-rating: "3.5/5"
+rating: "3.5"
 ---
 
 ### 🐺 [Wolfs](https://www.imdb.com/title/tt14257582) / It's OK <small class="superscript">3.5/5</small>

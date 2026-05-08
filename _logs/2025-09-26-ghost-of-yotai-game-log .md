@@ -3,6 +3,7 @@ layout: log
 title: "Ghost of Yotei"
 date: 2025-10-26
 category: game
+rating: "🔥"
 ---
 
 ### [⚔️ Ghost of Yotei](https://opencritic.com/game/18449/ghost-of-yotei) / Brilliant <small class="superscript">🔥</small>

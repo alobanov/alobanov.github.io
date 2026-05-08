@@ -3,7 +3,7 @@ layout: log
 title: "The Count of Monte-Cristo"
 date: 2024-11-10
 category: movie
-rating: "2/5"
+rating: "2"
 ---
 
 ### [The Count of Monte-Cristo](https://www.imdb.com/title/tt26446278/) / Meh <small class="superscript">2/5</small>

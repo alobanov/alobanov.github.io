@@ -3,6 +3,7 @@ layout: log
 title: "Resident Evil Requiem"
 date: 2026-03-15
 category: game
+rating: "5"
 ---
 
 ### [Resident Evil Requiem](https://opencritic.com/game/18716/resident-evil-requiem) / Excellent <small class="superscript">5/5</small>

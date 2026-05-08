@@ -3,7 +3,7 @@ layout: log
 title: "Weapons"
 date: 2025-11-05
 category: movie
-rating: "5/5"
+rating: "5"
 ---
 
 ### 👁️ [Weapons](https://www.imdb.com/title/tt26581740) / Masterpiece <small class="superscript">5/5</small>

@@ -3,9 +3,10 @@ layout: log
 title: "Clair Obscur: Expedition 33"
 date: 2025-05-15
 category: game
+rating: 3
 ---
 
-### [Clair Obscur: Expedition 33](https://opencritic.com/game/18026/clair-obscur-expedition-33) / Damn! soo good <small class="superscript">4/5</small>
+### [Clair Obscur: Expedition 33](https://opencritic.com/game/18026/clair-obscur-expedition-33) / Damn! soo good <small class="superscript">3/5</small>
 
 > A captivating story with unexpected twists, stunning visual style, and dynamic turn-based combat in the spirit of Final Fantasy. The game creates a unique atmosphere where each battle is a true test of tactical thinking.
 
