@@ -8,43 +8,79 @@ permalink: /logs/location/
 
 {% include log_category_list.html %}
 
-<div class="bubble yellow">
+<div class="view-toggle">
+  <button class="view-btn active" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn" id="btn-list" onclick="setView('list')">List</button>
+</div>
+
+{% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
+
+<div id="view-cards">
+  <div class="bubble yellow">
     🌏 Places I've visited with a brief note about each. <br />
     <b>Countries visited:</b> 🇷🇺 Russia, 🇮🇹 Italy, 🇹🇷 Turkey, 🇷🇸 Serbia, 🇪🇸 Spain, 🇸🇦 United Arab Emirates,
     🇸🇬 Singapore, 🇹🇭 Thailand, 🇫🇷 France, 🇱🇻 Latvia, 🇲🇾 Malaysia, 🇩🇪 Germany, 🇲🇨 Monaco, 🇨🇿 Czechia,
     🇫🇮 Finland, 🇸🇪 Sweden.
-</div>
-
-{% assign current_month = "" %}
-{% assign current_year = "" %}
-
-{% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
-{% for item in items %}
-{% include date_dividers.html
-date=item.date
-current_year=current_year
-current_month=current_month
-%}
-
-<div class="bubble">
+  </div>
+  {% assign current_month = "" %}
+  {% assign current_year = "" %}
+  {% for item in items %}
+  {% include date_dividers.html
+  date=item.date
+  current_year=current_year
+  current_month=current_month
+  %}
+  <div class="bubble">
     {{ item.content | markdownify }}
     {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-
     <div class="container-two-columns">
-        <div class="content-two-columns">
-            <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date |
-                    date: "%-d %B %Y" }}</b></small>
-        </div>
-        {% if item.images %}
-        <div class="image-preview">
-            {% for image in item.images %}
-            <img src="/assets/img/{{ item.category }}/{{ image }}" alt="{{ item.title }} Preview" class="thumbnail"
-                onclick="openModal('/assets/img/{{ item.category }}/{{ image }}')" />
-            {% endfor %}
-        </div>
-        {% endif %}
+      <div class="content-two-columns">
+        <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+      </div>
+      {% if item.images %}
+      <div class="image-preview">
+        {% for image in item.images %}
+        <img src="/assets/img/{{ item.category }}/{{ image }}" alt="{{ item.title }} Preview" class="thumbnail"
+          onclick="openModal('/assets/img/{{ item.category }}/{{ image }}')" />
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
+  </div>
+  <div class="spacer"></div>
+  {% endfor %}
 </div>
 
-<div class="spacer"></div>
-{% endfor %}
+<div id="view-list">
+  <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Place</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+      <tr>
+        <td class="ml-num">#{{ reversed_index }}</td>
+        <td class="ml-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+function setView(view) {
+  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
+  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
+  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
+  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
+  localStorage.setItem('locationView', view);
+}
+var saved = localStorage.getItem('locationView');
+if (saved) setView(saved); else setView('cards');
+</script>

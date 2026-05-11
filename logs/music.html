@@ -8,20 +8,58 @@ permalink: /logs/music/
 
 {% include log_category_list.html %}
 
-<div class="bubble yellow">
-    🎧 Music I’ve created on my gear: <a href="https://elektron.se/explore/digitakt-ii">Digitakt II</a> and
-    <a href="https://elektron.se/explore/syntakt">Syntakt</a>
+<div class="view-toggle">
+  <button class="view-btn active" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn" id="btn-list" onclick="setView('list')">List</button>
 </div>
 
 {% assign items = site.logs | where: "category", "music" | sort: 'date' | reverse %}
-{% for item in items %}
-<div class="bubble">
+
+<div id="view-cards">
+  <div class="bubble yellow">
+    🎧 Music I've created on my gear: <a href="https://elektron.se/explore/digitakt-ii">Digitakt II</a> and
+    <a href="https://elektron.se/explore/syntakt">Syntakt</a>
+  </div>
+  {% for item in items %}
+  <div class="bubble">
     {{ item.content | markdownify }}
     {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-
     <div class="spacer"></div>
-
-    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date:
-            "%-d %B %Y" }}</b></small>
+    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
+<div id="view-list">
+  <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Title</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+      <tr>
+        <td class="ml-num">#{{ reversed_index }}</td>
+        <td class="ml-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+function setView(view) {
+  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
+  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
+  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
+  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
+  localStorage.setItem('musicView', view);
+}
+var saved = localStorage.getItem('musicView');
+if (saved) setView(saved); else setView('cards');
+</script>
