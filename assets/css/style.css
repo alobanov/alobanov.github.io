@@ -802,3 +802,12 @@ pre, .highlight pre, .highlight {
     white-space: nowrap;
     text-align: right;
 }
+
+.ml-year-divider td {
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 20px 6px 4px;
+    border-bottom: none;
+}

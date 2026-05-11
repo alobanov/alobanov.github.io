@@ -40,12 +40,18 @@ permalink: /logs/game/
       </tr>
     </thead>
     <tbody>
+      {% assign current_year = "" %}
       {% for item in items %}
+      {% assign item_year = item.date | date: "%Y" %}
+      {% if item_year != current_year %}
+      {% assign current_year = item_year %}
+      <tr class="ml-year-divider"><td colspan="4">{{ item_year }}</td></tr>
+      {% endif %}
       {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
       <tr>
         <td class="ml-num">#{{ reversed_index }}</td>
         <td class="ml-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
-<td class="ml-rating">{{ item.rating }}</td>
+        <td class="ml-rating">{{ item.rating }}</td>
         <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
       </tr>
       {% endfor %}
