@@ -811,3 +811,20 @@ pre, .highlight pre, .highlight {
     padding: 20px 6px 4px;
     border-bottom: none;
 }
+
+.ml-cat {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: #b0a09a;
+    white-space: nowrap;
+    padding-left: 12px;
+}
+
+.ml-cat a {
+    color: #b0a09a;
+    text-decoration: none;
+}
+
+.ml-cat a:hover {
+    color: var(--primary-color);
+}

@@ -40,10 +40,16 @@ permalink: /logs/
 </div>
 <div class="spacer"></div>
 
-{% assign current_month = "" %}
-{% assign current_year = "" %}
+<div class="view-toggle">
+  <button class="view-btn active" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn" id="btn-list" onclick="setView('list')">List</button>
+</div>
 
 {% assign sorted_logs = site.logs | sort: 'date' | reverse %}
+
+<div id="view-cards">
+{% assign current_month = "" %}
+{% assign current_year = "" %}
 {% for log in sorted_logs %}
     {% include date_dividers.html 
         date=log.date 
@@ -80,3 +86,48 @@ permalink: /logs/
 
 <div class="spacer"></div>
 {% endfor %}
+</div>
+
+<div id="view-list">
+  <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Title</th>
+        <th class="ml-cat">Category</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign current_year = "" %}
+      {% for log in sorted_logs %}
+      {% assign item_year = log.date | date: "%Y" %}
+      {% if item_year != current_year %}
+      {% assign current_year = item_year %}
+      <tr class="ml-year-divider"><td colspan="4">{{ item_year }}</td></tr>
+      {% endif %}
+      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+      {% assign category = log.category %}
+      {% include emoji_category.html %}
+      <tr>
+        <td class="ml-num">#{{ reversed_index }}</td>
+        <td class="ml-title"><a href="{{ log.url }}">{{ log.title }}</a></td>
+        <td class="ml-cat"><a href="{{ site.baseurl }}/logs/{{ log.category }}">{{ category | capitalize }}</a></td>
+        <td class="ml-date">{{ log.date | date: "%b %Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+function setView(view) {
+  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
+  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
+  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
+  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
+  localStorage.setItem('allView', view);
+}
+var saved = localStorage.getItem('allView');
+if (saved) setView(saved); else setView('cards');
+</script>
