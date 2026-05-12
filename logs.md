@@ -38,7 +38,7 @@ permalink: /logs/
     {% endfor %}
 </div>
 
-<div class="view-toggle">
+<div class="view-toggle" data-view-key="allView">
   <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
   <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
@@ -126,22 +126,3 @@ permalink: /logs/
   </table>
 </div>
 
-<script>
-function setView(view) {
-  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
-  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
-  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
-  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
-  localStorage.setItem('allView', view);
-}
-const saved = localStorage.getItem('allView');
-setView(saved || 'list');
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.log-list-table .bm-row').forEach(function (row) {
-    row.addEventListener('click', function () {
-      this.closest('tbody').classList.toggle('expanded');
-    });
-  });
-});
-</script>
