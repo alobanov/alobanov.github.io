@@ -92,21 +92,12 @@
 
 <script src="/assets/js/bookmark_selector.js"></script>
 
-<h2>~lobanov-av.ru</h2>
+<h2 class="font-mono">~lobanov-av.ru</h2>
 
-<div class="bubble">
+<div class="bubble font-mono">
 
 
 <p>Hi! <strong>I’m Aleksei</strong>, a <a href="about_en/">developer</a> and electronic music enthusiast who enjoys <a href="logs/music/">creating music</a> without a DAW. <a href="mailto:lobanov.aw@gmail.com">Say hello</a> or keep reading to explore more. Here, you’ll find insights into my <a href="logs/">logs</a>, including <a href="logs/movie/">movies</a> and <a href="logs/game">games</a>, complete with brief reviews and ratings. I also curate a collection of <a href="bookmarks/">bookmarks</a> featuring tools and resources that I find useful.</p>
-
-</div>
-
-<div class="bubble">
-
-
-<h3 id="my-playlist-for-work">My Playlist for Work</h3>
-
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3ltOhzEdh8415XM3kxBlJf?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 </div>
 
@@ -127,19 +118,11 @@
     
   
     
-      <span class="tag small" data-tag="git">Git</span>
-    
-  
-    
-      <span class="tag small" data-tag="chatgpt">ChatGPT</span>
-    
-  
-    
-      <span class="tag small" data-tag="productivity">Productivity</span>
-    
-  
-    
       <span class="tag small" data-tag="automation">Automation</span>
+    
+  
+    
+      <span class="tag small" data-tag="git">Git</span>
     
   
     
@@ -154,29 +137,22 @@
       <span class="tag small" data-tag="pattern">Pattern</span>
     
   
-    
-      <span class="tag small" data-tag="ios">iOS</span>
-    
-  
-    
-      <span class="tag small" data-tag="swift">Swift</span>
-    
-  
-    
-      <span class="tag small" data-tag="mvc">MVC</span>
-    
-  
   | <span class="tag small" id="reset">❌ Reset</span>
 </div>
 
-<div class="bookmarks-container">
+<div class="view-toggle" data-view-key="postView">
+  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
+</div>
 
+<div id="view-cards">
+<div class="bookmarks-container">
 
 <div class="bookmarks-bubble" data-tags="thoughts">
 
 <h3><a href="/2025/07/27/thoughts-llm.html">Working with LLMs</a> <small class="superscript"></small></h3>
 
-<p>Large language models are like a stubborn donkey — always eager to help but never admitting they don’t know something. Or like a genie — granting your wishes literally, with surprising results. Sometimes they’re just a slot machine — spin it and you never know if you’ll hit the jackpot or nothing at all. So don’t expect miracles — you need to know how to work with LLMs, or you’ll end up with neither your wish nor your winnings.</p>
+<p>LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.</p>
 
 
 <div class="spacer"></div>
@@ -190,7 +166,7 @@
 <small><b>27 July 2025</b></small>
 </div>
 
-<div class="bookmarks-bubble" data-tags="git,chatgpt,productivity,automation">
+<div class="bookmarks-bubble" data-tags="automation">
 
 <h3><a href="/2025/05/15/daily-dev-report-git-chatgpt.html">Daily Stand-Up? Handled.</a> <small class="superscript"></small></h3>
 
@@ -199,12 +175,6 @@
 
 <div class="spacer"></div>
 
-
-  <span class="tag small">Git</span>
-
-  <span class="tag small">ChatGPT</span>
-
-  <span class="tag small">Productivity</span>
 
   <span class="tag small">Automation</span>
 
@@ -268,7 +238,7 @@
 <small><b>10 January 2024</b></small>
 </div>
 
-<div class="bookmarks-bubble" data-tags="pattern,ios,swift">
+<div class="bookmarks-bubble" data-tags="pattern">
 
 <h3><a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small></h3>
 
@@ -280,17 +250,13 @@
 
   <span class="tag small">Pattern</span>
 
-  <span class="tag small">iOS</span>
-
-  <span class="tag small">Swift</span>
-
 
 <div class="spacer"></div>
 
 <small><b>14 November 2017</b></small>
 </div>
 
-<div class="bookmarks-bubble" data-tags="pattern,ios,swift">
+<div class="bookmarks-bubble" data-tags="pattern">
 
 <h3><a href="/2017/11/03/2017-Composite.html">Composite</a> <small class="superscript">Data structures</small></h3>
 
@@ -302,17 +268,13 @@
 
   <span class="tag small">Pattern</span>
 
-  <span class="tag small">iOS</span>
-
-  <span class="tag small">Swift</span>
-
 
 <div class="spacer"></div>
 
 <small><b>3 November 2017</b></small>
 </div>
 
-<div class="bookmarks-bubble" data-tags="pattern,mvc">
+<div class="bookmarks-bubble" data-tags="pattern">
 
 <h3><a href="/2014/01/04/2014-MVC.html">MVC</a> <small class="superscript">Classic</small></h3>
 
@@ -324,15 +286,117 @@
 
   <span class="tag small">Pattern</span>
 
-  <span class="tag small">MVC</span>
-
 
 <div class="spacer"></div>
 
 <small><b>4 January 2014</b></small>
 </div>
 
+</div>
+</div>
 
+<div id="view-list">
+  <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Title</th>
+        <th class="bm-tags">Tag</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="thoughts">
+        <td class="ml-num">#8</td>
+        <td class="post-list-content">
+          <a href="/2025/07/27/thoughts-llm.html">Working with LLMs</a>
+          <div class="post-list-desc">LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="thoughts">Thoughts</span></td>
+        <td class="ml-date">Jul 2025</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="automation">
+        <td class="ml-num">#7</td>
+        <td class="post-list-content">
+          <a href="/2025/05/15/daily-dev-report-git-chatgpt.html">Daily Stand-Up? Handled.</a>
+          <div class="post-list-desc">How I automated my daily developer report using a simple Git script and a prompt for ChatGPT — never blank out at a stand-up again.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="automation">Automation</span></td>
+        <td class="ml-date">May 2025</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="git">
+        <td class="ml-num">#6</td>
+        <td class="post-list-content">
+          <a href="/2024/10/13/git-town-workflow.html">GitTown</a> <small class="superscript">Simplifying Git workflows</small>
+          <div class="post-list-desc">Git Town simplifies Git usage, making it more convenient so developers can use its full potential.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="git">Git</span></td>
+        <td class="ml-date">Oct 2024</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="unit test">
+        <td class="ml-num">#5</td>
+        <td class="post-list-content">
+          <a href="/2024/10/12/test-description.html">Unit test</a> <small class="superscript">Description</small>
+          <div class="post-list-desc">A guide on how to write comments for unit tests.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="unit test">Unit Test</span></td>
+        <td class="ml-date">Oct 2024</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="bloc">
+        <td class="ml-num">#4</td>
+        <td class="post-list-content">
+          <a href="/2024/01/10/Bloc-Sturct.html">BLoC file structure</a> <small class="superscript">Part 1</small>
+          <div class="post-list-desc">Setting up a feature structure based on BLoC architecture.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="bloc">BLoC</span></td>
+        <td class="ml-date">Jan 2024</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+        <td class="ml-num">#3</td>
+        <td class="post-list-content">
+          <a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small>
+          <div class="post-list-desc">You need to sequentially validate data and then apply transformations to it, in any order depending on the situation.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+        <td class="ml-date">Nov 2017</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+        <td class="ml-num">#2</td>
+        <td class="post-list-content">
+          <a href="/2017/11/03/2017-Composite.html">Composite</a> <small class="superscript">Data structures</small>
+          <div class="post-list-desc">Using the Composite pattern for table view data sources.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+        <td class="ml-date">Nov 2017</td>
+      </tr>
+      
+      
+      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+        <td class="ml-num">#1</td>
+        <td class="post-list-content">
+          <a href="/2014/01/04/2014-MVC.html">MVC</a> <small class="superscript">Classic</small>
+          <div class="post-list-desc">The MVC model facilitates separation of concerns in the development of interactive graphical applications.</div>
+        </td>
+        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+        <td class="ml-date">Jan 2014</td>
+      </tr>
+      
+    </tbody>
+  </table>
 </div>
 
       </main>

@@ -765,6 +765,55 @@ tr.bm-row:hover td {
     background-color: var(--row-hover-bg);
 }
 
+/* =============================================================================
+   POSTS — PAGE TAGLINE (JetBrains Mono heading + greeting bubble)
+   ============================================================================= */
+
+.font-mono {
+    font-family: var(--code-font);
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+}
+
+.bubble.font-mono {
+    font-family: var(--code-font);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =============================================================================
+   POSTS — LIST VIEW
+   ============================================================================= */
+
+.post-list-content {
+    width: 100%;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post-list-content > a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.post-list-content > a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.post-list-desc {
+    font-size: 12px;
+    color: var(--text-description);
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+
 .bm-content {
     vertical-align: top;
     padding-top: 10px;
