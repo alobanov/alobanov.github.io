@@ -52,6 +52,10 @@
    BASE STYLES
    ============================================================================= */
 
+html {
+    background-color: var(--background-color);
+}
+
 body {
     font-size: var(--base-font-size);
     font-family: var(--primary-font);
