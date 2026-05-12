@@ -868,6 +868,28 @@ tr.bm-row:hover td {
     content: " ↓";
 }
 
+.bm-detail-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.bm-detail-thumb {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    opacity: 0.9;
+}
+
+.bm-detail-thumb:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
 .bm-tags {
     padding-left: 8px;
     padding-top: 12px;
