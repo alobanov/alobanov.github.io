@@ -796,33 +796,63 @@ tr.bm-row:hover td {
    GAME LIST — EXPANDABLE ROWS
    ============================================================================= */
 
+.game-list-table .bm-row {
+    cursor: pointer;
+}
+
+.game-list-table .bm-row td {
+    vertical-align: middle;
+}
+
+.game-list-table .bm-row .bm-content h3 {
+    margin: 0;
+}
+
+/* Hover highlights the entire entry (title + detail) as one unit */
+.game-list-table .bm-entry:hover .bm-row td,
+.game-list-table .bm-entry:hover .bm-detail td {
+    background-color: #f9f6f4;
+}
+
+/* Remove divider between title row and detail row when expanded */
+.game-list-table .bm-entry.expanded .bm-row,
+.game-list-table .bm-entry.expanded .bm-row td {
+    border-bottom: none;
+}
+
+/* Detail row: hidden by default, shown when entry is expanded */
+.game-list-table .bm-detail {
+    display: none;
+}
+
+.game-list-table .bm-entry.expanded .bm-detail {
+    display: table-row;
+}
+
+.game-list-table .bm-detail-cell {
+    padding: 0 6px 14px;
+    border-top: none;
+}
+
 .game-list-table .bm-content-body h3 {
     display: none;
 }
 
-.game-list-table .bm-content blockquote {
-    display: none;
-    margin-top: 4px;
-}
-
-.game-list-table tr.bm-row {
-    cursor: pointer;
-}
-
-.game-list-table tr.bm-row td {
-    vertical-align: top;
-    padding-top: 10px;
-}
-
-.game-list-table tr.bm-row.expanded .bm-content blockquote {
-    display: block;
-    margin-top: 10px;
-    padding: 4px 0 4px 12px;
+.game-list-table .bm-content-body blockquote {
+    border: none;
     border-left: 2px solid #e0d3c9;
     border-radius: 0;
+    background: none;
+    padding: 4px 0 4px 12px;
+    margin: 0;
+    font-family: var(--primary-font);
     font-size: 12px;
     line-height: 1.6;
     color: #777;
+}
+
+.game-list-table .bm-content-body blockquote p {
+    margin: 0;
 }
 
 .game-list-table .bm-content > h3::after {
@@ -833,7 +863,7 @@ tr.bm-row:hover td {
     font-weight: 400;
 }
 
-.game-list-table tr.bm-row.expanded .bm-content > h3::after {
+.game-list-table .bm-entry.expanded .bm-content > h3::after {
     content: " ↓";
 }
 
