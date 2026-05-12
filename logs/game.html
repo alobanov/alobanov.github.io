@@ -31,7 +31,7 @@ permalink: /logs/game/
 </div>
 
 <div id="view-list">
-  <table class="movie-list-table game-list-table">
+  <table class="movie-list-table log-list-table">
     <thead>
       <tr>
         <th class="ml-num">#</th>
@@ -81,7 +81,7 @@ permalink: /logs/game/
   setView(saved || 'list');
 
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.game-list-table .bm-row').forEach(function (row) {
+    document.querySelectorAll('.log-list-table .bm-row').forEach(function (row) {
       row.addEventListener('click', function () {
         this.closest('tbody').classList.toggle('expanded');
       });

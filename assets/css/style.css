@@ -793,52 +793,52 @@ tr.bm-row:hover td {
 
 
 /* =============================================================================
-   GAME LIST — EXPANDABLE ROWS
+   LOG LIST — EXPANDABLE ROWS (shared by game, movie, music, location)
    ============================================================================= */
 
-.game-list-table .bm-row {
+.log-list-table .bm-row {
     cursor: pointer;
 }
 
-.game-list-table .bm-row td {
+.log-list-table .bm-row td {
     vertical-align: middle;
 }
 
-.game-list-table .bm-row .bm-content h3 {
+.log-list-table .bm-row .bm-content h3 {
     margin: 0;
 }
 
 /* Hover highlights the entire entry (title + detail) as one unit */
-.game-list-table .bm-entry:hover .bm-row td,
-.game-list-table .bm-entry:hover .bm-detail td {
+.log-list-table .bm-entry:hover .bm-row td,
+.log-list-table .bm-entry:hover .bm-detail td {
     background-color: #f9f6f4;
 }
 
 /* Remove divider between title row and detail row when expanded */
-.game-list-table .bm-entry.expanded .bm-row,
-.game-list-table .bm-entry.expanded .bm-row td {
+.log-list-table .bm-entry.expanded .bm-row,
+.log-list-table .bm-entry.expanded .bm-row td {
     border-bottom: none;
 }
 
 /* Detail row: hidden by default, shown when entry is expanded */
-.game-list-table .bm-detail {
+.log-list-table .bm-detail {
     display: none;
 }
 
-.game-list-table .bm-entry.expanded .bm-detail {
+.log-list-table .bm-entry.expanded .bm-detail {
     display: table-row;
 }
 
-.game-list-table .bm-detail-cell {
+.log-list-table .bm-detail-cell {
     padding: 0 6px 14px;
     border-top: none;
 }
 
-.game-list-table .bm-content-body h3 {
+.log-list-table .bm-content-body h3 {
     display: none;
 }
 
-.game-list-table .bm-content-body blockquote {
+.log-list-table .bm-content-body blockquote {
     border: none;
     border-left: 2px solid #e0d3c9;
     border-radius: 0;
@@ -851,11 +851,11 @@ tr.bm-row:hover td {
     color: #777;
 }
 
-.game-list-table .bm-content-body blockquote p {
+.log-list-table .bm-content-body blockquote p {
     margin: 0;
 }
 
-.game-list-table .bm-content > h3::after {
+.log-list-table .bm-content > h3::after {
     content: " ›";
     font-family: var(--code-font);
     font-size: 11px;
@@ -863,7 +863,7 @@ tr.bm-row:hover td {
     font-weight: 400;
 }
 
-.game-list-table .bm-entry.expanded .bm-content > h3::after {
+.log-list-table .bm-entry.expanded .bm-content > h3::after {
     content: " ↓";
 }
 
