@@ -831,7 +831,7 @@ tr.bm-row:hover td {
 }
 
 .log-list-table .bm-detail-cell {
-    padding: 0 6px 14px;
+    padding: 0 6px 14px 40px;
     border-top: none;
 }
 
