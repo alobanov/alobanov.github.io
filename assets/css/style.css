@@ -778,6 +778,7 @@ pre, .highlight pre, .highlight {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 14px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .ml-title a:hover {
