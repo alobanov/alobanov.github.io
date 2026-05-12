@@ -676,7 +676,8 @@ button:disabled {
 /* Column: rating */
 .ml-rating {
     font-family: var(--code-font);
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     color: var(--secondary-color);
     white-space: nowrap;
     padding-left: 12px;

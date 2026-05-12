@@ -80,7 +80,7 @@ permalink: /logs/
 </div>
 
 <div id="view-list">
-  <table class="movie-list-table">
+  <table class="movie-list-table log-list-table">
     <thead>
       <tr>
         <th class="ml-num">#</th>
@@ -89,23 +89,32 @@ permalink: /logs/
         <th class="ml-date">Date</th>
       </tr>
     </thead>
+    {% assign current_year = "" %}
+    {% for log in sorted_logs %}
+    {% assign item_year = log.date | date: "%Y" %}
+    {% if item_year != current_year %}
+    {% assign current_year = item_year %}
     <tbody>
-      {% assign current_year = "" %}
-      {% for log in sorted_logs %}
-      {% assign item_year = log.date | date: "%Y" %}
-      {% if item_year != current_year %}
-      {% assign current_year = item_year %}
       <tr class="ml-year-divider"><td colspan="4">{{ item_year }}</td></tr>
-      {% endif %}
-      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-      <tr>
+    </tbody>
+    {% endif %}
+    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+    <tbody class="bm-entry">
+      <tr class="bm-row">
         <td class="ml-num">#{{ reversed_index }}</td>
-        <td class="ml-title"><a href="{{ log.url }}">{{ log.title }}</a></td>
+        <td class="bm-content">
+          <h3><a href="{{ log.url }}">{{ log.title }}</a></h3>
+        </td>
         <td class="ml-cat"><a href="{{ site.baseurl }}/logs/{{ log.category }}">{{ log.category | capitalize }}</a></td>
         <td class="ml-date">{{ log.date | date: "%b %Y" }}</td>
       </tr>
-      {% endfor %}
+      <tr class="bm-detail">
+        <td colspan="4" class="bm-detail-cell">
+          <div class="bm-content-body">{{ log.content | markdownify }}</div>
+        </td>
+      </tr>
     </tbody>
+    {% endfor %}
   </table>
 </div>
 
@@ -119,4 +128,12 @@ function setView(view) {
 }
 const saved = localStorage.getItem('allView');
 setView(saved || 'list');
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.log-list-table .bm-row').forEach(function (row) {
+    row.addEventListener('click', function () {
+      this.closest('tbody').classList.toggle('expanded');
+    });
+  });
+});
 </script>
