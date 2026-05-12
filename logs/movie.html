@@ -15,16 +15,18 @@ permalink: /logs/movie/
 
 {% assign items = site.logs | where: "category", "movie" | sort: 'date' | reverse %}
 
+<div class="bubble yellow">
+  📽️ Movies I've watched, rated from 0 to 5, with a brief note on each. The most memorable ones are marked with a 🔥
+</div>
+
 <div id="view-cards">
-  <div class="bubble yellow">
-      📽️ Movies I've watched, rated from 0 to 5, with a brief note on each. The most memorable ones are marked with a 🔥
-  </div>
   {% for item in items %}
   <div class="bubble">
-      {{ item.content | markdownify }}
-      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-      <div class="spacer"></div>
-      <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+    {{ item.content | markdownify }}
+    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+    <div class="spacer"></div>
+    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date:
+        "%-d %B %Y" }}</b></small>
   </div>
   {% endfor %}
 </div>
@@ -45,7 +47,9 @@ permalink: /logs/movie/
       {% assign item_year = item.date | date: "%Y" %}
       {% if item_year != current_year %}
       {% assign current_year = item_year %}
-      <tr class="ml-year-divider"><td colspan="4">{{ item_year }}</td></tr>
+      <tr class="ml-year-divider">
+        <td colspan="4">{{ item_year }}</td>
+      </tr>
       {% endif %}
       {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
       <tr>
@@ -60,13 +64,13 @@ permalink: /logs/movie/
 </div>
 
 <script>
-function setView(view) {
-  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
-  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
-  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
-  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
-  localStorage.setItem('movieView', view);
-}
-var saved = localStorage.getItem('movieView');
-if (saved) setView(saved); else setView('cards');
+  function setView(view) {
+    document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
+    document.getElementById('view-list').style.display = view === 'list' ? 'block' : 'none';
+    document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
+    document.getElementById('btn-list').classList.toggle('active', view === 'list');
+    localStorage.setItem('movieView', view);
+  }
+  var saved = localStorage.getItem('movieView');
+  if (saved) setView(saved); else setView('cards');
 </script>

@@ -778,7 +778,6 @@ pre, .highlight pre, .highlight {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 14px;
-    font-family: "JetBrains Mono", monospace;
 }
 
 .ml-title a:hover {
@@ -805,7 +804,7 @@ pre, .highlight pre, .highlight {
 }
 
 .ml-year-divider td {
-    font-family: "Rubik", sans-serif;
+    font-family: "JetBrains Mono", monospace;
     font-size: 13px;
     font-weight: 700;
     color: var(--primary-color);

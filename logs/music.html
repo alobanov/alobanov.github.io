@@ -15,17 +15,19 @@ permalink: /logs/music/
 
 {% assign items = site.logs | where: "category", "music" | sort: 'date' | reverse %}
 
+<div class="bubble yellow">
+  🎧 Music I've created on my gear: <a href="https://elektron.se/explore/digitakt-ii">Digitakt II</a> and
+  <a href="https://elektron.se/explore/syntakt">Syntakt</a>
+</div>
+
 <div id="view-cards">
-  <div class="bubble yellow">
-    🎧 Music I've created on my gear: <a href="https://elektron.se/explore/digitakt-ii">Digitakt II</a> and
-    <a href="https://elektron.se/explore/syntakt">Syntakt</a>
-  </div>
   {% for item in items %}
   <div class="bubble">
     {{ item.content | markdownify }}
     {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
     <div class="spacer"></div>
-    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date: "%-d %B %Y" }}</b></small>
+    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date:
+        "%-d %B %Y" }}</b></small>
   </div>
   {% endfor %}
 </div>
@@ -45,7 +47,9 @@ permalink: /logs/music/
       {% assign item_year = item.date | date: "%Y" %}
       {% if item_year != current_year %}
       {% assign current_year = item_year %}
-      <tr class="ml-year-divider"><td colspan="3">{{ item_year }}</td></tr>
+      <tr class="ml-year-divider">
+        <td colspan="3">{{ item_year }}</td>
+      </tr>
       {% endif %}
       {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
       <tr>
@@ -59,13 +63,13 @@ permalink: /logs/music/
 </div>
 
 <script>
-function setView(view) {
-  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
-  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
-  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
-  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
-  localStorage.setItem('musicView', view);
-}
-var saved = localStorage.getItem('musicView');
-if (saved) setView(saved); else setView('cards');
+  function setView(view) {
+    document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
+    document.getElementById('view-list').style.display = view === 'list' ? 'block' : 'none';
+    document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
+    document.getElementById('btn-list').classList.toggle('active', view === 'list');
+    localStorage.setItem('musicView', view);
+  }
+  var saved = localStorage.getItem('musicView');
+  if (saved) setView(saved); else setView('cards');
 </script>

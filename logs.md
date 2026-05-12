@@ -38,7 +38,6 @@ permalink: /logs/
       {% endunless %}
     {% endfor %}
 </div>
-<div class="spacer"></div>
 
 <div class="view-toggle">
   <button class="view-btn active" id="btn-cards" onclick="setView('cards')">Cards</button>
