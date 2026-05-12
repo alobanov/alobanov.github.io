@@ -111,6 +111,14 @@ permalink: /logs/
       <tr class="bm-detail">
         <td colspan="4" class="bm-detail-cell">
           <div class="bm-content-body">{{ log.content | markdownify }}</div>
+          {% if log.images %}
+          <div class="bm-detail-images">
+            {% for image in log.images %}
+            <img src="/assets/img/{{ log.category }}/{{ image }}" alt="{{ log.title }}" class="bm-detail-thumb"
+              onclick="openModal('/assets/img/{{ log.category }}/{{ image }}')" />
+            {% endfor %}
+          </div>
+          {% endif %}
         </td>
       </tr>
     </tbody>
