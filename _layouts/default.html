@@ -40,12 +40,20 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-
   <!-- Custom head elements from include -->
   {% include head-custom.html %}
 
   <!-- JavaScript support detection -->
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+  <!-- Anti-FOUC: apply theme before first paint -->
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = preferred;
+    })();
+  </script>
 </head>
 
 <body>
@@ -74,6 +82,25 @@
 
   <!-- Deferred JavaScript -->
   <script defer src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+
+  <!-- Theme toggle interaction -->
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      function syncIcon() {
+        if (btn) btn.textContent = document.documentElement.dataset.theme === 'dark' ? '☀️' : '🌙';
+      }
+      if (btn) {
+        btn.addEventListener('click', function () {
+          const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem('theme', next);
+          syncIcon();
+        });
+      }
+      syncIcon();
+    })();
+  </script>
 </body>
 
 </html>

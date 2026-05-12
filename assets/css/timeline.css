@@ -5,6 +5,13 @@
     --melange_b_red: #362424;
 }
 
+[data-theme="dark"] {
+    --color-hr: #3e2e28;
+    --melange_b_yellow: #c69a6e;
+    --melange_b_magenta: #c09ad0;
+    --melange_b_red: #c08080;
+}
+
 .events {
     position: relative;
     display: flex;
