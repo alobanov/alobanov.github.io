@@ -4,24 +4,15 @@ layout: page
 
 {% include bookmark_import.html %}
 
-<h2>~lobanov-av.ru</h2>
+<h2 class="font-mono">~lobanov-av.ru</h2>
 
-<div class="bubble">
+<div class="bubble font-mono">
 {% capture markdown_content %}
 Hi! **I’m Aleksei**, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com) or keep reading to explore more. Here, you’ll find insights into my [logs](logs/), including [movies](logs/movie/) and [games](logs/game), complete with brief reviews and ratings. I also curate a collection of [bookmarks](bookmarks/) featuring tools and resources that I find useful.
 {% endcapture %}
 {{ markdown_content | markdownify }}
 </div>
 
-<div class="bubble">
-{% capture markdown_content %}
-
-### My Playlist for Work
-
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3ltOhzEdh8415XM3kxBlJf?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-{% endcapture %}
-{{ markdown_content | markdownify }}
-</div>
 
 <div class="bubble">
 {% capture markdown_content %}
@@ -46,8 +37,15 @@ Here you will find **posts**, you can filter them by tags. Enjoy your reading!
   | <span class='tag small' id="reset">❌ Reset</span>
 </div>
 
-<div class="bookmarks-container">
+<div class="view-toggle" data-view-key="postView">
+  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
+</div>
+
 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+
+<div id="view-cards">
+<div class="bookmarks-container">
 {% for post in sorted_posts %}
 <div class="bookmarks-bubble" data-tags="{% for tag in post.tags %}{{ tag | downcase }}{% if forloop.last == false %},{% endif %}{% endfor %}">
 
@@ -66,5 +64,32 @@ Here you will find **posts**, you can filter them by tags. Enjoy your reading!
 <small><b>{{ post.date | date: "%-d %B %Y" }}</b></small>
 </div>
 {% endfor %}
+</div>
+</div>
 
+<div id="view-list">
+  <table class="movie-list-table">
+    <thead>
+      <tr>
+        <th class="ml-num">#</th>
+        <th class="ml-title">Title</th>
+        <th class="bm-tags">Tag</th>
+        <th class="ml-date">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in sorted_posts %}
+      {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
+      <tr class="bookmarks-bubble bm-row" data-tags="{% for tag in post.tags %}{{ tag | downcase }}{% if forloop.last == false %},{% endif %}{% endfor %}">
+        <td class="ml-num">#{{ reversed_index }}</td>
+        <td class="post-list-content">
+          <a href="{{ post.url }}">{{ post.title }}</a>{% if post.superscript %} <small class="superscript">{{ post.superscript }}</small>{% endif %}
+          {% if post.description %}<div class="post-list-desc">{{ post.description }}</div>{% endif %}
+        </td>
+        <td class="bm-tags">{% for tag in post.tags %}<span class="tag small" data-tag="{{ tag | downcase }}">{{ tag }}</span>{% endfor %}</td>
+        <td class="ml-date">{{ post.date | date: "%b %Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
