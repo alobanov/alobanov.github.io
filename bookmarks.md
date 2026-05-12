@@ -31,7 +31,7 @@ permalink: /bookmarks/
 | <span class='tag small' id="reset">❌ Reset</span>
 </div>
 
-<div class="view-toggle">
+<div class="view-toggle" data-view-key="bookmarkView">
   <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
   <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
@@ -78,14 +78,3 @@ permalink: /bookmarks/
 
 <div class="spacer"></div>
 
-<script>
-function setView(view) {
-  document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
-  document.getElementById('view-list').style.display  = view === 'list'  ? 'block' : 'none';
-  document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
-  document.getElementById('btn-list').classList.toggle('active',  view === 'list');
-  localStorage.setItem('bookmarkView', view);
-}
-const saved = localStorage.getItem('bookmarkView');
-setView(saved || 'list');
-</script>

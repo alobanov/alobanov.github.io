@@ -4,8 +4,6 @@ layout: page
 
 {% include bookmark_import.html %}
 
-<body>
-
 <h2>~lobanov-av.ru</h2>
 
 <div class="bubble">
@@ -70,4 +68,3 @@ Here you will find **posts**, you can filter them by tags. Enjoy your reading!
 {% endfor %}
 
 </div>
-</body>
