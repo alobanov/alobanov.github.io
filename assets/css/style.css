@@ -2,35 +2,32 @@
 @import "timeline.css";
 @import "image_pop.css";
 
-/* Основные переменные */
+
+/* =============================================================================
+   CUSTOM PROPERTIES
+   ============================================================================= */
+
 :root {
-    /* Цвета */
-    --primary-color: #54433a;
-    --secondary-color: #267cb9;
-    --background-color: #fff;
+    --primary-color:          #54433a;
+    --secondary-color:        #267cb9;
+    --muted-color:            #b0a09a;
+    --background-color:       #fff;
     --background-color-light: #f9f9f9;
-    --code-background: #f6f4f2;
-    --border-color: #e5e5e5;
+    --code-background:        #f6f4f2;
+    --border-color:           #e5e5e5;
 
-    /* Размеры */
     --base-font-size: 15px;
-    --border-radius: 13px;
+    --border-radius:  13px;
 
-    /* Шрифты */
     --primary-font: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --code-font: "JetBrains Mono", "Lucida Console", Consolas, monospace;
+    --code-font:    "JetBrains Mono", "Lucida Console", Consolas, monospace;
 }
 
-.full-width-rounded-image {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    object-fit: cover;
-    filter: grayscale(90%);
-    position: relative;
-}
 
-/* Общие стили */
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
 body {
     font-size: var(--base-font-size);
     font-family: var(--primary-font);
@@ -38,7 +35,6 @@ body {
     background-color: var(--background-color);
 }
 
-/* Заголовки */
 h1,
 h2,
 h3,
@@ -68,7 +64,6 @@ h6 {
     color: #494949;
 }
 
-/* Параграфы и списки */
 p {
     margin: 0;
 }
@@ -79,7 +74,6 @@ ul {
     padding-left: 25px;
 }
 
-/* Таблицы и блоки кода */
 table,
 pre,
 dl {
@@ -96,6 +90,11 @@ td {
     text-align: left;
     padding: 5px 10px;
     border-bottom: 1px solid #e5e5e5;
+}
+
+dt,
+th {
+    color: #444;
 }
 
 code,
@@ -117,22 +116,28 @@ pre {
     overflow-x: auto;
 }
 
-/* Если код-блок первый или последний элемент в bubble */
-.bubble>pre:first-child {
+pre,
+.highlight pre,
+.highlight {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.bubble > pre:first-child {
     margin-top: -15px;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     border-top: none;
 }
 
-.bubble>pre:last-child {
+.bubble > pre:last-child {
     margin-bottom: -15px;
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
     border-bottom: none;
 }
 
-/* Ссылки */
 a {
     color: var(--secondary-color);
     text-decoration: none;
@@ -155,28 +160,6 @@ a:hover small {
     color: #777;
 }
 
-/* Структура страницы */
-.wrapper {
-    width: 600px;
-    margin: 0 auto;
-}
-
-header,
-footer {
-    font-family: var(--primary-font);
-    width: 270px;
-    float: left;
-    -webkit-font-smoothing: subpixel-antialiased;
-    margin-bottom: 20px;
-}
-
-section {
-    width: 600px;
-    float: right;
-    padding-bottom: 50px;
-}
-
-/* Дополнительные элементы */
 blockquote {
     border-left: 5px solid #909cab;
     border-radius: 4px;
@@ -184,11 +167,6 @@ blockquote {
     padding: 10px 0 10px 15px;
     color: #3e3b39;
     background-color: var(--code-background);
-}
-
-dt,
-th {
-    color: #444;
 }
 
 img {
@@ -229,68 +207,48 @@ hr {
     margin: 0 0 20px;
 }
 
-/* Медиа-запросы */
-@media print,
-screen and (max-width: 600px) {
 
-    .wrapper,
-    header,
-    section,
-    footer {
-        width: auto;
-        float: none;
-        position: static;
-    }
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
 
-    section {
-        border: 1px solid #e5e5e5;
-        border-width: 1px 0;
-        padding: 20px 0;
-        margin: 0 0 20px;
-    }
-
-    header a small {
-        display: inline;
-    }
-
-    header ul {
-        position: absolute;
-        top: 52px;
-    }
-
-    body {
-        word-wrap: break-word;
-        font-size: 14px;
-    }
-
-    small {
-        font-size: 11px;
-    }
-
-    pre,
-    code {
-        word-wrap: normal;
-    }
-
-    .bookmarks-bubble {
-        font-size: 13px;
-    }
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
 }
 
-@media (min-width: 601px) {
-    .menu-container {
-        width: 600px;
-    }
+header,
+footer {
+    font-family: var(--primary-font);
+    width: 270px;
+    float: left;
+    -webkit-font-smoothing: subpixel-antialiased;
+    margin-bottom: 20px;
 }
 
-@media print {
-    body {
-        font-size: 12pt;
-        color: #444;
-    }
+section {
+    width: 600px;
+    float: right;
+    padding-bottom: 50px;
 }
 
-/* Меню */
+.container-two-columns {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    height: 30px;
+}
+
+.content-two-columns {
+    flex: 1;
+    align-items: end;
+}
+
+
+/* =============================================================================
+   NAVIGATION
+   ============================================================================= */
+
 .menu-container {
     display: flex;
     justify-content: space-between;
@@ -336,10 +294,8 @@ screen and (max-width: 600px) {
     font-size: 16px;
     padding: 8px;
     border-radius: 15px;
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
     font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-nav a:hover {
@@ -347,30 +303,94 @@ screen and (max-width: 600px) {
     color: var(--primary-color);
 }
 
-.container-two-columns {
-    display: flex;
-    gap: 20px;
-    align-items: end;
-    height: 30px;
+
+/* =============================================================================
+   TYPOGRAPHY
+   ============================================================================= */
+
+article {
+    margin: 90px 10px 0;
 }
 
-/* Колонка для текста */
-.content-two-columns {
-    flex: 1;
-    align-items: end;
+.article-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.1;
 }
 
 .log-number {
     font-weight: bold;
-    font-family: "Rubik", sans-serif;
+    font-family: var(--primary-font);
     font-size: 15px;
     color: #5a463c;
 }
 
-/* Пузырь */
+.spacer {
+    height: 10px;
+}
+
+.wordcode {
+    background-color: #f2e9e1;
+    color: #5a4635;
+    padding: 1px 4px;
+    border-radius: 4px;
+    border: 1px solid #e0d3c9;
+    font-family: var(--code-font);
+    font-size: 12px;
+    display: inline-block;
+}
+
+ol.custom-counter {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+ol.custom-counter > li {
+    counter-increment: item;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+ol.custom-counter > li::before {
+    content: counter(item)".";
+    font-size: 26px;
+    font-weight: bold;
+    color: #996767;
+    position: absolute;
+    left: -26px;
+    top: -4px;
+}
+
+
+/* =============================================================================
+   DATE DIVIDERS
+   ============================================================================= */
+
+.year-divider {
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.month-divider {
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+/* =============================================================================
+   BUBBLES
+   ============================================================================= */
+
 .bubble {
     position: relative;
-    /* background-color: #f9f9f9; */
     background-color: var(--background-color-light);
     color: var(--primary-color);
     padding: 15px 18px;
@@ -387,54 +407,22 @@ screen and (max-width: 600px) {
 
 .bubble.yellow {
     background-color: rgba(238, 172, 16, 0.05);
-    /* EEAC110D */
     border: 1px solid #f6f5f4;
 }
 
 .bubble.purple {
     background-color: rgba(87, 17, 238, 0.05);
-    /* 5711EE0D */
     border: 1px solid rgba(87, 17, 238, 0.08);
 }
 
 .bubble.blue {
     background-color: rgba(17, 91, 238, 0.05);
-    /* 115BEE0D */
     border: 1px solid rgba(17, 91, 238, 0.08);
 }
 
 .bubble.red {
     background-color: rgba(238, 17, 57, 0.05);
-    /* EE11390D */
     border: 1px solid rgba(238, 17, 57, 0.08);
-}
-
-.bookmarks-container {
-    column-count: 2;
-    column-gap: 10px;
-    column-fill: balance;
-}
-
-.bookmarks-bubble {
-    background-color: #f9f9f9;
-    color: #54433a;
-    padding: 15px 20px;
-    border-radius: 15px;
-    font-family: "Rubik", sans-serif;
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0;
-    margin-bottom: 10px;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    border: 1px solid #f6f6f6;
-}
-
-.bookmarks-bubble.dimmed {
-    opacity: 0.3;
-    transform: scale(0.95);
 }
 
 .bubble h1,
@@ -446,6 +434,42 @@ screen and (max-width: 600px) {
     color: inherit;
     margin: 0 0 10px;
 }
+
+
+/* =============================================================================
+   BOOKMARKS — CARDS VIEW
+   ============================================================================= */
+
+.bookmarks-container {
+    column-count: 2;
+    column-gap: 10px;
+    column-fill: balance;
+}
+
+.bookmarks-bubble {
+    background-color: var(--background-color-light);
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-family: var(--primary-font);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #f6f6f6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bookmarks-bubble.hidden {
+    display: none;
+}
+
+
+/* =============================================================================
+   BADGES
+   ============================================================================= */
 
 .badge {
     position: absolute;
@@ -467,19 +491,11 @@ screen and (max-width: 600px) {
     height: 16px;
 }
 
-/* Статья */
-article {
-    margin: 90px 10px 0;
-}
 
-.article-title {
-    margin: 0;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1.1;
-}
+/* =============================================================================
+   TAGS
+   ============================================================================= */
 
-/* Теги */
 .tag {
     cursor: pointer;
     display: inline-flex;
@@ -487,13 +503,27 @@ article {
     justify-content: center;
     background-color: #eae1db;
     color: #1a1a1a;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-weight: 600;
+    font-size: 12px;
     padding: 3px 8px;
     border-radius: 6px;
     margin: 4px 10px 0 0;
-    font-size: 12px;
     white-space: nowrap;
+}
+
+.tag.small {
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-right: 5px;
+}
+
+.tag:last-child {
+    margin-right: 0;
+}
+
+.tag:hover {
+    background-color: #dcd0c6;
 }
 
 .tag img,
@@ -503,109 +533,10 @@ article {
     height: 16px;
 }
 
-.tag:last-child {
-    margin-right: 0;
-}
 
-.tag.small {
-    font-size: 11px;
-    padding: 3px 8px;
-    margin-right: 5px;
-}
-
-.tag:hover {
-    background-color: #dcd0c6;
-}
-
-/* Пользовательский счетчик */
-ol.custom-counter {
-    counter-reset: item;
-    list-style: none;
-    padding-left: 0;
-}
-
-ol.custom-counter>li {
-    counter-increment: item;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-ol.custom-counter>li::before {
-    content: counter(item)".";
-    font-size: 26px;
-    font-weight: bold;
-    color: #996767;
-    position: absolute;
-    left: -26px;
-    top: -4px;
-}
-
-/* Стиль для кода в тексте */
-.wordcode {
-    background-color: #f2e9e1;
-    color: #5a4635;
-    padding: 1px 4px;
-    border-radius: 4px;
-    border: 1px solid #e0d3c9;
-    font-family: var(--code-font);
-    font-size: 12px;
-    display: inline-block;
-}
-
-.spacer {
-    height: 10px;
-}
-
-/* Разделитель года */
-.year-divider {
-    font-size: 20px;
-    font-family: "Rubik", sans-serif;
-    color: var(--primary-color);
-    text-align: center;
-    font-weight: 700;
-}
-
-/* Разделитель месяца */
-.month-divider {
-    font-size: 16px;
-    font-family: "Rubik", sans-serif;
-    color: var(--primary-color);
-    font-weight: 600;
-    text-align: center;
-}
-
-/* @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #ffffff;
-    }
-
-    header {
-        background-color: #1f1f1f;
-        color: #eeeeee;
-    }
-
-    nav {
-        background-color: #2a2a2a;
-    }
-
-    nav a {
-        color: #00aaff;
-    }
-
-    nav a:hover {
-        text-decoration: underline;
-    }
-
-    main {
-        background-color: #1c1c1c;
-    }
-
-    footer {
-        background-color: #1f1f1f;
-        color: #aaaaaa;
-    }
-} */
+/* =============================================================================
+   BUTTONS
+   ============================================================================= */
 
 button {
     cursor: pointer;
@@ -614,27 +545,25 @@ button {
     justify-content: center;
     background-color: #eae1db;
     color: #1a1a1a;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-weight: 600;
     font-size: 10px;
     white-space: nowrap;
     border-radius: 6px;
     border: 1px solid #d6cbc3;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     padding: 3px 8px;
     margin: 4px 10px 0 0;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
     background-color: #d6cbc3;
-    /* Меняем цвет фона при наведении */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(234, 225, 219, 0.5);
-    /* Добавляем мягкий фокус */
 }
 
 button:disabled {
@@ -645,56 +574,10 @@ button:disabled {
 }
 
 
-/* 
-EEAC110D yellow
-5711EE0D purple
-115BEE0D blue
-EE11390D red
-*/
+/* =============================================================================
+   VIEW TOGGLE (Cards / List)
+   ============================================================================= */
 
-/* Footnotes */
-.footnotes {
-    margin-top: 2em;
-    padding-top: 1em;
-    border-top: 1px solid #eaecef;
-    font-size: 0.9em;
-    color: #666;
-}
-
-.footnotes p {
-    margin: 0.5em 0;
-}
-
-.footnotes a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
-.footnotes a:hover {
-    text-decoration: underline;
-}
-
-.footnote-ref {
-    font-size: 0.8em;
-    vertical-align: super;
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
-.footnote-backref {
-    text-decoration: none;
-    color: var(--secondary-color);
-    margin-left: 0.5em;
-}
-
-/* Allow line wrapping in code and highlight blocks */
-pre, .highlight pre, .highlight {
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-}
-
-/* View toggle (Cards / List) */
 .view-toggle {
     display: flex;
     gap: 6px;
@@ -703,17 +586,17 @@ pre, .highlight pre, .highlight {
 }
 
 .view-btn {
+    font-family: var(--code-font);
     font-size: 12px;
+    font-weight: 500;
     padding: 4px 12px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     background-color: var(--background-color-light);
     color: var(--primary-color);
     cursor: pointer;
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
     margin: 0;
+    transition: background-color 0.2s ease;
 }
 
 .view-btn:hover {
@@ -726,7 +609,11 @@ pre, .highlight pre, .highlight {
     border-color: var(--primary-color);
 }
 
-/* Minimalist movie list */
+
+/* =============================================================================
+   LIST TABLE
+   ============================================================================= */
+
 .movie-list-table {
     width: 100%;
     border-collapse: collapse;
@@ -734,12 +621,12 @@ pre, .highlight pre, .highlight {
 }
 
 .movie-list-table thead th {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #b0a09a;
+    color: var(--muted-color);
     padding: 0 6px 8px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
@@ -762,14 +649,16 @@ pre, .highlight pre, .highlight {
     vertical-align: middle;
 }
 
+/* Column: row number */
 .ml-num {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 12px;
-    color: #b0a09a;
+    color: var(--muted-color);
     white-space: nowrap;
     width: 36px;
 }
 
+/* Column: title */
 .ml-title {
     width: 100%;
 }
@@ -784,9 +673,9 @@ pre, .highlight pre, .highlight {
     text-decoration: underline;
 }
 
-
+/* Column: rating */
 .ml-rating {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 12px;
     color: var(--secondary-color);
     white-space: nowrap;
@@ -795,33 +684,26 @@ pre, .highlight pre, .highlight {
     text-align: right;
 }
 
+/* Column: date */
 .ml-date {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 11px;
-    color: #b0a09a;
+    color: var(--muted-color);
     white-space: nowrap;
     text-align: right;
 }
 
-.ml-year-divider td {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-color);
-    padding: 20px 6px 4px;
-    border-bottom: none;
-}
-
+/* Column: category */
 .ml-cat {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 11px;
-    color: #b0a09a;
+    color: var(--muted-color);
     white-space: nowrap;
     padding-left: 12px;
 }
 
 .ml-cat a {
-    color: #b0a09a;
+    color: var(--muted-color);
     text-decoration: none;
 }
 
@@ -829,7 +711,21 @@ pre, .highlight pre, .highlight {
     color: var(--primary-color);
 }
 
-/* Bookmark list view */
+/* Year divider row */
+.ml-year-divider td {
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 20px 6px 4px;
+    border-bottom: none;
+}
+
+
+/* =============================================================================
+   BOOKMARKS — LIST VIEW
+   ============================================================================= */
+
 tr.bookmarks-bubble {
     display: table-row;
     background-color: transparent;
@@ -837,10 +733,6 @@ tr.bookmarks-bubble {
     border: none;
     padding: 0;
     margin: 0;
-}
-
-.bookmarks-bubble.hidden {
-    display: none;
 }
 
 tr.bm-row:hover td {
@@ -854,7 +746,7 @@ tr.bm-row:hover td {
 }
 
 .bm-content h3 {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--code-font);
     font-size: 13px;
     font-weight: 600;
     margin: 0 0 4px;
@@ -864,7 +756,7 @@ tr.bm-row:hover td {
 .bm-content h3 small {
     font-size: 9px;
     font-weight: 400;
-    color: #b0a09a;
+    color: var(--muted-color);
 }
 
 .bm-content h3 a {
@@ -877,7 +769,7 @@ tr.bm-row:hover td {
 }
 
 .bm-content p {
-    font-family: "Rubik", sans-serif;
+    font-family: var(--primary-font);
     font-size: 11px;
     color: #888;
     margin: 0;
@@ -886,11 +778,121 @@ tr.bm-row:hover td {
 
 .bm-tags {
     padding-left: 8px;
+    padding-top: 12px;
     white-space: nowrap;
     vertical-align: top;
-    padding-top: 12px;
 }
 
-.bm-tags .tag {
-    cursor: pointer;
+
+/* =============================================================================
+   FOOTNOTES
+   ============================================================================= */
+
+.footnotes {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #eaecef;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.footnotes p {
+    margin: 0.5em 0;
+}
+
+.footnotes a,
+.footnote-ref,
+.footnote-backref {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footnotes a:hover {
+    text-decoration: underline;
+}
+
+.footnote-ref {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+.footnote-backref {
+    margin-left: 0.5em;
+}
+
+
+/* =============================================================================
+   UTILITIES
+   ============================================================================= */
+
+.full-width-rounded-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    filter: grayscale(90%);
+    position: relative;
+}
+
+
+/* =============================================================================
+   MEDIA QUERIES
+   ============================================================================= */
+
+@media (min-width: 601px) {
+    .menu-container {
+        width: 600px;
+    }
+}
+
+@media print, screen and (max-width: 600px) {
+    .wrapper,
+    header,
+    section,
+    footer {
+        width: auto;
+        float: none;
+        position: static;
+    }
+
+    section {
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
+        padding: 20px 0;
+        margin: 0 0 20px;
+    }
+
+    header a small {
+        display: inline;
+    }
+
+    header ul {
+        position: absolute;
+        top: 52px;
+    }
+
+    body {
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+
+    small {
+        font-size: 11px;
+    }
+
+    pre,
+    code {
+        word-wrap: normal;
+    }
+
+    .bookmarks-bubble {
+        font-size: 13px;
+    }
+}
+
+@media print {
+    body {
+        font-size: 12pt;
+        color: #444;
+    }
 }
