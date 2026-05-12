@@ -31,7 +31,7 @@ permalink: /logs/game/
 </div>
 
 <div id="view-list">
-  <table class="movie-list-table">
+  <table class="movie-list-table game-list-table">
     <thead>
       <tr>
         <th class="ml-num">#</th>
@@ -51,9 +51,12 @@ permalink: /logs/game/
       </tr>
       {% endif %}
       {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-      <tr>
+      <tr class="bm-row">
         <td class="ml-num">#{{ reversed_index }}</td>
-        <td class="ml-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td class="bm-content">
+          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+          <div class="bm-content-body">{{ item.content | markdownify }}</div>
+        </td>
         <td class="ml-rating">{{ item.rating }}</td>
         <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
       </tr>
@@ -72,4 +75,12 @@ permalink: /logs/game/
   }
   var saved = localStorage.getItem('gameView');
   if (saved) setView(saved); else setView('list');
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.game-list-table .bm-row').forEach(function (row) {
+      row.addEventListener('click', function () {
+        this.classList.toggle('expanded');
+      });
+    });
+  });
 </script>
