@@ -128,5 +128,5 @@ function setView(view) {
   localStorage.setItem('allView', view);
 }
 var saved = localStorage.getItem('allView');
-if (saved) setView(saved); else setView('cards');
+if (saved) setView(saved); else setView('list');
 </script>

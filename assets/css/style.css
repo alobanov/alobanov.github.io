@@ -828,3 +828,69 @@ pre, .highlight pre, .highlight {
 .ml-cat a:hover {
     color: var(--primary-color);
 }
+
+/* Bookmark list view */
+tr.bookmarks-bubble {
+    display: table-row;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bookmarks-bubble.hidden {
+    display: none;
+}
+
+tr.bm-row:hover td {
+    background-color: #f9f6f4;
+}
+
+.bm-content {
+    vertical-align: top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bm-content h3 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--primary-color);
+}
+
+.bm-content h3 small {
+    font-size: 9px;
+    font-weight: 400;
+    color: #b0a09a;
+}
+
+.bm-content h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.bm-content h3 a:hover {
+    text-decoration: underline;
+}
+
+.bm-content p {
+    font-family: "Rubik", sans-serif;
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.bm-tags {
+    padding-left: 8px;
+    white-space: nowrap;
+    vertical-align: top;
+    padding-top: 12px;
+}
+
+.bm-tags .tag {
+    cursor: pointer;
+}

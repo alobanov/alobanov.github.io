@@ -4,7 +4,6 @@ title: Atuin
 date: 2024-10-23
 tags: 
  - Terminal
- - Utils
 ---
 
 ### [Atuin](https://github.com/atuinsh/atuin) <small class="superscript">Shell history</small>

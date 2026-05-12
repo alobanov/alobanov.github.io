@@ -4,7 +4,6 @@ title: Eza
 date: 2024-10-20
 tags: 
  - Terminal
- - Utils
 ---
 
 ### [Eza](https://github.com/eza-community/eza) <small class="superscript">ls -la</small>
