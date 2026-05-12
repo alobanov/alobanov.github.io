@@ -86,6 +86,6 @@ function setView(view) {
   document.getElementById('btn-list').classList.toggle('active',  view === 'list');
   localStorage.setItem('bookmarkView', view);
 }
-var saved = localStorage.getItem('bookmarkView');
-if (saved) setView(saved); else setView('list');
+const saved = localStorage.getItem('bookmarkView');
+setView(saved || 'list');
 </script>
