@@ -6,22 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
         tag.addEventListener("click", () => {
             const selectedTag = tag.textContent.trim().toLowerCase();
 
-            // Перебираем баблы и меняем прозрачность
             bubbles.forEach(bubble => {
-                const bubbleTags = bubble.getAttribute("data-tags").toLowerCase().split(",").map(tag => tag.trim());
+                const bubbleTags = bubble.getAttribute("data-tags").toLowerCase().split(",").map(t => t.trim());
                 if (bubbleTags.includes(selectedTag)) {
-                    bubble.classList.remove("dimmed");
+                    bubble.classList.remove("hidden");
                 } else {
-                    bubble.classList.add("dimmed");
+                    bubble.classList.add("hidden");
                 }
             });
         });
     });
 
     document.getElementById("reset").addEventListener("click", () => {
-        bubbles.forEach(bubble => {
-            bubble.classList.remove("dimmed");
-        });
+        bubbles.forEach(bubble => bubble.classList.remove("hidden"));
     });
 });
 
@@ -29,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".bookmarks-container");
     const items = Array.from(container.children);
-    const columnCount = 2; // Количество колонок
+    const columnCount = 2;
 
     const reordered = [];
     for (let i = 0; i < columnCount; i++) {
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Очищаем контейнер и добавляем элементы в новом порядке
     container.innerHTML = "";
     reordered.forEach(item => container.appendChild(item));
 });
