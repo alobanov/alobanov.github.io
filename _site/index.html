@@ -40,7 +40,6 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="/assets/css/style.css?v=">
 
-
   <!-- Custom head elements from include -->
   <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
@@ -55,6 +54,15 @@
 
   <!-- JavaScript support detection -->
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+  <!-- Anti-FOUC: apply theme before first paint -->
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = preferred;
+    })();
+  </script>
 </head>
 
 <body>
@@ -71,6 +79,7 @@
     <a href="/bookmarks/">Bookmarks</a>
     <a href="/logs/">Logs</a>
     <a href="/about_en">CV</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
 </div>
 
@@ -343,6 +352,25 @@
 
   <!-- Deferred JavaScript -->
   <script defer src="/assets/js/scale.fix.js"></script>
+
+  <!-- Theme toggle interaction -->
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      function syncIcon() {
+        if (btn) btn.textContent = document.documentElement.dataset.theme === 'dark' ? '☀️' : '🌙';
+      }
+      if (btn) {
+        btn.addEventListener('click', function () {
+          const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem('theme', next);
+          syncIcon();
+        });
+      }
+      syncIcon();
+    })();
+  </script>
 </body>
 
 </html>
