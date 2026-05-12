@@ -9,8 +9,8 @@ permalink: /logs/game/
 {% include log_category_list.html %}
 
 <div class="view-toggle">
-  <button class="view-btn active" id="btn-cards" onclick="setView('cards')">Cards</button>
-  <button class="view-btn" id="btn-list" onclick="setView('list')">List</button>
+  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
+  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
 
 {% assign items = site.logs | where: "category", "game" | sort: 'date' | reverse %}
@@ -77,8 +77,8 @@ permalink: /logs/game/
     document.getElementById('btn-list').classList.toggle('active', view === 'list');
     localStorage.setItem('gameView', view);
   }
-  var saved = localStorage.getItem('gameView');
-  if (saved) setView(saved); else setView('list');
+  const saved = localStorage.getItem('gameView');
+  setView(saved || 'list');
 
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.game-list-table .bm-row').forEach(function (row) {
