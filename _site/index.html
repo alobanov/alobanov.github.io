@@ -99,15 +99,12 @@
 
 </div>
 
-<div class="bubble">
-
-
-<p>Here you will find <strong>posts</strong>, you can filter them by tags. Enjoy your reading!</p>
-
+<div class="bubble font-mono">
+<small><p>Here you will find <strong>posts</strong>, you can filter them by tags. Enjoy your reading!</p>
+</small>
 
 
   
-
   
   <small><b>Tags:</b></small>
   
@@ -138,264 +135,107 @@
   | <span class="tag small" id="reset">❌ Reset</span>
 </div>
 
-<div class="view-toggle" data-view-key="postView">
-  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
-  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
-</div>
-
-<div id="view-cards">
-<div class="bookmarks-container">
-
-<div class="bookmarks-bubble" data-tags="thoughts">
-
-<h3><a href="/2025/07/27/thoughts-llm.html">Working with LLMs</a> <small class="superscript"></small></h3>
-
-<p>LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Thoughts</span>
-
-
-<div class="spacer"></div>
-
-<small><b>27 July 2025</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="automation">
-
-<h3><a href="/2025/05/15/daily-dev-report-git-chatgpt.html">Daily Stand-Up? Handled.</a> <small class="superscript"></small></h3>
-
-<p>How I automated my daily developer report using a simple Git script and a prompt for ChatGPT — never blank out at a stand-up again.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Automation</span>
-
-
-<div class="spacer"></div>
-
-<small><b>15 May 2025</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="git">
-
-<h3><a href="/2024/10/13/git-town-workflow.html">GitTown</a> <small class="superscript">Simplifying Git workflows</small></h3>
-
-<p>Git Town simplifies Git usage, making it more convenient so developers can use its full potential.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Git</span>
-
-
-<div class="spacer"></div>
-
-<small><b>13 October 2024</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="unit test">
-
-<h3><a href="/2024/10/12/test-description.html">Unit test</a> <small class="superscript">Description</small></h3>
-
-<p>A guide on how to write comments for unit tests.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Unit Test</span>
-
-
-<div class="spacer"></div>
-
-<small><b>12 October 2024</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="bloc">
-
-<h3><a href="/2024/01/10/Bloc-Sturct.html">BLoC file structure</a> <small class="superscript">Part 1</small></h3>
-
-<p>Setting up a feature structure based on BLoC architecture.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">BLoC</span>
-
-
-<div class="spacer"></div>
-
-<small><b>10 January 2024</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="pattern">
-
-<h3><a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small></h3>
-
-<p>You need to sequentially validate data and then apply transformations to it, in any order depending on the situation.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Pattern</span>
-
-
-<div class="spacer"></div>
-
-<small><b>14 November 2017</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="pattern">
-
-<h3><a href="/2017/11/03/2017-Composite.html">Composite</a> <small class="superscript">Data structures</small></h3>
-
-<p>Using the Composite pattern for table view data sources.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Pattern</span>
-
-
-<div class="spacer"></div>
-
-<small><b>3 November 2017</b></small>
-</div>
-
-<div class="bookmarks-bubble" data-tags="pattern">
-
-<h3><a href="/2014/01/04/2014-MVC.html">MVC</a> <small class="superscript">Classic</small></h3>
-
-<p>The MVC model facilitates separation of concerns in the development of interactive graphical applications.</p>
-
-
-<div class="spacer"></div>
-
-
-  <span class="tag small">Pattern</span>
-
-
-<div class="spacer"></div>
-
-<small><b>4 January 2014</b></small>
-</div>
-
-</div>
-</div>
-
-<div id="view-list">
-  <table class="movie-list-table">
-    <thead>
-      <tr>
-        <th class="ml-num">#</th>
-        <th class="ml-title">Title</th>
-        <th class="bm-tags">Tag</th>
-        <th class="ml-date">Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="thoughts">
-        <td class="ml-num">#8</td>
-        <td class="post-list-content">
-          <a href="/2025/07/27/thoughts-llm.html">Working with LLMs</a>
-          <div class="post-list-desc">LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="thoughts">Thoughts</span></td>
-        <td class="ml-date">Jul 2025</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="automation">
-        <td class="ml-num">#7</td>
-        <td class="post-list-content">
-          <a href="/2025/05/15/daily-dev-report-git-chatgpt.html">Daily Stand-Up? Handled.</a>
-          <div class="post-list-desc">How I automated my daily developer report using a simple Git script and a prompt for ChatGPT — never blank out at a stand-up again.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="automation">Automation</span></td>
-        <td class="ml-date">May 2025</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="git">
-        <td class="ml-num">#6</td>
-        <td class="post-list-content">
-          <a href="/2024/10/13/git-town-workflow.html">GitTown</a> <small class="superscript">Simplifying Git workflows</small>
-          <div class="post-list-desc">Git Town simplifies Git usage, making it more convenient so developers can use its full potential.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="git">Git</span></td>
-        <td class="ml-date">Oct 2024</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="unit test">
-        <td class="ml-num">#5</td>
-        <td class="post-list-content">
-          <a href="/2024/10/12/test-description.html">Unit test</a> <small class="superscript">Description</small>
-          <div class="post-list-desc">A guide on how to write comments for unit tests.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="unit test">Unit Test</span></td>
-        <td class="ml-date">Oct 2024</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="bloc">
-        <td class="ml-num">#4</td>
-        <td class="post-list-content">
-          <a href="/2024/01/10/Bloc-Sturct.html">BLoC file structure</a> <small class="superscript">Part 1</small>
-          <div class="post-list-desc">Setting up a feature structure based on BLoC architecture.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="bloc">BLoC</span></td>
-        <td class="ml-date">Jan 2024</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
-        <td class="ml-num">#3</td>
-        <td class="post-list-content">
-          <a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small>
-          <div class="post-list-desc">You need to sequentially validate data and then apply transformations to it, in any order depending on the situation.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
-        <td class="ml-date">Nov 2017</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
-        <td class="ml-num">#2</td>
-        <td class="post-list-content">
-          <a href="/2017/11/03/2017-Composite.html">Composite</a> <small class="superscript">Data structures</small>
-          <div class="post-list-desc">Using the Composite pattern for table view data sources.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
-        <td class="ml-date">Nov 2017</td>
-      </tr>
-      
-      
-      <tr class="bookmarks-bubble bm-row" data-tags="pattern">
-        <td class="ml-num">#1</td>
-        <td class="post-list-content">
-          <a href="/2014/01/04/2014-MVC.html">MVC</a> <small class="superscript">Classic</small>
-          <div class="post-list-desc">The MVC model facilitates separation of concerns in the development of interactive graphical applications.</div>
-        </td>
-        <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
-        <td class="ml-date">Jan 2014</td>
-      </tr>
-      
-    </tbody>
-  </table>
-</div>
+<table class="movie-list-table">
+  <thead>
+    <tr>
+      <th class="ml-num">#</th>
+      <th class="ml-title">Title</th>
+      <th class="bm-tags">Tag</th>
+      <th class="ml-date">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="thoughts">
+      <td class="ml-num">#8</td>
+      <td class="post-list-content">
+        <a href="/2025/07/27/thoughts-llm.html">Working with LLMs</a>
+        <div class="post-list-desc">LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="thoughts">Thoughts</span></td>
+      <td class="ml-date">Jul 2025</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="automation">
+      <td class="ml-num">#7</td>
+      <td class="post-list-content">
+        <a href="/2025/05/15/daily-dev-report-git-chatgpt.html">Daily Stand-Up? Handled.</a>
+        <div class="post-list-desc">How I automated my daily developer report using a simple Git script and a prompt for ChatGPT — never blank out at a stand-up again.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="automation">Automation</span></td>
+      <td class="ml-date">May 2025</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="git">
+      <td class="ml-num">#6</td>
+      <td class="post-list-content">
+        <a href="/2024/10/13/git-town-workflow.html">GitTown</a> <small class="superscript">Simplifying Git workflows</small>
+        <div class="post-list-desc">Git Town simplifies Git usage, making it more convenient so developers can use its full potential.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="git">Git</span></td>
+      <td class="ml-date">Oct 2024</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="unit test">
+      <td class="ml-num">#5</td>
+      <td class="post-list-content">
+        <a href="/2024/10/12/test-description.html">Unit test</a> <small class="superscript">Description</small>
+        <div class="post-list-desc">A guide on how to write comments for unit tests.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="unit test">Unit Test</span></td>
+      <td class="ml-date">Oct 2024</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="bloc">
+      <td class="ml-num">#4</td>
+      <td class="post-list-content">
+        <a href="/2024/01/10/Bloc-Sturct.html">BLoC file structure</a> <small class="superscript">Part 1</small>
+        <div class="post-list-desc">Setting up a feature structure based on BLoC architecture.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="bloc">BLoC</span></td>
+      <td class="ml-date">Jan 2024</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+      <td class="ml-num">#3</td>
+      <td class="post-list-content">
+        <a href="/2017/11/14/2017-Chain.html">Chain</a> <small class="superscript">of responsibility</small>
+        <div class="post-list-desc">You need to sequentially validate data and then apply transformations to it, in any order depending on the situation.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+      <td class="ml-date">Nov 2017</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+      <td class="ml-num">#2</td>
+      <td class="post-list-content">
+        <a href="/2017/11/03/2017-Composite.html">Composite</a> <small class="superscript">Data structures</small>
+        <div class="post-list-desc">Using the Composite pattern for table view data sources.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+      <td class="ml-date">Nov 2017</td>
+    </tr>
+    
+    
+    <tr class="bookmarks-bubble bm-row" data-tags="pattern">
+      <td class="ml-num">#1</td>
+      <td class="post-list-content">
+        <a href="/2014/01/04/2014-MVC.html">MVC</a> <small class="superscript">Classic</small>
+        <div class="post-list-desc">The MVC model facilitates separation of concerns in the development of interactive graphical applications.</div>
+      </td>
+      <td class="bm-tags"><span class="tag small" data-tag="pattern">Pattern</span></td>
+      <td class="ml-date">Jan 2014</td>
+    </tr>
+    
+  </tbody>
+</table>
 
       </main>
 

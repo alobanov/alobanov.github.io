@@ -6,11 +6,8 @@ permalink: /bookmarks/
 
 {% include bookmark_import.html %}
 
-<div class="bubble">
-{% capture markdown_content %}
-💁 Explore a curated collection of utilities, apps, and sites I find useful.
-{% endcapture %}
-{{ markdown_content | markdownify }}
+<div class="bubble font-mono">
+<small>{% capture markdown_content %}💁 Explore a curated collection of utilities, apps, and sites I find useful.{% endcapture %}{{ markdown_content | markdownify }}</small>
 
 <div class="spacer"></div>
 
