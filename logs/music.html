@@ -8,7 +8,7 @@ permalink: /logs/music/
 
 {% include log_category_list.html %}
 
-<div class="view-toggle">
+<div class="view-toggle" data-view-key="musicView">
   <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
   <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
@@ -73,23 +73,3 @@ permalink: /logs/music/
   <h3>My Playlist for Work</h3>
   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3ltOhzEdh8415XM3kxBlJf?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
-
-<script>
-  function setView(view) {
-    document.getElementById('view-cards').style.display = view === 'cards' ? 'block' : 'none';
-    document.getElementById('view-list').style.display = view === 'list' ? 'block' : 'none';
-    document.getElementById('btn-cards').classList.toggle('active', view === 'cards');
-    document.getElementById('btn-list').classList.toggle('active', view === 'list');
-    localStorage.setItem('musicView', view);
-  }
-  const saved = localStorage.getItem('musicView');
-  setView(saved || 'list');
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.log-list-table .bm-row').forEach(function (row) {
-      row.addEventListener('click', function () {
-        this.closest('tbody').classList.toggle('expanded');
-      });
-    });
-  });
-</script>
