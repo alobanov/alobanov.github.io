@@ -82,7 +82,10 @@ h3 {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 14px;
+    font-family: var(--code-font);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 h3,
@@ -311,10 +314,15 @@ section {
 
 .menu-nav {
     display: flex;
+    align-self: stretch;
+    align-items: stretch;
     gap: 8px;
 }
 
 .menu-nav a {
+    display: flex;
+    align-items: center;
+    position: relative;
     text-align: center;
     text-decoration: none;
     color: var(--primary-color);
@@ -329,6 +337,17 @@ section {
 .menu-nav a:hover {
     background-color: var(--nav-hover-bg);
     color: var(--primary-color);
+}
+
+.menu-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    right: 6px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
 }
 
 

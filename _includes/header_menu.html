@@ -3,9 +3,9 @@
     <div class="menu-icon"></div>
   </a>
   <nav class="menu-nav">
-    <a href="/bookmarks/">Bookmarks</a>
-    <a href="/logs/">Logs</a>
-    <a href="/about_en">CV</a>
+    <a href="/bookmarks/"{% if page.url contains '/bookmarks' %} class="active"{% endif %}>Bookmarks</a>
+    <a href="/logs/"{% if page.url contains '/logs' %} class="active"{% endif %}>Logs</a>
+    <a href="/about_en"{% if page.url contains '/about_en' %} class="active"{% endif %}>CV</a>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
 </div>
