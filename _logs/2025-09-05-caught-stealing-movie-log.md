@@ -1,7 +1,7 @@
 ---
 layout: log
 title: "Caught Stealing"
-date: 2026-05-23
+date: 2025-09-05
 category: movie
 rating: "3"
 ---
