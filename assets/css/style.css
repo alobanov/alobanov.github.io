@@ -455,6 +455,9 @@ ol.custom-counter > li::before {
 .bubble.yellow {
     background-color: rgba(238, 172, 16, 0.05);
     border: 1px solid #f6f5f4;
+    font-family: var(--code-font);
+    font-size: 13px;
+    line-height: 1.7;
 }
 
 .bubble.purple {

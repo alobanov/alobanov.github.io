@@ -1,7 +1,7 @@
 ---
 layout: log
 title: "Code 3"
-date: 2026-05-23
+date: 2025-10-18
 category: movie
 rating: "4"
 ---
