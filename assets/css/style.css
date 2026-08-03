@@ -955,29 +955,30 @@ tr.bm-row:hover td {
 
 /* The source, named rather than pointed at: a smaller sibling of the category
    tags above the table. Quiet until its row is hovered or focused. */
-.log-ext {
+.log-list-table .log-ext {
     display: inline-block;
-    margin-left: 8px;
-    padding: 1px 6px;
-    border-radius: 5px;
+    margin-left: 7px;
+    padding: 1px 4px;
+    border-radius: 4px;
     background-color: transparent;
     color: var(--muted-color);
     font-family: var(--code-font);
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     line-height: 1.5;
     vertical-align: 1px;
     text-decoration: none;
     transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.log-entry-group:hover .log-ext,
-.log-ext:focus-visible {
+.log-list-table .log-entry-group:hover .log-ext,
+.log-list-table .log-ext:focus-visible {
     background-color: var(--control-bg);
     color: var(--control-color);
 }
 
-.log-ext:hover {
+.log-list-table .log-ext:hover {
     opacity: 1;
     color: var(--control-color);
     background-color: var(--control-bg-hover);
