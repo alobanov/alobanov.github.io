@@ -1,0 +1,10 @@
+{%- comment -%}
+Renders a 0–5 rating as a chip, in the same shape as the source label and the
+category tags. Halves print as they are: 4.5, 3.5.
+
+  Param: rating — number, or nothing at all (music and location entries)
+{%- endcomment -%}
+
+{%- if include.rating -%}
+<span class="log-rating-value" title="{{ include.rating }} out of 5">{{ include.rating }}</span>
+{%- endif -%}

@@ -22,7 +22,7 @@ layout: default
   {%- elsif page.highlight %}<span class="log-verdict"><span class="log-flame" title="One of the memorable ones">🔥</span></span>
   {%- endif -%}
   {%- if page.tag %}<span class="log-tag">{{ page.tag }}</span>{% endif -%}
-  {%- if page.rating %}<span class="log-meta-stars">{% include log_stars.html rating=page.rating %}</span>{% endif -%}
+  {%- if page.rating %}{% include log_rating.html rating=page.rating %}{% endif -%}
   <time class="log-meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
 </p>
 

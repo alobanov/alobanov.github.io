@@ -1,12 +1,9 @@
 {%- comment -%}
-The LOG list: the familiar table, with the rating column showing stars and the
-source link sitting next to the title. Clicking a row opens its note in place.
+The LOG list: the familiar table, with the rating and the source link sitting
+next to the title. Clicking a row opens its note in place.
 
   Params: items         — already sorted (newest first)
           show_category — show the category column (the all-logs page)
-
-The rating column is fixed-width and right-aligned on purpose: scanning down it,
-the filled stars form a ragged edge that reads as the shape of a year's taste.
 {%- endcomment -%}
 
 {%- assign rated_count = include.items | where_exp: "item", "item.rating" | size -%}
@@ -56,7 +53,7 @@ the filled stars form a ragged edge that reads as the shape of a year's taste.
         <td class="ml-cat">{{ item.category | capitalize }}</td>
         {%- endif -%}
         {%- if show_rating %}
-        <td class="ml-rating">{% include log_stars.html rating=item.rating %}</td>
+        <td class="ml-rating">{% include log_rating.html rating=item.rating %}</td>
         {%- endif %}
         <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
       </tr>

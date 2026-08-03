@@ -33,7 +33,7 @@ list row, so a card and a row can never disagree.
       </span>
       {%- endif %}
     </span>
-    {%- include log_stars.html rating=include.item.rating -%}
+    {%- include log_rating.html rating=include.item.rating -%}
   </div>
 
   <div class="log-card-body">{{ include.item.content | markdownify }}</div>
