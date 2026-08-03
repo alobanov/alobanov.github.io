@@ -1624,16 +1624,24 @@ body,
     height: 14px;
 }
 
+/* Scoped to .log-cats so the bookmark and post tags keep their own size */
+.log-cats .tag.small {
+    font-size: 13px;
+    padding: 5px 11px;
+    border-radius: 8px;
+    margin-right: 6px;
+}
+
 .log-cats .tag.small a {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     white-space: nowrap;
 }
 
 .log-cats .cat-icon {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
 }
 
 .badge a {
@@ -1643,8 +1651,8 @@ body,
 }
 
 .badge .cat-icon {
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
 }
 
 /* Date column: day and month — the year is the section heading above */
@@ -1655,13 +1663,13 @@ body,
 /* Category column: the icon alone, with the name kept for screen readers and
    as a tooltip */
 .log-list-table .ml-cat {
-    width: 34px;
+    width: 40px;
     text-align: center;
 }
 
 .log-list-table .ml-cat .cat-icon {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     margin: 0 auto;
     color: var(--muted-color);
 }
