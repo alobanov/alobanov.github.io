@@ -72,6 +72,26 @@ opened note. The quality comes from execution rather than added fields:
   permalink in the footer.
 - `prefers-reduced-motion` disables every transition above.
 
+### Revision 2, 2026-08-04
+
+Three complete list treatments were rendered side by side on real entries and
+reviewed; the calm one was chosen. What it changes from the above:
+
+- Rows breathe: 11px vertical padding, titles at 15px in regular weight.
+- The year is a section marker — 20px mono, muted, over a hairline — rather
+  than a table row that happens to hold a number.
+- The expand caret is gone. Hover, the cursor and the open state carry the
+  affordance; the row had three trailing glyphs and only needed one.
+- An open entry is tied to its note by a 2px rule down its left edge.
+- The rating is a number in a chip (5, 4.5, 3), not stars. Stars showed a
+  shape but never the value, and halves needed a clipped overlay to exist.
+- The source is named — IMDb, OpenCritic, Maps — instead of marked with an
+  arrow: a 9px muted mono label that fills into a chip when its row is hovered.
+
+Two specificity traps caused real bugs and are worth remembering: the base
+`th, td` border and `.movie-list-table td` padding both outrank a bare class,
+and `.ml-title a` silently overrode the source label's size and colour.
+
 ## Data model
 
 ```yaml

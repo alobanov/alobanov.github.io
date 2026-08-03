@@ -891,7 +891,7 @@ tr.bm-row:hover td {
 }
 
 .log-row td {
-    padding: 7px 6px;
+    padding: 11px 6px;
     vertical-align: middle;
     transition: background-color 0.15s ease;
 }
@@ -906,6 +906,12 @@ tr.bm-row:hover td {
     background-color: var(--background-color-light);
 }
 
+/* A rule down the left edge ties the open note back to the row it belongs to */
+.log-list-table .log-entry-group.expanded .log-row td:first-child,
+.log-list-table .log-entry-group.expanded .log-detail-cell {
+    box-shadow: inset 2px 0 0 var(--primary-color);
+}
+
 .log-row:focus-visible {
     outline: 2px solid var(--secondary-color);
     outline-offset: -2px;
@@ -918,17 +924,26 @@ tr.bm-row:hover td {
     position: sticky;
     top: 0;
     z-index: 2;
-    padding: 20px 6px 6px;
+    padding: 30px 6px 8px;
     text-align: left;
     font-family: var(--code-font);
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 700;
-    color: var(--primary-color);
+    letter-spacing: -0.03em;
+    color: var(--muted-color);
     background-color: var(--background-color);
     box-shadow: inset 0 -1px 0 var(--border-color);
 }
 
 /* Column: row number, links to the entry's own page */
+.log-list-table .ml-num {
+    width: 40px;
+}
+
+.log-list-table .ml-num a {
+    font-size: 11px;
+}
+
 .ml-num a {
     color: var(--muted-color);
     text-decoration: none;
@@ -940,7 +955,9 @@ tr.bm-row:hover td {
 
 /* Column: title */
 .ml-title-text {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
     color: var(--primary-color);
 }
 
@@ -979,19 +996,6 @@ tr.bm-row:hover td {
     color: var(--control-color);
     background-color: var(--control-bg-hover);
     text-decoration: none;
-}
-
-.log-caret {
-    display: inline-block;
-    margin-left: 6px;
-    font-family: var(--code-font);
-    font-size: 11px;
-    color: var(--muted-color);
-    transition: transform 0.2s ease;
-}
-
-.log-entry-group.expanded .log-caret {
-    transform: rotate(90deg);
 }
 
 /* Column: category */
@@ -1056,7 +1060,7 @@ tr.bm-row:hover td {
 }
 
 .log-detail-body {
-    padding: 2px 12px 18px 40px;
+    padding: 4px 12px 20px 46px;
     max-width: 62ch;
 }
 
@@ -1168,7 +1172,6 @@ tr.bm-row:hover td {
 
 @media (prefers-reduced-motion: reduce) {
     .log-detail-wrap,
-    .log-caret,
     .log-ext,
     .log-thumb,
     .log-row td {

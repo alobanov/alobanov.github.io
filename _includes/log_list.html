@@ -47,7 +47,6 @@ next to the title. Clicking a row opens its note in place.
           <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
              aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
           {%- endif -%}
-          <span class="log-caret" aria-hidden="true">›</span>
         </td>
         {%- if include.show_category %}
         <td class="ml-cat">{{ item.category | capitalize }}</td>
