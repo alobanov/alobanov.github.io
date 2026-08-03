@@ -1647,21 +1647,22 @@ body,
     height: 13px;
 }
 
-/* Date column: month only — the year is the section heading above */
+/* Date column: day and month — the year is the section heading above */
 .log-list-table .ml-date {
-    width: 34px;
+    width: 52px;
 }
 
 /* Category column: the icon alone, with the name kept for screen readers and
    as a tooltip */
 .log-list-table .ml-cat {
     width: 34px;
-    padding-left: 12px;
+    text-align: center;
 }
 
 .log-list-table .ml-cat .cat-icon {
     width: 15px;
     height: 15px;
+    margin: 0 auto;
     color: var(--muted-color);
 }
 

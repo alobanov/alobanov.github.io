@@ -54,7 +54,7 @@ next to the title. Clicking a row opens its note in place.
         {%- if show_rating %}
         <td class="ml-rating">{% include log_rating.html rating=item.rating %}</td>
         {%- endif %}
-        <td class="ml-date">{{ item.date | date: "%b" }}</td>
+        <td class="ml-date">{{ item.date | date: "%-d %b" }}</td>
       </tr>
 
       <tr class="log-detail-row">
