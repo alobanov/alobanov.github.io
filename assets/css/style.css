@@ -876,9 +876,18 @@ tr.bm-row:hover td {
    headings carry the structure, and hover draws the entry's own bounds.
    The base `th, td` border has to be cleared on the cells themselves — a rule
    on `tr` never overrides it. */
+/* One divider per entry, and it belongs to the bottom of the whole entry — so
+   it travels down with the note as it opens instead of staying pinned under
+   the title. Both the `tr` and the `td` rules have to be cleared: under
+   border-collapse a row's border outranks `none` on its cells. */
+.log-list-table tbody tr,
 .log-list-table tbody td,
 .log-list-table tbody th {
     border-bottom: none;
+}
+
+.log-list-table .log-detail-row td {
+    border-bottom: 1px solid var(--border-color);
 }
 
 .log-row {
