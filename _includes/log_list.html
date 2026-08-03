@@ -48,7 +48,7 @@ the filled stars form a ragged edge that reads as the shape of a year's taste.
           {%- if item.highlight %} <span class="log-flame" title="One of the memorable ones">🔥</span>{% endif -%}
           {%- if item.link %}
           <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
-             title="{{ log_link_label }}" aria-label="{{ item.title }} on {{ log_link_label }}">↗</a>
+             aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
           {%- endif -%}
           <span class="log-caret" aria-hidden="true">›</span>
         </td>
