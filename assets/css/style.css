@@ -1609,3 +1609,29 @@ body,
         color: #444;
     }
 }
+
+
+/* =============================================================================
+   CATEGORY ICONS (inline SVG, Lucide — ISC)
+   ============================================================================= */
+
+.cat-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    flex: 0 0 auto;
+}
+
+/* Category tags sit on a baseline of text, so the icon needs the optical nudge */
+.log-cats .tag.small .cat-icon {
+    width: 12px;
+    height: 12px;
+    vertical-align: -1px;
+    margin-right: 1px;
+}
+
+.badge .cat-icon {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+}

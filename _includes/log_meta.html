@@ -2,21 +2,12 @@
 Derives display metadata for one log entry.
 
   Param: log — a document from site.logs
-  Sets:  log_icon, log_link_label
+  Sets:  log_icon (the entry's own emoji, if it set one), log_link_label
 
 Liquid assigns leak into the calling scope, which is how the values get back out.
 {%- endcomment -%}
 
 {%- assign log_icon = include.log.icon -%}
-{%- unless log_icon -%}
-  {%- case include.log.category -%}
-    {%- when "game" -%}{%- assign log_icon = "🍄" -%}
-    {%- when "movie" -%}{%- assign log_icon = "🎬" -%}
-    {%- when "location" -%}{%- assign log_icon = "📍" -%}
-    {%- when "music" -%}{%- assign log_icon = "🎵" -%}
-    {%- else -%}{%- assign log_icon = "✈️" -%}
-  {%- endcase -%}
-{%- endunless -%}
 
 {%- assign log_link_label = include.log.link_label -%}
 {%- unless log_link_label -%}

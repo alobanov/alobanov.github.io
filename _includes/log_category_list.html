@@ -1,13 +1,11 @@
 <!-- script for full-size image -->
 <script src="{{ "/assets/js/image_pop.js" | relative_url }}"></script>
 
-<p>
-    <span class="tag small"><a href="{{ site.baseurl }}/logs/">:eyes: All</a></span>
-    {% assign categories = site.logs | map: "category" | uniq %}
+<p class="log-cats">
+    <span class="tag small"><a href="{{ site.baseurl }}/logs/">{% include log_icon.html category="all" %} All</a></span>
+    {%- assign categories = site.logs | map: "category" | uniq | sort -%}
     {% for category in categories %}
-    {% include emoji_category.html %}
-    <span class="tag small"><a href="{{ site.baseurl }}/logs/{{ category }}">{{ emoji }} {{ category | capitalize
-            }}</a></span>
+    <span class="tag small"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
     {% endfor %}
 </p>
 

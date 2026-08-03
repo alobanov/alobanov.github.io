@@ -11,7 +11,7 @@ list row, so a card and a row can never disagree.
 
 <div class="bubble log-card">
   <div class="log-card-head">
-    <span class="log-icon" aria-hidden="true">{{ log_icon }}</span>
+    <span class="log-icon">{% if log_icon %}<span aria-hidden="true">{{ log_icon }}</span>{% else %}{% include log_icon.html category=include.item.category %}{% endif %}</span>
     <span class="log-body">
       <span class="log-card-title">
         {%- if include.item.link -%}
@@ -50,9 +50,7 @@ list row, so a card and a row can never disagree.
 
   <div class="log-card-foot">
     {%- if include.show_category -%}
-    {%- assign category = include.item.category -%}
-    {%- include emoji_category.html -%}
-    <span class="badge"><a href="{{ site.baseurl }}/logs/{{ include.item.category }}">{{ emoji }} {{ include.item.category | capitalize }}</a></span>
+    <span class="badge"><a href="{{ site.baseurl }}/logs/{{ include.item.category }}">{% include log_icon.html category=include.item.category %} {{ include.item.category | capitalize }}</a></span>
     {%- else -%}
     <span></span>
     {%- endif -%}
