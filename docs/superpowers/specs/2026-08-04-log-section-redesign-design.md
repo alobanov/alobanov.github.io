@@ -44,6 +44,33 @@ Data defects found while surveying `_logs/`:
 | List row shape | Two-tier flex row, not a `<table>` |
 | Sort / filter / search controls | None (YAGNI) — category tabs and Cards/List stay as they are |
 | Verdict typos | Fixed during migration |
+| List row shape (revised) | The familiar table, with column headers kept |
+
+### Revision, 2026-08-04
+
+A first implementation replaced the table with a two-tier flex list. It was
+rejected in review: it dropped the column headers, changed the type, rounded the
+hover highlight, applied that highlight to the title row only rather than the
+whole entry, and pushed four extra fields into a row that had asked only for a
+rating and a link.
+
+The revised list keeps the table and its headers. The row carries `#`, title,
+optional category, rating and date — nothing else. Verdict and tag move into the
+opened note. The quality comes from execution rather than added fields:
+
+- The rating column is fixed-width and right-aligned, so scanning down it the
+  filled stars line up into the shape of a year's taste.
+- Year headings stick to the top of the viewport while their year scrolls past.
+- The note opens with a `grid-template-rows: 0fr → 1fr` transition instead of
+  appearing instantly, and the caret rotates with it.
+- Hover and the open state cover the whole entry — title row and note together —
+  with square corners.
+- The source link stays at half opacity until its row is hovered or focused.
+- The open note is typeset as its own spread: a mono eyebrow carrying the
+  verdict and tag, a hanging serif quote mark in the gutter, a 62ch measure,
+  1.72 leading, the author's bold set in the rating amber, and the date and
+  permalink in the footer.
+- `prefers-reduced-motion` disables every transition above.
 
 ## Data model
 

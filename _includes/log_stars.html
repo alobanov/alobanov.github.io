@@ -1,0 +1,11 @@
+{%- comment -%}
+Renders a 0–5 rating as stars. Halves work: the filled layer is clipped by width,
+so 3.5 shows as three and a half stars without a separate glyph.
+
+  Param: rating — number, or nothing at all (music and location entries)
+{%- endcomment -%}
+
+{%- if include.rating -%}
+{%- assign star_pct = include.rating | times: 20 -%}
+<span class="log-stars" role="img" aria-label="{{ include.rating }} out of 5"><span class="log-stars-base" aria-hidden="true">★★★★★</span><span class="log-stars-fill" style="width: {{ star_pct }}%" aria-hidden="true">★★★★★</span></span>
+{%- endif -%}
