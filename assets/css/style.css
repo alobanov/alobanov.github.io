@@ -1612,26 +1612,78 @@ body,
 
 
 /* =============================================================================
-   CATEGORY ICONS (inline SVG, Lucide — ISC)
+   CATEGORY ICONS (inline SVG, Phosphor Fill — MIT)
    ============================================================================= */
 
+/* A fixed square box, aligned by flex rather than by baseline: otherwise every
+   silhouette sits at its own height and the labels next to them jitter. */
 .cat-icon {
+    display: block;
+    flex: 0 0 auto;
     width: 14px;
     height: 14px;
-    vertical-align: -2px;
-    flex: 0 0 auto;
 }
 
-/* Category tags sit on a baseline of text, so the icon needs the optical nudge */
-.log-cats .tag.small .cat-icon {
+.log-cats .tag.small a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.log-cats .cat-icon {
     width: 12px;
     height: 12px;
-    vertical-align: -1px;
-    margin-right: 1px;
+}
+
+.badge a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .badge .cat-icon {
     width: 13px;
     height: 13px;
-    vertical-align: -2px;
+}
+
+/* Date column: month only — the year is the section heading above */
+.log-list-table .ml-date {
+    width: 34px;
+}
+
+/* Category column: the icon alone, with the name kept for screen readers and
+   as a tooltip */
+.log-list-table .ml-cat {
+    width: 34px;
+    padding-left: 12px;
+}
+
+.log-list-table .ml-cat .cat-icon {
+    width: 15px;
+    height: 15px;
+    color: var(--muted-color);
+}
+
+.log-list-table .log-entry-group:hover .ml-cat .cat-icon {
+    color: var(--primary-color);
+}
+
+.log-card-head .log-icon,
+.log-entry-title .log-icon {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }

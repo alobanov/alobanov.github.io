@@ -49,12 +49,12 @@ next to the title. Clicking a row opens its note in place.
           {%- endif -%}
         </td>
         {%- if include.show_category %}
-        <td class="ml-cat">{{ item.category | capitalize }}</td>
+        <td class="ml-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
         {%- endif -%}
         {%- if show_rating %}
         <td class="ml-rating">{% include log_rating.html rating=item.rating %}</td>
         {%- endif %}
-        <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
+        <td class="ml-date">{{ item.date | date: "%b" }}</td>
       </tr>
 
       <tr class="log-detail-row">
