@@ -9,7 +9,7 @@ permalink: /about_en/
 <div class="bubble">
 {% capture markdown_content %}
 
-<img src="/assets/img/workplace.jpeg" alt="Description" class="full-width-rounded-image">
+<img src="/assets/img/workplace.jpeg" alt="Aleksei Lobanov at his workplace" class="full-width-rounded-image" width="1200" height="801" loading="lazy" decoding="async">
 
 Detail-oriented **Mobile Engineer** dedicated to building high-quality products.
 <div class="spacer"></div>

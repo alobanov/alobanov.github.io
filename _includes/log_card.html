@@ -41,6 +41,7 @@ list row, so a card and a row can never disagree.
     {%- for image in include.item.images %}
     <img src="{{ site.baseurl }}/assets/img/{{ include.item.category | url_encode }}/{{ image | url_encode }}"
          alt="{{ include.item.title | escape }} preview" class="thumbnail"
+         width="25" height="25" loading="lazy" decoding="async"
          data-modal-src="{{ site.baseurl }}/assets/img/{{ include.item.category | url_encode }}/{{ image | url_encode }}" />
     {%- endfor %}
   </div>

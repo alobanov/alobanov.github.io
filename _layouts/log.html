@@ -31,6 +31,7 @@ layout: default
     {%- for image in page.images %}
     <img src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
          alt="{{ page.title | escape }} preview" class="thumbnail"
+         width="25" height="25" loading="lazy" decoding="async"
          data-modal-src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
     {%- endfor %}
   </div>

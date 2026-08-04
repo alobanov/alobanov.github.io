@@ -76,6 +76,7 @@ next to the title. Clicking a row opens its note in place.
                   {%- for image in item.images %}
                   <img src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}"
                        alt="{{ item.title | escape }}" class="log-thumb"
+                       width="84" height="84" loading="lazy" decoding="async"
                        data-modal-src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}" />
                   {%- endfor %}
                 </div>
