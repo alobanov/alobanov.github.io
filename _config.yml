@@ -17,3 +17,19 @@ collections:
 
 plugins:
   - jemoji
+
+# Nothing here belongs on the public site. Note that setting `exclude` replaces
+# Jekyll's defaults rather than adding to them, so the Gemfile entries have to
+# be repeated.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - AGENTS.override.md      # internal working notes
+  - docs/                   # design specs
+  - script/                 # one-off migration scripts
+  - jekyll-theme-minimal.gemspec
+  - LICENSE
+  - .tool-versions
+  - 2024-05-10-test.md      # leftover scratch page
