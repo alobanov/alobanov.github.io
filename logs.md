@@ -20,10 +20,5 @@ permalink: /logs/
   and visited <strong>{{ location_count }}</strong> places.
 </div>
 
-<div class="view-toggle" data-view-key="allView">
-  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
-  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
-</div>
 
-{% include log_cards.html items=sorted_logs show_category=true show_dividers=true %}
 {% include log_list.html items=sorted_logs show_category=true %}

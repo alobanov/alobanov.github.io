@@ -354,13 +354,6 @@ article {
     line-height: 1.1;
 }
 
-.log-number {
-    font-weight: bold;
-    font-family: var(--primary-font);
-    font-size: 15px;
-    color: #5a463c;
-}
-
 .spacer {
     height: 10px;
 }
@@ -402,23 +395,6 @@ ol.custom-counter > li::before {
 /* =============================================================================
    DATE DIVIDERS
    ============================================================================= */
-
-.year-divider {
-    font-family: var(--primary-font);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.month-divider {
-    font-family: var(--primary-font);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--primary-color);
-    text-align: center;
-}
-
 
 /* =============================================================================
    BUBBLES
@@ -508,27 +484,6 @@ ol.custom-counter > li::before {
 /* =============================================================================
    BADGES
    ============================================================================= */
-
-.badge {
-    position: absolute;
-    top: -16px;
-    right: 10px;
-    background-color: var(--background-color-light);
-    color: var(--primary-color);
-    font-size: 14px;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-weight: normal;
-    white-space: nowrap;
-}
-
-.badge img,
-.badge span {
-    vertical-align: middle;
-    width: 16px;
-    height: 16px;
-}
-
 
 /* =============================================================================
    TAGS
@@ -1216,55 +1171,6 @@ tr.bm-row:hover td {
 
 
 /* =============================================================================
-   LOG CARDS
-   ============================================================================= */
-
-.log-card-head {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.log-card-title {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.3;
-    color: var(--primary-color);
-}
-
-.log-card-title a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.log-card-title a:hover {
-    color: var(--secondary-color);
-}
-
-.log-ext-mark {
-    font-size: 11px;
-    color: var(--muted-color);
-}
-
-.log-card-body > *:first-child {
-    margin-top: 0;
-}
-
-.log-card-body > *:last-child {
-    margin-bottom: 0;
-}
-
-.log-card-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-
-/* =============================================================================
    LOG — SINGLE ENTRY PAGE
    ============================================================================= */
 
@@ -1304,6 +1210,9 @@ tr.bm-row:hover td {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    /* Spacing rather than dot separators: a ::before on the next item would be
+       drawn inside the rating chip's own background */
+    gap: 4px 10px;
     font-size: 12px;
     color: var(--text-description);
     margin: 0 0 14px;
@@ -1516,10 +1425,6 @@ body,
 }
 
 /* Misc */
-[data-theme="dark"] .badge {
-    background-color: var(--background-color-light);
-}
-
 [data-theme="dark"] .footnotes {
     border-top-color: var(--border-color);
     color: #7a6a62;
@@ -1679,17 +1584,6 @@ body,
     height: 16px;
 }
 
-.badge a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.badge .cat-icon {
-    width: 15px;
-    height: 15px;
-}
-
 /* Date column: day and month — the year is the section heading above */
 .log-list-table .ml-date {
     width: 52px;
@@ -1715,7 +1609,6 @@ body,
     color: var(--primary-color);
 }
 
-.log-card-head .log-icon,
 .log-entry-title .log-icon {
     display: inline-flex;
     align-items: center;

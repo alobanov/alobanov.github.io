@@ -15,10 +15,5 @@ permalink: /logs/music/
   <a href="https://elektron.se/explore/syntakt">Syntakt</a>
 </div>
 
-<div class="view-toggle" data-view-key="musicView">
-  <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
-  <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
-</div>
 
-{% include log_cards.html items=items %}
 {% include log_list.html items=items %}
