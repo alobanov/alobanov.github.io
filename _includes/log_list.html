@@ -14,14 +14,14 @@ next to the title. Clicking a row opens its note in place.
 {%- if show_rating -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
 {%- if include.show_category -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
 
-<table class="movie-list-table log-list-table">
+<table class="log-table">
   <thead>
     <tr>
-      <th class="ml-num">#</th>
-      <th class="ml-title">Title</th>
-      {%- if include.show_category %}<th class="ml-cat">Category</th>{% endif -%}
-      {%- if show_rating %}<th class="ml-rating">Rating</th>{% endif -%}
-      <th class="ml-date">Date</th>
+      <th class="log-col-num">#</th>
+      <th class="log-col-title">Title</th>
+      {%- if include.show_category %}<th class="log-col-cat">Category</th>{% endif -%}
+      {%- if show_rating %}<th class="log-col-rating">Rating</th>{% endif -%}
+      <th class="log-col-date">Date</th>
     </tr>
   </thead>
 
@@ -39,11 +39,11 @@ next to the title. Clicking a row opens its note in place.
 
     <tbody class="log-entry-group{% if item.highlight %} is-highlight{% endif %}">
       <tr class="log-row" role="button" tabindex="0" aria-expanded="false">
-        <td class="ml-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
-        <td class="ml-title">
-          <div class="ml-title-inner">
+        <td class="log-col-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
+        <td class="log-col-title">
+          <div class="log-title-row">
             <span class="log-emoji" aria-hidden="true">{{ log_icon }}</span>
-            <span class="ml-title-text" title="{{ item.title }}">{{ item.title }}</span>
+            <span class="log-title" title="{{ item.title }}">{{ item.title }}</span>
             {%- if item.link %}
             <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
                aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
@@ -51,12 +51,12 @@ next to the title. Clicking a row opens its note in place.
           </div>
         </td>
         {%- if include.show_category %}
-        <td class="ml-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
+        <td class="log-col-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
         {%- endif -%}
         {%- if show_rating %}
-        <td class="ml-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>
+        <td class="log-col-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>
         {%- endif %}
-        <td class="ml-date">{{ item.date | date: "%-d %b" }}</td>
+        <td class="log-col-date">{{ item.date | date: "%-d %b" }}</td>
       </tr>
 
       <tr class="log-detail-row">

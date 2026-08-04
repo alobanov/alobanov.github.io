@@ -815,25 +815,123 @@ tr.bm-row:hover td {
    headings carry the structure, and hover draws the entry's own bounds.
    The base `th, td` border has to be cleared on the cells themselves — a rule
    on `tr` never overrides it. */
+/* =============================================================================
+   LOG LIST — TABLE
+   -----------------------------------------------------------------------------
+   Self-contained on purpose. The list used to borrow .movie-list-table and the
+   .ml-* column classes from the bookmarks and posts tables, and those shared
+   rules kept winning on specificity: the base `th, td` border, the shared cell
+   padding and `.ml-title a`'s font size each silently overrode a rule written
+   for this list. Nothing here is shared, so nothing here can be overridden from
+   outside.
+   ============================================================================= */
+
+.log-table {
+    width: 100%;
+    margin-top: 8px;
+    border-collapse: collapse;
+    /* The title column takes what the fixed columns leave, which is what lets
+       a long title be truncated at all */
+    table-layout: fixed;
+}
+
+/* Neutralises the base `th, td` rule: its border and padding are for prose
+   tables in posts */
+.log-table th,
+.log-table td {
+    padding: 0 6px;
+    text-align: left;
+    border-bottom: none;
+}
+
+.log-table thead th {
+    /* 6px, not 8: the shared table put a border on the row as well as the cell,
+       and under border-collapse the pair resolved 2px shorter than one alone */
+    padding: 0 6px 6px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.log-table thead th.log-col-cat {
+    text-align: center;
+}
+
+.log-table thead th.log-col-rating,
+.log-table thead th.log-col-date {
+    text-align: right;
+}
+
+.log-table .log-col-num {
+    font-family: var(--code-font);
+    font-size: 12px;
+    color: var(--muted-color);
+    white-space: nowrap;
+}
+
+.log-table .log-col-num a {
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.log-table .log-col-num a:hover {
+    color: var(--secondary-color);
+}
+
+/* Every column width lives here and nowhere else. Widths are content-box: the
+   12px of horizontal padding from the rule above is added on top. */
+.log-table .log-col-num {
+    width: 20px;
+}
+
+.log-table .log-col-num a {
+    font-size: 11px;
+}
+
+.log-table .log-col-title {
+    width: 100%;
+}
+
+/* Wide enough for the word "Category" in its heading: under a fixed layout a
+   heading that does not fit spills into the next column */
+.log-table .log-col-cat {
+    width: 68px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.log-table .log-col-rating {
+    width: 62px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Day and month only — the year is the section heading above */
+.log-table .log-col-date {
+    width: 52px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--muted-color);
+    white-space: nowrap;
+    text-align: right;
+}
+
 /* One divider per entry, and it belongs to the bottom of the whole entry — so
    it travels down with the note as it opens instead of staying pinned under
    the title. Both the `tr` and the `td` rules have to be cleared: under
    border-collapse a row's border outranks `none` on its cells. */
-.log-list-table tbody tr,
-.log-list-table tbody td,
-.log-list-table tbody th {
+.log-table tbody tr,
+.log-table tbody td,
+.log-table tbody th {
     border-bottom: none;
 }
 
-.log-list-table .log-detail-row td {
+.log-table .log-detail-row td {
     border-bottom: 1px solid var(--border-color);
-}
-
-/* Fixed layout so the title column takes exactly what the other columns leave,
-   which is what makes truncation possible at all. Scoped to the log table —
-   the bookmark and post tables size themselves to their content. */
-.log-list-table {
-    table-layout: fixed;
 }
 
 .log-row {
@@ -842,7 +940,7 @@ tr.bm-row:hover td {
 
 /* One line per row: the title alone is clipped, the source label is never
    pushed out. */
-.ml-title-inner {
+.log-title-row {
     display: flex;
     align-items: center;
     min-width: 0;
@@ -851,7 +949,7 @@ tr.bm-row:hover td {
     line-height: 20px;
 }
 
-.log-list-table .ml-title-text {
+.log-table .log-title {
     flex: 0 1 auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -867,13 +965,13 @@ tr.bm-row:hover td {
     transition: background-color 0.15s ease;
 }
 
-.log-list-table .log-entry-group:hover .log-row td,
-.log-list-table .log-entry-group:hover .log-detail-cell {
+.log-table .log-entry-group:hover .log-row td,
+.log-table .log-entry-group:hover .log-detail-cell {
     background-color: var(--row-hover-bg);
 }
 
-.log-list-table .log-entry-group.expanded .log-row td,
-.log-list-table .log-entry-group.expanded .log-detail-cell {
+.log-table .log-entry-group.expanded .log-row td,
+.log-table .log-entry-group.expanded .log-detail-cell {
     background-color: var(--background-color-light);
 }
 
@@ -900,16 +998,6 @@ tr.bm-row:hover td {
 }
 
 /* Column: row number, links to the entry's own page */
-.log-list-table .ml-num {
-    /* Content-box width: 20 + 12px of padding gives the 32px column the list
-       had before table-layout: fixed started honouring this literally */
-    width: 20px;
-}
-
-.log-list-table .ml-num a {
-    font-size: 11px;
-}
-
 .ml-num a {
     color: var(--muted-color);
     text-decoration: none;
@@ -920,7 +1008,7 @@ tr.bm-row:hover td {
 }
 
 /* Column: title */
-.ml-title-text {
+.log-title {
     font-family: var(--code-font);
     font-size: 13px;
     font-weight: 500;
@@ -930,7 +1018,7 @@ tr.bm-row:hover td {
 
 /* The source, named rather than pointed at: a smaller sibling of the category
    tags above the table. Quiet until its row is hovered or focused. */
-.log-list-table .log-ext {
+.log-table .log-ext {
     display: inline-block;
     flex: 0 0 auto;
     margin-left: 7px;
@@ -948,35 +1036,17 @@ tr.bm-row:hover td {
     transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.log-list-table .log-entry-group:hover .log-ext,
-.log-list-table .log-ext:focus-visible {
+.log-table .log-entry-group:hover .log-ext,
+.log-table .log-ext:focus-visible {
     background-color: var(--control-bg);
     color: var(--control-color);
 }
 
-.log-list-table .log-ext:hover {
+.log-table .log-ext:hover {
     opacity: 1;
     color: var(--control-color);
     background-color: var(--control-bg-hover);
     text-decoration: none;
-}
-
-/* Column: category */
-.ml-cat {
-    font-family: var(--code-font);
-    font-size: 11px;
-    color: var(--muted-color);
-    white-space: nowrap;
-    padding-left: 12px;
-}
-
-/* Column: rating — fixed width so the chips line up in a single column */
-.ml-rating {
-    width: 62px;
-    padding-left: 12px;
-    padding-right: 12px;
-    text-align: right;
-    white-space: nowrap;
 }
 
 .log-rating-value {
@@ -1026,10 +1096,7 @@ tr.bm-row:hover td {
    LOG LIST — THE OPEN NOTE
    ============================================================================= */
 
-/* Needs `td` in the selector: `.movie-list-table td` is more specific than a
-   bare class, and its 8px padding would leave dead space under every
-   collapsed entry. */
-.log-list-table td.log-detail-cell {
+.log-table .log-detail-cell {
     padding: 0 6px;
     transition: background-color 0.15s ease;
 }
@@ -1584,28 +1651,14 @@ body,
     height: 16px;
 }
 
-/* Date column: day and month — the year is the section heading above */
-.log-list-table .ml-date {
-    width: 52px;
-}
-
-/* Category column: the icon alone, with the name kept for screen readers and
-   as a tooltip */
-.log-list-table .ml-cat {
-    /* Wide enough for the word "Category" in the heading: under fixed layout a
-       heading that does not fit spills into the next column */
-    width: 68px;
-    text-align: center;
-}
-
-.log-list-table .ml-cat .cat-icon {
+.log-table .log-col-cat .cat-icon {
     width: 18px;
     height: 18px;
     margin: 0 auto;
     color: var(--muted-color);
 }
 
-.log-list-table .log-entry-group:hover .ml-cat .cat-icon {
+.log-table .log-entry-group:hover .log-col-cat .cat-icon {
     color: var(--primary-color);
 }
 
