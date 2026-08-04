@@ -886,12 +886,40 @@ tr.bm-row:hover td {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Fixed layout so the title column takes exactly what the other columns leave,
+   which is what makes truncation possible at all. Scoped to the log table —
+   the bookmark and post tables size themselves to their content. */
+.log-list-table {
+    table-layout: fixed;
+}
+
 .log-row {
     cursor: pointer;
 }
 
+/* One line per row: the title alone is clipped, the source label is never
+   pushed out. */
+.ml-title-inner {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    /* Pinned: some emoji carry a taller line box than others and rows would
+       differ by a pixel */
+    line-height: 20px;
+}
+
+.log-list-table .ml-title-text {
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .log-row td {
-    padding: 11px 6px;
+    /* An explicit height rather than vertical padding: rows without a rating
+       chip, or with a shorter emoji, would otherwise differ by a pixel */
+    height: 44px;
+    padding: 0 6px;
     vertical-align: middle;
     transition: background-color 0.15s ease;
 }
@@ -959,6 +987,7 @@ tr.bm-row:hover td {
    tags above the table. Quiet until its row is hovered or focused. */
 .log-list-table .log-ext {
     display: inline-block;
+    flex: 0 0 auto;
     margin-left: 7px;
     padding: 1px 4px;
     border-radius: 4px;
@@ -1679,7 +1708,9 @@ body,
 /* Category column: the icon alone, with the name kept for screen readers and
    as a tooltip */
 .log-list-table .ml-cat {
-    width: 40px;
+    /* Wide enough for the word "Category" in the heading: under fixed layout a
+       heading that does not fit spills into the next column */
+    width: 68px;
     text-align: center;
 }
 
@@ -1716,9 +1747,11 @@ body,
 /* The entry's own emoji, ahead of its title */
 .log-emoji {
     display: inline-block;
+    flex: 0 0 auto;
     width: 18px;
     margin-right: 7px;
     font-size: 13px;
+    line-height: 20px;
     text-align: center;
 }
 
