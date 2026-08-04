@@ -906,12 +906,6 @@ tr.bm-row:hover td {
     background-color: var(--background-color-light);
 }
 
-/* A rule down the left edge ties the open note back to the row it belongs to */
-.log-list-table .log-entry-group.expanded .log-row td:first-child,
-.log-list-table .log-entry-group.expanded .log-detail-cell {
-    box-shadow: inset 2px 0 0 var(--primary-color);
-}
-
 .log-row:focus-visible {
     outline: 2px solid var(--secondary-color);
     outline-offset: -2px;
