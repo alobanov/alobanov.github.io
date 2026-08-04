@@ -1016,7 +1016,7 @@ tr.bm-row:hover td {
 
 .log-rating-value {
     display: inline-block;
-    min-width: 30px;
+    min-width: 34px;
     padding: 2px 6px;
     border-radius: 5px;
     background-color: var(--control-bg);
@@ -1028,6 +1028,33 @@ tr.bm-row:hover td {
     line-height: 1.4;
     text-align: center;
 }
+
+/* The tone carries the score: a 5 is nearly the text colour, a 2 barely
+   registers. Values without a rule keep the neutral chip above. */
+.log-rating-value[data-rating="5"]   { background-color: #54433a; color: #fff; }
+.log-rating-value[data-rating="4.5"] { background-color: #7d6a5e; color: #fff; }
+.log-rating-value[data-rating="4"]   { background-color: #a89383; color: #fff; }
+.log-rating-value[data-rating="3.5"] { background-color: #cbbdb1; color: #3a2e28; }
+.log-rating-value[data-rating="3"]   { background-color: #e2d8cf; color: #6a5a50; }
+.log-rating-value[data-rating="2.5"] { background-color: #e9e1da; color: #8a7a70; }
+.log-rating-value[data-rating="2"]   { background-color: #efe9e3; color: #9a8a80; }
+.log-rating-value[data-rating="1.5"],
+.log-rating-value[data-rating="1"],
+.log-rating-value[data-rating="0.5"],
+.log-rating-value[data-rating="0"]   { background-color: #f5f1ee; color: #b0a09a; }
+
+/* Dark theme inverts the scale — there, better means lighter */
+[data-theme="dark"] .log-rating-value[data-rating="5"]   { background-color: #ddd0c8; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="4.5"] { background-color: #b3a196; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="4"]   { background-color: #8a7568; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="3.5"] { background-color: #5e4c43; color: #ddd0c8; }
+[data-theme="dark"] .log-rating-value[data-rating="3"]   { background-color: #43332c; color: #b3a196; }
+[data-theme="dark"] .log-rating-value[data-rating="2.5"] { background-color: #3a2b24; color: #9a8578; }
+[data-theme="dark"] .log-rating-value[data-rating="2"]   { background-color: #33261f; color: #8a7568; }
+[data-theme="dark"] .log-rating-value[data-rating="1.5"],
+[data-theme="dark"] .log-rating-value[data-rating="1"],
+[data-theme="dark"] .log-rating-value[data-rating="0.5"],
+[data-theme="dark"] .log-rating-value[data-rating="0"]   { background-color: #2b201b; color: #6f5c52; }
 
 
 /* =============================================================================
