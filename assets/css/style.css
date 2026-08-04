@@ -958,7 +958,9 @@ tr.bm-row:hover td {
 
 /* Column: row number, links to the entry's own page */
 .log-list-table .ml-num {
-    width: 40px;
+    /* Content-box width: 20 + 12px of padding gives the 32px column the list
+       had before table-layout: fixed started honouring this literally */
+    width: 20px;
 }
 
 .log-list-table .ml-num a {
