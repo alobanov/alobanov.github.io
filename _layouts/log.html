@@ -7,7 +7,6 @@ layout: default
 <p class="log-breadcrumb"><a href="{{ '/logs/' | relative_url }}">LOG</a> / <a href="{{ site.baseurl }}/logs/{{ page.category }}">{{ page.category | capitalize }}</a></p>
 
 <h1 class="log-entry-title">
-  <span class="log-icon">{% if log_icon %}<span aria-hidden="true">{{ log_icon }}</span>{% else %}{% include log_icon.html category=page.category %}{% endif %}</span>
   {%- if page.link %}
   <a href="{{ page.link }}" target="_blank" rel="noopener">{{ page.title }} <span class="log-ext-mark" aria-hidden="true">↗</span></a>
   {%- else %}

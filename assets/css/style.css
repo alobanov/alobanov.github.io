@@ -1662,12 +1662,6 @@ body,
     color: var(--primary-color);
 }
 
-.log-entry-title .log-icon {
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -1678,17 +1672,6 @@ body,
     clip: rect(0 0 0 0);
     white-space: nowrap;
     border: 0;
-}
-
-/* The entry's own emoji, ahead of its title */
-.log-emoji {
-    display: inline-block;
-    flex: 0 0 auto;
-    width: 18px;
-    margin-right: 7px;
-    font-size: 13px;
-    line-height: 20px;
-    text-align: center;
 }
 
 /* The recommendation mark sits inside the chip, against the number itself */

@@ -42,7 +42,6 @@ next to the title. Clicking a row opens its note in place.
         <td class="log-col-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
         <td class="log-col-title">
           <div class="log-title-row">
-            <span class="log-emoji" aria-hidden="true">{{ log_icon }}</span>
             <span class="log-title" title="{{ item.title }}">{{ item.title }}</span>
             {%- if item.link %}
             <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
