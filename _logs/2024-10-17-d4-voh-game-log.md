@@ -4,6 +4,7 @@ title: "Diablo IV: Vessel of Hatred"
 date: 2024-10-17
 category: game
 rating: 4
+icon: "😈"
 verdict: "Great"
 link: https://opencritic.com/game/17122/diablo-iv-vessel-of-hatred
 ---

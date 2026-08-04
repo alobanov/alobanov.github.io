@@ -4,6 +4,7 @@ title: "Disco Elysium"
 date: 2024-08-06
 category: game
 rating: 5
+icon: "🕵️"
 verdict: "Masterpiece"
 highlight: true
 link: https://opencritic.com/game/8419/disco-elysium

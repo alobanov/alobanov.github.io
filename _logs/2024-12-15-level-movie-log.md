@@ -4,6 +4,7 @@ title: "Secret Level"
 date: 2024-12-15
 category: movie
 rating: 4
+icon: "🎮"
 verdict: "For Gamers"
 tag: "🎮 Series"
 highlight: true

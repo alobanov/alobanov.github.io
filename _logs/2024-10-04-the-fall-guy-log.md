@@ -4,6 +4,7 @@ title: "The Fall Guy"
 date: 2024-10-04
 category: movie
 rating: 3
+icon: "💥"
 verdict: "Nice"
 link: https://www.imdb.com/title/tt1684562/
 ---

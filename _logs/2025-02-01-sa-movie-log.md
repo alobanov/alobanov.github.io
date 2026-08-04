@@ -4,6 +4,7 @@ title: "Severance"
 date: 2025-02-01
 category: movie
 rating: 5
+icon: "🧠"
 verdict: "Masterpiece"
 tag: "🧠 A Mind-Bending Thriller"
 highlight: true

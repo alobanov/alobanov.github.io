@@ -4,6 +4,7 @@ title: "Alien: Romulus"
 date: 2024-10-17
 category: movie
 rating: 5
+icon: "👽"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt18412256/

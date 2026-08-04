@@ -4,6 +4,7 @@ title: "Deadpool & Wolverine"
 date: 2024-11-01
 category: movie
 rating: 4
+icon: "🦸"
 verdict: "Great"
 link: https://www.imdb.com/title/tt6263850/
 ---

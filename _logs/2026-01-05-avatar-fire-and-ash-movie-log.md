@@ -4,6 +4,7 @@ title: "Avatar: Fire and Ash"
 date: 2026-01-05
 category: movie
 rating: 4
+icon: "🌋"
 verdict: "Spectacular"
 highlight: true
 link: https://www.imdb.com/title/tt1757678

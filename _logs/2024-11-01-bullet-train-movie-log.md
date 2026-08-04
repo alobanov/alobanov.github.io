@@ -4,6 +4,7 @@ title: "Bullet train"
 date: 2024-11-01
 category: movie
 rating: 3
+icon: "🚄"
 verdict: "Good"
 link: https://www.imdb.com/title/tt12593682/
 ---

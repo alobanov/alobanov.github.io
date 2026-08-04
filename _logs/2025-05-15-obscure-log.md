@@ -4,6 +4,7 @@ title: "Clair Obscur: Expedition 33"
 date: 2025-05-15
 category: game
 rating: 3
+icon: "🖌️"
 verdict: "Damn! soo good"
 link: https://opencritic.com/game/18026/clair-obscur-expedition-33
 ---

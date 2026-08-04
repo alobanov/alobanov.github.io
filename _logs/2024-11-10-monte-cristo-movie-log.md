@@ -4,6 +4,7 @@ title: "The Count of Monte-Cristo"
 date: 2024-11-10
 category: movie
 rating: 2
+icon: "🗝️"
 verdict: "Meh"
 link: https://www.imdb.com/title/tt26446278/
 ---

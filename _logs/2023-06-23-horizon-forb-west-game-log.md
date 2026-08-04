@@ -4,6 +4,7 @@ title: "Horizon Forbidden West"
 date: 2023-02-11
 category: game
 rating: 4
+icon: "🏹"
 verdict: "Great"
 link: https://opencritic.com/game/12361/horizon-forbidden-west
 ---

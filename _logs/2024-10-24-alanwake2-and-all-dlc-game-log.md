@@ -4,6 +4,7 @@ title: "Alan Wake 2 with DLC"
 date: 2024-10-24
 category: game
 rating: 3
+icon: "🔦"
 verdict: "Nice"
 link: https://opencritic.com/game/15022/alan-wake-2
 ---

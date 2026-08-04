@@ -4,6 +4,7 @@ title: "Dungeons & Dragons: Honour Among Thieves"
 date: 2024-11-12
 category: movie
 rating: 5
+icon: "🐉"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt2906216/

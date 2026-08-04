@@ -4,6 +4,7 @@ title: "Klaus"
 date: 2025-01-01
 category: movie
 rating: 5
+icon: "🎅"
 verdict: "Perfect for the Christmas Season"
 highlight: true
 link: https://www.imdb.com/title/tt4729430/

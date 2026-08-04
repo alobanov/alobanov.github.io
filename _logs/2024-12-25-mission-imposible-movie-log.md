@@ -4,6 +4,7 @@ title: "M:I - Dead Reckoning"
 date: 2024-12-25
 category: movie
 rating: 3
+icon: "🕶️"
 verdict: "Sorry Mr. Cruise"
 link: https://www.imdb.com/title/tt4729430/
 ---

@@ -4,6 +4,7 @@ title: "The Phoenician Scheme"
 date: 2025-11-07
 category: movie
 rating: 5
+icon: "🧳"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt30840798

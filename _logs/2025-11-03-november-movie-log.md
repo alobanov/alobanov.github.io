@@ -4,6 +4,7 @@ title: "Mickey 17"
 date: 2025-10-23
 category: movie
 rating: 4
+icon: "🧬"
 verdict: "Very Good"
 link: https://www.imdb.com/title/tt12299608
 ---

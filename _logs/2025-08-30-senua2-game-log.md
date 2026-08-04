@@ -4,6 +4,7 @@ title: "Senua's Saga: Hellblade II"
 date: 2025-08-19
 category: game
 rating: 3
+icon: "🗡️"
 verdict: "Great"
 tag: "Photorealistic"
 link: https://opencritic.com/game/16475/senuas-saga-hellblade-ii
