@@ -41,7 +41,7 @@ next to the title. Clicking a row opens its note in place.
       <tr class="log-row" role="button" tabindex="0" aria-expanded="false">
         <td class="ml-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
         <td class="ml-title">
-          <span class="ml-title-text">{{ item.title }}</span>
+          <span class="log-emoji" aria-hidden="true">{{ log_icon }}</span><span class="ml-title-text">{{ item.title }}</span>
           {%- if item.link %}
           <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
              aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
@@ -51,7 +51,7 @@ next to the title. Clicking a row opens its note in place.
         <td class="ml-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
         {%- endif -%}
         {%- if show_rating %}
-        <td class="ml-rating">{% include log_rating.html rating=item.rating %}</td>
+        <td class="ml-rating">{%- if item.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}{% include log_rating.html rating=item.rating %}</td>
         {%- endif %}
         <td class="ml-date">{{ item.date | date: "%-d %b" }}</td>
       </tr>

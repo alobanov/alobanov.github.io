@@ -19,8 +19,7 @@ layout: default
   {%- if page.verdict %}<span class="log-verdict">{{ page.verdict }}</span>
   {%- endif -%}
   {%- if page.tag %}<span class="log-tag">{{ page.tag }}</span>{% endif -%}
-  {%- if page.highlight %}<span class="log-star" title="One of the memorable ones"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg> Recommended</span>{% endif -%}
-  {%- if page.rating %}{% include log_rating.html rating=page.rating %}{% endif -%}
+  {%- if page.rating %}<span class="log-score">{% if page.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif %}{% include log_rating.html rating=page.rating %}</span>{% endif -%}
   <time class="log-meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
 </p>
 

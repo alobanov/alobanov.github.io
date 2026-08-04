@@ -9,7 +9,7 @@ list row, so a card and a row can never disagree.
 
 {%- include log_meta.html log=item -%}
 
-<div class="bubble log-card{% if include.item.highlight %} is-highlight{% endif %}">
+<div class="bubble log-card">
   <div class="log-card-head">
     <span class="log-icon">{% if log_icon %}<span aria-hidden="true">{{ log_icon }}</span>{% else %}{% include log_icon.html category=include.item.category %}{% endif %}</span>
     <span class="log-body">
@@ -31,6 +31,7 @@ list row, so a card and a row can never disagree.
       </span>
       {%- endif %}
     </span>
+    {%- if include.item.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}
     {%- include log_rating.html rating=include.item.rating -%}
   </div>
 
