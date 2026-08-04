@@ -263,18 +263,6 @@ section {
     padding-bottom: 50px;
 }
 
-.container-two-columns {
-    display: flex;
-    gap: 20px;
-    align-items: end;
-    height: 30px;
-}
-
-.content-two-columns {
-    flex: 1;
-    align-items: end;
-}
-
 
 /* =============================================================================
    NAVIGATION
