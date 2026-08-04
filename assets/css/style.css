@@ -724,18 +724,6 @@ button:disabled {
     text-decoration: underline;
 }
 
-/* Column: rating */
-.ml-rating {
-    font-family: var(--code-font);
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--secondary-color);
-    white-space: nowrap;
-    padding-left: 12px;
-    padding-right: 12px;
-    text-align: right;
-}
-
 /* Column: date */
 .ml-date {
     font-family: var(--code-font);
@@ -743,34 +731,6 @@ button:disabled {
     color: var(--muted-color);
     white-space: nowrap;
     text-align: right;
-}
-
-/* Column: category */
-.ml-cat {
-    font-family: var(--code-font);
-    font-size: 11px;
-    color: var(--muted-color);
-    white-space: nowrap;
-    padding-left: 12px;
-}
-
-.ml-cat a {
-    color: var(--muted-color);
-    text-decoration: none;
-}
-
-.ml-cat a:hover {
-    color: var(--primary-color);
-}
-
-/* Year divider row */
-.ml-year-divider td {
-    font-family: var(--code-font);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-color);
-    padding: 20px 6px 4px;
-    border-bottom: none;
 }
 
 
@@ -904,101 +864,460 @@ tr.bm-row:hover td {
 
 
 /* =============================================================================
-   LOG LIST — EXPANDABLE ROWS (shared by game, movie, music, location)
+   LOG LIST — TABLE WITH EXPANDABLE ROWS
+   (shared by all logs, game, movie, music, location)
    ============================================================================= */
 
-.log-list-table .bm-row {
-    cursor: pointer;
-}
-
-.log-list-table .bm-row td {
-    vertical-align: middle;
-}
-
-.log-list-table .bm-row .bm-content h3 {
-    margin: 0;
-}
-
-/* Hover highlights the entire entry (title + detail) as one unit */
-.log-list-table .bm-entry:hover .bm-row td,
-.log-list-table .bm-entry:hover .bm-detail td {
-    background-color: var(--row-hover-bg);
-}
-
-/* Remove divider between title row and detail row when expanded */
-.log-list-table .bm-entry.expanded .bm-row,
-.log-list-table .bm-entry.expanded .bm-row td {
+/* No rules between entries: fifty-odd hairlines read as noise. The year
+   headings carry the structure, and hover draws the entry's own bounds.
+   The base `th, td` border has to be cleared on the cells themselves — a rule
+   on `tr` never overrides it. */
+/* One divider per entry, and it belongs to the bottom of the whole entry — so
+   it travels down with the note as it opens instead of staying pinned under
+   the title. Both the `tr` and the `td` rules have to be cleared: under
+   border-collapse a row's border outranks `none` on its cells. */
+.log-list-table tbody tr,
+.log-list-table tbody td,
+.log-list-table tbody th {
     border-bottom: none;
 }
 
-/* Detail row: hidden by default, shown when entry is expanded */
-.log-list-table .bm-detail {
-    display: none;
+.log-list-table .log-detail-row td {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.log-list-table .bm-entry.expanded .bm-detail {
-    display: table-row;
+.log-row {
+    cursor: pointer;
 }
 
-.log-list-table .bm-detail-cell {
-    padding: 0 16px 14px 40px;
-    border-top: none;
+.log-row td {
+    padding: 11px 6px;
+    vertical-align: middle;
+    transition: background-color 0.15s ease;
 }
 
-.log-list-table .bm-content-body h3 {
-    display: none;
+.log-list-table .log-entry-group:hover .log-row td,
+.log-list-table .log-entry-group:hover .log-detail-cell {
+    background-color: var(--row-hover-bg);
 }
 
-.log-list-table .bm-content-body blockquote {
-    border: none;
-    border-left: 2px solid var(--wordcode-border);
-    border-radius: 0;
-    background: none;
-    padding: 4px 0 4px 12px;
-    margin: 0;
-    font-family: var(--primary-font);
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--text-muted-alt);
+.log-list-table .log-entry-group.expanded .log-row td,
+.log-list-table .log-entry-group.expanded .log-detail-cell {
+    background-color: var(--background-color-light);
 }
 
-.log-list-table .bm-content-body blockquote p {
-    margin: 0;
+.log-row:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: -2px;
 }
 
-.log-list-table .bm-content > h3::after {
-    content: " ›";
+/* Year: sticks to the top while its year scrolls past. A box-shadow rather
+   than a border, because borders on sticky cells drop out under
+   border-collapse: collapse. */
+.log-year-row th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 24px 6px 6px;
+    text-align: left;
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    box-shadow: inset 0 -1px 0 var(--border-color);
+}
+
+/* Column: row number, links to the entry's own page */
+.log-list-table .ml-num {
+    width: 40px;
+}
+
+.log-list-table .ml-num a {
+    font-size: 11px;
+}
+
+.ml-num a {
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.ml-num a:hover {
+    color: var(--secondary-color);
+}
+
+/* Column: title */
+.ml-title-text {
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+
+/* The source, named rather than pointed at: a smaller sibling of the category
+   tags above the table. Quiet until its row is hovered or focused. */
+.log-list-table .log-ext {
+    display: inline-block;
+    margin-left: 7px;
+    padding: 1px 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--muted-color);
+    font-family: var(--code-font);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    vertical-align: 1px;
+    text-decoration: none;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.log-list-table .log-entry-group:hover .log-ext,
+.log-list-table .log-ext:focus-visible {
+    background-color: var(--control-bg);
+    color: var(--control-color);
+}
+
+.log-list-table .log-ext:hover {
+    opacity: 1;
+    color: var(--control-color);
+    background-color: var(--control-bg-hover);
+    text-decoration: none;
+}
+
+/* Column: category */
+.ml-cat {
     font-family: var(--code-font);
     font-size: 11px;
     color: var(--muted-color);
-    font-weight: 400;
+    white-space: nowrap;
+    padding-left: 12px;
 }
 
-.log-list-table .bm-entry.expanded .bm-content > h3::after {
-    content: " ↓";
+/* Column: rating — fixed width so the chips line up in a single column */
+.ml-rating {
+    width: 62px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: right;
+    white-space: nowrap;
 }
 
-.bm-detail-images {
+.log-rating-value {
+    display: inline-block;
+    min-width: 34px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background-color: var(--control-bg);
+    color: var(--control-color);
+    font-family: var(--code-font);
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* The tone carries the score: a 5 is nearly the text colour, a 2 barely
+   registers. Values without a rule keep the neutral chip above. */
+.log-rating-value[data-rating="5"]   { background-color: #54433a; color: #fff; }
+.log-rating-value[data-rating="4.5"] { background-color: #7d6a5e; color: #fff; }
+.log-rating-value[data-rating="4"]   { background-color: #a89383; color: #fff; }
+.log-rating-value[data-rating="3.5"] { background-color: #cbbdb1; color: #3a2e28; }
+.log-rating-value[data-rating="3"]   { background-color: #e2d8cf; color: #6a5a50; }
+.log-rating-value[data-rating="2.5"] { background-color: #e9e1da; color: #8a7a70; }
+.log-rating-value[data-rating="2"]   { background-color: #efe9e3; color: #9a8a80; }
+.log-rating-value[data-rating="1.5"],
+.log-rating-value[data-rating="1"],
+.log-rating-value[data-rating="0.5"],
+.log-rating-value[data-rating="0"]   { background-color: #f5f1ee; color: #b0a09a; }
+
+/* Dark theme inverts the scale — there, better means lighter */
+[data-theme="dark"] .log-rating-value[data-rating="5"]   { background-color: #ddd0c8; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="4.5"] { background-color: #b3a196; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="4"]   { background-color: #8a7568; color: #1c1411; }
+[data-theme="dark"] .log-rating-value[data-rating="3.5"] { background-color: #5e4c43; color: #ddd0c8; }
+[data-theme="dark"] .log-rating-value[data-rating="3"]   { background-color: #43332c; color: #b3a196; }
+[data-theme="dark"] .log-rating-value[data-rating="2.5"] { background-color: #3a2b24; color: #9a8578; }
+[data-theme="dark"] .log-rating-value[data-rating="2"]   { background-color: #33261f; color: #8a7568; }
+[data-theme="dark"] .log-rating-value[data-rating="1.5"],
+[data-theme="dark"] .log-rating-value[data-rating="1"],
+[data-theme="dark"] .log-rating-value[data-rating="0.5"],
+[data-theme="dark"] .log-rating-value[data-rating="0"]   { background-color: #2b201b; color: #6f5c52; }
+
+
+/* =============================================================================
+   LOG LIST — THE OPEN NOTE
+   ============================================================================= */
+
+/* Needs `td` in the selector: `.movie-list-table td` is more specific than a
+   bare class, and its 8px padding would leave dead space under every
+   collapsed entry. */
+.log-list-table td.log-detail-cell {
+    padding: 0 6px;
+    transition: background-color 0.15s ease;
+}
+
+/* 0fr → 1fr animates a height the browser can't otherwise interpolate */
+.log-detail-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s ease;
+}
+
+.log-entry-group.expanded .log-detail-wrap {
+    grid-template-rows: 1fr;
+}
+
+.log-detail-inner {
+    overflow: hidden;
+}
+
+.log-detail-body {
+    padding: 4px 12px 20px 46px;
+    max-width: 62ch;
+}
+
+/* Verdict and tag: an eyebrow above the note, not another column in the row */
+.log-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 0 0 8px;
+    font-family: var(--code-font);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-color);
+}
+
+.log-detail-meta > * + *::before {
+    content: "·";
+    margin: 0 7px;
+    color: var(--muted-color);
+}
+
+/* The note itself: a hanging quote mark in the gutter instead of a rule */
+.log-note-body {
+    position: relative;
+}
+
+.log-note-body blockquote {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.log-note-body blockquote::before {
+    content: "“";
+    position: absolute;
+    left: -28px;
+    top: -6px;
+    /* A serif face draws a real curly quote; Rubik's is a pair of tick marks */
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--muted-color);
+    opacity: 0.5;
+}
+
+.log-note-body p {
+    margin: 0 0 8px;
+    font-family: var(--primary-font);
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--text-heading-sub);
+}
+
+.log-note-body p:last-child {
+    margin-bottom: 0;
+}
+
+.log-note-body a {
+    color: var(--secondary-color);
+}
+
+.log-note-body iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.log-note-images {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
-.bm-detail-thumb {
-    width: 72px;
-    height: 72px;
+.log-thumb {
+    width: 84px;
+    height: 84px;
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.15s ease, opacity 0.15s ease;
     opacity: 0.9;
+    transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-.bm-detail-thumb:hover {
+.log-thumb:hover {
     transform: scale(1.05);
     opacity: 1;
 }
+
+.log-detail-foot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.log-permalink {
+    font-family: var(--code-font);
+    font-size: 10.5px;
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.log-permalink:hover {
+    color: var(--secondary-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .log-detail-wrap,
+    .log-ext,
+    .log-thumb,
+    .log-row td {
+        transition: none;
+    }
+}
+
+
+/* =============================================================================
+   LOG CARDS
+   ============================================================================= */
+
+.log-card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.log-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+.log-card-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.log-card-title a:hover {
+    color: var(--secondary-color);
+}
+
+.log-ext-mark {
+    font-size: 11px;
+    color: var(--muted-color);
+}
+
+.log-card-body > *:first-child {
+    margin-top: 0;
+}
+
+.log-card-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.log-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+
+/* =============================================================================
+   LOG — SINGLE ENTRY PAGE
+   ============================================================================= */
+
+.log-breadcrumb {
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--muted-color);
+    margin: 0 0 6px;
+}
+
+.log-breadcrumb a {
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.log-breadcrumb a:hover {
+    color: var(--secondary-color);
+}
+
+.log-entry-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 6px;
+}
+
+.log-entry-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.log-entry-title a:hover {
+    color: var(--secondary-color);
+}
+
+.log-entry-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--text-description);
+    margin: 0 0 14px;
+}
+
+.log-meta-date {
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--muted-color);
+}
+
+.log-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    font-size: 12px;
+}
+
+.log-nav a {
+    max-width: 45%;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.log-nav a:hover {
+    text-decoration: underline;
+}
+
+.log-nav-next {
+    text-align: right;
+}
+
 
 .bm-tags {
     padding-left: 8px;
@@ -1173,7 +1492,7 @@ body,
 }
 
 /* Log expandable blockquote — border only (color via variable) */
-[data-theme="dark"] .log-list-table .bm-content-body blockquote {
+[data-theme="dark"] .log-note-body blockquote {
     border-left-color: #5a4a44;
 }
 
@@ -1235,6 +1554,24 @@ body,
     .bookmarks-container {
         column-count: 1;
     }
+
+    /* The category is one tap away via the tabs above — the column can go */
+    .ml-cat {
+        display: none;
+    }
+
+    .log-detail-body {
+        padding-left: 28px;
+    }
+
+    .log-note-body blockquote::before {
+        left: -20px;
+        font-size: 28px;
+    }
+
+    .log-nav a {
+        max-width: 48%;
+    }
 }
 
 @media print, screen and (max-width: 600px) {
@@ -1287,4 +1624,107 @@ body,
         font-size: 12pt;
         color: #444;
     }
+}
+
+
+/* =============================================================================
+   CATEGORY ICONS (inline SVG, Phosphor Fill — MIT)
+   ============================================================================= */
+
+/* A fixed square box, aligned by flex rather than by baseline: otherwise every
+   silhouette sits at its own height and the labels next to them jitter. */
+.cat-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+}
+
+/* Scoped to .log-cats so the bookmark and post tags keep their own size */
+.log-cats .tag.small {
+    font-size: 13px;
+    padding: 5px 11px;
+    border-radius: 8px;
+    margin-right: 6px;
+}
+
+.log-cats .tag.small a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.log-cats .cat-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.badge a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge .cat-icon {
+    width: 15px;
+    height: 15px;
+}
+
+/* Date column: day and month — the year is the section heading above */
+.log-list-table .ml-date {
+    width: 52px;
+}
+
+/* Category column: the icon alone, with the name kept for screen readers and
+   as a tooltip */
+.log-list-table .ml-cat {
+    width: 40px;
+    text-align: center;
+}
+
+.log-list-table .ml-cat .cat-icon {
+    width: 18px;
+    height: 18px;
+    margin: 0 auto;
+    color: var(--muted-color);
+}
+
+.log-list-table .log-entry-group:hover .ml-cat .cat-icon {
+    color: var(--primary-color);
+}
+
+.log-card-head .log-icon,
+.log-entry-title .log-icon {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* The entry's own emoji, ahead of its title */
+.log-emoji {
+    display: inline-block;
+    width: 18px;
+    margin-right: 7px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* The recommendation mark sits inside the chip, against the number itself */
+.log-flame {
+    margin-right: 3px;
+    font-size: 10px;
+    vertical-align: 1px;
 }

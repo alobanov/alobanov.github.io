@@ -8,65 +8,16 @@ permalink: /logs/movie/
 
 {% include log_category_list.html %}
 
+{% assign items = site.logs | where: "category", "movie" | sort: 'date' | reverse %}
+
+<div class="bubble yellow">
+  📽️ Movies I've watched, rated from 0 to 5, with a brief note on each. The ones I recommend are marked with a 🔥
+</div>
+
 <div class="view-toggle" data-view-key="movieView">
   <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
   <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
 
-{% assign items = site.logs | where: "category", "movie" | sort: 'date' | reverse %}
-
-<div class="bubble yellow">
-  📽️ Movies I've watched, rated from 0 to 5, with a brief note on each. The most memorable ones are marked with a 🔥
-</div>
-
-<div id="view-cards">
-  {% for item in items %}
-  <div class="bubble">
-    {{ item.content | markdownify }}
-    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-    <div class="spacer"></div>
-    <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date | date:
-        "%-d %B %Y" }}</b></small>
-  </div>
-  {% endfor %}
-</div>
-
-<div id="view-list">
-  <table class="movie-list-table log-list-table">
-    <thead>
-      <tr>
-        <th class="ml-num">#</th>
-        <th class="ml-title">Title</th>
-        <th class="ml-rating">Rating</th>
-        <th class="ml-date">Date</th>
-      </tr>
-    </thead>
-    {% assign current_year = "" %}
-    {% for item in items %}
-    {% assign item_year = item.date | date: "%Y" %}
-    {% if item_year != current_year %}
-    {% assign current_year = item_year %}
-    <tbody>
-      <tr class="ml-year-divider"><td colspan="4">{{ item_year }}</td></tr>
-    </tbody>
-    {% endif %}
-    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-    <tbody class="bm-entry">
-      <tr class="bm-row">
-        <td class="ml-num">#{{ reversed_index }}</td>
-        <td class="bm-content">
-          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-        </td>
-        <td class="ml-rating">{{ item.rating }}</td>
-        <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
-      </tr>
-      <tr class="bm-detail">
-        <td colspan="4" class="bm-detail-cell">
-          <div class="bm-content-body">{{ item.content | markdownify }}</div>
-        </td>
-      </tr>
-    </tbody>
-    {% endfor %}
-  </table>
-</div>
-
+{% include log_cards.html items=items %}
+{% include log_list.html items=items %}

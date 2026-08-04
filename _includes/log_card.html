@@ -1,0 +1,57 @@
+{%- comment -%}
+The LOG card view. Builds its header from the same front matter fields as the
+list row, so a card and a row can never disagree.
+
+  Params: item          — a document from site.logs
+          index         — the entry number shown in the footer
+          show_category — render the category badge (all-logs page)
+{%- endcomment -%}
+
+{%- include log_meta.html log=item -%}
+
+<div class="bubble log-card">
+  <div class="log-card-head">
+    <span class="log-icon">{% if log_icon %}<span aria-hidden="true">{{ log_icon }}</span>{% else %}{% include log_icon.html category=include.item.category %}{% endif %}</span>
+    <span class="log-body">
+      <span class="log-card-title">
+        {%- if include.item.link -%}
+        <a href="{{ include.item.link }}" target="_blank" rel="noopener">{{ include.item.title }} <span class="log-ext-mark" aria-hidden="true">↗</span></a>
+        {%- else -%}
+        {{ include.item.title }}
+        {%- endif -%}
+      </span>
+      {%- if include.item.verdict or include.item.tag %}
+      <span class="log-sub">
+        {%- if include.item.verdict %}
+        <span class="log-verdict">{{ include.item.verdict }}</span>
+        {%- endif -%}
+        {%- if include.item.tag %}
+        <span class="log-tag">{{ include.item.tag }}</span>
+        {%- endif %}
+      </span>
+      {%- endif %}
+    </span>
+    {%- include log_rating.html rating=include.item.rating highlight=include.item.highlight -%}
+  </div>
+
+  <div class="log-card-body">{{ include.item.content | markdownify }}</div>
+
+  {%- if include.item.images %}
+  <div class="image-preview">
+    {%- for image in include.item.images %}
+    <img src="{{ site.baseurl }}/assets/img/{{ include.item.category | url_encode }}/{{ image | url_encode }}"
+         alt="{{ include.item.title | escape }} preview" class="thumbnail"
+         data-modal-src="{{ site.baseurl }}/assets/img/{{ include.item.category | url_encode }}/{{ image | url_encode }}" />
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  <div class="log-card-foot">
+    {%- if include.show_category -%}
+    <span class="badge"><a href="{{ site.baseurl }}/logs/{{ include.item.category }}">{% include log_icon.html category=include.item.category %} {{ include.item.category | capitalize }}</a></span>
+    {%- else -%}
+    <span></span>
+    {%- endif -%}
+    <span class="log-number"><a href="{{ include.item.url | relative_url }}">#{{ include.index }}</a>/<small><b>{{ include.item.date | date: "%-d %B %Y" }}</b></small></span>
+  </div>
+</div>

@@ -8,92 +8,16 @@ permalink: /logs/location/
 
 {% include log_category_list.html %}
 
+{% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
+
+<div class="bubble yellow">
+  🌍 Places I've been to, with a short note on each.
+</div>
+
 <div class="view-toggle" data-view-key="locationView">
   <button class="view-btn" id="btn-cards" onclick="setView('cards')">Cards</button>
   <button class="view-btn active" id="btn-list" onclick="setView('list')">List</button>
 </div>
 
-{% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
-
-<div class="bubble yellow">
-  🌏 Places I've visited with a brief note about each. <br />
-  <b>Countries visited:</b> 🇷🇺 Russia, 🇮🇹 Italy, 🇹🇷 Turkey, 🇷🇸 Serbia, 🇪🇸 Spain, 🇸🇦 United Arab Emirates,
-  🇸🇬 Singapore, 🇹🇭 Thailand, 🇫🇷 France, 🇱🇻 Latvia, 🇲🇾 Malaysia, 🇩🇪 Germany, 🇲🇨 Monaco, 🇨🇿 Czechia,
-  🇫🇮 Finland, 🇸🇪 Sweden.
-</div>
-
-<div id="view-cards">
-  {% assign current_month = "" %}
-  {% assign current_year = "" %}
-  {% for item in items %}
-  {% include date_dividers.html
-  date=item.date
-  current_year=current_year
-  current_month=current_month
-  %}
-  <div class="bubble">
-    {{ item.content | markdownify }}
-    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-    <div class="container-two-columns">
-      <div class="content-two-columns">
-        <span class="log-number"><a href="{{ item.url }}">#{{ reversed_index }}</a></span>/<small><b>{{ item.date |
-            date: "%-d %B %Y" }}</b></small>
-      </div>
-      {% if item.images %}
-      <div class="image-preview">
-        {% for image in item.images %}
-        <img src="/assets/img/{{ item.category }}/{{ image }}" alt="{{ item.title }} Preview" class="thumbnail"
-          onclick="openModal('/assets/img/{{ item.category }}/{{ image }}')" />
-        {% endfor %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-  <div class="spacer"></div>
-  {% endfor %}
-</div>
-
-<div id="view-list">
-  <table class="movie-list-table log-list-table">
-    <thead>
-      <tr>
-        <th class="ml-num">#</th>
-        <th class="ml-title">Place</th>
-        <th class="ml-date">Date</th>
-      </tr>
-    </thead>
-    {% assign current_year = "" %}
-    {% for item in items %}
-    {% assign item_year = item.date | date: "%Y" %}
-    {% if item_year != current_year %}
-    {% assign current_year = item_year %}
-    <tbody>
-      <tr class="ml-year-divider"><td colspan="3">{{ item_year }}</td></tr>
-    </tbody>
-    {% endif %}
-    {% assign reversed_index = forloop.length | minus: forloop.index | plus: 1 %}
-    <tbody class="bm-entry">
-      <tr class="bm-row">
-        <td class="ml-num">#{{ reversed_index }}</td>
-        <td class="bm-content">
-          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-        </td>
-        <td class="ml-date">{{ item.date | date: "%b %Y" }}</td>
-      </tr>
-      <tr class="bm-detail">
-        <td colspan="3" class="bm-detail-cell">
-          <div class="bm-content-body">{{ item.content | markdownify }}</div>
-          {% if item.images %}
-          <div class="bm-detail-images">
-            {% for image in item.images %}
-            <img src="/assets/img/{{ item.category }}/{{ image }}" alt="{{ item.title }}" class="bm-detail-thumb"
-              onclick="openModal('/assets/img/{{ item.category }}/{{ image }}')" />
-            {% endfor %}
-          </div>
-          {% endif %}
-        </td>
-      </tr>
-    </tbody>
-    {% endfor %}
-  </table>
-</div>
+{% include log_cards.html items=items %}
+{% include log_list.html items=items %}

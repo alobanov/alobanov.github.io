@@ -3,10 +3,12 @@ layout: log
 title: "Syracuse/Sicily"
 date: 2012-04-30
 category: location
+icon: "📍"
+verdict: "🇮🇹 Italy"
+tag: "Sicily"
+link: https://maps.app.goo.gl/qZESCqm7T7FjnHTT6
 images:
  - syracuse.jpeg
 ---
-
-### 📍 [Syracuse](https://maps.app.goo.gl/qZESCqm7T7FjnHTT6) / 🇮🇹 Italy <small class="superscript">Sicily</small>
 
 > We looked at the Fountain of Arethusa, it’s very beautiful.

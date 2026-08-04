@@ -1,0 +1,90 @@
+{%- comment -%}
+The LOG list: the familiar table, with the rating and the source link sitting
+next to the title. Clicking a row opens its note in place.
+
+  Params: items         — already sorted (newest first)
+          show_category — show the category column (the all-logs page)
+{%- endcomment -%}
+
+{%- assign rated_count = include.items | where_exp: "item", "item.rating" | size -%}
+{%- assign show_rating = false -%}
+{%- if rated_count > 0 -%}{%- assign show_rating = true -%}{%- endif -%}
+
+{%- assign column_count = 3 -%}
+{%- if show_rating -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
+{%- if include.show_category -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
+
+<table class="movie-list-table log-list-table" id="view-list">
+  <thead>
+    <tr>
+      <th class="ml-num">#</th>
+      <th class="ml-title">Title</th>
+      {%- if include.show_category %}<th class="ml-cat">Category</th>{% endif -%}
+      {%- if show_rating %}<th class="ml-rating">Rating</th>{% endif -%}
+      <th class="ml-date">Date</th>
+    </tr>
+  </thead>
+
+  {%- assign current_year = "" -%}
+  {%- for item in include.items -%}
+    {%- assign item_year = item.date | date: "%Y" -%}
+    {%- if item_year != current_year -%}
+      {%- assign current_year = item_year -%}
+      <tbody>
+        <tr class="log-year-row"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
+      </tbody>
+    {%- endif -%}
+    {%- assign entry_number = forloop.length | minus: forloop.index | plus: 1 -%}
+    {%- include log_meta.html log=item -%}
+
+    <tbody class="log-entry-group{% if item.highlight %} is-highlight{% endif %}">
+      <tr class="log-row" role="button" tabindex="0" aria-expanded="false">
+        <td class="ml-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
+        <td class="ml-title">
+          <span class="log-emoji" aria-hidden="true">{{ log_icon }}</span><span class="ml-title-text">{{ item.title }}</span>
+          {%- if item.link %}
+          <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
+             aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
+          {%- endif -%}
+        </td>
+        {%- if include.show_category %}
+        <td class="ml-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
+        {%- endif -%}
+        {%- if show_rating %}
+        <td class="ml-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>
+        {%- endif %}
+        <td class="ml-date">{{ item.date | date: "%-d %b" }}</td>
+      </tr>
+
+      <tr class="log-detail-row">
+        <td colspan="{{ column_count }}" class="log-detail-cell">
+          <div class="log-detail-wrap">
+            <div class="log-detail-inner" inert>
+              <div class="log-detail-body">
+                {%- if item.verdict or item.tag %}
+                <p class="log-detail-meta">
+                  {%- if item.verdict %}<span class="log-verdict">{{ item.verdict }}</span>{% endif -%}
+                  {%- if item.tag %}<span class="log-tag">{{ item.tag }}</span>{% endif -%}
+                </p>
+                {%- endif %}
+                <div class="log-note-body">{{ item.content | markdownify }}</div>
+                {%- if item.images %}
+                <div class="log-note-images">
+                  {%- for image in item.images %}
+                  <img src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}"
+                       alt="{{ item.title | escape }}" class="log-thumb"
+                       data-modal-src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}" />
+                  {%- endfor %}
+                </div>
+                {%- endif %}
+                <div class="log-detail-foot">
+                  <a class="log-permalink" href="{{ item.url | relative_url }}">{{ item.date | date: "%-d %B %Y" }} <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  {%- endfor -%}
+</table>

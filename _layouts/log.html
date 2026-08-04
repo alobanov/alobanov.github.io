@@ -1,31 +1,70 @@
 ---
 layout: default
-title: Logs
-permalink: /logs/
 ---
 
-<h1>LOG/</h1>
+{%- include log_meta.html log=page -%}
 
-{% include log_category_list.html %}
+<p class="log-breadcrumb"><a href="{{ '/logs/' | relative_url }}">LOG</a> / <a href="{{ site.baseurl }}/logs/{{ page.category }}">{{ page.category | capitalize }}</a></p>
 
-<div class="bubble">
-    {{ page.content | markdownify }}
+<h1 class="log-entry-title">
+  <span class="log-icon">{% if log_icon %}<span aria-hidden="true">{{ log_icon }}</span>{% else %}{% include log_icon.html category=page.category %}{% endif %}</span>
+  {%- if page.link %}
+  <a href="{{ page.link }}" target="_blank" rel="noopener">{{ page.title }} <span class="log-ext-mark" aria-hidden="true">↗</span></a>
+  {%- else %}
+  {{ page.title }}
+  {%- endif %}
+</h1>
 
-    {% if page.images %}
-    <div class="container-two-columns">
-        <div class="content-two-columns">
-            <small><b>{{ page.date | date: "%-d %B %Y" }}</b></small>
-        </div>
-        <div class="image-preview">
-            {% for image in page.images %}
-            <img src="/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
-                alt="{{ page.title | escape }} Preview" class="thumbnail"
-                data-modal-src="/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
-            {% endfor %}
-        </div>
-    </div>
-    {% else %}
-    <div class="spacer"></div>
-    <small><b>{{ page.date | date: "%-d %B %Y" }}</b></small>
-    {% endif %}
+<p class="log-entry-meta">
+  {%- if page.verdict %}<span class="log-verdict">{{ page.verdict }}</span>
+  {%- endif -%}
+  {%- if page.tag %}<span class="log-tag">{{ page.tag }}</span>{% endif -%}
+  {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
+  <time class="log-meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+</p>
+
+<div class="bubble log-entry">
+  {{ page.content | markdownify }}
+
+  {%- if page.images %}
+  <div class="image-preview">
+    {%- for image in page.images %}
+    <img src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
+         alt="{{ page.title | escape }} preview" class="thumbnail"
+         data-modal-src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</div>
+
+{%- comment -%} Previous / next within the same category, oldest first. {%- endcomment -%}
+{%- assign siblings = site.logs | where: "category", page.category | sort: 'date' -%}
+{%- assign position = 0 -%}
+{%- for sibling in siblings -%}
+  {%- if sibling.url == page.url -%}{%- assign position = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- assign last_position = siblings | size | minus: 1 -%}
+
+<nav class="log-nav" aria-label="Other {{ page.category }} entries">
+  {%- if position > 0 -%}
+    {%- assign older_position = position | minus: 1 -%}
+    {%- assign older = siblings[older_position] -%}
+    <a class="log-nav-prev" href="{{ older.url | relative_url }}"><span aria-hidden="true">←</span> {{ older.title }}</a>
+  {%- else -%}
+    <span></span>
+  {%- endif -%}
+  {%- if position < last_position -%}
+    {%- assign newer_position = position | plus: 1 -%}
+    {%- assign newer = siblings[newer_position] -%}
+    <a class="log-nav-next" href="{{ newer.url | relative_url }}">{{ newer.title }} <span aria-hidden="true">→</span></a>
+  {%- else -%}
+    <span></span>
+  {%- endif -%}
+</nav>
+
+<!-- Modal for full-size image -->
+<script src="{{ '/assets/js/image_pop.js' | relative_url }}"></script>
+<div id="image-modal" class="modal" onclick="closeModal(event)">
+  <span class="close" onclick="closeModal(event)">&times;</span>
+  <img class="modal-content" id="modal-img">
 </div>

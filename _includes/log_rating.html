@@ -1,0 +1,12 @@
+{%- comment -%}
+Renders a 0–5 rating as a chip whose tone carries the value: the higher the
+rating, the stronger the contrast against the page. Halves print as they are.
+`data-rating` drives the tone; unlisted values fall back to the neutral chip.
+
+  Params: rating    — number, or nothing at all (music and location entries)
+          highlight — true for entries the author recommends
+{%- endcomment -%}
+
+{%- if include.rating -%}
+<span class="log-rating-value" data-rating="{{ include.rating }}" title="{{ include.rating }} out of 5">{%- if include.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}{{ include.rating }}</span>
+{%- endif -%}
