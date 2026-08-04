@@ -31,8 +31,7 @@ list row, so a card and a row can never disagree.
       </span>
       {%- endif %}
     </span>
-    {%- if include.item.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}
-    {%- include log_rating.html rating=include.item.rating -%}
+    {%- include log_rating.html rating=include.item.rating highlight=include.item.highlight -%}
   </div>
 
   <div class="log-card-body">{{ include.item.content | markdownify }}</div>

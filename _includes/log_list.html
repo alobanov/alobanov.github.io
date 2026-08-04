@@ -51,7 +51,7 @@ next to the title. Clicking a row opens its note in place.
         <td class="ml-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
         {%- endif -%}
         {%- if show_rating %}
-        <td class="ml-rating">{%- if item.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}{% include log_rating.html rating=item.rating %}</td>
+        <td class="ml-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>
         {%- endif %}
         <td class="ml-date">{{ item.date | date: "%-d %b" }}</td>
       </tr>

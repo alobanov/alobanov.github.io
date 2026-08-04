@@ -19,7 +19,7 @@ layout: default
   {%- if page.verdict %}<span class="log-verdict">{{ page.verdict }}</span>
   {%- endif -%}
   {%- if page.tag %}<span class="log-tag">{{ page.tag }}</span>{% endif -%}
-  {%- if page.rating %}<span class="log-score">{% if page.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif %}{% include log_rating.html rating=page.rating %}</span>{% endif -%}
+  {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
   <time class="log-meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
 </p>
 

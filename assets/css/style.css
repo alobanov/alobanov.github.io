@@ -1728,14 +1728,9 @@ body,
     text-align: center;
 }
 
-/* The recommendation mark rides with the score */
+/* The recommendation mark sits inside the chip, against the number itself */
 .log-flame {
-    margin-right: 5px;
-    font-size: 11px;
+    margin-right: 3px;
+    font-size: 10px;
     vertical-align: 1px;
-}
-
-.log-score {
-    display: inline-flex;
-    align-items: center;
 }
