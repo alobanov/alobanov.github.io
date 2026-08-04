@@ -954,8 +954,10 @@ tr.bm-row:hover td {
 
 /* Column: title */
 .ml-title-text {
-    font-size: 14px;
+    font-family: var(--code-font);
+    font-size: 13px;
     font-weight: 500;
+    letter-spacing: -0.02em;
     color: var(--primary-color);
 }
 
