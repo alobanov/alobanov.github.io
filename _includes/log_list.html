@@ -42,7 +42,6 @@ next to the title. Clicking a row opens its note in place.
         <td class="ml-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
         <td class="ml-title">
           <span class="ml-title-text">{{ item.title }}</span>
-          {%- if item.highlight %} <span class="log-flame" title="One of the memorable ones">🔥</span>{% endif -%}
           {%- if item.link %}
           <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
              aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>

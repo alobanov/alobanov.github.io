@@ -961,11 +961,6 @@ tr.bm-row:hover td {
     color: var(--primary-color);
 }
 
-.log-flame {
-    margin-left: 2px;
-    font-size: 11px;
-}
-
 /* The source, named rather than pointed at: a smaller sibling of the category
    tags above the table. Quiet until its row is hovered or focused. */
 .log-list-table .log-ext {
@@ -1724,36 +1719,84 @@ body,
     border: 0;
 }
 
-/* Entries the author personally recommends carry a star watermark: a mask, so
-   it takes the theme's text colour and one asset covers light and dark. */
-.log-list-table .log-entry-group.is-highlight .ml-title {
+/* Cards carry the same mark as their rows */
+.log-card.is-highlight {
     position: relative;
+    overflow: hidden;
 }
 
-.log-list-table .log-entry-group.is-highlight .ml-title::after {
+.log-card.is-highlight::after {
     content: "";
     position: absolute;
-    top: 50%;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    transform: translateY(-50%);
+    top: 10px;
+    right: 14px;
+    width: 56px;
+    height: 56px;
     background-color: var(--primary-color);
     -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z'/%3E%3C/svg%3E") no-repeat center / contain;
     mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z'/%3E%3C/svg%3E") no-repeat center / contain;
-    opacity: 0.07;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .log-card.is-highlight::after {
+    opacity: 0.08;
+}
+
+/* On a single entry the mark is stated outright, next to the verdict */
+.log-star {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--code-font);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-color);
+}
+
+.log-star svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* The mark for a recommended entry sits under its index: bigger than the row
+   is tall, tilted, and cropped by the cell — so it reads as a stamp on the
+   page rather than another icon in the row. */
+.log-list-table .log-entry-group.is-highlight .ml-num {
+    position: relative;
+    overflow: hidden;
+}
+
+.log-list-table .log-entry-group.is-highlight .ml-num::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%) rotate(-14deg);
+    background-color: var(--primary-color);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3E%3Cpath%20d='M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z'/%3E%3C/svg%3E") no-repeat center / contain;
+    opacity: 0.1;
     pointer-events: none;
     transition: opacity 0.15s ease;
 }
 
-.log-list-table .log-entry-group.is-highlight:hover .ml-title::after {
+.log-list-table .log-entry-group.is-highlight:hover .ml-num::before {
+    opacity: 0.18;
+}
+
+/* Keep the number itself above the stamp */
+.log-list-table .ml-num a {
+    position: relative;
+}
+
+[data-theme="dark"] .log-list-table .log-entry-group.is-highlight .ml-num::before {
     opacity: 0.13;
 }
 
-[data-theme="dark"] .log-list-table .log-entry-group.is-highlight .ml-title::after {
-    opacity: 0.09;
-}
-
-[data-theme="dark"] .log-list-table .log-entry-group.is-highlight:hover .ml-title::after {
-    opacity: 0.16;
+[data-theme="dark"] .log-list-table .log-entry-group.is-highlight:hover .ml-num::before {
+    opacity: 0.22;
 }
