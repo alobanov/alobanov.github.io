@@ -48,11 +48,11 @@ next to the title. Clicking a row opens its note in place.
                aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
             {%- endif -%}
           </div>
-          {%- assign _preview = item.content | markdownify | strip_html | strip_newlines | strip | truncatewords: 14 -%}
-          {%- if item.verdict or _preview != "" %}
+          {%- if item.verdict or item.genre or item.tag %}
           <div class="log-subtitle-row">
             {%- if item.verdict %}<span class="log-sub-verdict">{{ item.verdict }}</span>{% endif -%}
-            {%- if _preview != "" %}<span class="log-sub-preview">{{ _preview }}</span>{% endif -%}
+            {%- if item.genre %}<span class="log-sub-genre">{{ item.genre }}</span>{% endif -%}
+            {%- if item.tag %}<span class="log-sub-tag">{{ item.tag }}</span>{% endif -%}
           </div>
           {%- endif %}
         </td>
@@ -73,26 +73,25 @@ next to the title. Clicking a row opens its note in place.
           <div class="log-detail-wrap">
             <div class="log-detail-inner" inert>
               <div class="log-detail-body">
-                {%- if item.verdict or item.tag %}
-                <p class="log-detail-meta">
-                  {%- if item.verdict %}<span class="log-verdict">{{ item.verdict }}</span>{% endif -%}
-                  {%- if item.tag %}<span class="log-tag">{{ item.tag }}</span>{% endif -%}
-                </p>
-                {%- endif %}
-                <div class="log-note-body">{{ item.content | markdownify }}</div>
-                {%- if item.images %}
-                <div class="log-note-images">
-                  {%- for image in item.images %}
-                  <img src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}"
-                       alt="{{ item.title | escape }}" class="log-thumb"
-                       width="84" height="84" loading="lazy" decoding="async"
-                       data-modal-src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}" />
-                  {%- endfor %}
+                <div class="log-detail-main">
+                  <div class="log-note-body">{{ item.content | markdownify }}</div>
+                  {%- if item.images %}
+                  <div class="log-note-images">
+                    {%- for image in item.images %}
+                    <img src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}"
+                         alt="{{ item.title | escape }}" class="log-thumb"
+                         width="84" height="84" loading="lazy" decoding="async"
+                         data-modal-src="{{ site.baseurl }}/assets/img/{{ item.category | url_encode }}/{{ image | url_encode }}" />
+                    {%- endfor %}
+                  </div>
+                  {%- endif %}
+                  <div class="log-detail-foot">
+                    <a class="log-permalink" href="{{ item.url | relative_url }}">{{ item.date | date: "%-d %B %Y" }} <span aria-hidden="true">→</span></a>
+                  </div>
                 </div>
+                {%- if item.poster %}
+                <img class="log-detail-poster" src="{{ item.poster }}" alt="{{ item.title | escape }} poster" loading="lazy">
                 {%- endif %}
-                <div class="log-detail-foot">
-                  <a class="log-permalink" href="{{ item.url | relative_url }}">{{ item.date | date: "%-d %B %Y" }} <span aria-hidden="true">→</span></a>
-                </div>
               </div>
             </div>
           </div>

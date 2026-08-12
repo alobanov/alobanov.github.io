@@ -8,6 +8,8 @@ icon: "✝️"
 verdict: "Sooo good"
 link: https://www.imdb.com/title/tt28015403/
 poster: "https://m.media-amazon.com/images/M/MV5BMzFiMWM4YjAtY2Y3Yi00MDIzLTk0N2MtYTAwNGM3ZmMwODhlXkEyXkFqcGc@._V1_SX300.jpg"
+genre: "Horror"
+tag: "🔮 Claustrophobic Tension"
 ---
 
 > If you’re looking for an intense and clever thriller, you should definitely watch The Heretic! Hugh Grant plays a surprising and chilling role as a charming maniac, and the movie keeps you hooked with its smart dialogues and tense atmosphere. It’s a must-watch if you enjoy stories about faith, inner struggles, and psychological games.

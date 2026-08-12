@@ -999,7 +999,33 @@ tr.bm-row:hover td {
     min-width: 0;
 }
 
-.log-subtitle-row .log-sub-verdict + .log-sub-preview::before {
+.log-subtitle-row .log-sub-genre {
+    flex: 0 0 auto;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-color);
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+.log-subtitle-row .log-sub-tag {
+    flex: 0 0 auto;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--muted-color);
+    opacity: 0.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.log-subtitle-row .log-sub-verdict + .log-sub-genre::before,
+.log-subtitle-row .log-sub-verdict + .log-sub-tag::before,
+.log-subtitle-row .log-sub-genre + .log-sub-tag::before,
+.log-subtitle-row .log-sub-verdict + .log-sub-preview::before,
+.log-subtitle-row .log-sub-genre + .log-sub-preview::before {
     content: " · ";
     white-space: pre;
     color: var(--muted-color);
@@ -1157,7 +1183,24 @@ tr.bm-row:hover td {
 
 .log-detail-body {
     padding: 4px 12px 20px 46px;
-    max-width: 62ch;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.log-detail-main {
+    flex: 1;
+    min-width: 0;
+    max-width: 52ch;
+}
+
+.log-detail-poster {
+    flex: 0 0 auto;
+    width: 72px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 2px;
 }
 
 /* Verdict and tag: an eyebrow above the note, not another column in the row */
@@ -1250,8 +1293,6 @@ tr.bm-row:hover td {
 }
 
 .log-detail-foot {
-    display: flex;
-    justify-content: flex-end;
     margin-top: 12px;
 }
 
@@ -1393,11 +1434,13 @@ tr.bm-row:hover td {
 
 .lep-poster {
     flex: 0 0 auto;
-    width: 88px;
-    border-radius: 8px;
+    width: 90px;
+    border-radius: 12px;
     object-fit: cover;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    object-position: top;
     display: block;
+    align-self: flex-start;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 /* Title */
@@ -1443,16 +1486,35 @@ tr.bm-row:hover td {
     padding-left: 38px;
 }
 
-.lep-tag {
+.lep-genre {
     font-family: var(--code-font);
     font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-color);
+    background-color: var(--control-bg);
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.lep-tag-row {
+    margin-top: 10px;
+    display: block;
+    padding-left: 38px;
+}
+
+.lep-tag {
+    display: inline-block;
+    font-family: var(--code-font);
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--muted-color);
     background-color: var(--control-bg);
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
 }
 
 .lep-date {
@@ -1781,6 +1843,10 @@ body,
         padding-left: 28px;
     }
 
+    .log-detail-poster {
+        display: none;
+    }
+
     .log-note-body blockquote::before {
         left: -20px;
         font-size: 28px;
@@ -1833,6 +1899,11 @@ body,
 
     .bookmarks-bubble {
         font-size: 13px;
+    }
+
+    .log-table .log-col-cat,
+    .log-table thead th.log-col-cat {
+        display: none;
     }
 }
 
@@ -1967,8 +2038,15 @@ body,
 }
 
 /* The recommendation mark sits inside the chip, against the number itself */
-.log-flame {
+.log-highlight {
+    display: inline-flex;
+    align-items: center;
     margin-right: 3px;
-    font-size: 10px;
-    vertical-align: 1px;
+}
+
+.highlight-star {
+    width: 12px;
+    height: 12px;
+    fill: #f97316;
+    vertical-align: -1px;
 }

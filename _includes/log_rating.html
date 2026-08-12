@@ -9,7 +9,7 @@ Filled pip = full point, half-filled = 0.5, empty = unrated.
 {%- if include.rating -%}
 {%- assign _r = include.rating -%}
 <span class="log-rating-pips" data-rating="{{ _r }}" title="{{ _r }}/5" aria-label="{{ _r }} out of 5">
-  {%- if include.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}
+  {%- if include.highlight %}<span class="log-highlight" title="One of the ones I recommend" aria-label="Recommended"><svg class="highlight-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>{% endif -%}
   {%- for i in (1..5) -%}
     {%- assign _half = i | minus: 0.5 -%}
     {%- if _r >= i -%}<i class="pip pip-full" aria-hidden="true"></i>
