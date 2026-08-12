@@ -48,9 +48,19 @@ next to the title. Clicking a row opens its note in place.
                aria-label="{{ item.title }} on {{ log_link_label }}">{{ log_link_label }}</a>
             {%- endif -%}
           </div>
+          {%- assign _preview = item.content | markdownify | strip_html | strip_newlines | strip | truncatewords: 14 -%}
+          {%- if item.verdict or _preview != "" %}
+          <div class="log-subtitle-row">
+            {%- if item.verdict %}<span class="log-sub-verdict">{{ item.verdict }}</span>{% endif -%}
+            {%- if _preview != "" %}<span class="log-sub-preview">{{ _preview }}</span>{% endif -%}
+          </div>
+          {%- endif %}
         </td>
         {%- if include.show_category %}
-        <td class="log-col-cat" title="{{ item.category | capitalize }}"><span class="visually-hidden">{{ item.category | capitalize }}</span>{% include log_icon.html category=item.category %}</td>
+        <td class="log-col-cat">
+          <span class="visually-hidden">{{ item.category | capitalize }}</span>
+          <span class="cat-pill cat-pill--{{ item.category }}" title="{{ item.category | capitalize }}">{% include log_icon.html category=item.category %}</span>
+        </td>
         {%- endif -%}
         {%- if show_rating %}
         <td class="log-col-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>

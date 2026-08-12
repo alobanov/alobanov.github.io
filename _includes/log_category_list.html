@@ -5,7 +5,7 @@
     <span class="tag small"><a href="{{ site.baseurl }}/logs/">{% include log_icon.html category="all" %} All</a></span>
     {%- assign categories = site.logs | map: "category" | uniq | sort -%}
     {% for category in categories %}
-    <span class="tag small"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
+    <span class="tag small cat-tag--{{ category }}"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
     {% endfor %}
 </p>
 

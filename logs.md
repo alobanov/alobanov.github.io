@@ -14,10 +14,10 @@ permalink: /logs/
 
 <div class="bubble yellow">
   💁‍♂️ On this page, I keep a log of my activities. Here's the current statistics:
-  I watched <strong>{{ movie_count }}</strong> movies,
-  completed <strong>{{ game_count }}</strong> games,
-  created <strong>{{ music_count }}</strong> music tracks
-  and visited <strong>{{ location_count }}</strong> places.
+  I watched <strong class="stat-c stat-c--movie">{{ movie_count }}</strong> movies,
+  completed <strong class="stat-c stat-c--game">{{ game_count }}</strong> games,
+  created <strong class="stat-c stat-c--music">{{ music_count }}</strong> music tracks
+  and visited <strong class="stat-c stat-c--location">{{ location_count }}</strong> places.
 </div>
 
 

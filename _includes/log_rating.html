@@ -1,12 +1,21 @@
 {%- comment -%}
-Renders a 0–5 rating as a chip whose tone carries the value: the higher the
-rating, the stronger the contrast against the page. Halves print as they are.
-`data-rating` drives the tone; unlisted values fall back to the neutral chip.
+Renders a 0–5 rating as five pip dots.
+Filled pip = full point, half-filled = 0.5, empty = unrated.
 
   Params: rating    — number, or nothing at all (music and location entries)
           highlight — true for entries the author recommends
 {%- endcomment -%}
 
 {%- if include.rating -%}
-<span class="log-rating-value" data-rating="{{ include.rating }}" title="{{ include.rating }} out of 5">{%- if include.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}{{ include.rating }}</span>
+{%- assign _r = include.rating -%}
+<span class="log-rating-pips" data-rating="{{ _r }}" title="{{ _r }}/5" aria-label="{{ _r }} out of 5">
+  {%- if include.highlight %}<span class="log-flame" title="One of the ones I recommend">🔥</span>{% endif -%}
+  {%- for i in (1..5) -%}
+    {%- assign _half = i | minus: 0.5 -%}
+    {%- if _r >= i -%}<i class="pip pip-full" aria-hidden="true"></i>
+    {%- elsif _r >= _half -%}<i class="pip pip-half" aria-hidden="true"></i>
+    {%- else -%}<i class="pip pip-empty" aria-hidden="true"></i>
+    {%- endif -%}
+  {%- endfor -%}
+</span>
 {%- endif -%}
