@@ -6,6 +6,6 @@ tags:
  - Font
 ---
 
-### [Victor](https://rubjo.github.io/victor-mono/) <small class="superscript">monospaced font</small>
+### ✍️ [Victor](https://rubjo.github.io/victor-mono/) <small class="superscript">monospaced font</small>
 
 I'm using this font to display code blocks on this website. It is available on [Google Fonts](https://fonts.google.com/specimen/Victor+Mono).

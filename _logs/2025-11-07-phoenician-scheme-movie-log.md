@@ -8,6 +8,7 @@ icon: "🧳"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt30840798
+poster: "https://m.media-amazon.com/images/M/MV5BNTJmODQzYmItNTZlMy00Mjg0LTk1NjctYjM4ZGI0NTM3ZTVjXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg"
 ---
 
 > **The Phoenician Scheme** is a dazzling feast for the eyes — Wes Anderson’s signature symmetry, color, and wit come together in a film that’s equal parts absurd, elegant, and irresistibly stylish. Every frame feels like a painting in motion, making it impossible to look away even for a second.

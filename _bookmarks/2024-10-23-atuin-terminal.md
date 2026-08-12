@@ -6,7 +6,7 @@ tags:
  - Terminal
 ---
 
-### [Atuin](https://github.com/atuinsh/atuin) <small class="superscript">Shell history</small>
+### 🐚 [Atuin](https://github.com/atuinsh/atuin) <small class="superscript">Shell history</small>
 
 I use Atuin every day, and it saves me a lot of time in the terminal.
 

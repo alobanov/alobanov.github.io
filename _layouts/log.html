@@ -4,40 +4,66 @@ layout: default
 
 {%- include log_meta.html log=page -%}
 
-<p class="log-breadcrumb"><a href="{{ '/logs/' | relative_url }}">LOG</a> / <a href="{{ site.baseurl }}/logs/{{ page.category }}">{{ page.category | capitalize }}</a></p>
+<div class="log-entry-page{% if page.highlight %} is-highlight{% endif %}">
 
-<h1 class="log-entry-title">
-  {%- if page.link %}
-  <a href="{{ page.link }}" target="_blank" rel="noopener">{{ page.title }} <span class="log-ext-mark" aria-hidden="true">↗</span></a>
-  {%- else %}
-  {{ page.title }}
-  {%- endif %}
-</h1>
-
-<p class="log-entry-meta">
-  {%- if page.verdict %}<span class="log-verdict">{{ page.verdict }}</span>
-  {%- endif -%}
-  {%- if page.tag %}<span class="log-tag">{{ page.tag }}</span>{% endif -%}
-  {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
-  <time class="log-meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
-</p>
-
-<div class="bubble log-entry">
-  {{ page.content | markdownify }}
-
-  {%- if page.images %}
-  <div class="image-preview">
-    {%- for image in page.images %}
-    <img src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
-         alt="{{ page.title | escape }} preview" class="thumbnail"
-         width="25" height="25" loading="lazy" decoding="async"
-         data-modal-src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
-    {%- endfor %}
+  <div class="lep-header">
+    <nav class="lep-breadcrumb" aria-label="breadcrumb">
+      <a href="{{ '/logs/' | relative_url }}">Log</a>
+      <span aria-hidden="true">/</span>
+      <a class="lep-cat-badge lep-cat-badge--{{ page.category }}"
+         href="{{ site.baseurl }}/logs/{{ page.category }}">
+        {%- include log_icon.html category=page.category -%}
+        {{- page.category | capitalize -}}
+      </a>
+    </nav>
+    {%- if page.link %}
+    <a class="lep-ext-link" href="{{ page.link }}" target="_blank" rel="noopener">
+      {{ log_link_label }}<span aria-hidden="true"> ↗</span>
+    </a>
+    {%- endif %}
   </div>
-  {%- endif %}
+
+  <div class="lep-body">
+    <div class="lep-info">
+      <div class="lep-title-wrap">
+        {%- if page.icon %}<span class="lep-icon" aria-hidden="true">{{ page.icon }}</span>{% endif %}
+        <h1 class="lep-title">{{ page.title }}</h1>
+      </div>
+
+      {%- if page.verdict %}
+      <p class="lep-verdict">{{ page.verdict }}</p>
+      {%- endif %}
+
+      <div class="lep-meta">
+        {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
+        {%- if page.tag %}<span class="lep-tag">{{ page.tag }}</span>{% endif -%}
+        <time class="lep-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      </div>
+    </div>
+
+    {%- if page.poster %}
+    <img class="lep-poster" src="{{ page.poster }}" alt="{{ page.title | escape }} poster" loading="lazy">
+    {%- endif %}
+  </div>
+
+  <div class="lep-divider"></div>
+
+  <div class="lep-content">
+    {{ page.content | markdownify }}
+    {%- if page.images %}
+    <div class="log-note-images">
+      {%- for image in page.images %}
+      <img src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}"
+           alt="{{ page.title | escape }}" class="log-thumb"
+           width="84" height="84" loading="lazy" decoding="async"
+           data-modal-src="{{ site.baseurl }}/assets/img/{{ page.category | url_encode }}/{{ image | url_encode }}" />
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+
 </div>
 
-{%- comment -%} Previous / next within the same category, oldest first. {%- endcomment -%}
 {%- assign siblings = site.logs | where: "category", page.category | sort: 'date' -%}
 {%- assign position = 0 -%}
 {%- for sibling in siblings -%}
@@ -45,24 +71,29 @@ layout: default
 {%- endfor -%}
 {%- assign last_position = siblings | size | minus: 1 -%}
 
-<nav class="log-nav" aria-label="Other {{ page.category }} entries">
+<nav class="lep-nav" aria-label="Other {{ page.category }} entries">
   {%- if position > 0 -%}
     {%- assign older_position = position | minus: 1 -%}
     {%- assign older = siblings[older_position] -%}
-    <a class="log-nav-prev" href="{{ older.url | relative_url }}"><span aria-hidden="true">←</span> {{ older.title }}</a>
+    <a class="lep-nav-prev" href="{{ older.url | relative_url }}">
+      <span class="lep-nav-arrow" aria-hidden="true">←</span>
+      <span class="lep-nav-title">{{ older.title }}</span>
+    </a>
   {%- else -%}
     <span></span>
   {%- endif -%}
   {%- if position < last_position -%}
     {%- assign newer_position = position | plus: 1 -%}
     {%- assign newer = siblings[newer_position] -%}
-    <a class="log-nav-next" href="{{ newer.url | relative_url }}">{{ newer.title }} <span aria-hidden="true">→</span></a>
+    <a class="lep-nav-next" href="{{ newer.url | relative_url }}">
+      <span class="lep-nav-title">{{ newer.title }}</span>
+      <span class="lep-nav-arrow" aria-hidden="true">→</span>
+    </a>
   {%- else -%}
     <span></span>
   {%- endif -%}
 </nav>
 
-<!-- Modal for full-size image -->
 <script src="{{ '/assets/js/image_pop.js' | relative_url }}"></script>
 <div id="image-modal" class="modal" onclick="closeModal(event)">
   <span class="close" onclick="closeModal(event)">&times;</span>

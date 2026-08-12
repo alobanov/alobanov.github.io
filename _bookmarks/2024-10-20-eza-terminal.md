@@ -6,7 +6,7 @@ tags:
  - Terminal
 ---
 
-### [Eza](https://github.com/eza-community/eza) <small class="superscript">ls -la</small>
+### 📋 [Eza](https://github.com/eza-community/eza) <small class="superscript">ls -la</small>
 
 <span class="wordcode">alias ee='eza --icons -l -F --colour=always --git -h --no-user --git-repos-no-status -x'
 </span>

@@ -6,6 +6,6 @@ tags:
  - Git
 ---
 
-### [Learn Git Branching](https://learngitbranching.js.org/) <small class="superscript">Simulator</small>
+### 🌳 [Learn Git Branching](https://learngitbranching.js.org/) <small class="superscript">Simulator</small>
 
 interactive way to learn git.

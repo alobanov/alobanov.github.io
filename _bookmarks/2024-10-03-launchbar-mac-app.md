@@ -6,6 +6,6 @@ tags:
  - App
 ---
 
-### [Raycast](https://www.raycast.com/) <small class="superscript">Quick access</small>
+### 🪄 [Raycast](https://www.raycast.com/) <small class="superscript">Quick access</small>
 
 Ease access for everifing on your mac

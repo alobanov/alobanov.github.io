@@ -6,6 +6,6 @@ tags:
  - App
 ---
 
-### [Ark](https://arc.net/) <small class="superscript">Browser</small>
+### 🌐 [Ark](https://arc.net/) <small class="superscript">Browser</small>
 
 Just another alternative to Chrome.
