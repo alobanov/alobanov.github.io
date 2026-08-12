@@ -56,7 +56,6 @@ permalink: /bookmarks/
         <th class="ml-num">#</th>
         <th class="ml-title">Name</th>
         <th class="bm-tags">Tags</th>
-        <th class="ml-date">Added</th>
       </tr>
     </thead>
     <tbody>
@@ -66,7 +65,6 @@ permalink: /bookmarks/
         <td class="ml-num">#{{ reversed_index }}</td>
         <td class="bm-content">{{ bookmark.content | markdownify }}</td>
         <td class="bm-tags">{% for tag in bookmark.tags %}<span class="tag small" data-tag="{{ tag | downcase }}">{{ tag }}</span>{% endfor %}</td>
-        <td class="ml-date">{{ bookmark.date | date: "%b %Y" }}</td>
       </tr>
       {% endfor %}
     </tbody>
