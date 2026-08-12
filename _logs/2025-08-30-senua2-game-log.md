@@ -9,6 +9,7 @@ verdict: "Great"
 tag: "Photorealistic"
 link: https://opencritic.com/game/16475/senuas-saga-hellblade-ii
 poster: "/assets/img/posters/2025-08-30-senua2-game-log.jpg"
+genre: "Action"
 ---
 
 > **Hellblade II** impresses with its visual detail and sound design, creating a powerful atmosphere and deep emotional impact. Despite criticism for repetitive combat and limited player agency, the game stands out for its strong narrative and cinematic quality, honestly and vividly portraying the inner world of the main character.
