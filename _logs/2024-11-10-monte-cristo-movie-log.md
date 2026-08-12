@@ -7,7 +7,7 @@ rating: 2
 icon: "🗝️"
 verdict: "Meh"
 link: https://www.imdb.com/title/tt26446278/
-poster: "https://m.media-amazon.com/images/M/MV5BMTY4NTA3ZDYtMWVkYy00MGNkLTlmYzUtODQ5YjZlZTA3YjA5XkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2024-11-10-monte-cristo-movie-log.jpg"
 genre: "Action"
 tag: "⚔️ Classic Revenge Epic"
 ---

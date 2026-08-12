@@ -7,7 +7,7 @@ rating: 4
 icon: "⚡"
 verdict: "Visually breathtaking"
 link: https://www.imdb.com/title/tt1312221
-poster: "https://m.media-amazon.com/images/M/MV5BYzYzNDYxMTQtMTU4OS00MTdlLThhMTQtZjI4NGJmMTZmNmRiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2026-02-01-frankenstein-movie-log.jpg"
 genre: "Drama"
 tag: "⚡ Del Toro's Darkness"
 ---

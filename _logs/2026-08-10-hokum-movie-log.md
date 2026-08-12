@@ -7,7 +7,7 @@ rating: 4
 icon: "🕯️"
 verdict: "Smart old-school haunted house"
 link: https://www.imdb.com/title/tt35672862
-poster: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2026-08-10-hokum-movie-log.jpg"
 genre: "Horror"
 tag: "👻 Old-School Chills"
 ---

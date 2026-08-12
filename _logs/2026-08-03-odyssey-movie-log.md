@@ -8,7 +8,7 @@ icon: "🌊"
 verdict: "Best film of the year"
 highlight: true
 link: https://www.imdb.com/title/tt33764258
-poster: "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2026-08-03-odyssey-movie-log.jpg"
 genre: "Action"
 tag: "🎞️ Nolan's Epic Journey"
 ---

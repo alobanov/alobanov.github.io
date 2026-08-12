@@ -8,7 +8,7 @@ icon: "🎅"
 verdict: "Perfect for the Christmas Season"
 highlight: false
 link: https://www.imdb.com/title/tt4729430/
-poster: "https://m.media-amazon.com/images/M/MV5BZDA4ODhlMzctNGRmYi00NmViLTkxZGYtZjRkNGQ5YzYwYWVlXkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2025-01-01-klaus-movie-log.jpg"
 genre: "Animation"
 tag: "🎄 Holiday Magic"
 ---

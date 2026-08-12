@@ -7,7 +7,7 @@ rating: 4
 icon: "✝️"
 verdict: "Sooo good"
 link: https://www.imdb.com/title/tt28015403/
-poster: "https://m.media-amazon.com/images/M/MV5BMzFiMWM4YjAtY2Y3Yi00MDIzLTk0N2MtYTAwNGM3ZmMwODhlXkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2025-01-10-heretic-movie-log.jpg"
 genre: "Horror"
 tag: "🔮 Claustrophobic Tension"
 ---

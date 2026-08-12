@@ -7,7 +7,7 @@ rating: 4
 icon: "🚑"
 verdict: "Rainn Wilson, for real"
 link: https://www.imdb.com/title/tt26394837/
-poster: "https://m.media-amazon.com/images/M/MV5BOTMyYjEwNzAtNjgwNS00ZDE0LTg0NWMtZjA5NjgyODliY2ZmXkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg"
+poster: "/assets/img/posters/2025-10-18-code-3-movie-log.jpg"
 genre: "Action"
 tag: "😅 Absurdist Comedy"
 ---

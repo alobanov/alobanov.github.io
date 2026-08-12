@@ -7,7 +7,7 @@ rating: 5
 icon: "🎬"
 verdict: "PTA at his best"
 link: https://www.imdb.com/title/tt30144839
-poster: "https://m.media-amazon.com/images/M/MV5BMzBkZmQ0NjMtNTZlMy00ZjdlLTg5ODUtYWFlNGM0YzE3MTg0XkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+poster: "/assets/img/posters/2026-01-21-one-battle-after-another-movie-log.jpg"
 genre: "Action"
 highlight: true
 tag: "⚡ PTA's War Epic"

@@ -8,7 +8,7 @@ icon: "🧳"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt30840798
-poster: "https://m.media-amazon.com/images/M/MV5BNTJmODQzYmItNTZlMy00Mjg0LTk1NjctYjM4ZGI0NTM3ZTVjXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg"
+poster: "/assets/img/posters/2025-11-07-phoenician-scheme-movie-log.jpg"
 genre: "Action"
 tag: "🕊️ Wes Anderson Perfection"
 ---

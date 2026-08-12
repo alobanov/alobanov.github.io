@@ -7,7 +7,7 @@ rating: 4
 icon: "🦸"
 verdict: "Great"
 link: https://www.imdb.com/title/tt6263850/
-poster: "https://m.media-amazon.com/images/M/MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2024-11-01-deadpool-wolverine-movie-log.jpg"
 genre: "Action"
 tag: "💥 Maximum Effort"
 ---

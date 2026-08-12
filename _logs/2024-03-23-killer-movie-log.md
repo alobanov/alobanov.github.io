@@ -7,7 +7,7 @@ rating: 4
 icon: "🔫"
 verdict: "Great"
 link: https://www.imdb.com/title/tt1136617/
-poster: "https://m.media-amazon.com/images/M/MV5BYzU2MTlkMTctNWI3MC00ODUzLTlmYzQtMzZjYjVmMmYwZGU0XkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2024-03-23-killer-movie-log.jpg"
 genre: "Action"
 tag: "🎯 Cold-Blooded Cool"
 ---

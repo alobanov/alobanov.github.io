@@ -7,7 +7,7 @@ rating: 3.5
 icon: "🐺"
 verdict: "It's OK"
 link: https://www.imdb.com/title/tt14257582
-poster: "https://m.media-amazon.com/images/M/MV5BNWI2MzdiM2ItMTg2Zi00MTYwLThlZmItM2FkNWI4NjE3ZjRhXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+poster: "/assets/img/posters/2024-11-07-wolfs-movie-log.jpg"
 genre: "Comedy"
 tag: "🐺 Star-Powered Buddy Film"
 ---

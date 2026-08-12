@@ -7,7 +7,7 @@ rating: 4
 icon: "🕷️"
 verdict: "A great sequel"
 link: https://www.imdb.com/title/tt22084616
-poster: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2026-08-09-spider-man-brand-new-day-movie-log.jpg"
 genre: "Action"
 tag: "🕷️ Perfect Superhero Fun"
 ---

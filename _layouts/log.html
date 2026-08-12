@@ -24,6 +24,9 @@ layout: default
         </a>
         {%- endif %}
       </div>
+
+      <time class="lep-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+
       <div class="lep-title-wrap">
         {%- if page.icon %}<span class="lep-icon" aria-hidden="true">{{ page.icon }}</span>{% endif %}
         <h1 class="lep-title">{{ page.title }}</h1>
@@ -32,16 +35,8 @@ layout: default
       {%- if page.verdict %}
       <p class="lep-verdict">{{ page.verdict }}</p>
       {%- endif %}
-
-      <div class="lep-meta">
-        {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
-        {%- if page.genre %}<span class="lep-genre">{{ page.genre }}</span>{% endif -%}
-        <time class="lep-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
-      </div>
       {%- if page.tag %}
-      <div class="lep-tag-row">
-        <span class="lep-tag">{{ page.tag }}</span>
-      </div>
+      <p class="lep-tag-line"><span class="lep-tag">{{ page.tag }}</span></p>
       {%- endif %}
     </div>
 
@@ -64,6 +59,13 @@ layout: default
       {%- endfor %}
     </div>
     {%- endif %}
+  </div>
+
+  <div class="lep-divider lep-divider--dotted"></div>
+
+  <div class="lep-footer-meta">
+    {%- if page.rating %}{% include log_rating.html rating=page.rating highlight=page.highlight %}{% endif -%}
+    {%- if page.genre %}<span class="lep-genre">{{ page.genre }}</span>{% endif -%}
   </div>
 
 </div>

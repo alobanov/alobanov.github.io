@@ -9,7 +9,7 @@ verdict: "For Gamers"
 tag: "🎮 Series"
 highlight: true
 link: https://www.imdb.com/title/tt33204697
-poster: "https://m.media-amazon.com/images/M/MV5BZWEwMjgwOTYtZmM1MC00MzdhLWJhMmUtNmNhNGMxMDdkYzNmXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+poster: "/assets/img/posters/2024-12-15-level-movie-log.jpg"
 genre: "Animation"
 ---
 

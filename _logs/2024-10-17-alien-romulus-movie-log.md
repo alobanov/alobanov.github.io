@@ -8,7 +8,7 @@ icon: "👽"
 verdict: "Masterpiece"
 highlight: true
 link: https://www.imdb.com/title/tt18412256/
-poster: "https://m.media-amazon.com/images/M/MV5BMDU0NjcwOGQtNjNjOS00NzQ3LWIwM2YtYWVmODZjMzQzN2ExXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2024-10-17-alien-romulus-movie-log.jpg"
 genre: "Horror"
 tag: "👾 Back to Roots"
 ---

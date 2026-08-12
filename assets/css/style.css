@@ -1474,17 +1474,9 @@ tr.bm-row:hover td {
     color: var(--text-description);
     margin: 0 0 12px;
     line-height: 1.4;
-    padding-left: 38px; /* aligns under title, past the icon */
 }
 
 /* Meta row: rating pips + tag + date */
-.lep-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-left: 38px;
-}
 
 .lep-genre {
     font-family: var(--code-font);
@@ -1498,11 +1490,6 @@ tr.bm-row:hover td {
     border-radius: 20px;
 }
 
-.lep-tag-row {
-    margin-top: 10px;
-    display: block;
-    padding-left: 38px;
-}
 
 .lep-tag {
     display: inline-block;
@@ -1517,17 +1504,36 @@ tr.bm-row:hover td {
     border-radius: 20px;
 }
 
+
+.lep-tag-line {
+    margin: 6px 0 4px;
+}
+
 .lep-date {
+    display: block;
     font-family: var(--code-font);
     font-size: 11px;
     color: var(--muted-color);
+    margin-bottom: 8px;
 }
 
 /* Dotted divider */
 .lep-divider {
     border: none;
-    border-top: 1px dotted var(--border-color);
-    margin: 16px 0;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+.lep-divider--dotted {
+    border-top-style: dotted;
+}
+
+.lep-footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
 }
 
 /* Content */

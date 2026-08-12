@@ -7,7 +7,7 @@ rating: 4
 icon: "🧬"
 verdict: "Very Good"
 link: https://www.imdb.com/title/tt12299608
-poster: "https://m.media-amazon.com/images/M/MV5BZGQwYmEzMzktYzBmMy00NmVmLTkyYTUtOTYyZjliZDNhZGVkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2025-11-03-november-movie-log.jpg"
 genre: "Adventure"
 tag: "🤖 Bong Joon-ho Returns"
 ---

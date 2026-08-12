@@ -7,7 +7,7 @@ rating: 3
 icon: "🚄"
 verdict: "Good"
 link: https://www.imdb.com/title/tt12593682/
-poster: "https://m.media-amazon.com/images/M/MV5BODUyZjkxZDMtZGI3ZC00ZmEwLTgwMTUtYTU4OTQ5YjU4ZjRlXkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2024-11-01-bullet-train-movie-log.jpg"
 genre: "Action"
 tag: "🚅 Fast & Fun"
 ---

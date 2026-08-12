@@ -9,7 +9,7 @@ verdict: "Masterpiece"
 tag: "🧠 A Mind-Bending Thriller"
 highlight: true
 link: https://www.imdb.com/title/tt11280740/
-poster: "https://m.media-amazon.com/images/M/MV5BZDI5YzJhODQtMzQyNy00YWNmLWIxMjUtNDBjNjA5YWRjMzExXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+poster: "/assets/img/posters/2025-02-01-sa-movie-log.jpg"
 genre: "Drama"
 ---
 

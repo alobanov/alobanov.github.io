@@ -7,7 +7,7 @@ rating: 3
 icon: "🦌"
 verdict: "Good"
 link: https://www.imdb.com/title/tt12747748
-poster: "https://m.media-amazon.com/images/M/MV5BZjI0YzhjZjAtMzg3ZS00NTFhLWFkYjctMjE5ZGExNTk1MmJkXkEyXkFqcGc@._V1_SX300.jpg"
+poster: "/assets/img/posters/2024-12-23-leave-world-behind-movie-log.jpg"
 genre: "Drama"
 tag: "📺 Paranoia Spiral"
 ---

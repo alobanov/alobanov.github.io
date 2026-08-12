@@ -7,7 +7,7 @@ rating: 4
 icon: "🏚️"
 verdict: "Must Watch"
 link: https://www.imdb.com/title/tt15791034
-poster: "https://m.media-amazon.com/images/M/MV5BNWQ5MDgwMzMtNWZhMy00Y2Q4LWI5NTAtODA4MDIzYTExOGQzXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2025-11-06-barbarian-movie-log.jpg"
 genre: "Horror"
 tag: "🚪 Do Not Open the Door"
 ---

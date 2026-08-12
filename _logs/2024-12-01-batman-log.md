@@ -7,7 +7,7 @@ rating: 4
 icon: "🦇"
 verdict: "Great"
 link: https://www.imdb.com/title/tt1877830/
-poster: "https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+poster: "/assets/img/posters/2024-12-01-batman-log.jpg"
 genre: "Action"
 ---
 
