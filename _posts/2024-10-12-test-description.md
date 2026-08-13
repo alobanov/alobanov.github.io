@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unit test
-superscript: Description
+superscript: Writing descriptions
 description: A guide on how to write comments for unit tests.
 tags:
   - Unit Test

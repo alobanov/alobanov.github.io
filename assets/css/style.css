@@ -227,8 +227,16 @@ small {
     font-size: 12px;
 }
 
+/* The post subtitle sits next to a mono title. Without its own size, colour and
+   gap it reads as a continuation of the heading — "Chain of responsibility"
+   instead of "Chain" + "of responsibility". */
 small.superscript {
-    vertical-align: super;
+    vertical-align: baseline;
+    margin-left: 7px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted-color);
 }
 
 hr {
@@ -990,16 +998,16 @@ tr.bm-row:hover td {
 }
 
 .post-list-content > a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
     font-family: var(--code-font);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .post-list-content > a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 .post-list-desc {
@@ -2666,4 +2674,50 @@ body,
     .cv-note {
         max-width: none;
     }
+}
+
+
+/* ---- Home page: post list ----------------------------------------------- */
+
+/* `.hidden` is defined for .bookmarks-bubble only; year rows need their own
+   rule or filtering leaves empty headings behind */
+.post-year-row.hidden {
+    display: none;
+}
+
+/* Year marker, matching the LOG list */
+.post-year-row th {
+    padding: 22px 6px 6px;
+    text-align: left;
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    box-shadow: inset 0 -1px 0 var(--border-color);
+    border-bottom: none;
+}
+
+.post-table tbody tr:first-child th {
+    padding-top: 8px;
+}
+
+.post-tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+/* Reset is an action, not a tag — it sits apart and stays quiet until hovered */
+.tag-reset {
+    margin-left: 6px;
+    background-color: transparent;
+    border: 1px dashed var(--control-border);
+    color: var(--muted-color);
+}
+
+.tag-reset:hover {
+    border-style: solid;
+    color: var(--primary-color);
 }
