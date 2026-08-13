@@ -1,0 +1,79 @@
+{%- comment -%}
+Опыт работы для /about_en/ — таблица в том же языке, что список в logs:
+uppercase-подписи колонок, моноширинные заголовки строк, метка платформы в
+скруглённом квадрате, пунктирный разделитель под каждой записью.
+
+Отличие от logs: ничего не скрыто, описание и стек видны сразу.
+
+Данные — _data/cv.yml, длительность считает cv_months.html.
+{%- endcomment -%}
+
+<table class="log-table cv-table">
+  <thead>
+    <tr>
+      <th class="cv-col-mark"><span class="visually-hidden">Platform</span></th>
+      <th class="cv-col-company">Company</th>
+      <th class="cv-col-span">Years</th>
+      <th class="cv-col-where">Where</th>
+    </tr>
+  </thead>
+
+  {%- for job in site.data.cv.experience -%}
+    {%- include cv_months.html job=job -%}
+    {%- if job.stack contains "Flutter" -%}
+      {%- assign mark_kind = "flutter" -%}{%- assign mark_char = "FL" -%}
+    {%- else -%}
+      {%- assign mark_kind = "ios" -%}{%- assign mark_char = "iOS" -%}
+    {%- endif -%}
+
+    <tbody class="cv-entry{% if job.current %} is-current{% endif %}">
+      <tr class="cv-row">
+        <td class="cv-col-mark">
+          <span class="cv-mark cv-mark--{{ mark_kind }}" title="{{ job.stack }}">{{ mark_char }}</span>
+        </td>
+
+        <td class="cv-col-company">
+          <div class="cv-title-row">
+            <span class="cv-company">{{ job.company }}</span>
+            {%- if job.link %}
+            <a class="cv-site" href="{{ job.link }}" target="_blank" rel="noopener"
+               aria-label="{{ job.company }} website">Site</a>
+            {%- endif -%}
+            {%- if job.current %}<span class="cv-badge">now</span>{% endif -%}
+          </div>
+          <div class="cv-subtitle-row">
+            <span class="cv-role">{{ job.role }}</span>
+            {%- if job.aside %}<span class="cv-aside">{{ job.aside }}</span>{% endif -%}
+          </div>
+          {%- comment -%}Ниже 600px колонки Years и Where скрыты — это их запасной вывод{%- endcomment -%}
+          <div class="cv-meta-mobile">
+            {{ job.period }} · {{ cv_duration }} ·
+            {%- if job.country %} <span class="cv-flag">{{ job.country | split: " " | first }}</span>{% endif %} {{ job.where }}
+          </div>
+        </td>
+
+        <td class="cv-col-span">
+          <span class="cv-years">{{ job.period }}</span>
+          <span class="cv-duration">{{ cv_duration }}</span>
+        </td>
+
+        <td class="cv-col-where">
+          {%- if job.country -%}<span class="cv-flag">{{ job.country | split: " " | first }}</span>{% endif -%}
+          {{ job.where }}
+        </td>
+      </tr>
+
+      <tr class="cv-note-row">
+        <td></td>
+        <td colspan="3" class="cv-note-cell">
+          <div class="cv-note">{{ job.note | markdownify }}</div>
+          {%- if job.tags %}
+          <div class="cv-tags">
+            {%- for t in job.tags %}<span class="tag small">{{ t }}</span>{% endfor -%}
+          </div>
+          {%- endif %}
+        </td>
+      </tr>
+    </tbody>
+  {%- endfor -%}
+</table>

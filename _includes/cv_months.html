@@ -1,0 +1,36 @@
+{%- comment -%}
+Считает длительность работы и кладёт подпись в cv_duration ("3 yr 11 mo").
+
+  Параметр: job — запись из _data/cv.yml с полями from ("YYYY-MM") и to
+            ("YYYY-MM" либо "now")
+
+Для текущего места считается от сегодняшней даты, поэтому срок не устаревает.
+Строка собирается через append, а не через capture: пробел-разделитель внутри
+capture съедается управлением пробелами и склеивает «2 yr» с «11 mo».
+{%- endcomment -%}
+
+{%- assign _f = include.job.from | split: "-" -%}
+{%- assign _fy = _f[0] | plus: 0 -%}
+{%- assign _fm = _f[1] | plus: 0 -%}
+
+{%- if include.job.to == "now" -%}
+  {%- assign _ty = 'now' | date: "%Y" | plus: 0 -%}
+  {%- assign _tm = 'now' | date: "%m" | plus: 0 -%}
+{%- else -%}
+  {%- assign _t = include.job.to | split: "-" -%}
+  {%- assign _ty = _t[0] | plus: 0 -%}
+  {%- assign _tm = _t[1] | plus: 0 -%}
+{%- endif -%}
+
+{%- assign _months = _ty | minus: _fy | times: 12 | plus: _tm | minus: _fm -%}
+{%- assign _yrs = _months | divided_by: 12 -%}
+{%- assign _rem = _months | modulo: 12 -%}
+
+{%- assign cv_duration = "" -%}
+{%- if _yrs > 0 -%}
+  {%- assign cv_duration = cv_duration | append: _yrs | append: " yr" -%}
+{%- endif -%}
+{%- if _rem > 0 -%}
+  {%- if cv_duration != "" -%}{%- assign cv_duration = cv_duration | append: " " -%}{%- endif -%}
+  {%- assign cv_duration = cv_duration | append: _rem | append: " mo" -%}
+{%- endif -%}

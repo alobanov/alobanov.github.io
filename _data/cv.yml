@@ -1,0 +1,154 @@
+# Данные страницы /about_en/. Разметка — _includes/cv_*.html.
+
+since: 2011                       # стаж считается от этого года
+
+facts:
+  - label: Based in
+    value: "Novi Sad, Serbia"
+    link: https://maps.app.goo.gl/GbfAnyofmzMD2ZqT6
+  - label: Working
+    value: Remote
+  - label: Write to
+    value: lobanov.aw@gmail.com
+    link: mailto:lobanov.aw@gmail.com
+
+# Навыки сгруппированы так же, как категории в logs: у каждой группы свой цвет.
+# kind задаёт цвет чипов, см. .cv-chip--* в style.css
+skills:
+  - kind: lang
+    label: Languages
+    items: [Dart, Swift, Objective-C, Python]
+  - kind: framework
+    label: Frameworks
+    items: [Flutter, SwiftUI, UIKit, RxSwift, Reactive Programming]
+  - kind: state
+    label: Architecture
+    items: [BLoC, Riverpod, MVVM, VIPER, Clean Architecture]
+  - kind: data
+    label: Data
+    items: [Drift, Hive, Realm, SQLite, CoreData, REST, GraphQL]
+  - kind: tool
+    label: Tooling
+    items: [Git, Fastlane, Mason, CocoaPods, JIRA, App Store Connect]
+  - kind: ai
+    label: AI
+    items: [Claude Code, coding agents, prompt engineering]
+
+links:
+  - label: GitHub
+    url: https://github.com/alobanov
+  - label: Instagram
+    url: https://www.instagram.com/alobanov/
+
+# Опыт — текущее место первым. stack задаёт цвет метки платформы.
+experience:
+  - company: Gameram
+    role: Software Engineer
+    period: Sep 2023 — now
+    from: 2023-09
+    to: now
+    stack: Flutter
+    where: Remote
+    country: 🇨🇾 Cyprus
+    link: https://www.gameram.com/
+    current: true
+    tags: [Flutter, REST, Hive, Design System, BLoC]
+    note: >
+      A social network for gamers — a place to share what you have been playing and
+      to find people to play with. Built the mobile app, shipped to
+      [iOS](https://apps.apple.com/us/app/gameram-network-for-gamers/id1526052976)
+      and [Android](https://play.google.com/store/apps/details?id=com.gameram.gameram&hl=en&gl=US).
+
+  - company: NDA
+    role: Software Engineer
+    period: Oct 2025 — Apr 2026
+    from: 2025-10
+    to: 2026-04
+    stack: Flutter
+    where: Remote
+    aside: parallel contract
+    tags: [Flutter, Drift, Riverpod, Blockchain]
+    note: >
+      A confidential project taken on alongside Gameram. Flutter with a local-first
+      data layer on Drift and Riverpod, talking to a blockchain backend.
+
+  - company: Finblox
+    role: Software Engineer
+    period: Nov 2021 — Aug 2023
+    from: 2021-11
+    to: 2023-08
+    stack: Flutter
+    where: Remote
+    country: 🇸🇬 Singapore
+    tags: [Flutter, REST, Hive, Design System, BLoC]
+    note: >
+      Built **Finblox Mobile Wallet** for iOS and Android from the first commit, then
+      shipped the same codebase to the web through Flutter — one design system across
+      all three.
+
+  - company: CoinsBank
+    role: Team lead · Software Engineer
+    period: Dec 2017 — Nov 2021
+    from: 2017-12
+    to: 2021-11
+    stack: iOS · Flutter
+    where: Remote
+    country: 🇪🇸 Spain
+    tags: [Objective-C, Swift, GraphQL, SQLite, Flutter]
+    note: >
+      Four years and three products. **CoinsBank Mobile Wallet** — an all-in-one gateway
+      to blockchain services, built from scratch for iOS. **Blockchain Cruise 2019** — the
+      companion app for the conference held on a ship. **Neocard** — mobile banking for
+      iOS and Android on a single Flutter codebase. Led the mobile side of the work.
+
+  - company: Soft Media Lab
+    role: Senior iOS · Team lead
+    period: Apr 2016 — Feb 2017
+    from: 2016-04
+    to: 2017-02
+    stack: iOS
+    where: Yekaterinburg
+    link: http://softmedialab.com/
+    tags: [Swift, Realm, REST, In-app Purchase, RxSwift]
+    note: >
+      **Avatar** — location-based private messaging between strangers nearby: geo search,
+      a REST backend, Realm, push notifications, in-app purchases, messaging and file
+      sharing. **Creditclub** — a credit system for Georgia on RxSwift and MVVM. Never shipped.
+
+  - company: NET Element
+    role: iOS Engineer
+    period: Feb 2015 — Apr 2016
+    from: 2015-02
+    to: 2016-04
+    stack: iOS
+    where: Yekaterinburg
+    tags: [Objective-C, Hardware, Bluetooth, REST]
+    note: >
+      **Aptito** — an all-in-one restaurant POS. Kept the existing
+      system running while adding features, worked through a large legacy codebase hunting
+      memory leaks, and wrapped printer and barcode-scanner SDKs into something usable.
+      **UBRA Boats** — Uber for water transport: two apps, riders and skippers, on VIPER.
+
+  - company: East Media
+    role: iOS Developer
+    period: Oct 2011 — Feb 2015
+    from: 2011-10
+    to: 2015-02
+    stack: iOS
+    where: Yekaterinburg
+    link: http://east-media.ru/
+    tags: [Objective-C, CoreData, REST]
+    note: >
+      Where it started. **PinMe** — a Pinterest-like app, **Live Poetry** — an interactive
+      multimedia book, and digital editions for the *Uralskiy Rabochiy* newspaper. Learned
+      networking, multithreading, UI optimisation and animation with Facebook's POP.
+
+education:
+  degree: Ural Federal University
+  field: Software, computer technology and automated systems
+  years: 2006 — 2010
+  links:
+    - label: University information
+      url: ../files/urfu_common.pdf
+    - label: Faculty information
+      url: ../files/urfu_faculty.pdf

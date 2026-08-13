@@ -2332,3 +2332,338 @@ body,
 .log-rating-pips .log-highlight {
     margin-right: 3px;
 }
+
+
+/* =============================================================================
+   CV PAGE
+   Built in the same language as the LOG section: mono headings, uppercase
+   column labels, category colours, dotted separators. The experience table
+   reuses .log-table for its base rules; only the columns are redefined.
+   ============================================================================= */
+
+/* ---- Facts block inside the yellow bubble ---- */
+
+.cv-facts {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 7px 18px;
+    margin: 0;
+}
+
+.cv-fact {
+    display: contents;
+}
+
+.cv-facts dt {
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-color);
+    align-self: center;
+}
+
+.cv-facts dd {
+    margin: 0;
+    font-family: var(--code-font);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cv-fact-icon {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.cv-elsewhere {
+    gap: 14px;
+}
+
+/* ---- Section headings ---- */
+
+.cv-section {
+    margin: 34px 0 12px;
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-color);
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ---- Skills: one row per group, colour-coded like log categories ---- */
+
+.cv-skills {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 10px 18px;
+    align-items: baseline;
+}
+
+.cv-skill-group {
+    display: contents;
+}
+
+.cv-skill-label {
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-color);
+    padding-top: 4px;
+}
+
+.cv-skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.cv-chip {
+    padding: 2px 9px;
+    border-radius: 6px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    line-height: 1.6;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+/* Same hues the LOG categories use, so the two pages read as one system */
+.cv-chip--lang      { color: #267cb9; background-color: rgba(38, 124, 185, 0.09);  border-color: rgba(38, 124, 185, 0.18); }
+.cv-chip--framework { color: #b87333; background-color: rgba(184, 115, 51, 0.09);  border-color: rgba(184, 115, 51, 0.2); }
+.cv-chip--state     { color: #823cb4; background-color: rgba(130, 60, 180, 0.09);  border-color: rgba(130, 60, 180, 0.18); }
+.cv-chip--data      { color: #468c5a; background-color: rgba(70, 140, 90, 0.09);   border-color: rgba(70, 140, 90, 0.2); }
+.cv-chip--tool      { color: var(--text-muted-alt); background-color: rgba(120, 120, 120, 0.07); border-color: rgba(120, 120, 120, 0.16); }
+.cv-chip--ai        { color: #c2410c; background-color: rgba(249, 115, 22, 0.09);  border-color: rgba(249, 115, 22, 0.2); }
+
+[data-theme="dark"] .cv-chip--lang      { color: #7dbfe8; background-color: rgba(125, 191, 232, 0.1); border-color: rgba(125, 191, 232, 0.2); }
+[data-theme="dark"] .cv-chip--framework { color: #d4963d; background-color: rgba(212, 150, 61, 0.1);  border-color: rgba(212, 150, 61, 0.22); }
+[data-theme="dark"] .cv-chip--state     { color: #c084fc; background-color: rgba(192, 132, 252, 0.1); border-color: rgba(192, 132, 252, 0.2); }
+[data-theme="dark"] .cv-chip--data      { color: #6dbc8a; background-color: rgba(109, 188, 138, 0.1); border-color: rgba(109, 188, 138, 0.2); }
+[data-theme="dark"] .cv-chip--tool      { color: var(--muted-color); background-color: rgba(200, 200, 200, 0.07); border-color: rgba(200, 200, 200, 0.14); }
+[data-theme="dark"] .cv-chip--ai        { color: #fb923c; background-color: rgba(251, 146, 60, 0.1);  border-color: rgba(251, 146, 60, 0.2); }
+
+/* ---- Experience table ---- */
+
+.cv-table {
+    margin-top: 4px;
+}
+
+/* table-layout is fixed, so every column but the flexible one needs a width */
+.cv-table .cv-col-mark    { width: 42px; vertical-align: top; padding-top: 12px; }
+.cv-table .cv-col-company { width: 100%; vertical-align: top; padding-top: 10px; }
+.cv-table .cv-col-span    { width: 150px; vertical-align: top; padding-top: 12px; text-align: right; }
+.cv-table .cv-col-where   { width: 118px; vertical-align: top; padding-top: 12px; text-align: right; }
+
+.cv-table thead th.cv-col-span,
+.cv-table thead th.cv-col-where {
+    text-align: right;
+}
+
+/* Platform mark — the same rounded square the LOG list uses for categories */
+.cv-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 6px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.cv-mark--flutter { background-color: rgba(38, 124, 185, 0.12); color: #267cb9; }
+.cv-mark--ios     { background-color: rgba(184, 115, 51, 0.12); color: #b87333; }
+
+[data-theme="dark"] .cv-mark--flutter { background-color: rgba(125, 191, 232, 0.14); color: #7dbfe8; }
+[data-theme="dark"] .cv-mark--ios     { background-color: rgba(212, 150, 61, 0.14); color: #d4963d; }
+
+.cv-title-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cv-company {
+    font-family: var(--code-font);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.cv-site {
+    font-family: var(--code-font);
+    font-size: 10px;
+    color: var(--muted-color);
+    opacity: 0.75;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.cv-entry:hover .cv-site {
+    opacity: 1;
+}
+
+.cv-site:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.cv-badge {
+    padding: 1px 7px;
+    border-radius: 20px;
+    background-color: rgba(70, 140, 90, 0.13);
+    color: #3d7a4e;
+    font-family: var(--code-font);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+[data-theme="dark"] .cv-badge {
+    background-color: rgba(109, 188, 138, 0.16);
+    color: #6dbc8a;
+}
+
+.cv-subtitle-row {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--text-muted-alt);
+}
+
+.cv-aside {
+    color: var(--muted-color);
+    font-size: 11px;
+}
+
+.cv-aside::before {
+    content: " · ";
+}
+
+/* Dates stack over the duration so the column stays narrow and both align right */
+.cv-years,
+.cv-duration {
+    display: block;
+    font-family: var(--code-font);
+    white-space: nowrap;
+}
+
+.cv-years {
+    font-size: 11px;
+    color: var(--text-muted-alt);
+}
+
+.cv-duration {
+    margin-top: 2px;
+    font-size: 10px;
+    color: var(--muted-color);
+    opacity: 0.8;
+}
+
+.cv-col-where {
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--muted-color);
+    white-space: nowrap;
+}
+
+/* A flag emoji is two code points — letter-spacing would break the pair */
+.cv-flag {
+    letter-spacing: 0;
+    margin-right: 4px;
+}
+
+/* The note hangs under the company column, indented past the platform mark.
+   The dotted rule goes on every cell of the row, not just the note cell —
+   otherwise it stops short of the platform-mark column. */
+.cv-note-cell {
+    padding-bottom: 18px !important;
+}
+
+.cv-table .cv-note-row td {
+    /* `.log-table tbody td` clears borders for the LOG list and outranks a bare
+       class here, so the selector has to carry .cv-table to win */
+    border-bottom: 1px dotted rgba(184, 115, 51, 0.34);
+}
+
+[data-theme="dark"] .cv-table .cv-note-row td {
+    border-bottom-color: rgba(212, 150, 61, 0.3);
+}
+
+.cv-table .cv-entry:last-child .cv-note-row td {
+    border-bottom: none;
+}
+
+/* Breathing room after the rule, before the next company */
+.cv-entry + .cv-entry .cv-row td {
+    padding-top: 18px;
+}
+
+.cv-note {
+    max-width: 62ch;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cv-note p {
+    margin: 0;
+}
+
+.cv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 10px;
+}
+
+
+/* Mobile: the fixed columns do not fit 390px, so dates and location fall back
+   to a line under the role, and the skills grid stacks */
+.cv-meta-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .cv-table .cv-col-span,
+    .cv-table thead th.cv-col-span,
+    .cv-table .cv-col-where,
+    .cv-table thead th.cv-col-where {
+        display: none;
+    }
+
+    .cv-meta-mobile {
+        display: block;
+        margin-top: 5px;
+        font-family: var(--code-font);
+        font-size: 10px;
+        color: var(--muted-color);
+    }
+
+    /* minmax(0, …), not 1fr: a bare 1fr keeps a max-content minimum and the
+       column stretches to the longest chip instead of wrapping */
+    .cv-skills,
+    .cv-facts {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+    }
+
+    .cv-skill-label,
+    .cv-facts dt {
+        padding-top: 10px;
+    }
+
+    .cv-note {
+        max-width: none;
+    }
+}
