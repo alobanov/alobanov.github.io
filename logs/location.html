@@ -10,8 +10,23 @@ permalink: /logs/location/
 
 {% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
 
+{% assign verdicts = items | map: "verdict" | compact | uniq | sort %}
+
 <div class="bubble yellow">
   🌍 Places I've been to, with a short note on each.
+  <hr class="bubble-sep">
+  <p class="bubble-note">
+    <span class="bubble-note-copy">
+      <span class="bubble-note-kicker">Been here</span>
+      <span class="country-flags">
+        {%- for v in verdicts -%}
+          {%- assign flag = v | split: ' ' | first -%}
+          {%- assign name = v | remove_first: flag | strip -%}
+          <span class="country-flag"><span class="country-flag-emoji">{{ flag }}</span>{{ name }}</span>
+        {%- endfor -%}
+      </span>
+    </span>
+  </p>
 </div>
 
 

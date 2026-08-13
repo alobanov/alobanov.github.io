@@ -515,6 +515,39 @@ ol.custom-counter > li::before {
     background-color: rgba(249, 115, 22, 0.16);
 }
 
+/* Country flags in the locations bubble */
+.country-flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.country-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background-color: rgba(184, 115, 51, 0.06);
+    border: 1px solid rgba(184, 115, 51, 0.18);
+    font-family: var(--code-font);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--muted-color);
+    white-space: nowrap;
+}
+
+.country-flag-emoji {
+    font-size: 14px;
+    line-height: 1;
+}
+
+[data-theme="dark"] .country-flag {
+    background-color: rgba(212, 150, 61, 0.08);
+    border-color: rgba(212, 150, 61, 0.22);
+}
+
 .bubble.purple {
     background-color: rgba(87, 17, 238, 0.05);
     border: 1px solid rgba(87, 17, 238, 0.08);
