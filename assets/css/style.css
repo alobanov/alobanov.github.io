@@ -863,9 +863,11 @@ button:disabled {
 }
 
 .view-btn.active {
-    background-color: var(--primary-color);
-    color: #fff;
-    border-color: var(--primary-color);
+    /* A warm pill, like the category tabs in the LOG header — the inverted
+       dark fill was the only place on the site that flipped the colours */
+    background-color: rgba(184, 115, 51, 0.11);
+    color: #b87333;
+    border-color: rgba(184, 115, 51, 0.32);
 }
 
 
@@ -2053,9 +2055,9 @@ body,
 
 
 [data-theme="dark"] .view-btn.active {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    border-color: var(--primary-color);
+    background-color: rgba(212, 150, 61, 0.14);
+    color: #d4963d;
+    border-color: rgba(212, 150, 61, 0.32);
 }
 
 /* Log expandable blockquote — border only (color via variable) */
@@ -2707,4 +2709,39 @@ body,
 .tag-reset:hover {
     border-style: solid;
     color: var(--primary-color);
+}
+
+
+/* ---- Bookmarks ----------------------------------------------------------- */
+
+/* Card headings were falling back to the global link colour while the list
+   headings were dark — the same bookmark looked different in the two views.
+   The domain label carries the "leaves the site" signal in both. */
+.bookmarks-container h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.bookmarks-container h3 a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Domain label after the bookmark name. Everything on this site links inward,
+   so bookmarks need to say where they actually go — the same job the IMDb and
+   Maps labels do in the LOG list. */
+.bm-host {
+    margin-left: 8px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--muted-color);
+    opacity: 0.75;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.bookmarks-bubble:hover .bm-host {
+    opacity: 1;
+    color: var(--secondary-color);
 }

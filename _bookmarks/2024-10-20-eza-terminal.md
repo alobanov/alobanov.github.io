@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Eza
+link: https://github.com/eza-community/eza
 date: 2024-10-20
 tags: 
  - Terminal

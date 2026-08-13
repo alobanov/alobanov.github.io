@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Victor
+link: https://rubjo.github.io/victor-mono/
 date: 2024-11-27
 tags: 
  - Font

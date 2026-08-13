@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Monaspace
+link: https://monaspace.githubnext.com/
 date: 2025-07-08
 tags: 
  - Font

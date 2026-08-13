@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Starship
+link: https://github.com/starship/starship
 date: 2024-10-22
 tags: 
  - Terminal

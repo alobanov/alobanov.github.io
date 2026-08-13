@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Atuin
+link: https://github.com/atuinsh/atuin
 date: 2024-10-23
 tags: 
  - Terminal

@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Ark
+link: https://arc.net/
 date: 2024-10-21
 tags: 
  - App

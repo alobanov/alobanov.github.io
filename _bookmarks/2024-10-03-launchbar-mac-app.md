@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Raycast
+link: https://www.raycast.com/
 date: 2024-10-03
 tags: 
  - App

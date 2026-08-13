@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Learn Git Branching
+link: https://learngitbranching.js.org/
 date: 2024-10-29
 tags: 
  - Git

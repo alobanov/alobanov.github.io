@@ -1,0 +1,16 @@
+{%- comment -%}
+Тело закладки: её markdown плюс метка домена в строке заголовка.
+
+  Параметр: bookmark — запись из site.bookmarks с полем link
+
+Метка вставляется подменой закрывающего </h3>, а не выводится следом: заголовок
+блочный, и любой вывод после него встал бы на новую строку, оторвавшись от
+названия. Домен берётся из front matter, а не парсится из тела.
+
+Поле называется link, а не url: у документа Jekyll `url` — это его собственный
+путь, и front matter с тем же именем молча им перекрывается.
+{%- endcomment -%}
+
+{%- assign host = include.bookmark.link | split: "//" | last | split: "/" | first | replace: "www.", "" -%}
+{%- capture host_label -%}<span class="bm-host">{{ host }}</span></h3>{%- endcapture -%}
+{{ include.bookmark.content | markdownify | replace: "</h3>", host_label }}

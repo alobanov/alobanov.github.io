@@ -1,6 +1,7 @@
 ---
 layout: bookmark
 title: Kap
+link: https://getkap.co/
 date: 2024-10-18
 tags: 
  - App
