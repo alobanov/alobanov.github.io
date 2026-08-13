@@ -1,6 +1,6 @@
 {%- comment -%}
-The LOG list: the familiar table, with the rating and the source link sitting
-next to the title. Clicking a row opens its note in place.
+The LOG list: the familiar table, with the recommendation star and the source
+link sitting next to the title. Clicking a row opens its note in place.
 
   Params: items         — already sorted (newest first)
           show_category — show the category column (the all-logs page)
@@ -42,6 +42,7 @@ next to the title. Clicking a row opens its note in place.
         <td class="log-col-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
         <td class="log-col-title">
           <div class="log-title-row">
+            {%- if item.highlight %}{% include log_highlight.html %}{% endif -%}
             <span class="log-title" title="{{ item.title }}">{{ item.title }}</span>
             {%- if item.link %}
             <a class="log-ext" href="{{ item.link }}" target="_blank" rel="noopener"
@@ -63,7 +64,7 @@ next to the title. Clicking a row opens its note in place.
         </td>
         {%- endif -%}
         {%- if show_rating %}
-        <td class="log-col-rating">{% include log_rating.html rating=item.rating highlight=item.highlight %}</td>
+        <td class="log-col-rating">{% include log_rating.html rating=item.rating %}</td>
         {%- endif %}
         <td class="log-col-date">{{ item.date | date: "%-d %b" }}</td>
       </tr>

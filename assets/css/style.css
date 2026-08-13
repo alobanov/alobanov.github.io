@@ -448,6 +448,73 @@ ol.custom-counter > li::before {
 [data-theme="dark"] .stat-c--music    { color: #c084fc; }
 [data-theme="dark"] .stat-c--location { color: #6dbc8a; }
 
+.bubble.yellow .bubble-sep {
+    border: none;
+    border-top: 1px dotted rgba(184, 115, 51, 0.35);
+    background: none;
+    height: 0;
+    margin: 12px 0 10px;
+}
+
+[data-theme="dark"] .bubble.yellow .bubble-sep {
+    border-top-color: rgba(212, 150, 61, 0.25);
+}
+
+.bubble-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.bubble-note-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background-color: rgba(249, 115, 22, 0.12);
+}
+
+.bubble-note-mark .log-highlight {
+    margin: 0;
+}
+
+.bubble-note-mark .highlight-star {
+    width: 14px;
+    height: 14px;
+}
+
+.bubble-note-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.bubble-note-kicker {
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f97316;
+    line-height: 1.2;
+}
+
+.bubble-note-body {
+    font-family: var(--primary-font);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted-color);
+}
+
+[data-theme="dark"] .bubble-note-mark {
+    background-color: rgba(249, 115, 22, 0.16);
+}
+
 .bubble.purple {
     background-color: rgba(87, 17, 238, 0.05);
     border: 1px solid rgba(87, 17, 238, 0.08);
@@ -2043,11 +2110,13 @@ body,
     border: 0;
 }
 
-/* The recommendation mark sits inside the chip, against the number itself */
+/* The recommendation mark sits next to the title in the list,
+   and next to the rating pips on the entry page */
 .log-highlight {
     display: inline-flex;
     align-items: center;
-    margin-right: 3px;
+    flex: 0 0 auto;
+    margin-right: 5px;
 }
 
 .highlight-star {
@@ -2055,4 +2124,8 @@ body,
     height: 12px;
     fill: #f97316;
     vertical-align: -1px;
+}
+
+.log-rating-pips .log-highlight {
+    margin-right: 3px;
 }

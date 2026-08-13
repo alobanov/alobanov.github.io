@@ -18,6 +18,14 @@ permalink: /logs/
   completed <strong class="stat-c stat-c--game">{{ game_count }}</strong> games,
   created <strong class="stat-c stat-c--music">{{ music_count }}</strong> music tracks
   and visited <strong class="stat-c stat-c--location">{{ location_count }}</strong> places.
+  <hr class="bubble-sep">
+  <p class="bubble-note">
+    <span class="bubble-note-mark" aria-hidden="true">{% include log_highlight.html %}</span>
+    <span class="bubble-note-copy">
+      <span class="bubble-note-kicker">Recommended</span>
+      <span class="bubble-note-body">Something I’d really push you to watch or play</span>
+    </span>
+  </p>
 </div>
 
 
