@@ -10,11 +10,24 @@ permalink: /logs/location/
 
 {% assign items = site.logs | where: "category", "location" | sort: 'date' | reverse %}
 
-{% assign verdicts = items | map: "verdict" | compact | uniq | sort %}
+{% comment %}
+  Список стран = страны из записей + те, где был, но записей ещё нет
+  (_data/extra_countries.yml). Сортируется вместе, по коду страны во флаге.
+{% endcomment %}
+{% assign extra_str = "" %}
+{%- for e in site.data.extra_countries -%}
+  {%- assign extra_str = extra_str | append: e.flag | append: " " | append: e.name | append: "|" -%}
+{%- endfor -%}
+{% assign extra_list = extra_str | split: "|" %}
+{% assign verdicts = items | map: "verdict" | compact | concat: extra_list | uniq | sort %}
 
 <div class="bubble yellow">
   🌍 Places I've been to, with a short note on each.
   <hr class="bubble-sep">
+  <details class="world-map-toggle">
+    <summary>Map</summary>
+    {% include world_map.html %}
+  </details>
   <p class="bubble-note">
     <span class="bubble-note-copy">
       <span class="bubble-note-kicker">Been here</span>

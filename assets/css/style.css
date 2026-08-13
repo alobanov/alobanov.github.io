@@ -548,6 +548,139 @@ ol.custom-counter > li::before {
     border-color: rgba(212, 150, 61, 0.22);
 }
 
+/* World map in the locations bubble — collapsed by default */
+.world-map-toggle {
+    margin: 2px 0 10px;
+}
+
+.world-map-toggle > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 9px;
+    border: 1px dotted rgba(184, 115, 51, 0.35);
+    border-radius: 6px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--muted-color);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.world-map-toggle > summary::-webkit-details-marker {
+    display: none;
+}
+
+.world-map-toggle > summary::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+
+.world-map-toggle[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.world-map-toggle > summary:hover,
+.world-map-toggle > summary:focus-visible {
+    color: var(--primary-color);
+    border-style: solid;
+}
+
+[data-theme="dark"] .world-map-toggle > summary {
+    border-color: rgba(212, 150, 61, 0.3);
+}
+
+.world-map {
+    position: relative;
+    margin: 10px 0 4px;
+}
+
+.world-map-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.world-map-land {
+    fill: rgba(184, 115, 51, 0.14);
+    stroke: rgba(184, 115, 51, 0.38);
+    stroke-width: 0.45;
+    stroke-linejoin: round;
+}
+
+.world-map-borders {
+    fill: none;
+    stroke: rgba(184, 115, 51, 0.32);
+    stroke-width: 0.35;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* Pins live in HTML on top of the map, positioned in % of the viewBox */
+.world-map-pins {
+    position: absolute;
+    inset: 0;
+}
+
+.world-map-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+
+.world-map-pin-dot {
+    display: block;
+    width: var(--dot);
+    height: var(--dot);
+    border-radius: 50%;
+    background-color: #468c5a;
+    border: 1.5px solid var(--background-color-light);
+    opacity: 0.85;
+    transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.world-map-pin:hover .world-map-pin-dot,
+.world-map-pin:focus-visible .world-map-pin-dot {
+    transform: scale(1.25);
+    opacity: 1;
+}
+
+.world-map-pin-label {
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 8px;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--background-color-light);
+    font-family: var(--code-font);
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+    z-index: 2;
+}
+
+.world-map-pin:hover .world-map-pin-label,
+.world-map-pin:focus-visible .world-map-pin-label {
+    opacity: 1;
+}
+
+[data-theme="dark"] .world-map-land {
+    fill: rgba(212, 150, 61, 0.16);
+    stroke: rgba(212, 150, 61, 0.3);
+}
+
+[data-theme="dark"] .world-map-pin-dot {
+    background-color: #6dbc8a;
+}
+
 .bubble.purple {
     background-color: rgba(87, 17, 238, 0.05);
     border: 1px solid rgba(87, 17, 238, 0.08);
