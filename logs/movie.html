@@ -11,7 +11,15 @@ permalink: /logs/movie/
 {% assign items = site.logs | where: "category", "movie" | sort: 'date' | reverse %}
 
 <div class="bubble yellow">
-  📽️ Movies I've watched, rated from 0 to 5, with a brief note on each. The ones I recommend are marked with a 🔥
+  📽️ Movies I've watched, rated from 0 to 5, with a brief note on each.
+  <hr class="bubble-sep">
+  <p class="bubble-note">
+    <span class="bubble-note-mark" aria-hidden="true">{% include log_highlight.html %}</span>
+    <span class="bubble-note-copy">
+      <span class="bubble-note-kicker">Recommended</span>
+      <span class="bubble-note-body">Something I'd really push you to watch or play</span>
+    </span>
+  </p>
 </div>
 
 
