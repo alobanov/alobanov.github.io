@@ -10,3 +10,4 @@ _site/
 .ruby-version
 _old_posts/
 *.map
+.claude/
