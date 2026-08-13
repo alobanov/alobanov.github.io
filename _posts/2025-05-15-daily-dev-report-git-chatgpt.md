@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Daily Stand-Up? Handled.
+icon: "🤖"
 description: How I automated my daily developer report using a simple Git script and a prompt for ChatGPT — never blank out at a stand-up again.
 tags:
   - Automation

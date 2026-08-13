@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Working with LLMs
+icon: "🎰"
 description: LLMs are like a stubborn donkey, a tricky genie, and a slot machine all in one — you need to know how to work with them.
 tags:
   - Thoughts

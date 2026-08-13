@@ -1,6 +1,7 @@
 ---
 layout: post
 title: BLoC file structure
+icon: "🧱"
 description: Setting up a feature structure based on BLoC architecture.
 superscript: Part 1
 tags:

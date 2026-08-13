@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Unit test
+icon: "🧪"
 superscript: Writing descriptions
 description: A guide on how to write comments for unit tests.
 tags:

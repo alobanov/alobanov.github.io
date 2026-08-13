@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Write the Spec First
+icon: "📐"
 description: Vibe coding worked for prototypes. For real projects, AI needs a blueprint — not a wish.
 tags:
   - Thoughts

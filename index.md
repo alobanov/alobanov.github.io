@@ -45,6 +45,7 @@ layout: page
     {% for post in sorted_posts %}
     <tr class="bookmarks-bubble bm-row" data-tags="{% for tag in post.tags %}{{ tag | downcase }}{% if forloop.last == false %},{% endif %}{% endfor %}">
       <td class="post-list-content">
+        {%- if post.icon %}<span class="post-icon" aria-hidden="true">{{ post.icon }}</span>{% endif -%}
         <a href="{{ post.url }}">{{ post.title }}</a>{% if post.superscript %}<small class="superscript">{{ post.superscript }}</small>{% endif %}
         {% if post.description %}<div class="post-list-desc">{{ post.description }}</div>{% endif %}
       </td>

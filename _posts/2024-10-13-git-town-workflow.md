@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GitTown
+icon: "🌳"
 superscript: Simplifying Git workflows
 description: Git Town simplifies Git usage, making it more convenient so developers can use its full potential.
 tags:

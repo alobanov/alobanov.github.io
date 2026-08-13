@@ -2679,6 +2679,16 @@ body,
 
 /* ---- Home page: post list ----------------------------------------------- */
 
+/* Post icon, in the spirit of the bookmark headings. Sits outside the link so
+   it is not underlined on hover, and opts out of the mono font so the emoji
+   keeps its own metrics. */
+.post-icon {
+    margin-right: 7px;
+    font-family: var(--primary-font);
+    font-size: 13px;
+    line-height: 1;
+}
+
 .post-tag-filter {
     display: flex;
     flex-wrap: wrap;

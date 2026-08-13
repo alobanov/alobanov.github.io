@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Anatomy of a Prompt
+icon: "🖥"
 superscript: Ghostty, Starship and the rest of the stack
 description: A line-by-line guide to my terminal setup — what every segment of the prompt means, how it is built, and what it costs.
 tags:
