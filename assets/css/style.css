@@ -305,12 +305,12 @@ section {
 }
 
 .menu-icon {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     background-image: url("/assets/img/ava.jpeg");
     background-size: cover;
-    border-radius: 50%;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .menu-icon:hover {
@@ -327,16 +327,15 @@ section {
 .menu-nav a {
     display: flex;
     align-items: center;
-    position: relative;
     text-align: center;
     text-decoration: none;
     color: var(--primary-color);
-    font-family: var(--primary-font);
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 15px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 11px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .menu-nav a:hover {
@@ -344,15 +343,20 @@ section {
     color: var(--primary-color);
 }
 
+/* Current page: a rule under the label */
+.menu-nav a.active {
+    position: relative;
+}
+
 .menu-nav a.active::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 6px;
-    right: 6px;
-    height: 3px;
-    background-color: var(--primary-color);
+    bottom: 1px;
+    left: 11px;
+    right: 11px;
+    height: 2px;
     border-radius: 2px;
+    background-color: var(--primary-color);
 }
 
 
@@ -2079,19 +2083,21 @@ body,
 
 /* Theme toggle button in nav */
 .theme-toggle {
-    font-size: 15px;
-    font-family: var(--primary-font);
-    font-weight: 400;
-    padding: 4px 8px;
+    /* Set apart from the links: sitting flush against them it read as another
+       menu item rather than a control */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    padding: 6px;
     background: transparent;
-    border: none;
+    border: 1px solid var(--border-color);
     color: var(--primary-color);
     cursor: pointer;
-    margin: 0;
     border-radius: 8px;
     line-height: 1;
     box-shadow: none;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -2102,6 +2108,36 @@ body,
 .theme-toggle:focus {
     box-shadow: none;
     outline: none;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.theme-icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+    color: var(--muted-color);
+    transition: color 0.2s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    color: var(--primary-color);
+}
+
+/* Only one of the two is ever shown */
+.theme-icon--sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-icon--moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-icon--sun {
+    display: block;
 }
 
 

@@ -87,19 +87,16 @@
   <!-- Theme toggle interaction -->
   <script>
     (function () {
+      // The icon itself is two inline SVGs swapped by CSS on data-theme,
+      // so the button only has to flip the attribute.
       const btn = document.getElementById('theme-toggle');
-      function syncIcon() {
-        if (btn) btn.textContent = document.documentElement.dataset.theme === 'dark' ? '☀️' : '🌙';
-      }
       if (btn) {
         btn.addEventListener('click', function () {
           const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
           document.documentElement.dataset.theme = next;
           localStorage.setItem('theme', next);
-          syncIcon();
         });
       }
-      syncIcon();
     })();
   </script>
 </body>
