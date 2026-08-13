@@ -1603,6 +1603,43 @@ tr.bm-row:hover td {
     margin-bottom: 8px;
 }
 
+.lep-recommend {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-color: rgba(249, 115, 22, 0.08);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.lep-recommend-icon {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    fill: #f97316;
+}
+
+.lep-recommend-title {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f97316;
+}
+
+.lep-recommend-sub {
+    display: block;
+    font-size: 11px;
+    color: var(--muted-color);
+    margin-top: 1px;
+}
+
+[data-theme="dark"] .lep-recommend {
+    background-color: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
 /* Content */
 .lep-content {
     font-family: var(--primary-font);
