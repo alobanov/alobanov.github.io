@@ -2679,29 +2679,6 @@ body,
 
 /* ---- Home page: post list ----------------------------------------------- */
 
-/* `.hidden` is defined for .bookmarks-bubble only; year rows need their own
-   rule or filtering leaves empty headings behind */
-.post-year-row.hidden {
-    display: none;
-}
-
-/* Year marker, matching the LOG list */
-.post-year-row th {
-    padding: 22px 6px 6px;
-    text-align: left;
-    font-family: var(--code-font);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-color);
-    background-color: var(--background-color);
-    box-shadow: inset 0 -1px 0 var(--border-color);
-    border-bottom: none;
-}
-
-.post-table tbody tr:first-child th {
-    padding-top: 8px;
-}
-
 .post-tag-filter {
     display: flex;
     flex-wrap: wrap;

@@ -2,21 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tags    = document.querySelectorAll(".tag");
     const bubbles = document.querySelectorAll(".bookmarks-bubble");
 
-    // Year headings are not posts and carry no data-tags, so filtering leaves
-    // them behind — a year with every post hidden under it. After each filter
-    // pass, hide any year that has no visible post left.
-    function syncYearRows() {
-        document.querySelectorAll(".post-year-row").forEach(yearRow => {
-            let hasVisible = false;
-            let row = yearRow.nextElementSibling;
-            while (row && !row.classList.contains("post-year-row")) {
-                if (!row.classList.contains("hidden")) hasVisible = true;
-                row = row.nextElementSibling;
-            }
-            yearRow.classList.toggle("hidden", !hasVisible);
-        });
-    }
-
     tags.forEach(tag => {
         tag.addEventListener("click", () => {
             if (tag.id === "reset") return;
@@ -25,13 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const bubbleTags = (bubble.getAttribute("data-tags") || "").toLowerCase().split(",").map(t => t.trim());
                 bubble.classList.toggle("hidden", !bubbleTags.includes(selectedTag));
             });
-            syncYearRows();
         });
     });
 
     document.getElementById("reset").addEventListener("click", () => {
         bubbles.forEach(bubble => bubble.classList.remove("hidden"));
-        syncYearRows();
     });
 
     // Reorder cards into two snake-order columns
