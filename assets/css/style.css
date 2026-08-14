@@ -2781,3 +2781,43 @@ body,
     opacity: 1;
     color: var(--secondary-color);
 }
+
+
+/* ---- Unlisted page ------------------------------------------------------- */
+
+.unlisted-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.unlisted-links li {
+    padding: 12px 0;
+}
+
+.unlisted-links li + li {
+    border-top: 1px dotted rgba(184, 115, 51, 0.26);
+}
+
+[data-theme="dark"] .unlisted-links li + li {
+    border-top-color: rgba(212, 150, 61, 0.24);
+}
+
+.unlisted-links a {
+    font-family: var(--code-font);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.unlisted-links a:hover {
+    color: var(--secondary-color);
+}
+
+.unlisted-note {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+    color: var(--text-muted-alt);
+}
