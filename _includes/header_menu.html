@@ -5,7 +5,6 @@
   <nav class="menu-nav">
     <a href="/bookmarks/"{% if page.url contains '/bookmarks' %} class="active"{% endif %}>Bookmarks</a>
     <a href="/logs/"{% if page.url contains '/logs' %} class="active"{% endif %}>Logs</a>
-    <a href="/about_en"{% if page.url contains '/about_en' %} class="active"{% endif %}>CV</a>
     {%- comment -%}
     Обе иконки лежат в кнопке, нужную показывает CSS по data-theme. Так JS не
     подменяет содержимое кнопки, и иконка не мигает при загрузке страницы.

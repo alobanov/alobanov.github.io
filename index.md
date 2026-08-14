@@ -16,7 +16,7 @@ layout: page
 
 <div class="bubble yellow font-mono">
 {% capture markdown_content %}
-👋 Hi! **I'm Aleksei**, a [developer](about_en/) and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com) or keep reading. Here you'll find my [logs](logs/) — [movies](logs/movie/), [games](logs/game) and [places](logs/location/) with short notes — and a collection of [bookmarks](bookmarks/) worth keeping.
+👋 Hi! **I'm Aleksei**, a developer and electronic music enthusiast who enjoys [creating music](logs/music/) without a DAW. [Say hello](mailto:lobanov.aw@gmail.com) or keep reading. Here you'll find my [logs](logs/) — [movies](logs/movie/) and [games](logs/game) with short notes — and a collection of [bookmarks](bookmarks/) worth keeping.
 {% endcapture %}
 {{ markdown_content | markdownify }}
   <hr class="bubble-sep">

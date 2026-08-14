@@ -1,7 +1,8 @@
 ---
 layout: page
 title: CV
-permalink: /about_en/
+permalink: /cv-ead106acf1/
+noindex: true
 ---
 
 {% assign this_year = 'now' | date: "%Y" | plus: 0 %}

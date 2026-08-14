@@ -3,8 +3,12 @@
 
 <p class="log-cats">
     <span class="tag small"><a href="{{ site.baseurl }}/logs/">{% include log_icon.html category="all" %} All</a></span>
+    {%- comment -%}
+    location намеренно исключена: её страница живёт по прямой ссылке и не
+    выводится ни вкладкой, ни в общем списке.
+    {%- endcomment -%}
     {%- assign categories = site.logs | map: "category" | uniq | sort -%}
-    {% for category in categories %}
+    {% for category in categories %}{% if category == "location" %}{% continue %}{% endif %}
     <span class="tag small cat-tag--{{ category }}"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
     {% endfor %}
 </p>
