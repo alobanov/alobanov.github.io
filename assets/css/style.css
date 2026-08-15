@@ -2821,3 +2821,21 @@ body,
     font-size: 13px;
     color: var(--text-muted-alt);
 }
+
+
+/* ---- Post body ----------------------------------------------------------- */
+
+/* The article sets one step below the base size: 15px in a 600px column runs
+   long for reading, and the extra leading makes up for the smaller type. */
+.post-content {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.post-content p {
+    margin: 0 0 14px;
+}
+
+.post-content li {
+    margin-bottom: 6px;
+}
