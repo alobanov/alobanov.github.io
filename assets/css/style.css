@@ -453,11 +453,13 @@ ol.custom-counter > li::before {
 .stat-c--movie    { color: #b87333; }
 .stat-c--game     { color: #267cb9; }
 .stat-c--music    { color: #823cb4; }
+.stat-c--podcast  { color: #b03a6a; }
 .stat-c--location { color: #468c5a; }
 
 [data-theme="dark"] .stat-c--movie    { color: #d4963d; }
 [data-theme="dark"] .stat-c--game     { color: #7dbfe8; }
 [data-theme="dark"] .stat-c--music    { color: #c084fc; }
+[data-theme="dark"] .stat-c--podcast  { color: #f28bb8; }
 [data-theme="dark"] .stat-c--location { color: #6dbc8a; }
 
 .bubble.yellow .bubble-sep {
@@ -1637,11 +1639,13 @@ tr.bm-row:hover td {
 .lep-cat-badge--movie    { background-color: rgba(184, 115, 51, 0.12); color: #b87333; }
 .lep-cat-badge--game     { background-color: rgba(38, 124, 185, 0.12); color: #267cb9; }
 .lep-cat-badge--music    { background-color: rgba(130, 60, 180, 0.12); color: #823cb4; }
+.lep-cat-badge--podcast  { background-color: rgba(176, 58, 106, 0.12); color: #b03a6a; }
 .lep-cat-badge--location { background-color: rgba(70, 140, 90, 0.12);  color: #468c5a; }
 
 [data-theme="dark"] .lep-cat-badge--movie    { background-color: rgba(212, 150, 61, 0.13);  color: #d4963d; }
 [data-theme="dark"] .lep-cat-badge--game     { background-color: rgba(125, 191, 232, 0.10); color: #7dbfe8; }
 [data-theme="dark"] .lep-cat-badge--music    { background-color: rgba(192, 132, 252, 0.10); color: #c084fc; }
+[data-theme="dark"] .lep-cat-badge--podcast  { background-color: rgba(242, 139, 184, 0.10); color: #f28bb8; }
 [data-theme="dark"] .lep-cat-badge--location { background-color: rgba(109, 188, 138, 0.10); color: #6dbc8a; }
 
 /* External link button */
@@ -2274,32 +2278,38 @@ body,
 .log-cats .cat-tag--movie    { background-color: rgba(184, 115, 51, 0.12); }
 .log-cats .cat-tag--game     { background-color: rgba(38, 124, 185, 0.12); }
 .log-cats .cat-tag--music    { background-color: rgba(130, 60, 180, 0.12); }
+.log-cats .cat-tag--podcast  { background-color: rgba(176, 58, 106, 0.12); }
 .log-cats .cat-tag--location { background-color: rgba(70, 140, 90, 0.12); }
 
 .log-cats .cat-tag--movie    .cat-icon { color: #b87333; }
 .log-cats .cat-tag--game     .cat-icon { color: #267cb9; }
 .log-cats .cat-tag--music    .cat-icon { color: #823cb4; }
+.log-cats .cat-tag--podcast  .cat-icon { color: #b03a6a; }
 .log-cats .cat-tag--location .cat-icon { color: #468c5a; }
 
 .log-cats .cat-tag--movie:hover    { background-color: rgba(184, 115, 51, 0.20); }
 .log-cats .cat-tag--game:hover     { background-color: rgba(38, 124, 185, 0.20); }
 .log-cats .cat-tag--music:hover    { background-color: rgba(130, 60, 180, 0.20); }
+.log-cats .cat-tag--podcast:hover  { background-color: rgba(176, 58, 106, 0.20); }
 .log-cats .cat-tag--location:hover { background-color: rgba(70, 140, 90, 0.20); }
 
 /* Dark mode */
 [data-theme="dark"] .log-cats .cat-tag--movie    { background-color: rgba(212, 150, 61, 0.13); }
 [data-theme="dark"] .log-cats .cat-tag--game     { background-color: rgba(125, 191, 232, 0.10); }
 [data-theme="dark"] .log-cats .cat-tag--music    { background-color: rgba(192, 132, 252, 0.10); }
+[data-theme="dark"] .log-cats .cat-tag--podcast  { background-color: rgba(242, 139, 184, 0.10); }
 [data-theme="dark"] .log-cats .cat-tag--location { background-color: rgba(109, 188, 138, 0.10); }
 
 [data-theme="dark"] .log-cats .cat-tag--movie    .cat-icon { color: #d4963d; }
 [data-theme="dark"] .log-cats .cat-tag--game     .cat-icon { color: #7dbfe8; }
 [data-theme="dark"] .log-cats .cat-tag--music    .cat-icon { color: #c084fc; }
+[data-theme="dark"] .log-cats .cat-tag--podcast  .cat-icon { color: #f28bb8; }
 [data-theme="dark"] .log-cats .cat-tag--location .cat-icon { color: #6dbc8a; }
 
 [data-theme="dark"] .log-cats .cat-tag--movie:hover    { background-color: rgba(212, 150, 61, 0.22); }
 [data-theme="dark"] .log-cats .cat-tag--game:hover     { background-color: rgba(125, 191, 232, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--music:hover    { background-color: rgba(192, 132, 252, 0.18); }
+[data-theme="dark"] .log-cats .cat-tag--podcast:hover  { background-color: rgba(242, 139, 184, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--location:hover { background-color: rgba(109, 188, 138, 0.18); }
 
 .log-table .log-col-cat .cat-icon {
@@ -2329,22 +2339,26 @@ body,
 .cat-pill--movie    { background-color: rgba(184, 115, 51, 0.12); }
 .cat-pill--game     { background-color: rgba(38, 124, 185, 0.12); }
 .cat-pill--music    { background-color: rgba(130, 60, 180, 0.12); }
+.cat-pill--podcast  { background-color: rgba(176, 58, 106, 0.12); }
 .cat-pill--location { background-color: rgba(70, 140, 90, 0.12); }
 
 .log-table .log-col-cat .cat-pill--movie    .cat-icon { color: #b87333; }
 .log-table .log-col-cat .cat-pill--game     .cat-icon { color: #267cb9; }
 .log-table .log-col-cat .cat-pill--music    .cat-icon { color: #823cb4; }
+.log-table .log-col-cat .cat-pill--podcast  .cat-icon { color: #b03a6a; }
 .log-table .log-col-cat .cat-pill--location .cat-icon { color: #468c5a; }
 
 /* Dark mode — brighter tints against dark background */
 [data-theme="dark"] .cat-pill--movie    { background-color: rgba(212, 150, 61, 0.13); }
 [data-theme="dark"] .cat-pill--game     { background-color: rgba(125, 191, 232, 0.10); }
 [data-theme="dark"] .cat-pill--music    { background-color: rgba(192, 132, 252, 0.10); }
+[data-theme="dark"] .cat-pill--podcast  { background-color: rgba(242, 139, 184, 0.10); }
 [data-theme="dark"] .cat-pill--location { background-color: rgba(109, 188, 138, 0.10); }
 
 [data-theme="dark"] .log-table .log-col-cat .cat-pill--movie    .cat-icon { color: #d4963d; }
 [data-theme="dark"] .log-table .log-col-cat .cat-pill--game     .cat-icon { color: #7dbfe8; }
 [data-theme="dark"] .log-table .log-col-cat .cat-pill--music    .cat-icon { color: #c084fc; }
+[data-theme="dark"] .log-table .log-col-cat .cat-pill--podcast  .cat-icon { color: #f28bb8; }
 [data-theme="dark"] .log-table .log-col-cat .cat-pill--location .cat-icon { color: #6dbc8a; }
 
 .visually-hidden {

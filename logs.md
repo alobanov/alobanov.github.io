@@ -15,12 +15,15 @@ permalink: /logs/
 {% assign movie_count = site.logs | where: "category", "movie" | size %}
 {% assign game_count = site.logs | where: "category", "game" | size %}
 {% assign music_count = site.logs | where: "category", "music" | size %}
+{% assign podcast_count = site.logs | where: "category", "podcast" | size %}
 
 <div class="bubble yellow">
   💁‍♂️ On this page, I keep a log of my activities. Here's the current statistics:
   I watched <strong class="stat-c stat-c--movie">{{ movie_count }}</strong> movies,
   completed <strong class="stat-c stat-c--game">{{ game_count }}</strong> games,
-  and created <strong class="stat-c stat-c--music">{{ music_count }}</strong> music tracks.
+  created <strong class="stat-c stat-c--music">{{ music_count }}</strong> music tracks,
+  and keep up with <strong class="stat-c stat-c--podcast">{{ podcast_count }}</strong>
+  {% if podcast_count == 1 %}podcast{% else %}podcasts{% endif %}.
   <hr class="bubble-sep">
   <p class="bubble-note">
     <span class="bubble-note-mark" aria-hidden="true">{% include log_highlight.html %}</span>

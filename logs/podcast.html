@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Podcasts"
+permalink: /logs/podcast/
+---
+
+<h1>{{ page.title }}</h1>
+
+{% include log_category_list.html %}
+
+{% assign items = site.logs | where: "category", "podcast" | sort: 'date' | reverse %}
+
+<div class="bubble yellow">
+  🎙️ Shows I am subscribed to and keep coming back to. No score here — if a
+  podcast is on this list, I already think it is worth your time.
+  <hr class="bubble-sep">
+  <p class="bubble-note">
+    <span class="bubble-note-mark" aria-hidden="true">{% include log_highlight.html %}</span>
+    <span class="bubble-note-copy">
+      <span class="bubble-note-kicker">Recommended</span>
+      <span class="bubble-note-body">Something I'd really push you to listen to</span>
+    </span>
+  </p>
+</div>
+
+
+{% include log_list.html items=items %}
