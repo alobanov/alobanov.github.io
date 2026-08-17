@@ -12,5 +12,9 @@ layout: default
   {% endfor %}
   {% endif %}
   <div class="spacer"></div>
-  {{ content }}
+  {%- comment -%}
+    Тело статьи живёт в своей типографической зоне: ритм абзацев и шкала
+    заголовков задаются классом .prose, а не базовыми стилями сайта.
+  {%- endcomment -%}
+  <div class="prose">{{ content }}</div>
 </div>
