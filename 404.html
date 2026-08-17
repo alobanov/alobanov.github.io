@@ -1,0 +1,16 @@
+---
+layout: default
+title: "404"
+permalink: /404.html
+noindex: true
+sitemap: false
+---
+
+<h2 class="font-mono">~lobanov-av.ru/404</h2>
+
+<div class="bubble yellow font-mono">
+{% capture markdown_content %}
+🧭 **This page does not exist.** It may have moved, or it was never here to begin with. Try the [posts](/), the [logs](/logs/), or the [bookmarks](/bookmarks/).
+{% endcapture %}
+{{ markdown_content | markdownify }}
+</div>

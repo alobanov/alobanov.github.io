@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /robots.txt
+sitemap: false
+---
+{%- comment -%}
+  Скрытые адреса здесь намеренно не перечислены. robots.txt открыт всем, и
+  строка Disallow опубликовала бы ровно тот путь, который прячется. От поиска
+  их закрывает мета-тег robots в default.html, а из карты сайта они и так
+  исключены.
+{%- endcomment -%}
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

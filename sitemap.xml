@@ -1,0 +1,49 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- comment -%}
+  Карта сайта без jekyll-sitemap: плагин пришлось бы отключать в каждой из
+  скрытых записей по отдельности, а здесь то же правило пишется один раз.
+
+  В карту не попадает ничего, что закрыто от поиска: страницы с noindex
+  (CV, /asddsa123/, /logs/location/), сами записи раздела location и
+  служебные файлы вроде этого. Признаки те же, что и в default.html, где
+  проставляется мета-тег robots.
+{%- endcomment -%}
+{%- comment -%}
+  Служебные файлы (этот, feed.xml, robots.txt, 404) помечают себя `sitemap:
+  false` в своём front matter. Отбирать их по расширению не выйдет:
+  `page.output_ext` в Liquid пустое.
+{%- endcomment -%}
+{%- assign public_pages = site.pages
+      | where_exp: "p", "p.noindex != true"
+      | where_exp: "p", "p.sitemap != false" -%}
+{%- assign public_logs = site.logs | where_exp: "item", "item.category != 'location'" -%}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for page in public_pages %}
+  <url>
+    <loc>{{ page.url | absolute_url | xml_escape }}</loc>
+  </url>
+  {%- endfor %}
+  {%- for post in site.posts %}
+  <url>
+    <loc>{{ post.url | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {%- endfor %}
+  {%- for log in public_logs %}
+  <url>
+    <loc>{{ log.url | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ log.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {%- endfor %}
+  {%- for bookmark in site.bookmarks %}
+  <url>
+    <loc>{{ bookmark.url | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ bookmark.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {%- endfor %}
+</urlset>

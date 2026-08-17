@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /feed.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- comment -%}
+  Одна общая лента: статьи и логи вперемешку, по дате.
+
+  Собрано шаблоном, а не jekyll-feed, по двум причинам. Во-первых, плагин не
+  умеет сводить posts и коллекции в один файл — на коллекцию он делает
+  отдельный фид. Во-вторых, классический GitHub Pages собирает сайт в safe
+  mode, где свои плагины не выполняются, так что чем меньше зависимостей, тем
+  надёжнее.
+
+  Фильтр логов повторяет logs.md: раздел location раздаётся только по прямой
+  ссылке и в ленту не попадает.
+{%- endcomment -%}
+{%- assign public_logs = site.logs | where_exp: "item", "item.category != 'location'" -%}
+{%- assign entries = site.posts | concat: public_logs | sort: "date" | reverse -%}
+{%- assign recent = entries | slice: 0, 30 -%}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">{{ site.title | xml_escape }}</title>
+  <subtitle type="text">{{ site.description | xml_escape }}</subtitle>
+  <id>{{ '/feed.xml' | absolute_url | xml_escape }}</id>
+  <link rel="self" type="application/atom+xml" href="{{ '/feed.xml' | absolute_url | xml_escape }}"/>
+  <link rel="alternate" type="text/html" hreflang="{{ site.lang | default: 'en-US' }}" href="{{ '/' | absolute_url | xml_escape }}"/>
+  <updated>{{ recent.first.date | date_to_xmlschema }}</updated>
+  <generator uri="https://jekyllrb.com/">Jekyll</generator>
+  <author>
+    <name>{{ site.author | xml_escape }}</name>
+  </author>
+  {%- for entry in recent %}
+  <entry>
+    <title type="html">{{ entry.title | xml_escape }}</title>
+    <id>{{ entry.url | absolute_url | xml_escape }}</id>
+    <link rel="alternate" type="text/html" href="{{ entry.url | absolute_url | xml_escape }}"/>
+    <published>{{ entry.date | date_to_xmlschema }}</published>
+    <updated>{{ entry.date | date_to_xmlschema }}</updated>
+    {%- comment -%}
+      У статьи только теги, у лога — ещё и категория (movie / game / music),
+      и для подписчика это главное деление ленты. Отдаём и то и другое: ветку
+      elsif здесь ставить нельзя, потому что Jekyll разворачивает одиночный
+      `tag:` логов в массив `tags`, и она бы никогда не выполнилась.
+    {%- endcomment -%}
+    {%- if entry.category %}
+    <category term="{{ entry.category | xml_escape }}"/>
+    {%- endif %}
+    {%- for tag in entry.tags %}
+    <category term="{{ tag | xml_escape }}"/>
+    {%- endfor %}
+    {%- if entry.description %}
+    <summary type="html">{{ entry.description | xml_escape }}</summary>
+    {%- endif %}
+    {%- comment -%}
+      xml:base нужен, чтобы относительные ссылки и картинки внутри записи
+      разрешались от домена сайта, а не от адреса читалки.
+    {%- endcomment -%}
+    <content type="html" xml:base="{{ entry.url | absolute_url | xml_escape }}">{{ entry.content | strip | xml_escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

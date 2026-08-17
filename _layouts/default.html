@@ -35,6 +35,10 @@
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}{% elsif page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
   <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url | escape }}{% else %}{{ '/assets/img/workplace.jpeg' | absolute_url }}{% endif %}">
 
+  <!-- Feed autodiscovery, so readers find the feed from any page -->
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}"
+    href="{{ '/feed.xml' | absolute_url }}">
+
   <!-- Font preloading for performance optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +84,8 @@
       <!-- Footer section -->
       <footer class="footer">
         <!-- Copyright and attribution -->
-        <p><small>Hosted on <a href="https://pages.github.com/" rel="noopener">GitHub Pages</a> &mdash; built with <a
+        <p><small><a href="{{ '/feed.xml' | relative_url }}">RSS</a> &mdash; hosted on <a
+              href="https://pages.github.com/" rel="noopener">GitHub Pages</a>, built with <a
               href="https://jekyllrb.com/" rel="noopener">Jekyll</a></small>
         </p>
       </footer>
