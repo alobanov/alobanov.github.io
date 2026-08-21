@@ -2293,6 +2293,33 @@ body,
 .log-cats .cat-tag--podcast:hover  { background-color: rgba(176, 58, 106, 0.20); }
 .log-cats .cat-tag--location:hover { background-color: rgba(70, 140, 90, 0.20); }
 
+/* Best — срез по highlight, а не категория. Цвет берёт от звезды (#f97316),
+   поэтому пункт читается как «то же самое, что помечено звёздочкой». */
+.log-cats .cat-tag--best        { background-color: rgba(249, 115, 22, 0.12); }
+.log-cats .cat-tag--best:hover  { background-color: rgba(249, 115, 22, 0.20); }
+
+/* Черта, отбивающая срез от собственно разделов */
+.log-cats-sep {
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    margin: 0 10px 0 4px;
+    vertical-align: -3px;
+    background-color: var(--border-color);
+}
+
+/* Звезда в табах живёт по правилам иконок категорий, а не по своим: в списке
+   она 12px, здесь у соседей 16px. Плюс лишний пиксель на оптику — у звезды
+   лучи тонкие, и в равном боксе она читается мельче сплошного силуэта.
+   Отступ обнулён: расстояние до подписи задаёт gap самой ссылки. */
+.log-cats .cat-tag--best .log-highlight { margin-right: 0; }
+
+.log-cats .cat-tag--best .highlight-star {
+    width: 17px;
+    height: 17px;
+    vertical-align: 0;
+}
+
 /* Dark mode */
 [data-theme="dark"] .log-cats .cat-tag--movie    { background-color: rgba(212, 150, 61, 0.13); }
 [data-theme="dark"] .log-cats .cat-tag--game     { background-color: rgba(125, 191, 232, 0.10); }
@@ -2311,6 +2338,8 @@ body,
 [data-theme="dark"] .log-cats .cat-tag--music:hover    { background-color: rgba(192, 132, 252, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--podcast:hover  { background-color: rgba(242, 139, 184, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--location:hover { background-color: rgba(109, 188, 138, 0.18); }
+[data-theme="dark"] .log-cats .cat-tag--best        { background-color: rgba(249, 115, 22, 0.13); }
+[data-theme="dark"] .log-cats .cat-tag--best:hover  { background-color: rgba(249, 115, 22, 0.22); }
 
 .log-table .log-col-cat .cat-icon {
     width: 16px;

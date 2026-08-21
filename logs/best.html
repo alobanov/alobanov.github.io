@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Best"
+permalink: /logs/best/
+---
+
+<h1>{{ page.title }}</h1>
+
+{% include log_category_list.html %}
+
+{%- comment -%}
+  Срез поперёк категорий, а не ещё одна категория: сюда попадает всё, что
+  помечено highlight. Звезда и раньше стояла у таких записей, но найти их
+  можно было только пролистав весь список.
+
+  location исключена по тому же правилу, что и в logs.md: раздел живёт по
+  прямой ссылке.
+{%- endcomment -%}
+{% assign items = site.logs | where: "highlight", true | where_exp: "item", "item.category != 'location'" | sort: 'date' | reverse %}
+
+<div class="bubble yellow">
+  ⭐️ Everything I'd actually push you to watch, play or listen to — pulled out
+  of the log so you don't have to scroll for the stars.
+  <hr class="bubble-sep">
+  <p class="bubble-note">
+    <span class="bubble-note-copy">
+      <span class="bubble-note-kicker">{{ items | size }} of {{ site.logs | where_exp: "i", "i.category != 'location'" | size }}</span>
+      <span class="bubble-note-body">That is how many entries earned the star</span>
+    </span>
+  </p>
+</div>
+
+
+{% include log_list.html items=items show_category=true %}
