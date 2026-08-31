@@ -2293,20 +2293,18 @@ body,
 .log-cats .cat-tag--podcast:hover  { background-color: rgba(176, 58, 106, 0.20); }
 .log-cats .cat-tag--location:hover { background-color: rgba(70, 140, 90, 0.20); }
 
-/* Best — срез по highlight, а не категория. Цвет берёт от звезды (#f97316),
-   поэтому пункт читается как «то же самое, что помечено звёздочкой». */
-.log-cats .cat-tag--best        { background-color: rgba(249, 115, 22, 0.12); }
-.log-cats .cat-tag--best:hover  { background-color: rgba(249, 115, 22, 0.20); }
+/* Best — срез по highlight, а не категория, поэтому он не берёт заливку из
+   палитры разделов, а носит ghost-стиль (см. .tag-ghost). Единственный цвет
+   здесь — сама звезда, тот же оранжевый, которым помечены записи.
 
-/* Черта, отбивающая срез от собственно разделов */
-.log-cats-sep {
-    display: inline-block;
-    width: 1px;
-    height: 15px;
-    margin: 0 10px 0 4px;
-    vertical-align: -3px;
-    background-color: var(--border-color);
+   Рамка добавляет пилюле 2px по обеим осям, а соседние табы её не имеют:
+   padding урезан на пиксель, чтобы Best не оказался выше остального ряда. */
+.log-cats .tag-ghost {
+    padding: 4px 10px;
 }
+
+.log-cats .tag-ghost a         { color: var(--muted-color); }
+.log-cats .tag-ghost:hover a   { color: var(--primary-color); }
 
 /* Звезда в табах живёт по правилам иконок категорий, а не по своим: в списке
    она 12px, здесь у соседей 16px. Плюс лишний пиксель на оптику — у звезды
@@ -2338,8 +2336,6 @@ body,
 [data-theme="dark"] .log-cats .cat-tag--music:hover    { background-color: rgba(192, 132, 252, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--podcast:hover  { background-color: rgba(242, 139, 184, 0.18); }
 [data-theme="dark"] .log-cats .cat-tag--location:hover { background-color: rgba(109, 188, 138, 0.18); }
-[data-theme="dark"] .log-cats .cat-tag--best        { background-color: rgba(249, 115, 22, 0.13); }
-[data-theme="dark"] .log-cats .cat-tag--best:hover  { background-color: rgba(249, 115, 22, 0.22); }
 
 .log-table .log-col-cat .cat-icon {
     width: 16px;
@@ -2777,17 +2773,25 @@ body,
     margin-top: 4px;
 }
 
-/* Reset is an action, not a tag — it sits apart and stays quiet until hovered */
+/* Ghost pill: an action or a cross-section, not a tag — it sits apart and
+   stays quiet until hovered. Used by Reset in the tag filters and by Best in
+   the LOGs tabs, which is why the style lives here rather than with either. */
+.tag-ghost,
 .tag-reset {
-    margin-left: 6px;
     background-color: transparent;
     border: 1px dashed var(--control-border);
     color: var(--muted-color);
 }
 
+.tag-ghost:hover,
 .tag-reset:hover {
     border-style: solid;
     color: var(--primary-color);
+}
+
+/* Reset trails a row of tags and needs the extra gap; Best opens no row */
+.tag-reset {
+    margin-left: 6px;
 }
 
 

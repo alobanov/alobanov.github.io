@@ -12,12 +12,15 @@
     <span class="tag small cat-tag--{{ category }}"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
     {% endfor %}
     {%- comment -%}
-    Best идёт последним и отбит чертой: это не категория, а срез по highlight
-    поперёк всех разделов. Цикл выше строит вкладки из site.logs и такой срез
-    не увидит, поэтому пункт задан руками.
+    Best идёт последним: это не категория, а срез по highlight поперёк всех
+    разделов. Цикл выше строит вкладки из site.logs и такой срез не увидит,
+    поэтому пункт задан руками.
+
+    tag-ghost — тот же стиль, что у Reset на bookmarks: пунктирный контур
+    вместо заливки. Он и отделяет пункт от категорий, поэтому черта, стоявшая
+    здесь раньше, больше не нужна.
     {%- endcomment -%}
-    <span class="log-cats-sep" aria-hidden="true"></span>
-    <span class="tag small cat-tag--best"><a href="{{ site.baseurl }}/logs/best/">{% include log_highlight.html %} Best</a></span>
+    <span class="tag small tag-ghost cat-tag--best"><a href="{{ site.baseurl }}/logs/best/">{% include log_highlight.html %} Best</a></span>
 </p>
 
 <!-- Modal for full-size image -->
