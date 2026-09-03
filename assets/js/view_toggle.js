@@ -19,8 +19,8 @@
     setView(localStorage.getItem(storageKey) || 'list');
   }
 
-  // Expandable log entries. The row toggles its note; the links inside it —
-  // the entry number and the source link — must not, so they stop the click.
+  // Expandable log entries. The row toggles its note; the links and covers inside it —
+  // the entry number, the source link, the cover — must not, so they stop the click.
   document.querySelectorAll('.log-entry-group').forEach(function (group) {
     var row = group.querySelector('.log-row');
     var inner = group.querySelector('.log-detail-inner');
@@ -41,8 +41,10 @@
       }
     });
 
-    row.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
+    // Клик по ссылке или по обложке, которая открывается во весь экран, не должен
+    // заодно раскрывать строку: у них своё действие, и всплытие здесь лишнее.
+    row.querySelectorAll('a, img[data-modal-src]').forEach(function (el) {
+      el.addEventListener('click', function (event) {
         event.stopPropagation();
       });
     });

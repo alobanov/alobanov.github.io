@@ -1256,7 +1256,9 @@ tr.bm-row:hover td {
 .log-subtitle-row .log-sub-verdict + .log-sub-tag::before,
 .log-subtitle-row .log-sub-genre + .log-sub-tag::before,
 .log-subtitle-row .log-sub-verdict + .log-sub-preview::before,
-.log-subtitle-row .log-sub-genre + .log-sub-preview::before {
+.log-subtitle-row .log-sub-genre + .log-sub-preview::before,
+.log-subtitle-row .log-sub-tag + .music-sub-label::before,
+.log-subtitle-row .log-sub-genre + .music-sub-label::before {
     content: " · ";
     white-space: pre;
     color: var(--muted-color);
@@ -3114,5 +3116,532 @@ body,
 @media screen and (max-width: 1000px) {
     .toc {
         display: none;
+    }
+}
+
+/* =============================================================================
+   MUSIC — релиз месяца, архив и плейлисты
+   ============================================================================= */
+
+/* Глобальное section {} задаёт ширину и float для контейнера страницы; блокам
+   внутри колонки это не нужно — иначе между ними встают пустые провалы. */
+.music-hero,
+.music-archive,
+.music-playlists {
+    width: auto;
+    float: none;
+    padding-bottom: 0;
+    margin-top: 34px;
+}
+
+/* Релиз месяца — карточка, а не просто строка с картинкой: собственный фон и
+   рамка отделяют выбор месяца от архива под ним. На узком экране — в колонку. */
+.music-hero {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px;
+    border: 1px dashed rgba(84, 67, 58, 0.28);
+    border-radius: 15px;
+    background-color: var(--background-color-light);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Обводка пунктирная, как у жёлтого блока выше, и намеренно бесцветная: под ней
+   размытая обложка, которая каждый месяц своя, и любой собственный оттенок
+   рамки спорил бы то с синим, то с красным. Полупрозрачная берёт тон от фона. */
+[data-theme="dark"] .music-hero {
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Обложка размытым фоном: каждый месяц блок окрашивается под свой релиз.
+   Слой отдельным псевдоэлементом, потому что filter на самом блоке размыл бы
+   и текст. Масштаб 1.15 прячет светлую кромку, которую blur оставляет по краям. */
+.music-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--music-cover);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.15);
+    /* В светлой теме обложка приглушается сильнее и обесцвечивается: на кремовом
+       фоне насыщенный слой читается как чужая картинка, а не как оттенок, и
+       холодные обложки выбивают карточку из тёплой палитры сайта. */
+    filter: blur(38px) saturate(0.75);
+    opacity: 0.13;
+}
+
+[data-theme="dark"] .music-hero::before {
+    filter: blur(38px) saturate(1.5);
+    opacity: 0.22;
+}
+
+/* У избранного релиза рамка берёт цвет звезды — тот же приём, что у вкладки Best */
+.music-hero.is-favourite,
+[data-theme="dark"] .music-hero.is-favourite {
+    border-color: rgba(249, 115, 22, 0.45);
+}
+
+/* Обложка «парит» над блоком: две тени — ближняя очерчивает край, дальняя
+   уходит вниз и даёт высоту. Обе тёплые: на кремовом фоне нейтральная серая
+   выглядит грязной. */
+.music-cover {
+    width: 264px;
+    height: 264px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    cursor: zoom-in;
+    box-shadow:
+        0 4px 10px -4px rgba(84, 67, 58, 0.35),
+        0 24px 44px -16px rgba(84, 67, 58, 0.45);
+}
+
+[data-theme="dark"] .music-cover {
+    box-shadow:
+        0 4px 10px -4px rgba(0, 0, 0, 0.55),
+        0 26px 50px -16px rgba(0, 0, 0, 0.7);
+}
+
+/* Звезда в заголовке стоит перед названием и не должна тянуть строку вверх */
+.music-title .log-highlight {
+    margin-right: 7px;
+}
+
+.music-title .highlight-star {
+    width: 16px;
+    height: 16px;
+    vertical-align: -1px;
+}
+
+.music-hero-copy {
+    min-width: 0;
+}
+
+/* Оранжевый берётся темнее светлого варианта: яркий #f97316 на голубом или
+   зелёном фоне обложки даёт грязный контраст комплементарных цветов. В тёмной
+   теме фон глухой, и там работает исходный. */
+.music-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #c2410c;
+}
+
+[data-theme="dark"] .music-kicker {
+    color: #f97316;
+}
+
+.music-title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.music-artist {
+    margin: 2px 0 0;
+    font-family: var(--code-font);
+    font-size: 13px;
+    color: var(--secondary-color);
+}
+
+/* Служебная строка: формат, лейбл, дата релиза. Цифры табличные — даты в архиве
+   и здесь набраны одним шрифтом и не пляшут по ширине. */
+.music-meta {
+    margin: 8px 0 0;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-color);
+}
+
+/* Текст берёт основной цвет, а не приглушённый: под ним размытая обложка,
+   и на цветном фоне описательный оттенок терял контраст. */
+/* Кавычка рисуется левее текста и вылезает за его край, поэтому блоку нужен
+   собственный отступ — иначе она обрежется краем карточки. */
+.music-note {
+    padding-left: 26px;
+}
+
+.music-note p {
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--primary-color);
+}
+
+.music-link {
+    font-family: var(--code-font);
+    font-size: 11px;
+}
+
+/* Заголовок раздела и первая строка читаются как одно целое: у .log-table свой
+   верхний отступ, рассчитанный на страницы логов, где над ней стоит шапка
+   таблицы, а здесь — только заголовок с чертой. */
+.music-archive-table {
+    margin-top: 0;
+}
+
+/* Архив — та же таблица, что в логах: раскрытие строки, ховер и анимация
+   достаются от .log-table даром. Своя здесь только колонка с обложкой. */
+.music-col-cover {
+    width: 60px;
+}
+
+/* Рецензия занимает почти всю ширину строки: прежний отступ под колонки номера
+   и обложки оставлял слева пустую полосу в сотню пикселей. Остаётся ровно
+   столько, сколько нужно кавычке, которая рисуется левее текста. */
+.music-archive-table .log-detail-body {
+    padding-left: 44px;
+}
+
+.music-archive-table .log-detail-main {
+    max-width: none;
+}
+
+.music-row-cover {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    cursor: zoom-in;
+    transition: transform 0.18s ease;
+}
+
+.log-row:hover .music-row-cover {
+    transform: scale(1.06);
+}
+
+/* Формат, лейбл и дата — метками в ряд. Формат выделен: он отвечает на первый
+   вопрос к записи в разделе, который называется release, а не album. */
+.music-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0 0;
+}
+
+/* Метки лежат на размытой обложке, поэтому фон у них не из палитры интерфейса,
+   а полупрозрачный: плашка --control-bg была тёплой и на синей или зелёной
+   обложке смотрелась грязным пятном. Прозрачная берёт тон от того, что под ней. */
+.music-pill {
+    padding: 3px 8px;
+    border-radius: 6px;
+    background-color: rgba(84, 67, 58, 0.07);
+    border: 1px solid rgba(84, 67, 58, 0.12);
+    color: var(--muted-color);
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+[data-theme="dark"] .music-pill {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.11);
+    color: var(--text-code-color);
+}
+
+/* Жанр — вторая по важности метка после формата, поэтому у него свой оттенок,
+   но спокойнее оранжевого: формат отвечает «что это», жанр — «какая музыка». */
+.music-pill--genre {
+    background-color: rgba(130, 60, 180, 0.10);
+    border-color: rgba(130, 60, 180, 0.28);
+    color: #6d2f97;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .music-pill--genre {
+    background-color: rgba(192, 132, 252, 0.14);
+    border-color: rgba(192, 132, 252, 0.3);
+    color: #c084fc;
+}
+
+.music-pill--format {
+    background-color: rgba(249, 115, 22, 0.10);
+    border-color: rgba(249, 115, 22, 0.3);
+    color: #c2410c;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .music-pill--format {
+    background-color: rgba(249, 115, 22, 0.16);
+    border-color: rgba(249, 115, 22, 0.32);
+    color: #f97316;
+}
+
+/* Дата в архиве стоит в два яруса: месяц крупнее, год тише — он повторяется
+   у соседних записей и не должен читаться первым. */
+.music-col-date {
+    text-align: right;
+    line-height: 1.25;
+}
+
+.music-date-month,
+.music-date-year {
+    display: block;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Месяц капсом моноширинным, год под тонкой чертой и тише — колонка читается
+   как штемпель, а не как две строки текста. */
+.music-date-month {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-color);
+}
+
+.music-date-year {
+    margin-top: 2px;
+    padding-top: 3px;
+    border-top: 1px solid var(--border-color);
+    font-size: 10px;
+    color: var(--muted-color);
+}
+
+/* Лейбл в подстроке — последняя по важности деталь, поэтому он тише прочих */
+.music-sub-label {
+    font-family: var(--code-font);
+    font-size: 10px;
+    color: var(--muted-color);
+    opacity: 0.8;
+}
+
+/* Ссылки под рецензией и в карточке месяца — иконками сервисов */
+.music-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+}
+
+.music-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--control-border);
+    border-radius: 8px;
+    color: var(--muted-color);
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.music-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* Цвет сервиса проявляется при наведении: в покое ряд иконок остаётся
+   спокойным и не спорит с обложкой, которая теперь красит весь блок. */
+.music-icon--spotify:hover {
+    background-color: rgba(29, 185, 84, 0.14);
+    border-color: rgba(29, 185, 84, 0.6);
+    color: #1db954;
+}
+
+.music-icon--bandcamp:hover {
+    background-color: rgba(98, 154, 169, 0.16);
+    border-color: rgba(98, 154, 169, 0.6);
+    color: #4f8494;
+}
+
+[data-theme="dark"] .music-icon--bandcamp:hover {
+    color: #7fb3c4;
+}
+
+/* Архив — та же таблица, что в логах: раскрытие строки, ховер и анимация
+   достаются от .log-table даром. Своя здесь только колонка с обложкой. */
+.music-col-cover {
+    width: 60px;
+}
+
+/* Рецензия занимает почти всю ширину строки: прежний отступ под колонки номера
+   и обложки оставлял слева пустую полосу в сотню пикселей. Остаётся ровно
+   столько, сколько нужно кавычке, которая рисуется левее текста. */
+.music-archive-table .log-detail-body {
+    padding-left: 44px;
+}
+
+.music-archive-table .log-detail-main {
+    max-width: none;
+}
+
+.music-row-cover {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    cursor: zoom-in;
+    transition: transform 0.18s ease;
+}
+
+.log-row:hover .music-row-cover {
+    transform: scale(1.06);
+}
+
+/* Формат, лейбл и дата — метками в ряд. Формат выделен: он отвечает на первый
+   вопрос к записи в разделе, который называется release, а не album. */
+.music-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0 0;
+}
+
+.music-pill {
+    padding: 3px 8px;
+    border-radius: 6px;
+    background-color: var(--control-bg);
+    color: var(--control-color);
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.music-pill--format {
+    background-color: rgba(249, 115, 22, 0.10);
+    border-color: rgba(249, 115, 22, 0.3);
+    color: #c2410c;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .music-pill--format {
+    background-color: rgba(249, 115, 22, 0.16);
+    border-color: rgba(249, 115, 22, 0.32);
+    color: #f97316;
+}
+
+/* Ссылки под рецензией и в карточке месяца */
+.music-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+}
+
+.music-btn {
+    padding: 5px 11px;
+    border: 1px solid var(--control-border);
+    border-radius: 8px;
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--control-color);
+    text-decoration: none;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.music-btn:hover {
+    background-color: var(--control-bg-hover);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Кнопки носят цвета своих сервисов: зелёный Spotify и синий Bandcamp
+   узнаются раньше, чем прочитывается подпись. */
+.music-btn--spotify {
+    border-color: rgba(29, 185, 84, 0.45);
+    color: #1db954;
+}
+
+.music-btn--spotify:hover {
+    background-color: rgba(29, 185, 84, 0.14);
+    border-color: rgba(29, 185, 84, 0.7);
+    color: #1db954;
+}
+
+.music-btn--bandcamp {
+    border-color: rgba(98, 154, 169, 0.5);
+    color: #4f8494;
+}
+
+.music-btn--bandcamp:hover {
+    background-color: rgba(98, 154, 169, 0.15);
+    border-color: rgba(98, 154, 169, 0.75);
+    color: #4f8494;
+}
+
+/* В тёмной теме синий Bandcamp уходит в фон, поэтому берётся светлее */
+[data-theme="dark"] .music-btn--bandcamp {
+    color: #7fb3c4;
+}
+
+/* Плейлисты: две колонки, на узком экране одна. */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.music-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.18s ease;
+}
+
+.music-card:hover {
+    background-color: var(--row-hover-bg);
+    text-decoration: none;
+}
+
+.music-card-cover {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+}
+
+.music-card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.music-card-title {
+    font-family: var(--code-font);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.music-card-note {
+    font-size: 11px;
+    color: var(--muted-color);
+}
+
+@media screen and (max-width: 600px) {
+    .music-hero {
+        flex-direction: column;
+    }
+
+    .music-cover {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .music-grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -9,7 +9,13 @@
     {%- endcomment -%}
     {%- assign categories = site.logs | map: "category" | uniq | sort -%}
     {% for category in categories %}{% if category == "location" %}{% continue %}{% endif %}
-    <span class="tag small cat-tag--{{ category }}"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ category | capitalize }}</a></span>
+    {%- comment -%}
+    Подпись music — Tracks: раздел собирает собственные треки автора, а /music/
+    в главном меню — про чужие релизы. Одинаковые названия путали бы. Подменяется
+    только подпись; значение категории в данных и адрес страницы прежние.
+    {%- endcomment -%}
+    {%- if category == "music" -%}{%- assign label = "Tracks" -%}{%- else -%}{%- assign label = category | capitalize -%}{%- endif -%}
+    <span class="tag small cat-tag--{{ category }}"><a href="{{ site.baseurl }}/logs/{{ category }}">{% include log_icon.html category=category %} {{ label }}</a></span>
     {% endfor %}
     {%- comment -%}
     Best идёт последним: это не категория, а срез по highlight поперёк всех
@@ -23,8 +29,4 @@
     <span class="tag small tag-ghost cat-tag--best"><a href="{{ site.baseurl }}/logs/best/">{% include log_highlight.html %} Best</a></span>
 </p>
 
-<!-- Modal for full-size image -->
-<div id="image-modal" class="modal" onclick="closeModal(event)">
-    <span class="close" onclick="closeModal(event)">&times;</span>
-    <img class="modal-content" id="modal-img">
-</div>
+{% include image_modal.html %}

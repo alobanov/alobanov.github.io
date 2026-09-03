@@ -1,0 +1,9 @@
+{%- comment -%}
+Окно просмотра картинки во весь экран. Разметка вынесена из списка категорий
+логов, потому что теперь её открывает и обложка альбома на /music/.
+Открытие вешает assets/js/image_pop.js на любой img с data-modal-src.
+{%- endcomment -%}
+<div id="image-modal" class="modal" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <img class="modal-content" id="modal-img" alt="">
+</div>
