@@ -2176,6 +2176,42 @@ body,
         margin: 0 0 20px;
     }
 
+    /* Правило выше написано для section как контейнера страницы. Разделы внутри
+       колонки — закладок и музыки — наследовали от него рамку сверху и снизу,
+       и на узком экране она читалась как лишние черты между блоками. */
+    .bm-section,
+    .music-hero,
+    .music-archive,
+    .music-playlists {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .bm-section + .bm-section {
+        margin-top: 26px;
+    }
+
+    .music-hero,
+    .music-archive,
+    .music-playlists {
+        margin-top: 26px;
+    }
+
+    .music-hero {
+        border: 1px dashed rgba(84, 67, 58, 0.28);
+        padding: 14px;
+    }
+
+    [data-theme="dark"] .music-hero {
+        border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .music-hero.is-favourite,
+    [data-theme="dark"] .music-hero.is-favourite {
+        border-color: rgba(249, 115, 22, 0.45);
+    }
+
     header a small {
         display: inline;
     }
