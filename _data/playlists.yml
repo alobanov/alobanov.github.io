@@ -1,0 +1,7 @@
+# Плейлисты для раздела /music/. Порядок здесь — порядок на странице.
+# Пока список пуст, блок Playlists не выводится вовсе.
+#
+# - name: "Название"
+#   link: https://open.spotify.com/playlist/...
+#   cover: "/assets/img/music/pl-slug.jpg"
+#   note: "одна строка, для чего он"
