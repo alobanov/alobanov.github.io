@@ -3416,7 +3416,26 @@ body,
     color: #f97316;
 }
 
-/* Дата в архиве стоит в два яруса: месяц крупнее, год тише — он повторяется
+/* Колонка даты держит свою ширину, а подпись обрезается многоточием: при
+   нехватке места текст должен уходить за край, а не жаться в узкий столбик,
+   ломаясь по слогам. */
+.music-archive-table .log-col-title {
+    overflow: hidden;
+}
+
+.music-archive-table .log-title-row,
+.music-archive-table .log-subtitle-row {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-archive-table .music-col-date {
+    width: 52px;
+}
+
+/* Дата стоит в два яруса: месяц крупнее, год под ним тише — он повторяется
    у соседних записей и не должен читаться первым. */
 .music-col-date {
     text-align: right;
@@ -3440,9 +3459,6 @@ body,
 }
 
 .music-date-year {
-    margin-top: 2px;
-    padding-top: 3px;
-    border-top: 1px solid var(--border-color);
     font-size: 10px;
     color: var(--muted-color);
 }
@@ -3669,6 +3685,13 @@ body,
 @media screen and (max-width: 600px) {
     .music-hero {
         flex-direction: column;
+    }
+
+    /* Лейбл — последняя по важности деталь строки, на узком экране он уходит
+       первым, чтобы название и артист остались целыми. */
+    .music-archive-table .music-sub-label,
+    .music-archive-table .log-subtitle-row .log-sub-genre + .music-sub-label::before {
+        display: none;
     }
 
     .music-cover {
