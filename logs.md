@@ -35,4 +35,18 @@ permalink: /logs/
 </div>
 
 
+{%- comment -%}
+  Оглавление по годам. Годы берутся из тех же записей, что и таблица, поэтому
+  пункт не может указать на год, которого в списке нет.
+{%- endcomment -%}
+{%- assign by_year = sorted_logs | group_by_exp: "item", "item.date | date: '%Y'" -%}
+<aside class="toc" aria-label="Years">
+  <span class="toc-title">Years</span>
+  <ol class="toc-list">
+    {%- for year in by_year -%}
+    <li><a class="toc-link" href="#year-{{ year.name }}" data-target="{{ year.name }}">{{ year.name }}<span class="toc-count">{{ year.items | size }}</span></a></li>
+    {%- endfor -%}
+  </ol>
+</aside>
+
 {% include log_list.html items=sorted_logs show_category=true %}

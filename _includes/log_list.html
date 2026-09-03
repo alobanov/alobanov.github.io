@@ -31,7 +31,7 @@ link sitting next to the title. Clicking a row opens its note in place.
     {%- if item_year != current_year -%}
       {%- assign current_year = item_year -%}
       <tbody>
-        <tr class="log-year-row"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
+        <tr class="log-year-row" id="year-{{ item_year }}" data-toc="{{ item_year }}"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
       </tbody>
     {%- endif -%}
     {%- assign entry_number = forloop.length | minus: forloop.index | plus: 1 -%}
