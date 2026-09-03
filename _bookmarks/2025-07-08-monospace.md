@@ -9,4 +9,4 @@ tags:
 
 ### 👾 [Monaspace](https://monaspace.githubnext.com/) <small class="superscript">for coding</small>
 
-Modern monospace font from GitHub designed for developers. The Neon variant is perfect for coding with its crisp and readable characters.
+Monospace family from GitHub — the Neon variant is the one for code.

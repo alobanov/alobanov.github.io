@@ -9,4 +9,4 @@ tags:
 
 ### 🚀 [Starship](https://github.com/starship/starship)
 
-Take a few paces forward and you will observe how your terminal can transform into a more enlightening and efficient instrument.
+Cross-shell prompt that turns the terminal line into something worth reading.

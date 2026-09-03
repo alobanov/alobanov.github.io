@@ -725,28 +725,6 @@ ol.custom-counter > li::before {
    BOOKMARKS — CARDS VIEW
    ============================================================================= */
 
-.bookmarks-container {
-    column-count: 2;
-    column-gap: 10px;
-    column-fill: balance;
-}
-
-.bookmarks-bubble {
-    background-color: var(--background-color-light);
-    color: var(--primary-color);
-    padding: 15px 20px;
-    border-radius: 15px;
-    font-family: var(--primary-font);
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0 0 10px;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #f6f6f6;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
 .bookmarks-bubble.hidden {
     display: none;
 }
@@ -961,6 +939,10 @@ tr.bookmarks-bubble {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+tr.bm-row td {
+    transition: background-color 0.18s ease;
 }
 
 tr.bm-row:hover td {
@@ -2052,10 +2034,6 @@ body,
     border-color: rgba(238, 17, 57, 0.12);
 }
 
-[data-theme="dark"] .bookmarks-bubble {
-    border-color: #2e2420;
-}
-
 /* Buttons — only the dark-specific overrides that can't be handled by variables */
 [data-theme="dark"] button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -2156,10 +2134,6 @@ body,
 }
 
 @media screen and (max-width: 600px) {
-    .bookmarks-container {
-        column-count: 1;
-    }
-
     /* The category is one tap away via the tabs above — the column can go */
     .ml-cat {
         display: none;
@@ -2223,7 +2197,7 @@ body,
         word-wrap: normal;
     }
 
-    .bookmarks-bubble {
+    .bm-row {
         font-size: 13px;
     }
 
@@ -2797,18 +2771,190 @@ body,
 
 /* ---- Bookmarks ----------------------------------------------------------- */
 
-/* Card headings were falling back to the global link colour while the list
-   headings were dark — the same bookmark looked different in the two views.
-   The domain label carries the "leaves the site" signal in both. */
-.bookmarks-container h3 a {
-    color: var(--primary-color);
+/* Раздел закладок. Заголовок повторяет kicker из логов — моно, капсом, оранжевый:
+   он делит длинный список на части, но не спорит с названиями самих закладок. */
+/* Куда бы ни вёл пункт оглавления — в раздел закладок или в строку года в
+   таблице логов, — цель не должна упереться в фиксированное меню. Его нижняя
+   кромка на 65px, остальное — небольшой воздух под ней. */
+[data-toc] {
+    scroll-margin-top: 74px;
+}
+
+.bm-section {
+    /* Глобальное правило section {} написано для контейнера страницы и задаёт
+       ширину, float и нижний отступ. Семантические разделы внутри колонки его
+       наследовать не должны — иначе между ними встают пустые провалы. */
+    width: auto;
+    float: none;
+    padding-bottom: 0;
+}
+
+.bm-section {
+    margin-top: 34px;
+}
+
+.bm-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--code-font);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f97316;
+}
+
+/* Заголовок раздела и его первый элемент читаются как одно целое, поэтому
+   зазор под линией убран у обоих видов — и у списка, и у карточек. */
+.bm-section .movie-list-table {
+    margin-top: 0;
+}
+
+/* Подпись в шапке закладок набрана моноширинным, как и весь их bubble.
+   В логах тот же элемент остаётся на основном шрифте — отсюда .font-mono. */
+.bubble.font-mono .bubble-note-body {
+    font-family: var(--code-font);
+    letter-spacing: -0.01em;
+}
+
+/* Счётчик — служебное число, поэтому он тише подписи и набран табличными цифрами:
+   у разделов они выстраиваются в колонку и не пляшут по ширине. */
+.bm-section-count,
+.toc-count {
+    font-size: 10px;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-color);
+    opacity: 0.8;
+}
+
+.bm-section-count::before,
+.toc-count::before {
+    content: "·";
+    margin-right: 5px;
+}
+
+/* Дата в списке. Столбец узкий и прижат вправо, цифры табличные — иначе строки
+   с разной шириной символов ломают правый край. */
+.bm-date {
+    width: 68px;
+    text-align: right;
+    vertical-align: top;
+    padding-top: 2px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-color);
+    white-space: nowrap;
+}
+
+/* Эмодзи в начале заголовка — единственная картинка в строке, и в прежнем размере
+   она терялась. ::first-letter достаёт её, не трогая название: обёртки вокруг знака
+   в markdown закладок нет, а заводить её в 25 файлах ради кегля не стоит.
+
+   Селектор привязан к .bm-section: класс .bm-row носят и строки постов на главной,
+   где заголовки крупнее и трогать их незачем. */
+.bm-section .bm-row h3::first-letter {
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+/* Строка статистики в шапке. Кегль остаётся прежним — выделены только числа,
+   иначе подпись начинает спорить с самим списком. */
+.bm-stat {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: #f97316;
+}
+
+/* Подписи в этом bubble нужен воздух от заголовка: строка стала длиннее одной. */
+.bubble.font-mono .bubble-note-copy {
+    gap: 5px;
+}
+
+/* ---- Оглавление ---------------------------------------------------------- */
+
+/* Оглавление страницы: закладки перечисляют разделы, логи — годы. .wrapper —
+   фиксированные 600px по центру, поэтому панель встаёт от середины плюс полширины
+   колонки. Ниже 1000px её прячет медиазапрос в конце файла. */
+.toc {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 324px);
+    width: 152px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.toc-title {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-color);
+    opacity: 0.7;
+}
+
+.toc-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Полоска слева отмечает активный пункт. Она нарисована на каждом, но проявляется
+   только у текущего — так строка не дёргается по горизонтали при прокрутке. */
+.toc-link {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 4px 0 4px 10px;
+    border-left: 2px solid transparent;
+    font-family: var(--code-font);
+    font-size: 11px;
+    color: var(--muted-color);
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Глобальное a:focus подчёркивает ссылки и по специфичности бьёт одиночный
+   класс, поэтому подчёркивание снимается сразу во всех состояниях: клик по
+   пункту оставляет фокус, и активный пункт иначе оказывался подчёркнут. */
+.toc-link,
+.toc-link:hover,
+.toc-link:focus,
+.toc-link:active,
+.toc-link.active {
     text-decoration: none;
 }
 
-.bookmarks-container h3 a:hover {
-    color: var(--secondary-color);
-    text-decoration: none;
+.toc-link:hover {
+    color: var(--primary-color);
+    border-left-color: var(--border-color);
 }
+
+.toc-link:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.toc-link.active {
+    color: var(--primary-color);
+    border-left-color: #f97316;
+}
+
+.toc-link.active .toc-count {
+    color: #f97316;
+    opacity: 1;
+}
+
 
 /* Domain label after the bookmark name. Everything on this site links inward,
    so bookmarks need to say where they actually go — the same job the IMDb and
@@ -2824,7 +2970,7 @@ body,
     transition: opacity 0.15s ease, color 0.15s ease;
 }
 
-.bookmarks-bubble:hover .bm-host {
+.bm-row:hover .bm-host {
     opacity: 1;
     color: var(--secondary-color);
 }
@@ -2961,4 +3107,12 @@ body,
 /* Разделитель отбивает смысловые части, поэтому воздуха больше, чем у абзаца */
 .prose hr {
     margin: 2em 0;
+}
+
+/* Оглавление живёт в поле справа от 600px-колонки. Когда поля меньше
+   ~190px, панель наезжает на текст — там её не показываем вовсе. */
+@media screen and (max-width: 1000px) {
+    .toc {
+        display: none;
+    }
 }
