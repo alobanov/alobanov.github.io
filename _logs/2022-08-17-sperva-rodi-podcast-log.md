@@ -9,6 +9,7 @@ link: https://libolibo.ru/spervarodi
 link_label: "Site"
 poster: "/assets/img/posters/2022-08-17-sperva-rodi-podcast-log.jpg"
 genre: "Parenting"
+highlight: true
 tag: "🇷🇺 Russian-language"
 ---
 
