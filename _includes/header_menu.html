@@ -6,6 +6,11 @@
     <a href="/bookmarks/"{% if page.url contains '/bookmarks' %} class="active"{% endif %}>Bookmarks</a>
     <a href="/logs/"{% if page.url contains '/logs' %} class="active"{% endif %}>Logs</a>
     {%- comment -%}
+    Сравнение точное, а не contains: путь /logs/music/ тоже содержит "/music",
+    и по contains подсветились бы сразу два пункта меню.
+    {%- endcomment -%}
+    <a href="/music/"{% if page.url == '/music/' %} class="active"{% endif %}>Music</a>
+    {%- comment -%}
     Обе иконки лежат в кнопке, нужную показывает CSS по data-theme. Так JS не
     подменяет содержимое кнопки, и иконка не мигает при загрузке страницы.
     {%- endcomment -%}
