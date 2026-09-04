@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{%- comment -%}
+  Стили статьи держатся отдельно от общих: правила поста не задевают остальной
+  сайт, а правки общего style.css не меняют вид статей.
+{%- endcomment -%}
+<link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+
 <div class="bubble">
   <span class="article-title">{{ page.title }}</span>
   <br />

@@ -390,29 +390,6 @@ article {
     display: inline-block;
 }
 
-ol.custom-counter {
-    counter-reset: item;
-    list-style: none;
-    padding-left: 0;
-}
-
-ol.custom-counter > li {
-    counter-increment: item;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-ol.custom-counter > li::before {
-    content: counter(item)".";
-    font-size: 26px;
-    font-weight: bold;
-    color: #996767;
-    position: absolute;
-    left: -26px;
-    top: -4px;
-}
-
-
 /* =============================================================================
    DATE DIVIDERS
    ============================================================================= */
@@ -817,35 +794,6 @@ button:disabled {
 }
 
 
-/* =============================================================================
-   VIEW TOGGLE (Cards / List)
-   ============================================================================= */
-
-.view-toggle {
-    display: flex;
-    gap: 6px;
-    margin-top: 20px;
-    margin-bottom: 16px;
-}
-
-.view-btn {
-    font-family: var(--code-font);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--background-color-light);
-    color: var(--primary-color);
-    cursor: pointer;
-    margin: 0;
-    transition: background-color 0.2s ease;
-}
-
-.view-btn:hover {
-    background-color: var(--control-bg);
-}
-
 .view-btn.active {
     /* A warm pill, like the category tabs in the LOG header — the inverted
        dark fill was the only place on the site that flipped the colours */
@@ -894,14 +842,6 @@ button:disabled {
     vertical-align: middle;
 }
 
-/* Column: row number */
-.ml-num {
-    font-family: var(--code-font);
-    font-size: 12px;
-    color: var(--muted-color);
-    white-space: nowrap;
-    width: 36px;
-}
 
 /* Column: title */
 .ml-title {
@@ -966,15 +906,6 @@ tr.bm-row:hover td {
     line-height: 1.7;
 }
 
-/* =============================================================================
-   POSTS — TAG FILTER STRIP
-   ============================================================================= */
-
-.post-filter {
-    margin: 12px 0 8px;
-    padding: 0;
-    line-height: 2;
-}
 
 /* =============================================================================
    POSTS — LIST VIEW
@@ -1309,15 +1240,6 @@ tr.bm-row:hover td {
     box-shadow: inset 0 -1px 0 var(--border-color);
 }
 
-/* Column: row number, links to the entry's own page */
-.ml-num a {
-    color: var(--muted-color);
-    text-decoration: none;
-}
-
-.ml-num a:hover {
-    color: var(--secondary-color);
-}
 
 /* Column: title */
 .log-title {
@@ -1436,24 +1358,6 @@ tr.bm-row:hover td {
     margin-top: 2px;
 }
 
-/* Verdict and tag: an eyebrow above the note, not another column in the row */
-.log-detail-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    margin: 0 0 8px;
-    font-family: var(--code-font);
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted-color);
-}
-
-.log-detail-meta > * + *::before {
-    content: "·";
-    margin: 0 7px;
-    color: var(--muted-color);
-}
 
 /* The note itself: a hanging quote mark in the gutter instead of a rule */
 .log-note-body {
@@ -1771,42 +1675,6 @@ tr.bm-row:hover td {
     margin-bottom: 8px;
 }
 
-.lep-recommend {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 14px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    background-color: rgba(249, 115, 22, 0.08);
-    border: 1px solid rgba(249, 115, 22, 0.25);
-}
-
-.lep-recommend-icon {
-    flex: 0 0 auto;
-    width: 16px;
-    height: 16px;
-    fill: #f97316;
-}
-
-.lep-recommend-title {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    color: #f97316;
-}
-
-.lep-recommend-sub {
-    display: block;
-    font-size: 11px;
-    color: var(--muted-color);
-    margin-top: 1px;
-}
-
-[data-theme="dark"] .lep-recommend {
-    background-color: rgba(249, 115, 22, 0.1);
-    border-color: rgba(249, 115, 22, 0.3);
-}
 
 /* Content */
 .lep-content {
@@ -1906,19 +1774,12 @@ tr.bm-row:hover td {
 
 .footnotes a,
 .footnote-ref,
-.footnote-backref {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
+
 
 .footnotes a:hover {
     text-decoration: underline;
 }
 
-.footnote-ref {
-    font-size: 0.8em;
-    vertical-align: super;
-}
 
 .footnote-backref {
     margin-left: 0.5em;
@@ -2061,9 +1922,7 @@ body,
 
 [data-theme="dark"] .footnotes a,
 [data-theme="dark"] .footnote-ref,
-[data-theme="dark"] .footnote-backref {
-    color: var(--secondary-color);
-}
+
 
 /* Theme toggle button in nav */
 .theme-toggle {
@@ -2182,11 +2041,7 @@ body,
     .bm-section,
     .music-hero,
     .music-archive,
-    .music-playlists {
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
+    
 
     .bm-section + .bm-section {
         margin-top: 26px;
@@ -2470,10 +2325,6 @@ body,
     gap: 7px;
 }
 
-.cv-fact-icon {
-    font-size: 12px;
-    line-height: 1;
-}
 
 .cv-elsewhere {
     gap: 14px;
@@ -3054,111 +2905,6 @@ body,
 }
 
 
-/* =============================================================================
-   ARTICLE PROSE
-
-   Тело статьи. Базовые стили сайта рассчитаны на плотные интерфейсные блоки —
-   списки логов, карточки закладок, таблицу CV — и обнуляют отступ у абзацев
-   (`p { margin: 0 }`). Для длинного текста это не годится: абзацы слипаются в
-   сплошное полотно. Раньше воздух добавлялся вручную, распорками
-   <div class="spacer"> прямо в markdown, поэтому здесь они гасятся — ритм
-   теперь задаёт CSS, а старые посты остаются валидными без правки.
-
-   Зона намеренно ограничена классом .prose и ничего не меняет за пределами
-   статьи.
-   ============================================================================= */
-
-.prose {
-    line-height: 1.7;
-}
-
-.prose p {
-    margin: 0 0 1.1em;
-}
-
-/* Распорки из старых постов: воздух теперь идёт от margin абзацев */
-.prose .spacer {
-    height: 0;
-}
-
-/* Заголовки прижимаются к своему тексту: сверху отбивка заметно больше, чем
-   снизу, иначе непонятно, к какому блоку относится заголовок */
-.prose h2,
-.prose h3,
-.prose h4 {
-    margin: 1.9em 0 0.5em;
-    line-height: 1.3;
-}
-
-.prose h2 {
-    font-size: 19px;
-}
-
-.prose h3 {
-    font-size: 16px;
-}
-
-.prose h4 {
-    font-size: 15px;
-}
-
-/* Первый элемент не отбивается от шапки поста — её отступ уже задан */
-.prose > :first-child {
-    margin-top: 0;
-}
-
-.prose > :last-child {
-    margin-bottom: 0;
-}
-
-.prose ul,
-.prose ol {
-    margin: 0 0 1.1em;
-    padding-left: 22px;
-}
-
-.prose li {
-    margin-bottom: 0.35em;
-}
-
-.prose li:last-child {
-    margin-bottom: 0;
-}
-
-/* Крупная выносная нумерация в старых постах. Правила .prose ol и .prose li
-   идут ниже по файлу при равной специфичности и перебивают её: список получал
-   отступ слева, из-за которого цифры переставали выходить за колонку, и терял
-   воздух между пунктами. Здесь она возвращается с весом .prose. */
-.prose ol.custom-counter {
-    padding-left: 0;
-}
-
-.prose ol.custom-counter > li {
-    margin-bottom: 20px;
-}
-
-.prose li > ul,
-.prose li > ol {
-    margin: 0.35em 0 0;
-}
-
-.prose blockquote {
-    margin: 0 0 1.1em;
-}
-
-.prose blockquote p:last-child {
-    margin-bottom: 0;
-}
-
-.prose table {
-    margin: 0 0 1.4em;
-}
-
-/* Разделитель отбивает смысловые части, поэтому воздуха больше, чем у абзаца */
-.prose hr {
-    margin: 2em 0;
-}
-
 /* Оглавление живёт в поле справа от 600px-колонки. Когда поля меньше
    ~190px, панель наезжает на текст — там её не показываем вовсе. */
 @media screen and (max-width: 1000px) {
@@ -3379,15 +3125,6 @@ body,
     color: var(--secondary-color);
 }
 
-/* Служебная строка: формат, лейбл, дата релиза. Цифры табличные — даты в архиве
-   и здесь набраны одним шрифтом и не пляшут по ширине. */
-.music-meta {
-    margin: 8px 0 0;
-    font-family: var(--code-font);
-    font-size: 10px;
-    font-variant-numeric: tabular-nums;
-    color: var(--muted-color);
-}
 
 /* Текст берёт основной цвет, а не приглушённый: под ним размытая обложка,
    и на цветном фоне описательный оттенок терял контраст. */
@@ -3404,10 +3141,6 @@ body,
     color: var(--primary-color);
 }
 
-.music-link {
-    font-family: var(--code-font);
-    font-size: 11px;
-}
 
 /* Заголовок раздела и первая строка читаются как одно целое: у .log-table свой
    верхний отступ, рассчитанный на страницы логов, где над ней стоит шапка
@@ -3676,101 +3409,6 @@ body,
     margin: 14px 0 0;
 }
 
-.music-btn {
-    padding: 5px 11px;
-    border: 1px solid var(--control-border);
-    border-radius: 8px;
-    font-family: var(--code-font);
-    font-size: 11px;
-    color: var(--control-color);
-    text-decoration: none;
-    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-}
-
-.music-btn:hover {
-    background-color: var(--control-bg-hover);
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-/* Кнопки носят цвета своих сервисов: зелёный Spotify и синий Bandcamp
-   узнаются раньше, чем прочитывается подпись. */
-.music-btn--spotify {
-    border-color: rgba(29, 185, 84, 0.45);
-    color: #1db954;
-}
-
-.music-btn--spotify:hover {
-    background-color: rgba(29, 185, 84, 0.14);
-    border-color: rgba(29, 185, 84, 0.7);
-    color: #1db954;
-}
-
-.music-btn--bandcamp {
-    border-color: rgba(98, 154, 169, 0.5);
-    color: #4f8494;
-}
-
-.music-btn--bandcamp:hover {
-    background-color: rgba(98, 154, 169, 0.15);
-    border-color: rgba(98, 154, 169, 0.75);
-    color: #4f8494;
-}
-
-/* В тёмной теме синий Bandcamp уходит в фон, поэтому берётся светлее */
-[data-theme="dark"] .music-btn--bandcamp {
-    color: #7fb3c4;
-}
-
-/* Плейлисты: две колонки, на узком экране одна. */
-.music-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.music-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    color: inherit;
-    text-decoration: none;
-    transition: background-color 0.18s ease;
-}
-
-.music-card:hover {
-    background-color: var(--row-hover-bg);
-    text-decoration: none;
-}
-
-.music-card-cover {
-    width: 56px;
-    height: 56px;
-    flex: 0 0 auto;
-    border-radius: 8px;
-}
-
-.music-card-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 0;
-}
-
-.music-card-title {
-    font-family: var(--code-font);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.music-card-note {
-    font-size: 11px;
-    color: var(--muted-color);
-}
 
 @media screen and (max-width: 600px) {
     .music-hero {
