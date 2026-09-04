@@ -1,0 +1,42 @@
+---
+layout: page
+title: Playlists
+permalink: /music/playlists/
+---
+
+{% include music_tabs.html current="playlists" %}
+
+<div class="bubble yellow font-mono">
+  🎧 Playlists I keep going back to — put one on and let it run.
+</div>
+
+{%- if site.data.playlists.size > 0 -%}
+{%- comment -%}
+  Компактный плеер: 152px — вариант Spotify без списка треков. Он же позволяет
+  держать на странице несколько плейлистов, не превращая её в ленту в экран
+  высотой каждый.
+
+  Грузится по требованию (loading="lazy"): пока плейлист не попал в окно, его
+  скрипты и куки не подтягиваются.
+{%- endcomment -%}
+{%- for playlist in site.data.playlists -%}
+<section class="playlist-item">
+  <h2 class="bm-section-head">
+    {{ playlist.name }}
+    <a class="playlist-link" href="https://open.spotify.com/playlist/{{ playlist.spotify }}"
+       target="_blank" rel="noopener">Open ↗</a>
+  </h2>
+  {%- if playlist.note %}<p class="playlist-note">{{ playlist.note }}</p>{% endif -%}
+  <iframe class="playlist-embed" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/{{ playlist.spotify }}?utm_source=generator"
+          width="100%" height="152" frameborder="0" loading="lazy"
+          title="{{ playlist.name }} on Spotify"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen></iframe>
+</section>
+{%- endfor -%}
+{%- else -%}
+<p class="playlist-empty">Nothing here yet.</p>
+{%- endif -%}
+
+<div class="spacer"></div>

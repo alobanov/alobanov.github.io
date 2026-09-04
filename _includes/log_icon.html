@@ -2,7 +2,7 @@
 Monochrome category icons. Inline SVG so they take `currentColor` — one set
 covers both themes, and nothing is fetched over the network.
 
-  Param: category — movie | game | music | podcast | location | all
+  Param: category — movie | game | music | podcast | location | playlist | all
 
 Solid silhouettes rather than outlines: at 12px an outline with internal
 detail (film perforations, gamepad buttons) turns to noise.
@@ -18,6 +18,8 @@ Geometry from Phosphor Icons (https://phosphoricons.com), Fill weight, MIT.
 <svg class="cat-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M212.92,17.71a7.89,7.89,0,0,0-6.86-1.46l-128,32A8,8,0,0,0,72,56V166.1A36,36,0,1,0,88,196V102.25l112-28V134.1A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.71Z"/></svg>
 {%- when "podcast" -%}
 <svg class="cat-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M80,128V64a48,48,0,0,1,96,0v64a48,48,0,0,1-96,0Zm128,0a8,8,0,0,0-16,0,64,64,0,0,1-128,0,8,8,0,0,0-16,0,80.11,80.11,0,0,0,72,79.6V240a8,8,0,0,0,16,0V207.6A80.11,80.11,0,0,0,208,128Z"/></svg>
+{%- when "playlist" -%}
+<svg class="cat-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM64,72H192a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16Zm0,48h72a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16Zm40,64H64a8,8,0,0,1,0-16h40a8,8,0,0,1,0,16Zm103.59-53.47a8,8,0,0,1-10.12,5.06L184,131.1V176a24,24,0,1,1-16-22.62V120a8,8,0,0,1,10.53-7.59l24,8A8,8,0,0,1,207.59,130.53Z"/></svg>
 {%- when "location" -%}
 <svg class="cat-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"/></svg>
 {%- else -%}

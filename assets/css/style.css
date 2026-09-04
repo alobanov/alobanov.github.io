@@ -3125,6 +3125,18 @@ body,
     margin-bottom: 0;
 }
 
+/* Крупная выносная нумерация в старых постах. Правила .prose ol и .prose li
+   идут ниже по файлу при равной специфичности и перебивают её: список получал
+   отступ слева, из-за которого цифры переставали выходить за колонку, и терял
+   воздух между пунктами. Здесь она возвращается с весом .prose. */
+.prose ol.custom-counter {
+    padding-left: 0;
+}
+
+.prose ol.custom-counter > li {
+    margin-bottom: 20px;
+}
+
 .prose li > ul,
 .prose li > ol {
     margin: 0.35em 0 0;
@@ -3168,6 +3180,84 @@ body,
     float: none;
     padding-bottom: 0;
     margin-top: 34px;
+}
+
+/* Вкладки раздела музыки. Цвет второй берётся от фиолетового логов — он уже
+   закреплён за музыкой в палитре категорий, и вкладки читаются как одна семья. */
+/* Вкладки выстроены флексом, а не строкой: как инлайновые элементы пилюли
+   вставали по базовой линии текста, а она зависит от того, что внутри, и
+   соседние вкладки расходились по вертикали на несколько пикселей. */
+.music-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.music-tabs .tag.small {
+    margin: 0;
+}
+
+.log-cats .cat-tag--playlist        { background-color: rgba(130, 60, 180, 0.10); }
+.log-cats .cat-tag--playlist:hover  { background-color: rgba(130, 60, 180, 0.18); }
+
+[data-theme="dark"] .log-cats .cat-tag--playlist       { background-color: rgba(192, 132, 252, 0.10); }
+[data-theme="dark"] .log-cats .cat-tag--playlist:hover { background-color: rgba(192, 132, 252, 0.18); }
+
+/* Текущая вкладка отмечена рамкой, а не заливкой: заливка у каждой своя. */
+.log-cats .tag.is-current {
+    box-shadow: inset 0 0 0 1px var(--muted-color);
+}
+
+/* ---- Плейлисты ----------------------------------------------------------- */
+
+.playlist-item {
+    width: auto;
+    float: none;
+    padding-bottom: 0;
+    margin-top: 26px;
+}
+
+.playlist-item .bm-section-head {
+    align-items: center;
+    justify-content: space-between;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+}
+
+.playlist-link {
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.playlist-link:hover {
+    color: #1db954;
+    text-decoration: none;
+}
+
+.playlist-note {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: var(--muted-color);
+}
+
+/* Плеер занимает всю ширину колонки; высоту задаёт сам Spotify */
+.playlist-embed {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.playlist-empty {
+    margin-top: 20px;
+    font-family: var(--code-font);
+    font-size: 12px;
+    color: var(--muted-color);
 }
 
 /* Релиз месяца — карточка, а не просто строка с картинкой: собственный фон и

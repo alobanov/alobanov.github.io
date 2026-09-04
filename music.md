@@ -14,6 +14,8 @@ permalink: /music/
 {%- assign archive = releases | shift -%}
 {%- assign favourites = site.music | where: "highlight", true -%}
 
+{% include music_tabs.html current="albums" %}
+
 <div class="bubble yellow font-mono">
   🎧 My favourite albums — the records I keep coming back to, whatever year they
   are from. One of them is pulled to the top each month, plus the playlists I live in.
@@ -134,27 +136,6 @@ permalink: /music/
     </tbody>
     {%- endfor -%}
   </table>
-</section>
-{%- endif -%}
-
-{%- comment -%}
-  Блок появляется сам, как только в _data/playlists.yml окажется первая запись.
-{%- endcomment -%}
-{%- if site.data.playlists.size > 0 -%}
-<section class="music-playlists">
-  <h2 class="bm-section-head">Playlists<span class="bm-section-count">{{ site.data.playlists.size }}</span></h2>
-  <div class="music-grid">
-    {%- for playlist in site.data.playlists -%}
-    <a class="music-card" href="{{ playlist.link }}" rel="noopener">
-      <img class="music-card-cover" src="{{ playlist.cover | relative_url }}"
-           alt="{{ playlist.name }} cover" width="120" height="120" loading="lazy">
-      <span class="music-card-copy">
-        <span class="music-card-title">{{ playlist.name }}</span>
-        {%- if playlist.note %}<span class="music-card-note">{{ playlist.note }}</span>{% endif -%}
-      </span>
-    </a>
-    {%- endfor -%}
-  </div>
 </section>
 {%- endif -%}
 

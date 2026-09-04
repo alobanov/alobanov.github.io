@@ -1,0 +1,15 @@
+{%- comment -%}
+Вкладки раздела музыки. Устроены как вкладки категорий в логах: обычные ссылки
+на отдельные страницы, а не переключатель на одной, — так у каждой части свой
+адрес, который можно дать ссылкой.
+
+Параметр: current — "albums" или "playlists"
+{%- endcomment -%}
+<p class="log-cats music-tabs">
+  <span class="tag small cat-tag--music{% if include.current == 'albums' %} is-current{% endif %}">
+    <a href="{{ site.baseurl }}/music/">{% include log_icon.html category="music" %} Albums</a>
+  </span>
+  <span class="tag small cat-tag--playlist{% if include.current == 'playlists' %} is-current{% endif %}">
+    <a href="{{ site.baseurl }}/music/playlists/">{% include log_icon.html category="playlist" %} Playlists</a>
+  </span>
+</p>

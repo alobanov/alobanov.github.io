@@ -22,6 +22,8 @@ Liquid assigns leak into the calling scope, which is how the values get back out
     {%- assign log_link_label = "Spotify" -%}
   {%- elsif log_link_url contains "youtube.com" or log_link_url contains "youtu.be" -%}
     {%- assign log_link_label = "YouTube" -%}
+  {%- elsif log_link_url contains "soundcloud.com" -%}
+    {%- assign log_link_label = "SoundCloud" -%}
   {%- else -%}
     {%- assign log_link_label = "Link" -%}
   {%- endif -%}

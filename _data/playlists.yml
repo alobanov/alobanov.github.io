@@ -1,7 +1,10 @@
-# Плейлисты для раздела /music/. Порядок здесь — порядок на странице.
-# Пока список пуст, блок Playlists не выводится вовсе.
+# Плейлисты для /music/playlists/. Порядок здесь — порядок на странице.
 #
-# - name: "Название"
-#   link: https://open.spotify.com/playlist/...
-#   cover: "/assets/img/music/pl-slug.jpg"
-#   note: "одна строка, для чего он"
+# spotify — идентификатор плейлиста из адреса open.spotify.com/playlist/<id>.
+# Из него собирается и плеер, и ссылка на сам плейлист.
+
+- name: "38 fucking years old"
+  spotify: "3ltOhzEdh8415XM3kxBlJf"
+
+- name: "Tired gamer"
+  spotify: "5QtK4D0JppLVbPA8TglAGL"
