@@ -2,8 +2,10 @@
 The LOG list: the familiar table, with the recommendation star and the source
 link sitting next to the title. Clicking a row opens its note in place.
 
-  Params: items         — already sorted (newest first)
-          show_category — show the category column (the all-logs page)
+  Params: items            — already sorted (newest first)
+          show_category    — show the category column (the all-logs page)
+          toc_merge_before — optional year; everything older than it shares one
+                             table-of-contents entry instead of one per year
 {%- endcomment -%}
 
 {%- assign rated_count = include.items | where_exp: "item", "item.rating" | size -%}
@@ -30,8 +32,21 @@ link sitting next to the title. Clicking a row opens its note in place.
     {%- assign item_year = item.date | date: "%Y" -%}
     {%- if item_year != current_year -%}
       {%- assign current_year = item_year -%}
+      {%- comment -%}
+        toc_merge_before — год, начиная с которого пункты оглавления идут по
+        одному. Всё, что старше, делит общий data-toc: toc.js подсвечивает по
+        нему один пункт на весь хвост, а скроллит к первой такой строке, то
+        есть к самому свежему году диапазона. Атрибут id остаётся годовым,
+        поэтому прямые ссылки вида #year-2016 продолжают работать.
+      {%- endcomment -%}
+      {%- assign toc_name = item_year -%}
+      {%- if include.toc_merge_before -%}
+        {%- assign year_number = item_year | plus: 0 -%}
+        {%- assign merge_before = include.toc_merge_before | plus: 0 -%}
+        {%- if year_number < merge_before -%}{%- assign toc_name = "older" -%}{%- endif -%}
+      {%- endif -%}
       <tbody>
-        <tr class="log-year-row" id="year-{{ item_year }}" data-toc="{{ item_year }}"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
+        <tr class="log-year-row" id="year-{{ item_year }}" data-toc="{{ toc_name }}"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
       </tbody>
     {%- endif -%}
     {%- assign entry_number = forloop.length | minus: forloop.index | plus: 1 -%}
