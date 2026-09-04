@@ -9,10 +9,17 @@ permalink: /music/
   попасть альбом, вышедший в мае. Свежая запись идёт крупной карточкой, все
   остальные — списком под ней.
 {%- endcomment -%}
-{%- assign releases = site.music | sort: 'date' | reverse -%}
+{%- comment -%}
+  site.music берётся через промежуточную переменную с пустым массивом по
+  умолчанию: при инкрементальной пересборке в jekyll serve коллекция иногда
+  ещё не загружена, и sort по null роняет сборку целиком.
+{%- endcomment -%}
+{%- assign no_music = "" | split: "" -%}
+{%- assign all_music = site.music | default: no_music -%}
+{%- assign releases = all_music | sort: 'date' | reverse -%}
 {%- assign current = releases | first -%}
 {%- assign archive = releases | shift -%}
-{%- assign favourites = site.music | where: "highlight", true -%}
+{%- assign favourites = all_music | where: "highlight", true -%}
 
 {% include music_tabs.html current="albums" %}
 
@@ -25,7 +32,7 @@ permalink: /music/
     <span class="bubble-note-copy">
       <span class="bubble-note-kicker">The essential ones</span>
       <span class="bubble-note-body"><strong class="bm-stat">{{ favourites | size }}</strong> of
-      <strong class="bm-stat">{{ site.music | size }}</strong> carry the star — the handful that shaped what I listen to</span>
+      <strong class="bm-stat">{{ all_music | size }}</strong> carry the star — the handful that shaped what I listen to</span>
     </span>
   </p>
 </div>
