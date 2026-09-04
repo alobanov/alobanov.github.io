@@ -10,6 +10,29 @@
    вид статей поехал. Типографику статей менять здесь.
    ============================================================================= */
 
+/* Акцент статьи вынесен в переменные: цвет один, а мест, где он встречается,
+   несколько — kicker, номер секции, выделения. Файл грузится только на постах,
+   поэтому за пределы статьи переменные не выходят.
+
+   В тёмной теме взят приглушённый тон вместо яркого #f97316: на тёмном фоне
+   чистый оранжевый бьёт по глазам, а в светлой теме он и так притушён до
+   жжёной охры. Здесь оба варианта одинаково спокойные. */
+:root {
+    --post-accent: #c2410c;
+    --post-accent-fill: rgba(249, 115, 22, 0.10);
+    --post-accent-line: rgba(249, 115, 22, 0.30);
+    --post-accent-badge: rgba(194, 65, 12, 0.14);
+    --post-accent-badge-ink: #a3350a;
+}
+
+[data-theme="dark"] {
+    --post-accent: #cf8560;
+    --post-accent-fill: rgba(207, 133, 96, 0.14);
+    --post-accent-line: rgba(207, 133, 96, 0.32);
+    --post-accent-badge: rgba(207, 133, 96, 0.18);
+    --post-accent-badge-ink: #e0a27f;
+}
+
 /* Крупная выносная нумерация: цифра выходит за колонку текста влево. */
 ol.custom-counter {
     counter-reset: item;
@@ -31,4 +54,201 @@ ol.custom-counter > li::before {
     position: absolute;
     left: -26px;
     top: -4px;
+}
+
+/* =============================================================================
+   ШАПКА СТАТЬИ
+   ============================================================================= */
+
+/* Порядок тот же, что в карточке релиза: сперва служебная строка, затем
+   крупное название, под ним подзаголовок. Дата и теги ушли из плашек в эту
+   строку — двум рядам меток над заголовком было тесно. */
+.post-head {
+    /* Глобальное header {} досталось от темы и делает из шапки колонку в 270px
+       с обтеканием — тот же капкан, что section {} для разделов страницы. */
+    width: auto;
+    float: none;
+    position: static;
+
+    padding-bottom: 18px;
+}
+
+.post-kicker {
+    margin: 0 0 10px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--post-accent);
+}
+
+/* Знак статьи без плашки: серый бокс превращал эмодзи в кнопку и перетягивал
+   внимание с названия. Здесь он просто стоит перед ним, крупнее текста. */
+.post-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+}
+
+.post-icon-mark {
+    flex: 0 0 auto;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.post-superscript {
+    margin: 8px 0 0;
+    font-family: var(--code-font);
+    font-size: 12px;
+    color: var(--muted-color);
+}
+
+/* =============================================================================
+   ТЕЛО СТАТЬИ
+   ============================================================================= */
+
+/* Разделитель, которым в некоторых постах начинается текст, скрыт: он отбивал
+   шапку от контента, а шапку отбивает её собственный отступ. Линии сверху нет
+   вовсе — ни у шапки, ни в начале статьи.
+
+   :first-of-type, а не :first-child: перед разделителем стоят <style> и
+   переключатель языков, и первым ребёнком идёт не он. В двуязычных постах
+   текст к тому же завёрнут в #lang-en и #lang-ru, поэтому разделитель там
+   лежит на уровень глубже — отсюда вторая строка селектора. */
+.prose > hr:first-of-type,
+.prose > div[id^="lang-"] > hr:first-of-type {
+    display: none;
+}
+
+/* Счётчик секций живёт на всей статье: номера сквозные по h2. */
+.prose {
+    counter-reset: section;
+}
+
+/* Номер секции — бейдж со срезанными углами по диагонали: форма нерегулярная,
+   поэтому он читается как деталь, а не как ещё одна пилюля рядом с пилюлями
+   шапки. Срез рисует clip-path, поэтому у бейджа нет border — вместо рамки
+   заливка поплотнее, иначе край сгрызается вместе с ней.
+
+   Заголовок выстроен флексом: у номера своя высота и своя гарнитура, и по
+   базовой линии он вставал бы выше строки. */
+.prose h2 {
+    counter-increment: section;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 1em 0 0.7em;
+}
+
+.prose h2::before {
+    content: "#" counter(section, decimal-leading-zero);
+    flex: 0 0 auto;
+    padding: 6px 10px 5px;
+    background-color: var(--post-accent-badge);
+    clip-path: polygon(
+        7px 0, 100% 0, 100% calc(100% - 7px),
+        calc(100% - 7px) 100%, 0 100%, 0 7px);
+    font-family: var(--code-font);
+    font-size: 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--post-accent-badge-ink);
+}
+
+/* Выделения в тексте берут тот же акцент, что kicker и номер секции */
+.prose strong {
+    color: var(--post-accent);
+}
+
+/* Цитата — жёлтая врезка, как bubble в разделах: ею отбивается главная мысль,
+   а не просто чужая речь. */
+.prose blockquote {
+    margin: 1.4em 0;
+    padding: 14px 18px;
+    border: 1px dotted rgba(212, 150, 61, 0.35);
+    border-radius: 15px;
+    background-color: rgba(160, 109, 0, 0.07);
+}
+
+.prose blockquote > :first-child {
+    margin-top: 0;
+}
+
+.prose blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/* Блок кода подписан языком из data-lang, который проставляет kramdown.
+   Подпись сидит в углу блока и не мешает выделять сам код. */
+.prose div.highlighter-rouge,
+.prose figure.highlight,
+.prose pre {
+    position: relative;
+}
+
+.prose pre > code[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-family: var(--code-font);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-color);
+    opacity: 0.65;
+}
+
+
+/* Инлайн-код заметен рамкой и плашкой, но не цветом: текста, набранного им, в
+   статьях много, и оранжевым он превращал абзац в пёструю строку. Акцент в
+   тексте остаётся один — выделение жирным. */
+.prose :not(pre) > code {
+    padding: 1px 5px;
+    border: 1px solid var(--wordcode-border, var(--border-color));
+    border-radius: 5px;
+    background-color: var(--code-background);
+    color: var(--primary-color);
+    font-size: 0.88em;
+}
+
+[data-theme="dark"] .prose :not(pre) > code {
+    color: var(--text-code-color);
+}
+
+/* Ссылка, целиком набранная кодом, не должна терять признак ссылки */
+.prose a > code {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
+/* Разделитель между секциями. Отступы у него маленькие: сверху к нему уже
+   примыкает поле предыдущего блока, снизу — поле заголовка, и вместе они
+   складывались в провал почти в экран. */
+.prose hr {
+    margin: 0.8em 0 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Врезка перед разделителем не добавляет своего поля снизу: иначе к нему
+   прибавляется отступ самой черты. */
+.prose blockquote {
+    margin-bottom: 1em;
+}
+
+/* В старых постах воздух между блоками добавляли вручную — переносом строки,
+   который markdown заворачивает в отдельный абзац. Такой абзац пустой и только
+   растягивает промежутки; перенос внутри текста при этом остаётся переносом. */
+.prose > p:has(> br:only-child) {
+    display: none;
 }

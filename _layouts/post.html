@@ -9,15 +9,28 @@ layout: default
 <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
 
 <div class="bubble">
-  <span class="article-title">{{ page.title }}</span>
-  <br />
-  <small>Published: <b>{{ page.date | date: "%-d %B %Y" }}</b><br />Tagged:</small>
-  {% if page.tags %}
-  {% for tag in page.tags %}
-  <span class="tag small">{{ tag }}</span>
-  {% endfor %}
-  {% endif %}
-  <div class="spacer"></div>
+  {%- comment -%}
+    Шапка статьи собрана как карточка в разделах: знак, название, подзаголовок
+    и метки. icon и superscript лежат во фронтматтере постов давно, но до сих
+    пор никуда не выводились.
+  {%- endcomment -%}
+  <header class="post-head">
+    <p class="post-kicker">
+      {%- for tag in page.tags %}{{ tag }} · {% endfor -%}
+      {{ page.date | date: "%-d %B %Y" }}
+    </p>
+    <h1 class="post-title">
+      {%- if page.icon %}<span class="post-icon-mark" aria-hidden="true">{{ page.icon }}</span>{% endif -%}
+      {{ page.title }}
+    </h1>
+    {%- comment -%}
+      Подзаголовок берётся из superscript, а если его нет — из description:
+      то же одно предложение о статье, только написанное для превью и ленты.
+    {%- endcomment -%}
+    {%- assign post_sub = page.superscript | default: page.description -%}
+    {%- if post_sub %}<p class="post-superscript">{{ post_sub }}</p>{% endif -%}
+  </header>
+
   {%- comment -%}
     Тело статьи живёт в своей типографической зоне: ритм абзацев и шкала
     заголовков задаются классом .prose, а не базовыми стилями сайта.
