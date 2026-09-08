@@ -2292,7 +2292,10 @@ body,
     .bm-section,
     .music-hero,
     .music-archive,
-    
+    .music-playlists {
+        border: 0;
+        padding: 0;
+    }
 
     .bm-section + .bm-section {
         margin-top: 26px;
