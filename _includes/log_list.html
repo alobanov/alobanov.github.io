@@ -23,6 +23,8 @@ link sitting next to the title. Clicking a row opens its note in place.
 {%- if show_rating -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
 {%- if include.show_category -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
 
+{% include log_search.html %}
+
 <table class="log-table">
   <thead>
     <tr>
@@ -70,7 +72,7 @@ link sitting next to the title. Clicking a row opens its note in place.
               <span class="log-year-stats">
                 {%- for cat in year_cats -%}
                 {%- assign cat_count = year_group.items | where: "category", cat | size -%}
-                <span class="log-year-stat stat-c--{{ cat }}"><span class="visually-hidden">{{ cat | capitalize }}: </span>{% include log_icon.html category=cat %}{{ cat_count }}</span>
+                <span class="log-year-stat stat-c--{{ cat }}" data-category="{{ cat }}"><span class="visually-hidden">{{ cat | capitalize }}: </span>{% include log_icon.html category=cat %}<span class="log-year-count">{{ cat_count }}</span></span>
                 {%- endfor -%}
               </span>
             </span>
@@ -81,7 +83,7 @@ link sitting next to the title. Clicking a row opens its note in place.
     {%- assign entry_number = forloop.length | minus: forloop.index | plus: 1 -%}
     {%- include log_meta.html log=item -%}
 
-    <tbody class="log-entry-group{% if item.highlight %} is-highlight{% endif %}">
+    <tbody class="log-entry-group{% if item.highlight %} is-highlight{% endif %}" data-category="{{ item.category }}">
       <tr class="log-row" role="button" tabindex="0" aria-expanded="false">
         <td class="log-col-num"><a href="{{ item.url | relative_url }}" title="Open this entry">#{{ entry_number }}</a></td>
         <td class="log-col-title">

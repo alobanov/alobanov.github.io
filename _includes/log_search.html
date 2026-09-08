@@ -1,0 +1,19 @@
+{%- comment -%}
+Фильтр по таблице. Стоит вплотную к ней и приезжает вместе с log_list.html,
+поэтому появляется на всех страницах логов и на /music/ сам собой.
+
+Скрыт в разметке и открывается скриптом: без JS фильтровать нечем, а мёртвое
+поле ввода хуже его отсутствия.
+
+Счётчик — role="status", чтобы скринридер сообщал результат: визуально он
+очевиден, на слух — нет.
+{%- endcomment -%}
+<div class="log-search" hidden>
+  <label class="log-search-field">
+    <svg class="log-search-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
+    <input type="search" class="log-search-input" placeholder="Filter&#8230;"
+           aria-label="Filter entries by title, genre, tag or verdict" autocomplete="off" spellcheck="false">
+  </label>
+  <span class="log-search-count" role="status"></span>
+  <p class="log-search-empty" hidden>Nothing matches.</p>
+</div>

@@ -82,6 +82,12 @@ permalink: /music/
 {%- endcomment -%}
 <section class="music-archive">
   <h2 class="bm-section-head">Favourites<span class="bm-section-count">{{ archive.size }}</span></h2>
+  {%- comment -%}
+    Тот же фильтр, что над таблицами логов. Архив собран их разметкой, поэтому
+    скрипту здесь ничего не нужно, кроме самого поля: он ищет по .log-title и
+    .log-sub-*, а они тут те же. Годовых заголовков нет — пересчитывать нечего.
+  {%- endcomment -%}
+  {% include log_search.html %}
   <table class="log-table music-archive-table">
     {%- for release in archive -%}
     {%- assign entry_number = archive.size | minus: forloop.index | plus: 1 -%}

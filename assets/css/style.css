@@ -313,8 +313,16 @@ section {
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+/* transform в переходе выше был объявлен, но на hover не задавался — намерение
+   бросили на полпути. Наклон против часовой, а не просто подрост: лицо на
+   аватарке от этого будто поворачивается к тебе. */
 .menu-icon:hover {
     filter: brightness(1.2);
+    transform: scale(1.06) rotate(-2deg);
+}
+
+.menu-icon:active {
+    transform: scale(0.98) rotate(-2deg);
 }
 
 .menu-nav {
@@ -343,12 +351,17 @@ section {
     color: var(--primary-color);
 }
 
-/* Current page: a rule under the label */
-.menu-nav a.active {
+/* Черта под подписью — та же, что помечает текущую страницу: на hover она
+   выезжает из-под пункта слева направо. Так наведение обещает ровно то
+   состояние, в которое пункт перейдёт по клику, а не заводит отдельный язык.
+
+   У активного пункта она отрисована сразу: переходы не срабатывают на первом
+   применении стиля, поэтому при загрузке ничего не разъезжается. */
+.menu-nav a {
     position: relative;
 }
 
-.menu-nav a.active::after {
+.menu-nav a::after {
     content: '';
     position: absolute;
     bottom: 1px;
@@ -357,6 +370,14 @@ section {
     height: 2px;
     border-radius: 2px;
     background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+}
+
+.menu-nav a.active::after,
+.menu-nav a:hover::after {
+    transform: scaleX(1);
 }
 
 
@@ -1021,6 +1042,99 @@ tr.bm-row:hover td {
     table-layout: fixed;
 }
 
+/* Фильтр по таблице. Отдельной строкой над ней, а не в ряду вкладок: тот ряд
+   ведёт на другие страницы и уже переполнен — чип с действием уезжал бы там на
+   вторую строку. Здесь же поле стоит вплотную к тому, что фильтрует. */
+.log-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.log-search[hidden] {
+    display: none;
+}
+
+.log-search-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex: 1 1 180px;
+    max-width: 260px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color-light);
+    transition: border-color 0.2s ease;
+}
+
+/* Рамку подсвечивает поле целиком, а не сам input внутри: обводка вокруг текста
+   без иконки выглядела бы обрезанной. */
+.log-search-field:focus-within {
+    border-color: var(--secondary-color);
+}
+
+.log-search-icon {
+    width: 13px;
+    height: 13px;
+    flex: 0 0 auto;
+    color: var(--muted-color);
+}
+
+.log-search-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: var(--code-font);
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.log-search-input:focus {
+    outline: none;
+}
+
+.log-search-input::placeholder {
+    color: var(--muted-color);
+}
+
+/* Системный крестик очистки в WebKit рисуется своим цветом и в тёмной теме
+   светится белым. Убран — Escape делает то же самое. */
+.log-search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.log-search-count {
+    font-family: var(--code-font);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted-color);
+}
+
+.log-search-empty {
+    flex: 1 0 100%;
+    margin: 2px 0 0;
+    font-family: var(--code-font);
+    font-size: 12px;
+    color: var(--muted-color);
+}
+
+/* Отфильтрованное уходит из потока целиком — и записи, и опустевшие годы. */
+.log-table .is-filtered-out {
+    display: none;
+}
+
+/* Категория, от которой в году ничего не осталось, исчезает вместе со своим
+   нулём: «0» в строке итогов — не итог, а мусор. */
+.log-year-stat[hidden] {
+    display: none;
+}
+
 /* Neutralises the base `th, td` rule: its border and padding are for prose
    tables in posts */
 .log-table th,
@@ -1404,6 +1518,14 @@ tr.bm-row:hover td {
     object-fit: cover;
     object-position: top;
     margin-top: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Слабее, чем у превью локаций: те открываются во весь экран по клику, а постер
+   никуда не ведёт, и обещать ему нечего. Здесь движение только оживляет. */
+.log-detail-poster:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -1469,12 +1591,13 @@ tr.bm-row:hover td {
     border-radius: 6px;
     cursor: pointer;
     opacity: 0.9;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
 }
 
 .log-thumb:hover {
     transform: scale(1.05);
     opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
 .log-detail-foot {
@@ -1496,8 +1619,33 @@ tr.bm-row:hover td {
     .log-detail-wrap,
     .log-ext,
     .log-thumb,
-    .log-row td {
+    .log-detail-poster,
+    .log-row td,
+    .menu-icon,
+    .menu-nav a::after,
+    .tag,
+    .log-cats .tag .cat-icon,
+    .log-cats .tag .highlight-star,
+    .theme-icon {
         transition: none;
+    }
+
+    /* Одного отключения перехода мало: без него декоративный сдвиг просто
+       происходит рывком, что для этой настройки ничем не лучше. Движение,
+       которое ничего не сообщает, здесь убирается совсем — в отличие от черты
+       под пунктом меню, она говорит, куда ты попадёшь. */
+    .menu-icon:hover,
+    .menu-icon:active,
+    .log-thumb:hover,
+    .log-detail-poster:hover,
+    .log-cats .tag:hover,
+    .tag[data-tag]:hover,
+    .tag-reset:hover,
+    .log-cats .tag:hover .cat-icon,
+    .log-cats .tag:hover .highlight-star,
+    .theme-toggle:hover .theme-icon,
+    .theme-toggle:active .theme-icon {
+        transform: none;
     }
 }
 
@@ -1897,7 +2045,24 @@ body,
 .menu-container,
 .bubble,
 .tag {
-    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+                transform 0.15s ease;
+}
+
+/* Подъём — только у чипов, по которым кликают: вкладки логов, фильтр по тегам и
+   Reset. Ярлыки навыков в резюме на вид такие же, но никуда не ведут, и
+   отзываться на наведение им незачем. */
+.log-cats .tag:hover,
+.tag[data-tag]:hover,
+.tag-reset:hover {
+    transform: translateY(-1px);
+}
+
+/* Нажатие возвращает чип на место — иначе клик по нему ничем не отзывается. */
+.log-cats .tag:active,
+.tag[data-tag]:active,
+.tag-reset:active {
+    transform: translateY(0);
 }
 
 /* Table borders in dark mode */
@@ -2019,11 +2184,16 @@ body,
     width: 15px;
     height: 15px;
     color: var(--muted-color);
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover .theme-icon {
     color: var(--primary-color);
+    transform: rotate(20deg);
+}
+
+.theme-toggle:active .theme-icon {
+    transform: rotate(20deg) scale(0.88);
 }
 
 /* Only one of the two is ever shown */
@@ -2192,9 +2362,27 @@ body,
     white-space: nowrap;
 }
 
+/* Глобальное a:hover подчёркивает текст ссылки — внутри чипа это лишнее: он и
+   так целиком отзывается подъёмом и цветом, а черта под подписью разрезает
+   пилюлю пополам. Снято только здесь: обычным ссылкам подчёркивание нужно. */
+.log-cats .tag a:hover,
+.log-cats .tag a:focus {
+    text-decoration: none;
+}
+
 .log-cats .cat-icon {
     width: 16px;
     height: 16px;
+}
+
+.log-cats .tag .cat-icon,
+.log-cats .tag .highlight-star {
+    transition: transform 0.2s ease;
+}
+
+.log-cats .tag:hover .cat-icon,
+.log-cats .tag:hover .highlight-star {
+    transform: scale(1.12);
 }
 
 /* Category tag colours — mirrors the table cat-pill scheme */
