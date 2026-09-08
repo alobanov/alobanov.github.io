@@ -1240,6 +1240,54 @@ tr.bm-row:hover td {
     box-shadow: inset 0 -1px 0 var(--border-color);
 }
 
+/* Итоги года — сколько записей каждой категории. По умолчанию
+   их не видно: строка цифр, висящая постоянно, спорила бы за внимание с самой
+   таблицей. Проявляются при наведении на строку года — она sticky и держится
+   вверху, пока её год листается, так что навести на неё легко в любой момент. */
+.log-year-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.log-year-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.log-year-row:hover .log-year-stats,
+.log-year-row:focus-within .log-year-stats {
+    opacity: 1;
+}
+
+/* Там, где наведения нет вовсе, цифры показываются всегда: иначе на телефоне их
+   не достать никак. */
+@media (hover: none) {
+    .log-year-stats {
+        opacity: 1;
+    }
+}
+
+/* Цвет иконки и числа приходит из .stat-c--<категория>: палитра там уже задана
+   для обеих тем. Сам .stat-c не подключаем — он тянет свои 15px/700 из жёлтого
+   баббла, а здесь цифры должны быть тише года. */
+.log-year-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.log-year-stat .cat-icon {
+    width: 11px;
+    height: 11px;
+}
+
 
 /* Column: title */
 .log-title {

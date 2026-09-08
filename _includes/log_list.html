@@ -12,6 +12,13 @@ link sitting next to the title. Clicking a row opens its note in place.
 {%- assign show_rating = false -%}
 {%- if rated_count > 0 -%}{%- assign show_rating = true -%}{%- endif -%}
 
+{%- comment -%}
+  Статистика года считается по группам, собранным один раз до цикла: внутри
+  остаётся только достать свою группу по имени года. Список уже отсортирован,
+  поэтому группы идут в том же порядке, что и строки таблицы.
+{%- endcomment -%}
+{%- assign year_groups = include.items | group_by_exp: "entry", "entry.date | date: '%Y'" -%}
+
 {%- assign column_count = 3 -%}
 {%- if show_rating -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
 {%- if include.show_category -%}{%- assign column_count = column_count | plus: 1 -%}{%- endif -%}
@@ -45,8 +52,30 @@ link sitting next to the title. Clicking a row opens its note in place.
         {%- assign merge_before = include.toc_merge_before | plus: 0 -%}
         {%- if year_number < merge_before -%}{%- assign toc_name = "older" -%}{%- endif -%}
       {%- endif -%}
+      {%- comment -%}
+        Цифры года: сколько записей каждой категории. Видны только при
+        наведении на строку года — она sticky и висит вверху, пока её год
+        листается, так что попасть по ней легко.
+
+        Категории идут по алфавиту: порядок не несёт смысла, зато не скачет
+        между годами.
+      {%- endcomment -%}
+      {%- assign year_group = year_groups | where: "name", item_year | first -%}
+      {%- assign year_cats = year_group.items | map: "category" | uniq | sort -%}
       <tbody>
-        <tr class="log-year-row" id="year-{{ item_year }}" data-toc="{{ toc_name }}"><th colspan="{{ column_count }}" scope="rowgroup">{{ item_year }}</th></tr>
+        <tr class="log-year-row" id="year-{{ item_year }}" data-toc="{{ toc_name }}">
+          <th colspan="{{ column_count }}" scope="rowgroup">
+            <span class="log-year-head">
+              <span class="log-year-label">{{ item_year }}</span>
+              <span class="log-year-stats">
+                {%- for cat in year_cats -%}
+                {%- assign cat_count = year_group.items | where: "category", cat | size -%}
+                <span class="log-year-stat stat-c--{{ cat }}"><span class="visually-hidden">{{ cat | capitalize }}: </span>{% include log_icon.html category=cat %}{{ cat_count }}</span>
+                {%- endfor -%}
+              </span>
+            </span>
+          </th>
+        </tr>
       </tbody>
     {%- endif -%}
     {%- assign entry_number = forloop.length | minus: forloop.index | plus: 1 -%}
