@@ -1,7 +1,13 @@
 url: "https://lobanov-av.ru"
-title: Aleksei Lobanov
-author: Lobanov Aleksei
-description: Personal blog of Aleksei Lobanov
+
+# Имя сайта, а не имя автора: title уходит в заголовок вкладки, в og:site_name
+# и в заголовок фида — везде, где сайт представляется сам. Пишется так же, как
+# заголовок на главной, чтобы вкладка и страница называли одно и то же.
+# В кавычках намеренно: тильда в начале скаляра — зарезервированный в YAML
+# символ null, и полагаться на то, что разбор всё равно даст строку, незачем.
+title: "~stdout"
+author: Aleksei
+description: Logs, music and notes — films, games and podcasts with short notes, tracks made without a DAW, and bookmarks worth keeping.
 google_analytics:
 markdown: kramdown
 highlighter: rouge

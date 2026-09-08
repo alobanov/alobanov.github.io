@@ -4,7 +4,7 @@ layout: page
 
 {% include bookmark_import.html %}
 
-<h2 class="font-mono">~lobanov-av.ru</h2>
+<h2 class="font-mono">~stdout</h2>
 
 {% assign all_tags = "" %}
 {%- for post in site.posts -%}
