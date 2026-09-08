@@ -7,8 +7,14 @@
 
 Счётчик — role="status", чтобы скринридер сообщал результат: визуально он
 очевиден, на слух — нет.
+
+  Параметры: unit / units — как называть записи в счётчике. По умолчанию
+  «entry/entries»; на /music/ это альбомы. Обе формы задаются явно, потому что
+  английское множественное число из одной формы не вывести: entry → entries.
 {%- endcomment -%}
-<div class="log-search" hidden>
+<div class="log-search" hidden
+     data-unit="{{ include.unit | default: 'entry' }}"
+     data-units="{{ include.units | default: 'entries' }}">
   <label class="log-search-field">
     <svg class="log-search-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
     <input type="search" class="log-search-input" placeholder="Filter&#8230;"

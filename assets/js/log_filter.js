@@ -49,7 +49,8 @@
 
   var toc = document.querySelector('.toc');
   var total = entries.length;
-  var noun = total === 1 ? ' entry' : ' entries';
+  var noun = ' ' + (total === 1 ? (search.dataset.unit || 'entry')
+                                : (search.dataset.units || 'entries'));
 
   function apply(query) {
     var terms = query.toLowerCase().split(/\s+/).filter(Boolean);

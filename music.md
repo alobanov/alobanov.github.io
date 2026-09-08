@@ -48,7 +48,12 @@ permalink: /music/
        title="Open the cover"
        alt="{{ current.artist }} — {{ current.title }} cover" width="264" height="264">
   <div class="music-hero-copy">
-    <span class="music-kicker">Release of the month · {{ current.date | date: "%B %Y" }}</span>
+    {%- comment -%}
+      «Latest pick», а не «Release of the month»: карточку занимает самая свежая
+      запись по дате выбора, и никакой месячной периодичности разметка не
+      гарантирует. Дата рядом — тот же месяц выбора, а не выхода альбома.
+    {%- endcomment -%}
+    <span class="music-kicker">Latest pick · {{ current.date | date: "%B %Y" }}</span>
     <h2 class="music-title">
       {%- if current.highlight %}{% include log_highlight.html %}{% endif -%}
       {{ current.title }}
@@ -81,13 +86,16 @@ permalink: /music/
   по всей коллекции и не начинается заново.
 {%- endcomment -%}
 <section class="music-archive">
-  <h2 class="bm-section-head">Favourites<span class="bm-section-count">{{ archive.size }}</span></h2>
   {%- comment -%}
-    Тот же фильтр, что над таблицами логов. Архив собран их разметкой, поэтому
-    скрипту здесь ничего не нужно, кроме самого поля: он ищет по .log-title и
-    .log-sub-*, а они тут те же. Годовых заголовков нет — пересчитывать нечего.
+    Заголовка у раздела нет намеренно: «Favourites 15» дублировал счётчик строкой
+    ниже, а раздел на странице единственный и в назывании не нуждается. Фирменный
+    оранжевый, который держал заголовок, перешёл к счётчику.
+
+    Сам фильтр — тот же, что над таблицами логов: архив собран их разметкой, и
+    скрипту здесь ничего не нужно, кроме самого поля. Годовых заголовков нет,
+    пересчитывать нечего.
   {%- endcomment -%}
-  {% include log_search.html %}
+  {% include log_search.html unit="album" units="albums" %}
   <table class="log-table music-archive-table">
     {%- for release in archive -%}
     {%- assign entry_number = archive.size | minus: forloop.index | plus: 1 -%}
