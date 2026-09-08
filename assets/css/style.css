@@ -352,11 +352,11 @@ section {
 }
 
 /* Черта под подписью — та же, что помечает текущую страницу: на hover она
-   выезжает из-под пункта слева направо. Так наведение обещает ровно то
-   состояние, в которое пункт перейдёт по клику, а не заводит отдельный язык.
+   просто проявляется. Выезд слева направо тянул на себя внимание сильнее, чем
+   стоит подсказка о наведении.
 
-   У активного пункта она отрисована сразу: переходы не срабатывают на первом
-   применении стиля, поэтому при загрузке ничего не разъезжается. */
+   У активного пункта она видна сразу: переходы не срабатывают на первом
+   применении стиля, поэтому при загрузке ничего не мигает. */
 .menu-nav a {
     position: relative;
 }
@@ -370,14 +370,13 @@ section {
     height: 2px;
     border-radius: 2px;
     background-color: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.2s ease;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .menu-nav a.active::after,
 .menu-nav a:hover::after {
-    transform: scaleX(1);
+    opacity: 1;
 }
 
 
@@ -1042,15 +1041,27 @@ tr.bm-row:hover td {
     table-layout: fixed;
 }
 
-/* Фильтр по таблице. Отдельной строкой над ней, а не в ряду вкладок: тот ряд
-   ведёт на другие страницы и уже переполнен — чип с действием уезжал бы там на
-   вторую строку. Здесь же поле стоит вплотную к тому, что фильтрует. */
+/* Фильтр по таблице — не отдельный виджет над ней, а её же шапка ярусом выше.
+   Ни рамки, ни заливки: сплошная коробка с радиусом была единственной на всей
+   странице (у баббла пунктир, у ghost-чипов штрих, у таблицы волосяные линии) и
+   читалась как форма из админки, наклеенная поверх. Здесь всё — падинги,
+   кегль, разрядка, линия снизу — взято у thead, поэтому строка садится в
+   таблицу, а не лежит на ней. */
 .log-search {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 24px;
+    padding: 0 6px 6px;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.2s ease;
+}
+
+/* Фокус подсвечивает саму линию под строкой: обводки тут нет, и подсказать, что
+   поле активно, больше нечем. */
+.log-search:focus-within {
+    border-bottom-color: var(--secondary-color);
 }
 
 .log-search[hidden] {
@@ -1061,26 +1072,20 @@ tr.bm-row:hover td {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    flex: 1 1 180px;
-    max-width: 260px;
-    padding: 6px 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--background-color-light);
-    transition: border-color 0.2s ease;
-}
-
-/* Рамку подсвечивает поле целиком, а не сам input внутри: обводка вокруг текста
-   без иконки выглядела бы обрезанной. */
-.log-search-field:focus-within {
-    border-color: var(--secondary-color);
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .log-search-icon {
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
     flex: 0 0 auto;
     color: var(--muted-color);
+    transition: color 0.2s ease;
+}
+
+.log-search:focus-within .log-search-icon {
+    color: var(--primary-color);
 }
 
 .log-search-input {
@@ -1098,8 +1103,17 @@ tr.bm-row:hover td {
     outline: none;
 }
 
+/* Пустое поле набрано ровно как подписи колонок — так оно и есть ещё одна
+   подпись. Набранный запрос переключается на кегль содержимого: это уже не
+   заголовок, а данные. Регистр не трогаем — печатать «HORROR», когда вводишь
+   «horror», незачем. */
 .log-search-input::placeholder {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--muted-color);
+    opacity: 1;
 }
 
 /* Системный крестик очистки в WebKit рисуется своим цветом и в тёмной теме
@@ -1109,19 +1123,30 @@ tr.bm-row:hover td {
     appearance: none;
 }
 
+/* Счётчик встаёт на место DATE — по правому краю и той же типографикой. */
 .log-search-count {
+    margin-left: auto;
     font-family: var(--code-font);
     font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     font-variant-numeric: tabular-nums;
     color: var(--muted-color);
 }
 
 .log-search-empty {
     flex: 1 0 100%;
-    margin: 2px 0 0;
+    margin: 10px 0 0;
     font-family: var(--code-font);
     font-size: 12px;
     color: var(--muted-color);
+}
+
+/* Под строкой фильтра своя линия, под шапкой своя. Зазор нужен, чтобы они
+   читались как два яруса, а не как одна утолщённая черта. */
+.log-search + .log-table {
+    margin-top: 12px;
 }
 
 /* Отфильтрованное уходит из потока целиком — и записи, и опустевшие годы. */
