@@ -7,6 +7,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  {%- comment -%}
+  Значение здесь — только запасное, на случай выключенного JS. Настоящее ставит
+  скрипт ниже: тема переключается кнопкой, а не системной настройкой, поэтому
+  вариант с media="(prefers-color-scheme)" покрыл бы лишь половину случаев.
+  {%- endcomment -%}
   <meta name="theme-color" content="#ffffff">
   <meta name="format-detection" content="telephone=no">
 
@@ -59,10 +64,24 @@
 
   <!-- Anti-FOUC: apply theme before first paint -->
   <script>
+    // Полосу браузера на мобиле красит meta[theme-color], а не CSS, так что
+    // держать её в синхроне приходится руками. Цвет не задан здесь константой,
+    // а читается из --background-color: иначе он молча разъедется с темой при
+    // первой же правке палитры. Таблица стилей подключена выше, а она блокирует
+    // выполнение следующих скриптов, поэтому переменная уже доступна.
+    window.applyThemeColor = function () {
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (!meta) return;
+      const bg = getComputedStyle(document.documentElement)
+        .getPropertyValue('--background-color').trim();
+      if (bg) meta.setAttribute('content', bg);
+    };
+
     (function () {
       const stored = localStorage.getItem('theme');
       const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.dataset.theme = preferred;
+      window.applyThemeColor();
     })();
   </script>
 </head>
@@ -108,6 +127,7 @@
           const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
           document.documentElement.dataset.theme = next;
           localStorage.setItem('theme', next);
+          window.applyThemeColor();
         });
       }
     })();
