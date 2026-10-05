@@ -72,4 +72,8 @@ Recognised by [Anabin](http://anabin.kmk.org/): {% for l in site.data.cv.educati
 {{ markdown_content | markdownify }}
 </div>
 
+<p class="cv-download">
+  <a href="../files/Aleksei_Lobanov_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+</p>
+
 {% include grain_import.html %}
