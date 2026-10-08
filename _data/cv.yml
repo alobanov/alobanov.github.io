@@ -17,24 +17,26 @@ facts:
 skills:
   - kind: lang
     label: Languages
-    items: [Dart, Swift, Objective-C, Python]
+    items: [Dart, Swift, Kotlin, Objective-C]
   - kind: framework
     label: Frameworks
-    items: [Flutter, SwiftUI, UIKit, RxSwift, Reactive Programming]
+    items: [Flutter, WidgetKit, Glance, SwiftUI, UIKit, Combine, RxSwift]
   - kind: state
     label: Architecture
-    items: [BLoC, Riverpod, MVVM, VIPER, Clean Architecture]
+    items: [BLoC, Riverpod, freezed, injectable / get_it, Clean Architecture, MVVM, VIPER, bloc_test]
   - kind: data
     label: Data
-    items: [Drift, Hive, Realm, SQLite, CoreData, REST, GraphQL]
+    items: [Drift, Hive, SQLite, CoreData, Realm, REST, GraphQL, WebSocket]
   - kind: tool
     label: Tooling
-    items: [Git, Fastlane, Mason, CocoaPods, JIRA, App Store Connect]
+    items: [Git, Bitrise, Fastlane, Mason, Crowdin, Stream Chat, Firebase, Google Mobile Ads, App Store Connect, Google Play Console]
   - kind: ai
     label: AI
-    items: [Claude Code, coding agents, prompt engineering]
+    items: [Claude Code, coding agents, spec-driven development]
 
 links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/alobanov87/
   - label: GitHub
     url: https://github.com/alobanov
   - label: Instagram
@@ -43,21 +45,25 @@ links:
 # Опыт — текущее место первым. stack задаёт цвет метки платформы.
 experience:
   - company: Gameram
-    role: Software Engineer
-    period: Sep 2023 — now
+    role: Senior Flutter Engineer
+    period: Sep 2023 — Oct 2026
     from: 2023-09
-    to: now
+    to: 2026-10
     stack: Flutter
     where: Remote
     country: 🇨🇾 Cyprus
     link: https://www.gameram.com/
     current: true
-    tags: [Flutter, REST, Hive, Design System, BLoC]
+    tags: [Flutter, BLoC, Stream Chat, WidgetKit, Glance, Design System, Hive, REST]
     note: >
       A social network for gamers — a place to share what you have been playing and
-      to find people to play with. Built the mobile app, shipped to
+      to find people to play with, shipped to
       [iOS](https://apps.apple.com/us/app/gameram-network-for-gamers/id1526052976)
       and [Android](https://play.google.com/store/apps/details?id=com.gameram.gameram&hl=en&gl=US).
+      Three years on the core mobile team. Mine: the **native home-screen widgets**
+      (WidgetKit on iOS, Glance on Android), the **chats** on Stream Chat, the
+      **design system** the whole app is assembled from, and the **media players**
+      for video, YouTube and feed images.
 
   - company: NDA
     role: Software Engineer
