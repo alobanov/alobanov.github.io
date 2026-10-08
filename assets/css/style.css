@@ -3723,3 +3723,149 @@ body,
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =============================================================================
+   PROJECTS — things built for myself, no client behind them
+   ============================================================================= */
+
+/* Та же пунктирная карточка, что у релиза месяца — двумя колонками, иконка
+   слева, как обложка у .music-hero. Без неё карточка была просто ещё одной
+   жёлтой плашкой под вступлением и терялась рядом с ней. */
+.project-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-top: 24px;
+    padding: 18px;
+    border: 1px dashed rgba(84, 67, 58, 0.28);
+    border-radius: 15px;
+    background-color: var(--background-color-light);
+}
+
+[data-theme="dark"] .project-card {
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Иконка несёт собственный цвет (жёлтый Boop), поэтому тайл — только рамка
+   и тень, которая приподнимает её над карточкой, как обложка у .music-cover.
+   Скругление тайла чуть меньше, чем у .project-card, вторя скруглению
+   самой иконки (rx 14 на 64 — то же соотношение, что у app-иконок iOS). */
+.project-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 20px -10px rgba(84, 67, 58, 0.45),
+        0 2px 6px -2px rgba(84, 67, 58, 0.3);
+}
+
+[data-theme="dark"] .project-icon {
+    box-shadow:
+        0 10px 20px -10px rgba(0, 0, 0, 0.6),
+        0 2px 6px -2px rgba(0, 0, 0, 0.45);
+}
+
+.project-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-body {
+    min-width: 0;
+}
+
+.project-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--code-font);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #c2410c;
+}
+
+[data-theme="dark"] .project-kicker {
+    color: #f97316;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.project-desc {
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--primary-color);
+}
+
+.project-tags {
+    margin: 12px 0 0;
+}
+
+/* Платформа — не технология: отдельный синий, тот же, что у языков в резюме
+   и у категории «игры» в логах, чтобы «на чём работает» не терялось в ряду
+   с тем, «на чём написано». */
+.project-pill--platform {
+    color: #267cb9;
+    background-color: rgba(38, 124, 185, 0.09);
+    border-color: rgba(38, 124, 185, 0.2);
+}
+
+[data-theme="dark"] .project-pill--platform {
+    color: #7dbfe8;
+    background-color: rgba(125, 191, 232, 0.12);
+    border-color: rgba(125, 191, 232, 0.24);
+}
+
+/* Кнопка-ссылка, не <button>: ведёт на внешний сайт, а не выполняет действие
+   на странице. Оранжевая, в цвет кикера — единственный явный призыв к
+   действию на карточке, остальное на ней читать, а не нажимать. */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 16px;
+    padding: 6px 12px;
+    border-radius: 7px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    background-color: rgba(249, 115, 22, 0.12);
+    color: #c2410c;
+    font-family: var(--code-font);
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+[data-theme="dark"] .project-link {
+    border-color: rgba(249, 115, 22, 0.32);
+    background-color: rgba(249, 115, 22, 0.16);
+    color: #f97316;
+}
+
+.project-link:hover {
+    background-color: rgba(249, 115, 22, 0.2);
+    box-shadow: 0 4px 10px -4px rgba(249, 115, 22, 0.4);
+    text-decoration: none;
+}
+
+.project-link:active {
+    transform: translateY(1px);
+}
+
+@media screen and (max-width: 600px) {
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
